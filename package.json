@@ -1,0 +1,12 @@
+{
+  "name": "bayareamap",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test test/audit.test.mjs && node scripts/validate.mjs",
+    "audit": "node scripts/audit.mjs",
+    "readme": "node scripts/render-readme.mjs"
+  }
+}

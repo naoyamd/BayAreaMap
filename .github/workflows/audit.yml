@@ -1,0 +1,61 @@
+name: URL audit
+
+on:
+  schedule:
+    - cron: '17 8 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Audit mode
+        type: choice
+        required: true
+        default: daily
+        options:
+          - daily
+          - all
+
+permissions:
+  contents: write
+
+concurrency:
+  group: url-audit
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run URL audit
+        shell: bash
+        run: |
+          if [ "${{ inputs.mode }}" = "all" ]; then
+            node scripts/audit.mjs --all
+          else
+            node scripts/audit.mjs
+          fi
+
+      - name: Render README
+        shell: bash
+        run: node scripts/render-readme.mjs
+
+      - name: Test
+        shell: bash
+        run: npm test
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -z "$(git status --porcelain -- data/entities.geojson README.md)" ]; then
+            echo "no changes"
+          else
+            git add data/entities.geojson README.md
+            git commit -m "chore: refresh URL audit"
+            git push
+          fi

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ベイエリア企業マップ</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>ベイエリア企業マップ</h1>
+      <p class="dataset-info">
+        データ更新日: <time id="dataset-date">読み込み中…</time>
+        ／ URL確認日: <time id="checked-date">読み込み中…</time>
+        ／ 表示中の企業: <span id="visible-count">0</span> 件
+      </p>
+    </header>
+
+    <aside id="sidebar">
+      <section class="search-section" aria-labelledby="search-heading">
+        <h2 id="search-heading">企業を検索</h2>
+        <label for="search">企業名やキーワードで絞り込みます</label>
+        <input type="search" id="search" name="search" autocomplete="off" placeholder="例: AI、半導体、サンノゼ" />
+        <button type="button" id="clear-search">検索条件をクリア</button>
+      </section>
+
+      <section id="filters" aria-labelledby="filters-heading">
+        <h2 id="filters-heading">表示を切り替える</h2>
+        <div class="preset-buttons" role="group" aria-label="プリセット絞り込み">
+          <button type="button" data-preset="all">すべて</button>
+          <button type="button" data-preset="japan">日系</button>
+          <button type="button" data-preset="large">大企業</button>
+          <button type="button" data-preset="manufacturing">製造業</button>
+          <button type="button" data-preset="startup">スタートアップ</button>
+          <button type="button" data-preset="vc-cvc">VC/CVC</button>
+          <button type="button" data-preset="support">支援機関</button>
+        </div>
+        <fieldset id="filter-japan">
+          <legend>日系</legend>
+        </fieldset>
+        <fieldset id="filter-type">
+          <legend>企業タイプ</legend>
+        </fieldset>
+        <fieldset id="filter-scale">
+          <legend>規模</legend>
+        </fieldset>
+        <fieldset id="filter-industry">
+          <legend>業種</legend>
+        </fieldset>
+        <fieldset id="filter-county">
+          <legend>カウンティ</legend>
+        </fieldset>
+        <button type="button" id="reset-filters">フィルターをリセット</button>
+      </section>
+
+      <section class="tier-guide" aria-labelledby="tier-heading">
+        <h2 id="tier-heading">初回コンタクトの目安（ティア別）</h2>
+        <dl>
+          <dt>Tier 1</dt>
+          <dd>JETRO San Francisco / Global Acceleration Hub、Japan Innovation Campus</dd>
+          <dt>Tier 2</dt>
+          <dd>Plug and Play Tech Center、500 Global</dd>
+          <dt>Tier 3</dt>
+          <dd>Stanford ecosystem、主要VC、日本企業コミュニティ</dd>
+        </dl>
+      </section>
+
+      <section class="results-section" aria-labelledby="results-heading">
+        <h2 id="results-heading">検索結果</h2>
+        <div id="results"></div>
+      </section>
+
+      <article id="detail" aria-label="企業の詳細情報" hidden>
+        <button type="button" id="close-detail">詳細を閉じる</button>
+      </article>
+    </aside>
+
+    <main>
+      <div id="map" role="region" aria-label="ベイエリアの企業地図"></div>
+    </main>
+  </body>
+</html>
