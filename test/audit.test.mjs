@@ -2,7 +2,13 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
-import { hashId, selectFeatures } from '../scripts/audit.mjs';
+import {
+  classifyLocation,
+  distanceKm,
+  hashId,
+  selectFeatures,
+  sourceMentionsLocation,
+} from '../scripts/audit.mjs';
 
 const SHARD_COUNT = 45;
 
@@ -43,4 +49,31 @@ test('shards 0..44 partition every feature id exactly once', () => {
   for (const id of allIds) {
     assert.ok(seen.has(id), `missing id ${id} from all shards`);
   }
+});
+
+test('Sony correction moves the pin from the wrong side of US-101', () => {
+  const sony = features.find((feature) => feature.properties.id === 'sony');
+  const census = [-122.282282821742, 37.562067494598];
+  const old = [-122.3005, 37.5572];
+
+  assert.ok(distanceKm(old, census) > 1, 'old coordinate should be over 1 km away');
+  assert.ok(distanceKm(sony.geometry.coordinates, census) < 0.01);
+  assert.strictEqual(sony.properties.location.status, 'verified');
+});
+
+test('location verification separates coordinate match from official evidence', () => {
+  const location = {
+    address: '2207 Bridgepointe Pkwy',
+    city: 'San Mateo',
+  };
+  const officialPage = '<p>2207 Bridgepointe Pkwy, San Mateo, CA 94404</p>';
+
+  assert.strictEqual(sourceMentionsLocation(officialPage, location), true);
+  assert.strictEqual(sourceMentionsLocation('<p>San Mateo office</p>', location), false);
+  assert.strictEqual(classifyLocation({ distance: 0.2, sourceUrl: null }), 'matched');
+  assert.strictEqual(
+    classifyLocation({ distance: 0.2, sourceUrl: 'https://example.com', sourceMatches: true }),
+    'verified',
+  );
+  assert.strictEqual(classifyLocation({ distance: 1.2, sourceUrl: null }), 'review');
 });

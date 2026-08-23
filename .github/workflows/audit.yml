@@ -1,4 +1,4 @@
-name: URL audit
+name: Data audit
 
 on:
   schedule:
@@ -18,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: url-audit
+  group: data-audit
 
 jobs:
   audit:
@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Run URL audit
+      - name: Run distributed data audit
         shell: bash
         run: |
           if [ "${{ inputs.mode }}" = "all" ]; then
@@ -56,6 +56,6 @@ jobs:
             echo "no changes"
           else
             git add data/entities.geojson README.md
-            git commit -m "chore: refresh URL audit"
+            git commit -m "chore: refresh data audit"
             git push
           fi

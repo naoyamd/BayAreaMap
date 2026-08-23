@@ -31,6 +31,18 @@ const CHECK_STATUS_LABELS = {
   review: "要確認",
 };
 
+const LOCATION_PRECISION_LABELS = {
+  address: "番地単位",
+  city: "都市中心（概略）",
+};
+
+const LOCATION_STATUS_LABELS = {
+  unchecked: "未照合",
+  matched: "住所と座標が一致",
+  verified: "公式根拠まで確認済み",
+  review: "要確認",
+};
+
 let map;
 let markerLayer;
 let entities = [];
@@ -42,6 +54,7 @@ const filterState = {
   scale: new Set(),
   industries: new Set(),
   county: new Set(),
+  locationPrecision: new Set(),
 };
 
 const FILTER_GROUPS = {
@@ -50,6 +63,7 @@ const FILTER_GROUPS = {
   scale: "filter-scale",
   industries: "filter-industry",
   county: "filter-county",
+  locationPrecision: "filter-location-precision",
 };
 
 function initMap() {
@@ -116,6 +130,7 @@ function makeIcon(props) {
   if (props.japanConnection && props.japanConnection !== "none") {
     classes.push("japan");
   }
+  if (props.location.precision === "city") classes.push("approximate");
   return L.divIcon({
     className: classes.join(" "),
     iconSize: [ICON_SIZE, ICON_SIZE],
@@ -129,7 +144,9 @@ function rebuildMarkers(features) {
   for (const feature of features) {
     const props = feature.properties;
     const marker = L.marker(latlngOf(feature), { icon: makeIcon(props) });
-    marker.bindTooltip(props.name);
+    marker.bindTooltip(
+      `${props.name}${props.location.precision === "city" ? "（概略位置）" : ""}`,
+    );
     marker.on("click", () => selectEntity(feature));
     marker.on("add", () => {
       const el = marker.getElement();
@@ -142,11 +159,13 @@ function rebuildMarkers(features) {
 }
 
 function matchesQuery(props, query) {
+  const location = props.location;
   const haystack = [
     props.name,
     props.nameJa,
-    props.city,
-    props.county,
+    location.address,
+    location.city,
+    location.county,
     ...(Array.isArray(props.industries) ? props.industries : []),
   ]
     .filter(Boolean)
@@ -155,13 +174,19 @@ function matchesQuery(props, query) {
   return haystack.includes(query);
 }
 
+function filterValue(props, group) {
+  if (group === "county") return props.location.county;
+  if (group === "locationPrecision") return props.location.precision;
+  return props[group];
+}
+
 function matchesActiveGroups(props) {
   for (const [group, selected] of Object.entries(filterState)) {
     if (selected.size === 0) continue;
     if (group === "industries") {
       const list = Array.isArray(props.industries) ? props.industries : [];
       if (!list.some((industry) => selected.has(industry))) return false;
-    } else if (!selected.has(props[group])) {
+    } else if (!selected.has(filterValue(props, group))) {
       return false;
     }
   }
@@ -193,6 +218,7 @@ function makeResultCard(feature) {
   if (props.japanConnection && props.japanConnection !== "none") {
     logo.classList.add("japan");
   }
+  if (props.location.precision === "city") logo.classList.add("approximate");
   fillLogo(logo, props);
 
   const body = document.createElement("div");
@@ -201,9 +227,11 @@ function makeResultCard(feature) {
   const nameJaLine = document.createElement("p");
   nameJaLine.textContent = props.nameJa || "";
   const placeLine = document.createElement("p");
-  placeLine.textContent = [props.city, props.county].filter(Boolean).join(" ／ ");
+  placeLine.textContent = [props.location.city, props.location.county]
+    .filter(Boolean)
+    .join(" ／ ");
   const metaLine = document.createElement("p");
-  metaLine.textContent = `更新 ${props.updatedAt} ／ 確認 ${props.checkedAt}`;
+  metaLine.textContent = `${LOCATION_PRECISION_LABELS[props.location.precision]} ／ 更新 ${props.updatedAt} ／ 位置確認 ${props.location.checkedAt || "未確認"}`;
   body.append(heading, nameJaLine, placeLine, metaLine);
 
   card.append(logo, body);
@@ -225,6 +253,7 @@ function renderResults(features) {
 function showLoadingError() {
   document.getElementById("visible-count").textContent = "0";
   document.getElementById("dataset-date").textContent = "—";
+  document.getElementById("location-checked-date").textContent = "—";
   document.getElementById("checked-date").textContent = "—";
   const results = document.getElementById("results");
   const message = document.createElement("p");
@@ -243,6 +272,9 @@ function filterValueLabel(group, value) {
   if (group === "japanConnection" && JAPAN_CONNECTION_LABELS[value]) {
     return JAPAN_CONNECTION_LABELS[value];
   }
+  if (group === "locationPrecision" && LOCATION_PRECISION_LABELS[value]) {
+    return LOCATION_PRECISION_LABELS[value];
+  }
   return String(value).replace(/-/g, " ");
 }
 
@@ -251,7 +283,7 @@ function buildFilterControls() {
   for (const group of Object.keys(FILTER_GROUPS)) {
     const values = new Set();
     for (const feature of entities) {
-      const raw = feature.properties[group];
+      const raw = filterValue(feature.properties, group);
       if (Array.isArray(raw)) {
         for (const item of raw) if (item) values.add(item);
       } else if (raw) {
@@ -370,7 +402,7 @@ async function loadEntities() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const geojson = await response.json();
     entities = Array.isArray(geojson.features) ? geojson.features : [];
-    setDatasetDates(entities);
+    setDatasetDates(geojson);
     buildFilterControls();
     applyFilter(document.getElementById("search").value);
   } catch {
@@ -378,15 +410,21 @@ async function loadEntities() {
   }
 }
 
-function setDatasetDates(features) {
-  const maxOf = (key) =>
-    features
-      .map((feature) => feature.properties[key])
+function setDatasetDates(geojson) {
+  const maxOf = (read) =>
+    geojson.features
+      .map((feature) => read(feature.properties))
       .filter(Boolean)
       .sort()
       .at(-1) ?? "—";
-  document.getElementById("dataset-date").textContent = maxOf("updatedAt");
-  document.getElementById("checked-date").textContent = maxOf("checkedAt");
+  document.getElementById("dataset-date").textContent =
+    geojson.metadata?.updatedAt ?? maxOf((props) => props.updatedAt);
+  document.getElementById("location-checked-date").textContent = maxOf(
+    (props) => props.location.checkedAt,
+  );
+  document.getElementById("checked-date").textContent = maxOf(
+    (props) => props.websiteCheck.checkedAt,
+  );
 }
 
 function detailRow(label, valueNode) {
@@ -444,22 +482,40 @@ function showDetail(feature) {
   nameJaLine.textContent = props.nameJa || "";
 
   const rows = document.createElement("dl");
-  const address = [props.address, props.city, props.county]
+  const location = props.location;
+  const address = [location.address, location.city, location.region, location.postalCode]
     .filter(Boolean)
     .join(", ");
   rows.append(detailRow("住所", textNode(address)));
+  rows.append(
+    detailRow("位置精度", textNode(LOCATION_PRECISION_LABELS[location.precision])),
+  );
   rows.append(detailRow("分類", textNode(categoryLabel(props))));
   rows.append(
     detailRow("業種", textNode((props.industries || []).join("・"))),
   );
   if (props.website) rows.append(detailRow("公式サイト", linkNode(props.website)));
-  if (props.sourceUrl) rows.append(detailRow("出典", linkNode(props.sourceUrl)));
+  if (props.profileSourceUrl) {
+    rows.append(detailRow("掲載根拠", linkNode(props.profileSourceUrl)));
+  }
+  if (location.sourceUrl) {
+    rows.append(detailRow("所在地根拠", linkNode(location.sourceUrl)));
+  }
   rows.append(detailRow("データ更新日", textNode(props.updatedAt)));
-  rows.append(detailRow("最終確認日", textNode(props.checkedAt)));
   rows.append(
     detailRow(
-      "確認状況",
-      textNode(CHECK_STATUS_LABELS[props.checkStatus] || props.checkStatus),
+      "所在地確認",
+      textNode(
+        `${LOCATION_STATUS_LABELS[location.status] || location.status} ／ ${location.checkedAt || "未確認"}`,
+      ),
+    ),
+  );
+  rows.append(
+    detailRow(
+      "サイト確認",
+      textNode(
+        `${CHECK_STATUS_LABELS[props.websiteCheck.status] || props.websiteCheck.status} ／ ${props.websiteCheck.checkedAt || "未確認"}`,
+      ),
     ),
   );
 

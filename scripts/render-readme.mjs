@@ -34,6 +34,18 @@ const STATUS_LABELS = {
   unchecked: "未確認",
 };
 
+const LOCATION_PRECISION_LABELS = {
+  address: "番地単位",
+  city: "都市中心（概略）",
+};
+
+const LOCATION_STATUS_LABELS = {
+  unchecked: "未照合",
+  matched: "住所・座標一致",
+  verified: "公式根拠確認済み",
+  review: "要確認",
+};
+
 const SHARD_COUNT = 45;
 
 function escText(value) {
@@ -58,14 +70,14 @@ function isJapanLinked(props) {
   return Boolean(props.japanConnection) && props.japanConnection !== "none";
 }
 
-function maxOf(features, key) {
-  return features.reduce((max, f) => {
-    const v = String(f?.[key] ?? "");
+function maxOf(features, read) {
+  return features.reduce((max, feature) => {
+    const v = String(read(feature) ?? "");
     return v > max ? v : max;
   }, "");
 }
 
-function render(entities) {
+function render(entities, metadata) {
   const total = entities.length;
   const japanLinked = entities.filter((p) => isJapanLinked(p)).length;
   const large = entities.filter((p) => p.scale === "large").length;
@@ -75,9 +87,13 @@ function render(entities) {
   const nonCompany = entities.filter(
     (p) => p.entityType && p.entityType !== "company",
   ).length;
-  const counties = [...new Set(entities.map((p) => p.county).filter(Boolean))].sort();
-  const updatedAt = maxOf(entities, "updatedAt") || "—";
-  const checkedAt = maxOf(entities, "checkedAt") || "—";
+  const counties = [...new Set(entities.map((p) => p.location.county).filter(Boolean))].sort();
+  const addressPrecision = entities.filter((p) => p.location.precision === "address").length;
+  const cityPrecision = entities.filter((p) => p.location.precision === "city").length;
+  const verifiedLocations = entities.filter((p) => p.location.status === "verified").length;
+  const updatedAt = metadata?.updatedAt || maxOf(entities, (p) => p.updatedAt) || "—";
+  const checkedAt = maxOf(entities, (p) => p.websiteCheck.checkedAt) || "—";
+  const locationCheckedAt = maxOf(entities, (p) => p.location.checkedAt) || "—";
 
   const lines = [];
   lines.push("# ベイエリア企業マップ");
@@ -96,12 +112,15 @@ function render(entities) {
   lines.push("## データサマリ");
   lines.push("");
   lines.push(`- データ更新日: ${updatedAt}`);
+  lines.push(`- 所在地確認日: ${locationCheckedAt}`);
   lines.push(`- URL確認日: ${checkedAt}`);
   lines.push(`- 掲載件数: ${total}件`);
   lines.push(`- 日本関連: ${japanLinked}件`);
   lines.push(`- 大規模（scale: large）: ${large}件`);
   lines.push(`- 製造業関連: ${mfgRelated}件`);
   lines.push(`- 企業以外（VC/CVC・支援機関・大学など）: ${nonCompany}件`);
+  lines.push(`- 位置精度: 番地単位 ${addressPrecision}件／都市中心の概略位置 ${cityPrecision}件`);
+  lines.push(`- 公式根拠まで確認済みの所在地: ${verifiedLocations}件`);
   lines.push(`- 対象カウンティ: 全${counties.length}カウンティ（${counties.join("・")}）`);
   lines.push("");
   lines.push("## 初回コンタクトの目安");
@@ -115,15 +134,23 @@ function render(entities) {
   lines.push("## 使い方");
   lines.push("");
   lines.push(
-    "- 各ピンはサイトのロゴ（favicon）を使った**正方形アイコン**で、ロゴが取得できない場合は名称の頭文字を表示します。日本関連のピンは枠色で強調されます。",
+    "- 各ピンはサイトのロゴ（favicon）を使った**正方形アイコン**で、ロゴが取得できない場合は名称の頭文字を表示します。日本関連のピンは枠色で強調され、都市中心の概略位置は破線で表示されます。",
     "- **検索ボックス**で社名・日本語名・都市などのキーワードで絞り込めます。",
     "- **フィルター**で日系／タイプ／規模／業種／カウンティを組み合わせて絞り込めます（日系・大企業・製造業などのプリセットボタン付き）。",
   );
   lines.push("");
-  lines.push("## URL監査（シャード方式）");
+  lines.push("## 所在地データ設計（schema v2）");
   lines.push("");
   lines.push(
-    `各エンティティIDのハッシュで全件を${SHARD_COUNT}シャードに決定論的に分割し、毎日1シャード分のURLを自動確認します。約1.5か月で全件を一巡します。結果は checkStatus に記録され、ok=確認済み／review=要確認／unchecked=未確認 として一覧表に反映されます。`,
+    "- GeoJSON座標はWGS84の `[経度, 緯度]`。`location.precision` で番地単位（address）と都市中心（city）を区別します。",
+    "- `location.coordinateSource` は座標の由来、`location.sourceUrl` は現住所の公式根拠です。両者を混同しません。",
+    "- `location.status` は住所と座標の照合結果、`websiteCheck` はサイト疎通結果です。更新日・所在地確認日・URL確認日は別々に管理します。",
+  );
+  lines.push("");
+  lines.push("## 分散監査（シャード方式）");
+  lines.push("");
+  lines.push(
+    `各エンティティIDのハッシュで全件を${SHARD_COUNT}シャードに決定論的に分割し、毎日1シャード分を確認します。約1.5か月で全件を一巡し、サイト疎通に加えて、番地のある所在地は米国国勢調査局ジオコーダーで住所と座標の距離を照合します。公式所在地ページが登録されている場合は住所表記も確認します。`,
   );
   lines.push("");
   lines.push("## ホスティング");
@@ -143,15 +170,15 @@ function render(entities) {
   lines.push("");
   lines.push("```sh", "npm test                     # テストとデータ検証");
   lines.push("npm run readme               # README.md 再生成");
-  lines.push("npm run audit -- --shard 0   # シャード0のURL確認");
-  lines.push("npm run audit -- --all       # 全件のURL確認", "```");
+  lines.push("npm run audit -- --shard 0   # シャード0のデータ監査");
+  lines.push("npm run audit -- --all       # 全件のデータ監査", "```");
   lines.push("");
   lines.push("## 掲載データ一覧");
   lines.push("");
   lines.push(
-    "| 日系 | 名称 | タイプ | 規模 | 都市／カウンティ | 業種 | 更新日 | 確認日 | 状態 |",
+    "| 日系 | 名称 | タイプ | 規模 | 都市／カウンティ | 業種 | 位置精度 | 所在地確認 | URL確認 | 更新日 |",
   );
-  lines.push("| --- | --- | --- | --- | --- | --- | --- | --- | --- |");
+  lines.push("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |");
 
   for (const p of entities) {
     const nameCell = mdLink(p.name, p.website);
@@ -160,11 +187,12 @@ function render(entities) {
       nameCell,
       cell(TYPE_LABELS[p.entityType] ?? p.entityType),
       cell(SCALE_LABELS[p.scale] ?? p.scale),
-      cell([p.city, p.county].filter(Boolean).join("／")),
+      cell([p.location.city, p.location.county].filter(Boolean).join("／")),
       cell((p.industries ?? []).join(", ")),
+      cell(LOCATION_PRECISION_LABELS[p.location.precision] ?? p.location.precision),
+      cell(`${LOCATION_STATUS_LABELS[p.location.status] ?? p.location.status}（${p.location.checkedAt || "—"}）`),
+      cell(`${STATUS_LABELS[p.websiteCheck.status] ?? p.websiteCheck.status}（${p.websiteCheck.checkedAt || "—"}）`),
       cell(p.updatedAt),
-      cell(p.checkedAt),
-      cell(STATUS_LABELS[p.checkStatus] ?? p.checkStatus),
     ];
     lines.push(`| ${row.join(" | ")} |`);
   }
@@ -207,7 +235,7 @@ function main() {
         collator.compare(String(a.id ?? ""), String(b.id ?? "")),
     );
 
-  const markdown = render(entities);
+  const markdown = render(entities, geo.metadata);
 
   if (checkOnly) {
     let current;

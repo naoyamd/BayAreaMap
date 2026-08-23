@@ -14,6 +14,7 @@
       <h1>ベイエリア企業マップ</h1>
       <p class="dataset-info">
         データ更新日: <time id="dataset-date">読み込み中…</time>
+        ／ 位置確認日: <time id="location-checked-date">読み込み中…</time>
         ／ URL確認日: <time id="checked-date">読み込み中…</time>
         ／ 表示中の企業: <span id="visible-count">0</span> 件
       </p>
@@ -53,6 +54,10 @@
         <fieldset id="filter-county">
           <legend>カウンティ</legend>
         </fieldset>
+        <fieldset id="filter-location-precision">
+          <legend>位置精度</legend>
+        </fieldset>
+        <p class="location-note">破線のピンは都市中心の概略位置です。</p>
         <button type="button" id="reset-filters">フィルターをリセット</button>
       </section>
 
