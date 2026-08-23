@@ -83,7 +83,7 @@ function initMap() {
   markerLayer = L.markerClusterGroup({
     showCoverageOnHover: false,
     maxClusterRadius: 55,
-    disableClusteringAtZoom: 14,
+    spiderfyDistanceMultiplier: 1.5,
     iconCreateFunction(cluster) {
       return L.divIcon({
         className: "company-cluster",

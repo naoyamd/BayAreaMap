@@ -19549,8 +19549,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
@@ -19567,22 +19567,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -19596,8 +19596,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
@@ -19614,22 +19614,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -19643,8 +19643,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
@@ -19661,22 +19661,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20162,8 +20162,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
@@ -20180,22 +20180,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20209,8 +20209,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
@@ -20227,22 +20227,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20256,8 +20256,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
@@ -20274,22 +20274,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20303,8 +20303,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
@@ -20321,22 +20321,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20350,8 +20350,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
@@ -20369,22 +20369,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20398,8 +20398,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
@@ -20417,22 +20417,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20446,8 +20446,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
@@ -20464,22 +20464,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
@@ -20580,6 +20580,54 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked"
+        },
+        "updatedAt": "2026-08-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.300177371754,
+          37.555182590093
+        ]
+      },
+      "properties": {
+        "id": "rakunest",
+        "name": "RakuNest",
+        "nameJa": "ラクネスト",
+        "website": "https://www.rakunest.com/",
+        "entityType": "support",
+        "japanConnection": "japan-headquartered",
+        "scale": "not-applicable",
+        "industries": [
+          "coworking",
+          "startup-support",
+          "community"
+        ],
+        "profileSourceUrl": "https://www.rakunest.com/",
+        "location": {
+          "address": "900 Concar Drive, Suite 400",
+          "city": "San Mateo",
+          "region": "CA",
+          "postalCode": "94402",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.rakunest.com/"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23"
       }

@@ -64,6 +64,31 @@ test('Sony correction moves the pin from the wrong side of US-101', () => {
   assert.strictEqual(sony.properties.presenceCheck.status, 'verified');
 });
 
+test('RakuNest and its mapped tenants share the verified facility address', () => {
+  const ids = [
+    'rakunest',
+    'jcb-silicon-valley',
+    'jtb-silicon-valley',
+    'hakuhodo-dy-irep',
+    'shimizu-rakunest',
+    'eneos-rakunest',
+    'systena-rakunest',
+    'exedy-rakunest',
+    'kurita-rakunest',
+    'tosoh-rakunest',
+    'sekisui-chemical-rakunest',
+  ];
+  const expected = [-122.300177371754, 37.555182590093];
+
+  for (const id of ids) {
+    const feature = features.find((item) => item.properties.id === id);
+    assert.ok(feature, `missing ${id}`);
+    assert.ok(distanceKm(feature.geometry.coordinates, expected) < 0.01, id);
+    assert.strictEqual(feature.properties.location.address, '900 Concar Drive, Suite 400');
+    assert.strictEqual(feature.properties.location.status, 'matched');
+  }
+});
+
 test('coordinate and current-presence checks stay independent', () => {
   const location = {
     address: '2207 Bridgepointe Pkwy',
