@@ -79,6 +79,7 @@ test('RakuNest and its mapped tenants share the verified facility address', () =
     'jcb-silicon-valley',
     'jtb-silicon-valley',
     'hakuhodo-dy-irep',
+    'ihi-aerospace-rakunest',
     'shimizu-rakunest',
     'eneos-rakunest',
     'systena-rakunest',

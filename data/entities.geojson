@@ -1561,35 +1561,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
-        "id": "ihi-americas",
-        "name": "IHI Americas",
-        "nameJa": "IHIアメリカ",
+        "id": "ihi-aerospace-rakunest",
+        "name": "IHI Aerospace",
+        "nameJa": "株式会社IHIエアロスペース",
         "website": "https://www.ihi.co.jp/ia/en/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
         "industries": [
-          "industrial",
+          "aerospace",
           "manufacturing"
         ],
         "profileSourceUrl": "https://www.ihi.co.jp/ia/en/",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "900 Concar Drive, Suite 400",
+          "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/clients",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
@@ -1599,7 +1599,7 @@
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rakunest.com/clients"
         }
       }
     },
