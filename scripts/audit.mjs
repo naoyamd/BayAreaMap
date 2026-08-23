@@ -59,6 +59,48 @@ export function sourceMentionsPresence(html, location) {
   return cityWords.length > 0 && cityWords.every((word) => documentWords.has(word));
 }
 
+function host(url) {
+  try {
+    return new URL(url).hostname.toLowerCase().replace(/^www\d*\./, "");
+  } catch {
+    return "";
+  }
+}
+
+export function officialAddressSource(properties) {
+  const website = properties?.website;
+  const websiteHost = host(website);
+  const presenceUrl = properties?.presenceCheck?.sourceUrl;
+  const presenceHost = host(presenceUrl);
+  if (presenceHost && websiteHost &&
+      (presenceHost === websiteHost || presenceHost.endsWith(`.${websiteHost}`) ||
+       websiteHost.endsWith(`.${presenceHost}`))) {
+    return presenceUrl;
+  }
+  return website ?? null;
+}
+
+export function extractCaliforniaAddress(html, city) {
+  const text = String(html ?? "")
+    .replace(/&nbsp;|&#160;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ");
+  const escapedCity = String(city ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  if (!escapedCity) return null;
+  const suffix = "(?:Street|St\\.?|Avenue|Ave\\.?|Road|Rd\\.?|Boulevard|Blvd\\.?|Drive|Dr\\.?|Lane|Ln\\.?|Way|Circle|Cir\\.?|Court|Ct\\.?|Parkway|Pkwy\\.?|Plaza|Place|Pl\\.?)";
+  const unit = "(?:\\s*,?\\s*(?:Tower|Building|Bldg\\.?|Suite|Ste\\.?|Floor|Fl\\.?|#)\\s*[A-Za-z0-9-]+){0,2}";
+  const match = text.match(new RegExp(
+    `\\b(\\d{1,6}\\s+[A-Za-z0-9.'’& -]{1,70}?\\s${suffix}${unit})\\s*,?\\s*${escapedCity}\\s*,?\\s*(?:California|CA)\\s*[,.]?\\s*(\\d{5}(?:-\\d{4})?)\\b`,
+    "i",
+  ));
+  if (!match) return null;
+  return {
+    address: match[1].replace(/\s*,\s*/g, ", ").replace(/\s+/g, " ").trim(),
+    postalCode: match[2],
+  };
+}
+
 export function classifyLocation({ distance }) {
   if (!Number.isFinite(distance) || distance > MAX_LOCATION_DISTANCE_KM) return "review";
   return "matched";
@@ -212,10 +254,60 @@ async function audit(argv) {
 
   let locationChecked = 0;
   let locationReview = 0;
+  let officialSourcesLinked = 0;
+  let cityLocationsUpgraded = 0;
   for (const feature of selected) {
     const props = feature.properties;
     const location = props.location;
+    if (location.precision === "city") {
+      const sourceUrl = officialAddressSource(props);
+      if (!sourceUrl) continue;
+      const source = await fetchPage(sourceUrl, true);
+      if (!source.ok) continue;
+      const candidate = extractCaliforniaAddress(source.text, location.city);
+      if (!candidate) {
+        if (sourceMentionsPresence(source.text, location)) {
+          location.sourceUrl = sourceUrl;
+          props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl };
+          props.updatedAt = date;
+          geo.metadata.updatedAt = date;
+          officialSourcesLinked++;
+        }
+        continue;
+      }
+      const geocode = await geocodeLocation({ ...location, ...candidate });
+      if (!geocode.ok) {
+        console.log(`review  discovery ${props.id} ${geocode.detail}`);
+        continue;
+      }
+      feature.geometry.coordinates = geocode.coordinates;
+      Object.assign(location, candidate, {
+        precision: "address",
+        coordinateSource: "census-geocoder",
+        sourceUrl,
+        checkedAt: date,
+        status: "matched",
+      });
+      props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl };
+      props.updatedAt = date;
+      geo.metadata.updatedAt = date;
+      officialSourcesLinked++;
+      cityLocationsUpgraded++;
+      console.log(`matched  discovery ${props.id} ${candidate.address}`);
+      continue;
+    }
     if (location.precision !== "address") continue;
+    if (!location.sourceUrl) {
+      const sourceUrl = officialAddressSource(props);
+      const source = sourceUrl ? await fetchPage(sourceUrl, true) : null;
+      if (source?.ok && sourceMentionsLocation(source.text, location)) {
+        location.sourceUrl = sourceUrl;
+        props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl };
+        props.updatedAt = date;
+        geo.metadata.updatedAt = date;
+        officialSourcesLinked++;
+      }
+    }
     locationChecked++;
     const geocode = await geocodeLocation(location);
     location.checkedAt = date;
@@ -270,6 +362,7 @@ async function audit(argv) {
   console.log(
     `Summary: shard ${shardLabel} | selected ${selected.length} | website ok ${websiteOk}, review ${websiteReview} | ` +
     `address locations checked ${locationChecked}, review ${locationReview} | ` +
+    `official sources linked ${officialSourcesLinked}, city locations upgraded ${cityLocationsUpgraded} | ` +
     `presence checked ${presenceChecked}, review ${presenceReview} | ` +
     `${selected.length ? "wrote" : "no changes written"}`,
   );

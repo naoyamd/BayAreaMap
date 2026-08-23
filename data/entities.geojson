@@ -17014,15 +17014,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.2711,
-          37.5585
+          -122.277118175753,
+          37.558093516631
         ]
       },
       "properties": {
         "id": "sompo-international-san-francisco",
         "name": "SOMPO Digital Lab Silicon Valley",
         "nameJa": "SOMPOデジタルラボ",
-        "website": "https://www.sompo-hd.com/en/",
+        "website": "https://www2.sompo-hd.com/digital/en/pc/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
@@ -17032,17 +17032,17 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "950 Tower Lane, Suite 777",
           "city": "Foster City",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94404",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://bizfileonline.sos.ca.gov/search/business",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -17052,7 +17052,7 @@
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www2.sompo-hd.com/digital/en/pc/"
         }
       }
     },
@@ -19693,15 +19693,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.302099564596,
+          37.553492836924
         ]
       },
       "properties": {
         "id": "acario-innovation",
         "name": "Acario Innovation / Tokyo Gas",
         "nameJa": "東京ガス（Acario Innovation）",
-        "website": "https://www.tokyo-gas.co.jp/en/",
+        "website": "https://acarioinnovation.com/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
@@ -19711,22 +19711,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "1875 South Grant Street, Suite 920",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://acarioinnovation.com/contact-us/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://acarioinnovation.com/contact-us/"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -19740,15 +19740,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -121.947956575124,
+          37.317238858588
         ]
       },
       "properties": {
         "id": "idemitsu-americas",
         "name": "Idemitsu Americas",
         "nameJa": "出光興産",
-        "website": "https://www.idemitsu.com/en/",
+        "website": "https://idemitsuamericas.com/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
@@ -19759,22 +19759,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
-          "city": "San Mateo",
+          "address": "3031 Tisch Way, Suite 430",
+          "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95128",
           "countryCode": "US",
-          "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://idemitsuamericas.com/notes/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://idemitsuamericas.com/notes/"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -19814,14 +19814,14 @@
           "county": "Santa Clara County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20260522_8524",
           "checkedAt": null,
           "status": "unchecked"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20260522_8524"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -19835,8 +19835,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.9547,
-          37.3541
+          -121.971408002954,
+          37.385791345997
         ]
       },
       "properties": {
@@ -19853,22 +19853,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "3945 Freedom Circle, Suite 920",
           "city": "Santa Clara",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95054",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rapidus.inc/en/about/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.rapidus.inc/en/about/"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -19909,14 +19909,14 @@
           "county": "Alameda County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://www.resonac.com/news/2024/07/08/3116.html",
           "checkedAt": null,
           "status": "unchecked"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.resonac.com/news/2024/07/08/3116.html"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -19930,8 +19930,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.9547,
-          37.3541
+          -121.97323863841,
+          37.387098136336
         ]
       },
       "properties": {
@@ -19948,22 +19948,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "3975 Freedom Circle, Suite 910",
           "city": "Santa Clara",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95054",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.scskusa.com/contact.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.scskusa.com/contact.html"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -19985,7 +19985,7 @@
         "id": "mitsui-fudosan-san-francisco",
         "name": "Mitsui Fudosan San Francisco",
         "nameJa": "三井不動産",
-        "website": "https://www.mitsuifudosan.co.jp/english/",
+        "website": "https://www.mfamerica.com/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
@@ -19995,22 +19995,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "50 California Street, Suite 2525",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94111",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.mfamerica.com/contact",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.mfamerica.com/contact"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20024,8 +20024,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4066,
-          37.6547
+          -122.38979453633,
+          37.656817722866
         ]
       },
       "properties": {
@@ -20042,22 +20042,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "480 Forbes Boulevard",
           "city": "South San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94080",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.astellas.com/en/contact-us/global-directory?accId=section-n-0",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.astellas.com/en/contact-us/global-directory?accId=section-n-0"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20071,8 +20071,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.397010849266,
+          37.793643549681
         ]
       },
       "properties": {
@@ -20089,22 +20089,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "50 California Street, Suite 600",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94111",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.kikkoman.com/en/corporate/business/soysauce/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.kikkoman.com/en/corporate/business/soysauce/"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20118,8 +20118,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.143,
-          37.4419
+          -122.136531494785,
+          37.4222261224
         ]
       },
       "properties": {
@@ -20136,22 +20136,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "3250 Ash Street",
           "city": "Palo Alto",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94306",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1040190/000119312522250272/d395073dsc13d.htm",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.nissay.co.jp/kaisha/nipponlifex/en/"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20496,15 +20496,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.9547,
-          37.3541
+          -121.963484677949,
+          37.368428064892
         ]
       },
       "properties": {
         "id": "fujifilm-dimatix",
         "name": "FUJIFILM Dimatix",
         "nameJa": "富士フイルム",
-        "website": "https://www.fujifilm.com/us/en/business/industrial-inkjet",
+        "website": "https://www.fujifilm.com/fdmx/en/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
@@ -20515,22 +20515,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "2250 Martin Avenue",
           "city": "Santa Clara",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95050",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.fujifilm.com/fdmx/en/about/office",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.fujifilm.com/fdmx/en/about/office"
         },
         "websiteCheck": {
           "checkedAt": null,
@@ -20544,8 +20544,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.920330354319,
+          37.384509490462
         ]
       },
       "properties": {
@@ -20563,22 +20563,22 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "2355 Zanker Road",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95131",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://sumitomoelectric.com/company/office_group_companies/innovation-core-sei-inc",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://sumitomoelectric.com/company/office_group_companies/innovation-core-sei-inc"
         },
         "websiteCheck": {
           "checkedAt": null,

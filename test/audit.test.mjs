@@ -6,7 +6,9 @@ import {
   classifyLocation,
   classifyPresence,
   distanceKm,
+  extractCaliforniaAddress,
   hashId,
+  officialAddressSource,
   selectFeatures,
   sourceMentionsLocation,
   sourceMentionsPresence,
@@ -118,6 +120,21 @@ test('coordinate and current-presence checks stay independent', () => {
     classifyPresence({ sourceUrl: null, sourceOk: false, sourceHtml: '', location }),
     'unchecked',
   );
+});
+
+test('city locations use a first-party source and can discover a street address', () => {
+  const properties = {
+    website: 'https://www.example.co.jp/en/',
+    presenceCheck: { sourceUrl: 'https://blog.example.net/company-list' },
+  };
+  const html = '<address>3975 Freedom Circle, Suite 910<br>Santa Clara, CA 95054</address>';
+
+  assert.strictEqual(officialAddressSource(properties), properties.website);
+  assert.deepStrictEqual(extractCaliforniaAddress(html, 'Santa Clara'), {
+    address: '3975 Freedom Circle, Suite 910',
+    postalCode: '95054',
+  });
+  assert.strictEqual(extractCaliforniaAddress(html, 'San Mateo'), null);
 });
 
 test('major Bay Area anchors are present and exact overlaps expand at town zoom', () => {
