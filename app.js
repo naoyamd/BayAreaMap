@@ -2,6 +2,7 @@
 
 const MAP_CENTER = [37.55, -122.2];
 const MAP_ZOOM = 9;
+const MAX_ZOOM = 19;
 const ICON_SIZE = 42;
 const TOWN_ZOOM = 14;
 const DENSE_CLUSTER_CITIES = new Set(["San Francisco", "San Jose", "Santa Clara"]);
@@ -57,6 +58,7 @@ let overlapLegLayer;
 let entities = [];
 let visibleEntities = [];
 let townMode = false;
+let maxZoomMode = false;
 const markersById = new Map();
 
 const filterState = {
@@ -82,7 +84,7 @@ const FILTER_GROUPS = {
 function initMap() {
   map = L.map("map", { center: MAP_CENTER, zoom: MAP_ZOOM });
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
+    maxZoom: MAX_ZOOM,
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
@@ -102,8 +104,10 @@ function initMap() {
   townMarkerLayer = L.layerGroup().addTo(map);
   map.on("zoomend", () => {
     const nextTownMode = map.getZoom() >= TOWN_ZOOM;
-    if (nextTownMode === townMode) return;
+    const nextMaxZoomMode = map.getZoom() === MAX_ZOOM;
+    if (nextTownMode === townMode && nextMaxZoomMode === maxZoomMode) return;
     townMode = nextTownMode;
+    maxZoomMode = nextMaxZoomMode;
     rebuildMarkers(visibleEntities);
   });
 }
@@ -202,7 +206,7 @@ function rebuildMarkers(features) {
   if (townMode) {
     const groups = new Map();
     for (const feature of features) {
-      if (DENSE_CLUSTER_CITIES.has(feature.properties.location.city)) continue;
+      if (DENSE_CLUSTER_CITIES.has(feature.properties.location.city) && !maxZoomMode) continue;
       const key = feature.geometry.coordinates.join(",");
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key).push(feature);
@@ -242,7 +246,7 @@ function rebuildMarkers(features) {
       fillLogo(el, props);
       el.setAttribute("aria-label", props.name);
     });
-    const stayClustered = DENSE_CLUSTER_CITIES.has(props.location.city);
+    const stayClustered = DENSE_CLUSTER_CITIES.has(props.location.city) && !maxZoomMode;
     marker.addTo(townMode && !stayClustered ? townMarkerLayer : markerLayer);
     markersById.set(props.id, marker);
   }

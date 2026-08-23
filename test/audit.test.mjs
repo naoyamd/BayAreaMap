@@ -239,7 +239,7 @@ test('official office pages replace San Francisco city placeholders', () => {
   assert.ok(!features.some((item) => item.properties.id === 'soracom-us'));
 });
 
-test('major Bay Area anchors are present and exact overlaps expand at town zoom', () => {
+test('major Bay Area anchors are present and dense cities expand only at maximum zoom', () => {
   const ids = [
     'google', 'apple', 'meta', 'nvidia', 'tesla-fremont', 'cisco', 'intel', 'amd',
     'oracle', 'linkedin', 'netflix', 'databricks', 'snowflake', 'anthropic', 'doordash',
@@ -256,7 +256,10 @@ test('major Bay Area anchors are present and exact overlaps expand at town zoom'
     assert.strictEqual(features.find((item) => item.properties.id === id)?.properties.scale, 'large', id);
   }
   assert.match(appSource, /const TOWN_ZOOM = 14;/);
+  assert.match(appSource, /const MAX_ZOOM = 19;/);
   assert.match(appSource, /DENSE_CLUSTER_CITIES = new Set\(\["San Francisco", "San Jose", "Santa Clara"\]\)/);
+  assert.match(appSource, /nextMaxZoomMode = map\.getZoom\(\) === MAX_ZOOM/);
+  assert.match(appSource, /DENSE_CLUSTER_CITIES\.has\(feature\.properties\.location\.city\) && !maxZoomMode/);
   assert.match(appSource, /marker\.addTo\(townMode && !stayClustered \? townMarkerLayer : markerLayer\)/);
   assert.match(appSource, /feature\.geometry\.coordinates\.join\(","\)/);
   assert.doesNotMatch(appSource, /scheduleAutoSpiderfy|\.spiderfy\(\)/);
