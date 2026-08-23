@@ -39,7 +39,12 @@ const LOCATION_PRECISION_LABELS = {
 const LOCATION_STATUS_LABELS = {
   unchecked: "未照合",
   matched: "住所と座標が一致",
-  verified: "公式根拠まで確認済み",
+  review: "要確認",
+};
+
+const PRESENCE_STATUS_LABELS = {
+  unchecked: "未確認",
+  verified: "確認済み",
   review: "要確認",
 };
 
@@ -55,6 +60,7 @@ const filterState = {
   industries: new Set(),
   county: new Set(),
   locationPrecision: new Set(),
+  presenceStatus: new Set(),
 };
 
 const FILTER_GROUPS = {
@@ -64,6 +70,7 @@ const FILTER_GROUPS = {
   industries: "filter-industry",
   county: "filter-county",
   locationPrecision: "filter-location-precision",
+  presenceStatus: "filter-presence",
 };
 
 function initMap() {
@@ -73,7 +80,18 @@ function initMap() {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
-  markerLayer = L.layerGroup().addTo(map);
+  markerLayer = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    maxClusterRadius: 55,
+    disableClusteringAtZoom: 14,
+    iconCreateFunction(cluster) {
+      return L.divIcon({
+        className: "company-cluster",
+        html: `<span>${cluster.getChildCount()}</span>`,
+        iconSize: [44, 44],
+      });
+    },
+  }).addTo(map);
 }
 
 function latlngOf(feature) {
@@ -81,14 +99,20 @@ function latlngOf(feature) {
   return [lat, lon];
 }
 
-function logoSrc(props) {
-  if (props.logoUrl) return props.logoUrl;
+function logoSources(props) {
+  const sources = [];
+  if (props.logoUrl) sources.push(props.logoUrl);
   try {
-    if (!props.website) return null;
-    return new URL("/favicon.ico", props.website).href;
+    if (!props.website) return sources;
+    const website = new URL(props.website);
+    sources.push(
+      `https://www.google.com/s2/favicons?domain=${encodeURIComponent(website.hostname)}&sz=128`,
+      new URL("/favicon.ico", website).href,
+    );
   } catch {
-    return null;
+    return sources;
   }
+  return [...new Set(sources)];
 }
 
 function initialsOf(name) {
@@ -109,19 +133,21 @@ function fallbackLogo(name) {
 }
 
 function fillLogo(container, props) {
-  const src = logoSrc(props);
-  if (!src) {
+  const sources = logoSources(props);
+  if (!sources.length) {
     container.replaceChildren(fallbackLogo(props.name));
     return;
   }
   const img = document.createElement("img");
   img.alt = "";
-  img.src = src;
-  img.addEventListener(
-    "error",
-    () => container.replaceChildren(fallbackLogo(props.name)),
-    { once: true },
-  );
+  img.referrerPolicy = "no-referrer";
+  let index = 0;
+  img.addEventListener("error", () => {
+    index += 1;
+    if (index < sources.length) img.src = sources[index];
+    else container.replaceChildren(fallbackLogo(props.name));
+  });
+  img.src = sources[index];
   container.replaceChildren(img);
 }
 
@@ -131,6 +157,7 @@ function makeIcon(props) {
     classes.push("japan");
   }
   if (props.location.precision === "city") classes.push("approximate");
+  if (props.presenceCheck.status !== "verified") classes.push("presence-unverified");
   return L.divIcon({
     className: classes.join(" "),
     iconSize: [ICON_SIZE, ICON_SIZE],
@@ -144,9 +171,10 @@ function rebuildMarkers(features) {
   for (const feature of features) {
     const props = feature.properties;
     const marker = L.marker(latlngOf(feature), { icon: makeIcon(props) });
-    marker.bindTooltip(
-      `${props.name}${props.location.precision === "city" ? "（概略位置）" : ""}`,
-    );
+    const notes = [];
+    if (props.location.precision === "city") notes.push("概略位置");
+    if (props.presenceCheck.status !== "verified") notes.push("現所在未確認");
+    marker.bindTooltip(`${props.name}${notes.length ? `（${notes.join("・")}）` : ""}`);
     marker.on("click", () => selectEntity(feature));
     marker.on("add", () => {
       const el = marker.getElement();
@@ -177,6 +205,7 @@ function matchesQuery(props, query) {
 function filterValue(props, group) {
   if (group === "county") return props.location.county;
   if (group === "locationPrecision") return props.location.precision;
+  if (group === "presenceStatus") return props.presenceCheck.status;
   return props[group];
 }
 
@@ -219,6 +248,7 @@ function makeResultCard(feature) {
     logo.classList.add("japan");
   }
   if (props.location.precision === "city") logo.classList.add("approximate");
+  if (props.presenceCheck.status !== "verified") logo.classList.add("presence-unverified");
   fillLogo(logo, props);
 
   const body = document.createElement("div");
@@ -231,7 +261,7 @@ function makeResultCard(feature) {
     .filter(Boolean)
     .join(" ／ ");
   const metaLine = document.createElement("p");
-  metaLine.textContent = `${LOCATION_PRECISION_LABELS[props.location.precision]} ／ 更新 ${props.updatedAt} ／ 位置確認 ${props.location.checkedAt || "未確認"}`;
+  metaLine.textContent = `${LOCATION_PRECISION_LABELS[props.location.precision]} ／ 現所在 ${PRESENCE_STATUS_LABELS[props.presenceCheck.status]} ${props.presenceCheck.checkedAt || "未確認"} ／ 更新 ${props.updatedAt}`;
   body.append(heading, nameJaLine, placeLine, metaLine);
 
   card.append(logo, body);
@@ -253,6 +283,7 @@ function renderResults(features) {
 function showLoadingError() {
   document.getElementById("visible-count").textContent = "0";
   document.getElementById("dataset-date").textContent = "—";
+  document.getElementById("presence-checked-date").textContent = "—";
   document.getElementById("location-checked-date").textContent = "—";
   document.getElementById("checked-date").textContent = "—";
   const results = document.getElementById("results");
@@ -274,6 +305,9 @@ function filterValueLabel(group, value) {
   }
   if (group === "locationPrecision" && LOCATION_PRECISION_LABELS[value]) {
     return LOCATION_PRECISION_LABELS[value];
+  }
+  if (group === "presenceStatus" && PRESENCE_STATUS_LABELS[value]) {
+    return PRESENCE_STATUS_LABELS[value];
   }
   return String(value).replace(/-/g, " ");
 }
@@ -381,6 +415,8 @@ function applyPreset(preset) {
         }
       }
     }
+  } else if (preset === "verified") {
+    filterState.presenceStatus.add("verified");
   } else if (preset === "startup") {
     filterState.scale.add("startup");
   } else if (preset === "vc-cvc") {
@@ -419,6 +455,9 @@ function setDatasetDates(geojson) {
       .at(-1) ?? "—";
   document.getElementById("dataset-date").textContent =
     geojson.metadata?.updatedAt ?? maxOf((props) => props.updatedAt);
+  document.getElementById("presence-checked-date").textContent = maxOf(
+    (props) => props.presenceCheck.checkedAt,
+  );
   document.getElementById("location-checked-date").textContent = maxOf(
     (props) => props.location.checkedAt,
   );
@@ -499,14 +538,25 @@ function showDetail(feature) {
     rows.append(detailRow("掲載根拠", linkNode(props.profileSourceUrl)));
   }
   if (location.sourceUrl) {
-    rows.append(detailRow("所在地根拠", linkNode(location.sourceUrl)));
+    rows.append(detailRow("住所の根拠", linkNode(location.sourceUrl)));
+  }
+  if (props.presenceCheck.sourceUrl) {
+    rows.append(detailRow("現所在の根拠", linkNode(props.presenceCheck.sourceUrl)));
   }
   rows.append(detailRow("データ更新日", textNode(props.updatedAt)));
   rows.append(
     detailRow(
-      "所在地確認",
+      "座標照合",
       textNode(
         `${LOCATION_STATUS_LABELS[location.status] || location.status} ／ ${location.checkedAt || "未確認"}`,
+      ),
+    ),
+  );
+  rows.append(
+    detailRow(
+      "現所在確認",
+      textNode(
+        `${PRESENCE_STATUS_LABELS[props.presenceCheck.status] || props.presenceCheck.status} ／ ${props.presenceCheck.checkedAt || "未確認"}`,
       ),
     ),
   );

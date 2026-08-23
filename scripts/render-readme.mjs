@@ -42,7 +42,12 @@ const LOCATION_PRECISION_LABELS = {
 const LOCATION_STATUS_LABELS = {
   unchecked: "未照合",
   matched: "住所・座標一致",
-  verified: "公式根拠確認済み",
+  review: "要確認",
+};
+
+const PRESENCE_STATUS_LABELS = {
+  unchecked: "未確認",
+  verified: "確認済み",
   review: "要確認",
 };
 
@@ -90,10 +95,11 @@ function render(entities, metadata) {
   const counties = [...new Set(entities.map((p) => p.location.county).filter(Boolean))].sort();
   const addressPrecision = entities.filter((p) => p.location.precision === "address").length;
   const cityPrecision = entities.filter((p) => p.location.precision === "city").length;
-  const verifiedLocations = entities.filter((p) => p.location.status === "verified").length;
+  const verifiedPresence = entities.filter((p) => p.presenceCheck.status === "verified").length;
   const updatedAt = metadata?.updatedAt || maxOf(entities, (p) => p.updatedAt) || "—";
   const checkedAt = maxOf(entities, (p) => p.websiteCheck.checkedAt) || "—";
   const locationCheckedAt = maxOf(entities, (p) => p.location.checkedAt) || "—";
+  const presenceCheckedAt = maxOf(entities, (p) => p.presenceCheck.checkedAt) || "—";
 
   const lines = [];
   lines.push("# ベイエリア企業マップ");
@@ -112,7 +118,8 @@ function render(entities, metadata) {
   lines.push("## データサマリ");
   lines.push("");
   lines.push(`- データ更新日: ${updatedAt}`);
-  lines.push(`- 所在地確認日: ${locationCheckedAt}`);
+  lines.push(`- 現所在確認日: ${presenceCheckedAt}`);
+  lines.push(`- 座標照合日: ${locationCheckedAt}`);
   lines.push(`- URL確認日: ${checkedAt}`);
   lines.push(`- 掲載件数: ${total}件`);
   lines.push(`- 日本関連: ${japanLinked}件`);
@@ -120,7 +127,7 @@ function render(entities, metadata) {
   lines.push(`- 製造業関連: ${mfgRelated}件`);
   lines.push(`- 企業以外（VC/CVC・支援機関・大学など）: ${nonCompany}件`);
   lines.push(`- 位置精度: 番地単位 ${addressPrecision}件／都市中心の概略位置 ${cityPrecision}件`);
-  lines.push(`- 公式根拠まで確認済みの所在地: ${verifiedLocations}件`);
+  lines.push(`- 現在のベイエリア所在を確認済み: ${verifiedPresence}件`);
   lines.push(`- 対象カウンティ: 全${counties.length}カウンティ（${counties.join("・")}）`);
   lines.push("");
   lines.push("## 初回コンタクトの目安");
@@ -134,23 +141,23 @@ function render(entities, metadata) {
   lines.push("## 使い方");
   lines.push("");
   lines.push(
-    "- 各ピンはサイトのロゴ（favicon）を使った**正方形アイコン**で、ロゴが取得できない場合は名称の頭文字を表示します。日本関連のピンは枠色で強調され、都市中心の概略位置は破線で表示されます。",
+    "- 各ピンはサイトのロゴ（favicon）を使った**正方形アイコン**です。縮小時は近隣企業を件数表示へまとめ、日本関連は枠色、都市中心の概略位置は破線、現所在未確認は淡色で表示します。",
     "- **検索ボックス**で社名・日本語名・都市などのキーワードで絞り込めます。",
     "- **フィルター**で日系／タイプ／規模／業種／カウンティを組み合わせて絞り込めます（日系・大企業・製造業などのプリセットボタン付き）。",
   );
   lines.push("");
-  lines.push("## 所在地データ設計（schema v2）");
+  lines.push("## 所在地データ設計（schema v3）");
   lines.push("");
   lines.push(
     "- GeoJSON座標はWGS84の `[経度, 緯度]`。`location.precision` で番地単位（address）と都市中心（city）を区別します。",
-    "- `location.coordinateSource` は座標の由来、`location.sourceUrl` は現住所の公式根拠です。両者を混同しません。",
-    "- `location.status` は住所と座標の照合結果、`websiteCheck` はサイト疎通結果です。更新日・所在地確認日・URL確認日は別々に管理します。",
+    "- `location.status` は住所と座標の照合結果だけを表し、`presenceCheck` は現在もベイエリアに拠点がある根拠を別管理します。住所が座標化できただけでは現所在確認済みにしません。",
+    "- `websiteCheck` はサイト疎通です。データ更新日・現所在確認日・座標照合日・URL確認日を分けて表示します。",
   );
   lines.push("");
   lines.push("## 分散監査（シャード方式）");
   lines.push("");
   lines.push(
-    `各エンティティIDのハッシュで全件を${SHARD_COUNT}シャードに決定論的に分割し、毎日1シャード分を確認します。約1.5か月で全件を一巡し、サイト疎通に加えて、番地のある所在地は米国国勢調査局ジオコーダーで住所と座標の距離を照合します。公式所在地ページが登録されている場合は住所表記も確認します。`,
+    `各エンティティIDのハッシュで全件を${SHARD_COUNT}シャードに決定論的に分割し、毎日1シャード分を確認します。約1.5か月で全件を一巡し、サイト疎通、番地と座標の距離、登録済み根拠ページ上の所在表記をゆるく確認します。退去疑いで自動削除はせず「要確認」に留めます。`,
   );
   lines.push("");
   lines.push("## ホスティング");
@@ -159,10 +166,22 @@ function render(entities, metadata) {
     `現在は GitHub Pages（${SITE_URL}）で公開されています。将来の独自ドメイン移行に備え、CSS/JS/データはすべて相対パスで参照しています。`,
   );
   lines.push("");
+  lines.push("## 掲載候補の探索順");
+  lines.push("");
+  lines.push(
+    "1. **大手・地域主要企業**: Silicon Valley Leadership Group、Bay Area Council",
+    "2. **日系企業**: Japan Society of Northern California、JCCNC、Japan Innovation Campus、METI・JETRO資料",
+    "3. **スタートアップ**: Built In、Y Combinator、Berkeley SkyDeck、StartX、Alchemist",
+    "4. **住所の努力確認**: 各社公式サイトを優先。退去疑いは自動削除せず要確認にします。CrunchbaseとWellfoundは直接クロールしません。",
+  );
+  lines.push("");
   lines.push("## 出典");
   lines.push("");
   lines.push(
+    "- Silicon Valley Leadership Group Member Companies: <https://www.svlg.org/member-companies/>",
+    "- Japan Society of Northern California Corporate Members: <https://www.usajapan.org/about/corporate-members/>",
     "- JETRO「ベイエリア進出日本企業調査報告書」: <https://www.jetro.go.jp/usa/topics/survey-report-on-japan-based-companies-operating-in-the-san-francisco-bay-area.html>",
+    "- シリコンバレー・サンフランシスコ進出の大手日系企業52社【2024年以降】: <https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/>",
     "- sf-companies（theShiva）: <https://github.com/theShiva/sf-companies>",
   );
   lines.push("");
@@ -176,9 +195,9 @@ function render(entities, metadata) {
   lines.push("## 掲載データ一覧");
   lines.push("");
   lines.push(
-    "| 日系 | 名称 | タイプ | 規模 | 都市／カウンティ | 業種 | 位置精度 | 所在地確認 | URL確認 | 更新日 |",
+    "| 日系 | 名称 | タイプ | 規模 | 都市／カウンティ | 業種 | 位置精度 | 現所在確認 | 座標照合 | URL確認 | 更新日 |",
   );
-  lines.push("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |");
+  lines.push("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |");
 
   for (const p of entities) {
     const nameCell = mdLink(p.name, p.website);
@@ -190,6 +209,7 @@ function render(entities, metadata) {
       cell([p.location.city, p.location.county].filter(Boolean).join("／")),
       cell((p.industries ?? []).join(", ")),
       cell(LOCATION_PRECISION_LABELS[p.location.precision] ?? p.location.precision),
+      cell(`${PRESENCE_STATUS_LABELS[p.presenceCheck.status] ?? p.presenceCheck.status}（${p.presenceCheck.checkedAt || "—"}）`),
       cell(`${LOCATION_STATUS_LABELS[p.location.status] ?? p.location.status}（${p.location.checkedAt || "—"}）`),
       cell(`${STATUS_LABELS[p.websiteCheck.status] ?? p.websiteCheck.status}（${p.websiteCheck.checkedAt || "—"}）`),
       cell(p.updatedAt),

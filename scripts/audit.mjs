@@ -52,10 +52,21 @@ export function sourceMentionsLocation(html, location) {
   return required.length >= 2 && required.every((word) => documentWords.has(word));
 }
 
-export function classifyLocation({ distance, sourceUrl, sourceMatches }) {
+export function sourceMentionsPresence(html, location) {
+  if (location.precision === "address") return sourceMentionsLocation(html, location);
+  const documentWords = new Set(normalizedWords(html));
+  const cityWords = normalizedWords(location.city).filter((word) => word.length >= 3);
+  return cityWords.length > 0 && cityWords.every((word) => documentWords.has(word));
+}
+
+export function classifyLocation({ distance }) {
   if (!Number.isFinite(distance) || distance > MAX_LOCATION_DISTANCE_KM) return "review";
-  if (!sourceUrl) return "matched";
-  return sourceMatches ? "verified" : "review";
+  return "matched";
+}
+
+export function classifyPresence({ sourceUrl, sourceOk, sourceHtml, location }) {
+  if (!sourceUrl) return "unchecked";
+  return sourceOk && sourceMentionsPresence(sourceHtml, location) ? "verified" : "review";
 }
 
 function parseArgs(argv) {
@@ -96,10 +107,11 @@ async function fetchPage(url, readBody = false) {
     const ok = response.status >= 200 && response.status <= 399;
     const text = readBody && ok ? await response.text() : "";
     if (!readBody) await response.body?.cancel().catch(() => {});
-    return { ok, detail: `HTTP ${response.status}`, text };
+    return { ok, status: response.status, detail: `HTTP ${response.status}`, text };
   } catch (error) {
     return {
       ok: false,
+      status: null,
       detail: error?.cause?.code ?? error?.cause?.message ?? error?.message ?? "network error",
       text: "",
     };
@@ -215,22 +227,34 @@ async function audit(argv) {
     }
 
     const distance = distanceKm(feature.geometry.coordinates, geocode.coordinates);
-    let sourceMatches = false;
-    let sourceDetail = "no location source";
-    if (location.sourceUrl && distance <= MAX_LOCATION_DISTANCE_KM) {
-      const source = await fetchPage(location.sourceUrl, true);
-      sourceMatches = source.ok && sourceMentionsLocation(source.text, location);
-      sourceDetail = `${source.detail}, address ${sourceMatches ? "found" : "not found"}`;
-    }
-    location.status = classifyLocation({
-      distance,
-      sourceUrl: location.sourceUrl,
-      sourceMatches,
-    });
+    location.status = classifyLocation({ distance });
     if (location.status === "review") locationReview++;
     console.log(
-      `${location.status.padEnd(8)} location ${props.id} ${distance.toFixed(2)} km, ${sourceDetail}`,
+      `${location.status.padEnd(8)} location ${props.id} ${distance.toFixed(2)} km`,
     );
+  }
+
+  let presenceChecked = 0;
+  let presenceReview = 0;
+  for (const feature of selected) {
+    const props = feature.properties;
+    const check = props.presenceCheck;
+    if (!check.sourceUrl) continue;
+    presenceChecked++;
+    const source = await fetchPage(check.sourceUrl, true);
+    if (!source.ok && ![404, 410].includes(source.status)) {
+      console.log(`${check.status.padEnd(8)} presence ${props.id} ${source.detail}, retained`);
+      continue;
+    }
+    check.checkedAt = date;
+    check.status = classifyPresence({
+      sourceUrl: check.sourceUrl,
+      sourceOk: source.ok,
+      sourceHtml: source.text,
+      location: props.location,
+    });
+    if (check.status === "review") presenceReview++;
+    console.log(`${check.status.padEnd(8)} presence ${props.id} ${source.detail}`);
   }
 
   if (selected.length) {
@@ -246,6 +270,7 @@ async function audit(argv) {
   console.log(
     `Summary: shard ${shardLabel} | selected ${selected.length} | website ok ${websiteOk}, review ${websiteReview} | ` +
     `address locations checked ${locationChecked}, review ${locationReview} | ` +
+    `presence checked ${presenceChecked}, review ${presenceReview} | ` +
     `${selected.length ? "wrote" : "no changes written"}`,
   );
 }

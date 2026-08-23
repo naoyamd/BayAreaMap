@@ -4,10 +4,12 @@ import { readFileSync } from 'node:fs';
 
 import {
   classifyLocation,
+  classifyPresence,
   distanceKm,
   hashId,
   selectFeatures,
   sourceMentionsLocation,
+  sourceMentionsPresence,
 } from '../scripts/audit.mjs';
 
 const SHARD_COUNT = 45;
@@ -58,22 +60,34 @@ test('Sony correction moves the pin from the wrong side of US-101', () => {
 
   assert.ok(distanceKm(old, census) > 1, 'old coordinate should be over 1 km away');
   assert.ok(distanceKm(sony.geometry.coordinates, census) < 0.01);
-  assert.strictEqual(sony.properties.location.status, 'verified');
+  assert.strictEqual(sony.properties.location.status, 'matched');
+  assert.strictEqual(sony.properties.presenceCheck.status, 'verified');
 });
 
-test('location verification separates coordinate match from official evidence', () => {
+test('coordinate and current-presence checks stay independent', () => {
   const location = {
     address: '2207 Bridgepointe Pkwy',
     city: 'San Mateo',
+    precision: 'address',
   };
   const officialPage = '<p>2207 Bridgepointe Pkwy, San Mateo, CA 94404</p>';
 
   assert.strictEqual(sourceMentionsLocation(officialPage, location), true);
   assert.strictEqual(sourceMentionsLocation('<p>San Mateo office</p>', location), false);
-  assert.strictEqual(classifyLocation({ distance: 0.2, sourceUrl: null }), 'matched');
+  assert.strictEqual(sourceMentionsPresence(officialPage, location), true);
+  assert.strictEqual(classifyLocation({ distance: 0.2 }), 'matched');
   assert.strictEqual(
-    classifyLocation({ distance: 0.2, sourceUrl: 'https://example.com', sourceMatches: true }),
+    classifyPresence({
+      sourceUrl: 'https://example.com',
+      sourceOk: true,
+      sourceHtml: officialPage,
+      location,
+    }),
     'verified',
   );
-  assert.strictEqual(classifyLocation({ distance: 1.2, sourceUrl: null }), 'review');
+  assert.strictEqual(classifyLocation({ distance: 1.2 }), 'review');
+  assert.strictEqual(
+    classifyPresence({ sourceUrl: null, sourceOk: false, sourceHtml: '', location }),
+    'unchecked',
+  );
 });

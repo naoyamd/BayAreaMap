@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ベイエリア企業マップ</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -14,7 +16,8 @@
       <h1>ベイエリア企業マップ</h1>
       <p class="dataset-info">
         データ更新日: <time id="dataset-date">読み込み中…</time>
-        ／ 位置確認日: <time id="location-checked-date">読み込み中…</time>
+        ／ 現所在確認日: <time id="presence-checked-date">読み込み中…</time>
+        ／ 座標照合日: <time id="location-checked-date">読み込み中…</time>
         ／ URL確認日: <time id="checked-date">読み込み中…</time>
         ／ 表示中の企業: <span id="visible-count">0</span> 件
       </p>
@@ -35,6 +38,7 @@
           <button type="button" data-preset="japan">日系</button>
           <button type="button" data-preset="large">大企業</button>
           <button type="button" data-preset="manufacturing">製造業</button>
+          <button type="button" data-preset="verified">現所在確認済み</button>
           <button type="button" data-preset="startup">スタートアップ</button>
           <button type="button" data-preset="vc-cvc">VC/CVC</button>
           <button type="button" data-preset="support">支援機関</button>
@@ -57,7 +61,10 @@
         <fieldset id="filter-location-precision">
           <legend>位置精度</legend>
         </fieldset>
-        <p class="location-note">破線のピンは都市中心の概略位置です。</p>
+        <fieldset id="filter-presence">
+          <legend>現所在の確認</legend>
+        </fieldset>
+        <p class="location-note">破線は都市中心の概略位置、淡色は現在の所在が未確認のピンです。</p>
         <button type="button" id="reset-filters">フィルターをリセット</button>
       </section>
 

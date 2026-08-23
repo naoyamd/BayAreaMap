@@ -15,8 +15,9 @@ const ENUMS = {
 };
 const LOCATION_PRECISIONS = ["address", "city"];
 const COORDINATE_SOURCES = ["census-geocoder", "city-centroid", "legacy"];
-const LOCATION_STATUSES = ["unchecked", "matched", "verified", "review"];
+const LOCATION_STATUSES = ["unchecked", "matched", "review"];
 const WEBSITE_STATUSES = ["unchecked", "ok", "review"];
+const PRESENCE_STATUSES = ["unchecked", "verified", "review"];
 const MFG_INDUSTRIES = new Set(["manufacturing", "automotive", "electronics", "robotics", "semiconductors"]);
 const BAY_AREA_COUNTIES = [
   "Alameda", "Contra Costa", "Marin", "Napa", "San Francisco",
@@ -50,8 +51,8 @@ try {
 if (doc?.type !== "FeatureCollection") {
   err(`top-level: type must be "FeatureCollection" (got ${JSON.stringify(doc?.type)})`);
 }
-if (doc?.metadata?.schemaVersion !== 2) {
-  err(`top-level: metadata.schemaVersion must be 2 (got ${JSON.stringify(doc?.metadata?.schemaVersion)})`);
+if (doc?.metadata?.schemaVersion !== 3) {
+  err(`top-level: metadata.schemaVersion must be 3 (got ${JSON.stringify(doc?.metadata?.schemaVersion)})`);
 }
 if (!validDate(doc?.metadata?.updatedAt)) {
   err(`top-level: metadata.updatedAt must match YYYY-MM-DD (got ${JSON.stringify(doc?.metadata?.updatedAt)})`);
@@ -75,7 +76,7 @@ let largeScale = 0;
 let mfgRelated = 0;
 let nonCompany = 0;
 let cityPrecision = 0;
-let verifiedLocations = 0;
+let verifiedPresence = 0;
 let newestEntityUpdate = "";
 
 for (let i = 0; i < features.length; i++) {
@@ -167,11 +168,32 @@ for (let i = 0; i < features.length; i++) {
     if (location.status !== "unchecked" && !validDate(location.checkedAt)) {
       err(at("checked locations require checkedAt"));
     }
-    if (location.status === "verified") {
-      verifiedLocations++;
-      if (!validUrl(location.sourceUrl)) err(at("verified locations require sourceUrl"));
-    }
     if (nonEmptyString(location.county)) countiesSeen.add(countyKey(location.county));
+  }
+
+  const presenceCheck = p.presenceCheck;
+  if (!presenceCheck || typeof presenceCheck !== "object" || Array.isArray(presenceCheck)) {
+    err(at("properties.presenceCheck must be an object"));
+  } else {
+    if (!PRESENCE_STATUSES.includes(presenceCheck.status)) {
+      err(at(`properties.presenceCheck.status must be ${PRESENCE_STATUSES.join("|")}`));
+    }
+    if (presenceCheck.sourceUrl !== null && !validUrl(presenceCheck.sourceUrl)) {
+      err(at("properties.presenceCheck.sourceUrl must be null or an http(s) URL"));
+    }
+    if (presenceCheck.checkedAt !== null && !validDate(presenceCheck.checkedAt)) {
+      err(at("properties.presenceCheck.checkedAt must be null or YYYY-MM-DD"));
+    }
+    if (presenceCheck.status === "unchecked" && presenceCheck.checkedAt !== null) {
+      err(at("unchecked presence checks must have checkedAt: null"));
+    }
+    if (presenceCheck.status !== "unchecked" && !validDate(presenceCheck.checkedAt)) {
+      err(at("completed presence checks require checkedAt"));
+    }
+    if (presenceCheck.status === "verified") {
+      verifiedPresence++;
+      if (!validUrl(presenceCheck.sourceUrl)) err(at("verified presence checks require sourceUrl"));
+    }
   }
 
   const websiteCheck = p.websiteCheck;
@@ -219,8 +241,8 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log(
-    `OK ${FILE}: schema v2, ${features.length} features | japan-linked ${japanLinked}, ` +
+    `OK ${FILE}: schema v3, ${features.length} features | japan-linked ${japanLinked}, ` +
     `city-precision ${cityPrecision}, address-precision ${features.length - cityPrecision}, ` +
-    `verified locations ${verifiedLocations}, all 9 counties present`,
+    `verified current presence ${verifiedPresence}, all 9 counties present`,
   );
 }

@@ -270,7 +270,26 @@ button:hover {
 
 .logo-pin.approximate {
   border-style: dashed;
-  opacity: 0.72;
+}
+
+.logo-pin.presence-unverified {
+  filter: grayscale(0.8);
+  opacity: 0.58;
+}
+
+.company-cluster {
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--accent);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(27, 31, 36, 0.32);
+  font-weight: 800;
+}
+
+.company-cluster span {
+  line-height: 1;
 }
 
 .location-note {
