@@ -14,6 +14,7 @@ import {
   officialAddressSource,
   selectFeatures,
   sourceMentionsEntity,
+  sourceMentionsEntityNearLocation,
   sourceMentionsLocation,
   sourceMentionsPresence,
 } from '../scripts/audit.mjs';
@@ -128,12 +129,28 @@ test('coordinate and current-presence checks stay independent', () => {
       sourceOk: true,
       sourceHtml: officialPage,
       location,
+      entityName: 'Example Corp',
     }),
-    'verified',
+    'review',
   );
+  assert.strictEqual(classifyPresence({
+    sourceUrl: 'https://example.com',
+    sourceOk: true,
+    sourceHtml: `<p>Example Corp</p>${officialPage}`,
+    location,
+    entityName: 'Example Corp',
+  }), 'verified');
+  assert.strictEqual(classifyPresence({
+    sourceUrl: 'https://blog.example.net/list',
+    sourceOk: true,
+    sourceHtml: `<p>Example Corp</p>${officialPage}`,
+    location,
+    entityName: 'Example Corp',
+    trustedSource: false,
+  }), 'review');
   assert.strictEqual(classifyLocation({ distance: 1.2 }), 'review');
   assert.strictEqual(
-    classifyPresence({ sourceUrl: null, sourceOk: false, sourceHtml: '', location }),
+    classifyPresence({ sourceUrl: null, sourceOk: false, sourceHtml: '', location, entityName: 'Example Corp' }),
     'unchecked',
   );
 });
@@ -145,6 +162,7 @@ test('city locations use a first-party source and can discover a street address'
   };
   const html = '<address>3975 Freedom Circle, Suite 910<br>Santa Clara, CA 95054</address>';
   const homepage = `
+    <a href="/group-companies">Group companies</a>
     <a href="/contact">Contact</a>
     <a href="/about-us">About us</a>
     <a href="https://blog.example.net/locations">Locations blog</a>
@@ -153,7 +171,11 @@ test('city locations use a first-party source and can discover a street address'
   assert.strictEqual(officialAddressSource(properties), properties.website);
   assert.deepStrictEqual(
     discoverOfficialLocationUrls(homepage, properties.website, properties.website),
-    ['https://www.example.co.jp/contact', 'https://www.example.co.jp/about-us'],
+    [
+      'https://www.example.co.jp/group-companies',
+      'https://www.example.co.jp/contact',
+      'https://www.example.co.jp/about-us',
+    ],
   );
   assert.deepStrictEqual(extractCaliforniaAddress(html, 'Santa Clara'), {
     address: '3975 Freedom Circle, Suite 910',
@@ -171,6 +193,27 @@ test('city locations use a first-party source and can discover a street address'
   });
   assert.strictEqual(sourceMentionsEntity('<p>Resonac America Inc.</p>', 'Resonac US-JOINT'), false);
   assert.strictEqual(sourceMentionsEntity('<p>Resonac US-JOINT</p>', 'Resonac US-JOINT'), true);
+  assert.strictEqual(sourceMentionsEntity('<p>NRI America</p>', 'NRI America San Francisco'), true);
+  assert.strictEqual(sourceMentionsEntity('<p>IHI Aerospace</p>', 'IHI Corporation'), false);
+});
+
+test('a group page cannot assign one subsidiary another subsidiary address', () => {
+  const html = `
+    <section><h2>IHI Aerospace</h2><p>123 Aviation Way, San Mateo, CA 94401</p></section>
+    <section><h2>IHI Corporation</h2><p>800 Concar Drive, San Mateo, CA 94402</p></section>
+  `;
+  const aerospace = { address: '123 Aviation Way', city: 'San Mateo', postalCode: '94401' };
+  const corporation = { address: '800 Concar Drive', city: 'San Mateo', postalCode: '94402' };
+
+  assert.strictEqual(sourceMentionsEntityNearLocation(html, aerospace, 'IHI Corporation'), false);
+  assert.strictEqual(sourceMentionsEntityNearLocation(html, corporation, 'IHI Corporation'), true);
+  assert.strictEqual(classifyPresence({
+    sourceUrl: 'https://example.com/group-companies',
+    sourceOk: true,
+    sourceHtml: '<p>IHI Aerospace, 800 Concar Drive, San Mateo, CA 94402</p>',
+    location: corporation,
+    entityName: 'IHI Corporation',
+  }), 'review');
 });
 
 test('major Bay Area anchors are present and exact overlaps expand at town zoom', () => {

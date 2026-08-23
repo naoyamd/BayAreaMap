@@ -48,13 +48,20 @@ function normalizedWords(value) {
 }
 
 export function sourceMentionsEntity(html, name) {
-  const generic = new Set([
-    "america", "americas", "company", "corporation", "inc", "international", "the", "us", "usa",
+  const document = ` ${normalizedWords(html).join(" ")} `;
+  const names = [...new Set([
+    String(name ?? ""),
+    String(name ?? "").replace(/\s+(?:san francisco|san jose|silicon valley|bay area)$/i, ""),
+  ])];
+  const legalSuffixes = new Set([
+    "co", "company", "corp", "corporation", "inc", "incorporated", "llc", "ltd", "limited",
   ]);
-  const nameWords = normalizedWords(name)
-    .filter((word) => word.length >= 3 && !generic.has(word));
-  const documentWords = new Set(normalizedWords(html));
-  return nameWords.length > 0 && nameWords.every((word) => documentWords.has(word));
+  const variants = names.flatMap((candidate) => {
+    const words = normalizedWords(candidate);
+    if (!words.length) return [];
+    return words.length > 2 && legalSuffixes.has(words.at(-1)) ? [words, words.slice(0, -1)] : [words];
+  });
+  return variants.some((variant) => document.includes(` ${variant.join(" ")} `));
 }
 
 export function sourceMentionsLocation(html, location) {
@@ -72,6 +79,21 @@ export function sourceMentionsPresence(html, location) {
   const documentWords = new Set(normalizedWords(html));
   const cityWords = normalizedWords(location.city).filter((word) => word.length >= 3);
   return cityWords.length > 0 && cityWords.every((word) => documentWords.has(word));
+}
+
+export function sourceMentionsEntityNearLocation(html, location, name) {
+  const words = normalizedWords(addressText(html));
+  const addressWords = normalizedWords(location.address);
+  if (addressWords.length < 2) return false;
+  for (let i = 0; i < words.length - 1; i++) {
+    if (words[i] !== addressWords[0] || words[i + 1] !== addressWords[1]) continue;
+    const postalIndex = location.postalCode
+      ? words.slice(i, i + 30).indexOf(String(location.postalCode).toLowerCase())
+      : -1;
+    const end = postalIndex >= 0 ? i + postalIndex + 1 : i + addressWords.length + 10;
+    if (sourceMentionsEntity(words.slice(Math.max(0, i - 60), end).join(" "), name)) return true;
+  }
+  return false;
 }
 
 function host(url) {
@@ -99,6 +121,8 @@ export function officialAddressSource(properties) {
        websiteHost.endsWith(`.${presenceHost}`))) {
     return presenceUrl;
   }
+  const profileUrl = properties?.profileSourceUrl;
+  if (sameOrganizationHost(profileUrl, website)) return profileUrl;
   return website ?? null;
 }
 
@@ -120,7 +144,7 @@ export function discoverOfficialLocationUrls(html, baseUrl, website) {
       .toLowerCase().replace(/[^a-z]+/g, " ");
     if (/\b(privacy|terms|career|jobs|news|press|blog|support|product|login)\b/.test(label)) continue;
     let score = 0;
-    if (/\b(locations?|offices?|network|branches|where we are|global)\b/.test(label)) score = 4;
+    if (/\b(locations?|offices?|network|branches|where we are|global|subsidiaries|affiliates|group companies)\b/.test(label)) score = 4;
     else if (/\bcontact\b/.test(label)) score = 3;
     else if (/\b(about|company|corporate|profile)\b/.test(label)) score = 1;
     if (score) candidates.push({ url: url.href, score });
@@ -184,9 +208,10 @@ export function classifyLocation({ distance }) {
   return "matched";
 }
 
-export function classifyPresence({ sourceUrl, sourceOk, sourceHtml, location }) {
+export function classifyPresence({ sourceUrl, sourceOk, sourceHtml, location, entityName, trustedSource = true }) {
   if (!sourceUrl) return "unchecked";
-  return sourceOk && sourceMentionsPresence(sourceHtml, location) ? "verified" : "review";
+  return trustedSource && sourceOk && sourceMentionsEntity(sourceHtml, entityName) &&
+    sourceMentionsPresence(sourceHtml, location) ? "verified" : "review";
 }
 
 function parseArgs(argv) {
@@ -243,7 +268,9 @@ async function fetchPage(url, readBody = false) {
 
 async function fetchOfficialAddressPages(properties) {
   const website = properties.website;
-  const queue = [...new Set([officialAddressSource(properties), website].filter(Boolean))];
+  const queue = [...new Set([
+    officialAddressSource(properties), properties.profileSourceUrl, website,
+  ].filter((url) => url && sameOrganizationHost(url, website)))];
   const visited = new Set();
   const pages = [];
   while (queue.length && pages.length < MAX_OFFICIAL_PAGES) {
@@ -367,20 +394,22 @@ async function audit(argv) {
     const props = feature.properties;
     const location = props.location;
     const pages = await fetchOfficialAddressPages(props);
-    const candidates = pages.flatMap((page) =>
-      extractCaliforniaAddresses(page.text, bayAreaCities)
-        .map((candidate) => ({
-          ...candidate,
-          sourceUrl: page.sourceUrl,
-          entityMatched: sourceMentionsEntity(page.text, props.name),
-        })),
-    );
-    const candidate = chooseAddressCandidate(
-      candidates.filter((item) => item.city === location.city || item.entityMatched),
-      location.city,
-    );
+    const entityName = props.name;
+    const candidates = pages.flatMap((page) => {
+      const found = extractCaliforniaAddresses(page.text, bayAreaCities);
+      return found.map((candidate) => ({
+        ...candidate,
+        sourceUrl: page.sourceUrl,
+        entityMatched: found.length === 1
+          ? sourceMentionsEntity(page.text, entityName)
+          : sourceMentionsEntityNearLocation(page.text, candidate, entityName),
+      }));
+    });
+    const candidate = chooseAddressCandidate(candidates.filter((item) => item.entityMatched), location.city);
     if (!candidate) {
-      const presencePage = pages.find((page) => sourceMentionsPresence(page.text, location));
+      const presencePage = pages.find((page) =>
+        sourceMentionsEntity(page.text, entityName) && sourceMentionsPresence(page.text, location),
+      );
       if (presencePage) {
         location.sourceUrl = presencePage.sourceUrl;
         props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl: presencePage.sourceUrl };
@@ -422,11 +451,14 @@ async function audit(argv) {
     const location = props.location;
     if (location.precision !== "address") continue;
     if (!location.sourceUrl) {
-      const sourceUrl = officialAddressSource(props);
-      const source = sourceUrl ? await fetchPage(sourceUrl, true) : null;
-      if (source?.ok && sourceMentionsLocation(source.text, location)) {
-        location.sourceUrl = sourceUrl;
-        props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl };
+      const entityName = props.name;
+      const pages = await fetchOfficialAddressPages(props);
+      const source = pages.find((page) =>
+        sourceMentionsEntity(page.text, entityName) && sourceMentionsLocation(page.text, location),
+      );
+      if (source) {
+        location.sourceUrl = source.sourceUrl;
+        props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl: source.sourceUrl };
         props.updatedAt = date;
         geo.metadata.updatedAt = date;
         officialSourcesLinked++;
@@ -468,6 +500,9 @@ async function audit(argv) {
       sourceOk: source.ok,
       sourceHtml: source.text,
       location: props.location,
+      entityName: props.name,
+      trustedSource: sameOrganizationHost(check.sourceUrl, props.website) ||
+        (props.location.precision === "address" && check.sourceUrl === props.location.sourceUrl),
     });
     if (check.status === "review") presenceReview++;
     console.log(`${check.status.padEnd(8)} presence ${props.id} ${source.detail}`);
