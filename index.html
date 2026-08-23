@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bay Area Company Map</title>
+    <title>Bay Area Company Map — Field Networking</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="styles.css" />
@@ -11,87 +11,127 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
     <script src="app.js" defer></script>
   </head>
-  <body>
+  <body class="mobile-view-list">
     <header class="site-header">
-      <h1>Bay Area Company Map</h1>
-      <p class="dataset-info">
-        Data updated: <time id="dataset-date">Loading…</time>
-        · Presence checked: <time id="presence-checked-date">Loading…</time>
-        · Coordinates checked: <time id="location-checked-date">Loading…</time>
-        · URLs checked: <time id="checked-date">Loading…</time>
-        · Showing: <span id="visible-count">0</span>
-      </p>
+      <div class="brand">
+        <h1>Bay Area Company Map</h1>
+        <p class="header-tagline">Field networking directory for Japan-linked Bay Area outreach</p>
+      </div>
+      <div class="dataset-info">
+        Showing <span id="visible-count">0</span> companies
+        <details id="data-quality-summary">
+          <summary>Data quality dates</summary>
+          <ul class="dq-list">
+            <li>Dataset updated: <time id="dataset-date">Loading…</time></li>
+            <li>Presence checked: <time id="presence-checked-date">Loading…</time></li>
+            <li>Coordinates checked: <time id="location-checked-date">Loading…</time></li>
+            <li>URLs checked: <time id="checked-date">Loading…</time></li>
+          </ul>
+        </details>
+      </div>
     </header>
+
+    <nav class="mobile-toolbar" aria-label="Mobile view switcher">
+      <span class="mobile-tabs" role="tablist" aria-label="Map or list view">
+        <button type="button" id="mobile-map-tab" role="tab" aria-selected="false" aria-controls="map">Map</button>
+        <button type="button" id="mobile-list-tab" role="tab" aria-selected="true" aria-controls="sidebar">List</button>
+      </span>
+      <button type="button" id="mobile-filter-button" aria-controls="advanced-filters" aria-expanded="false">Filters</button>
+    </nav>
 
     <aside id="sidebar">
       <section class="search-section" aria-labelledby="search-heading">
         <h2 id="search-heading">Find companies</h2>
-        <label for="search">Filter by company name or keyword</label>
-        <input type="search" id="search" name="search" autocomplete="off" placeholder="e.g. AI, semiconductors, San Jose" />
-        <button type="button" id="clear-search">Clear search</button>
-      </section>
-
-      <section id="filters" aria-labelledby="filters-heading">
-        <h2 id="filters-heading">Filter the map</h2>
-        <div class="preset-buttons" role="group" aria-label="Preset filters">
-          <button type="button" data-preset="all">All</button>
-          <button type="button" data-preset="japan">Japan-linked</button>
-          <button type="button" data-preset="large">Large companies</button>
-          <button type="button" data-preset="manufacturing">Manufacturing</button>
-          <button type="button" data-preset="verified">Presence verified</button>
-          <button type="button" data-preset="startup">Startups</button>
-          <button type="button" data-preset="vc-cvc">VC/CVC</button>
-          <button type="button" data-preset="support">Support</button>
+        <label class="sr-only" for="search">Filter by company name or keyword</label>
+        <div class="search-controls">
+          <input type="search" id="search" name="search" autocomplete="off" placeholder="e.g. AI, semiconductors, San Jose" />
+          <button type="button" id="clear-search">Clear</button>
         </div>
-        <fieldset id="filter-japan">
-          <legend>Japan connection</legend>
-        </fieldset>
-        <fieldset id="filter-type">
-          <legend>Organization type</legend>
-        </fieldset>
-        <fieldset id="filter-scale">
-          <legend>Scale</legend>
-        </fieldset>
-        <fieldset id="filter-industry">
-          <legend>Industry</legend>
-        </fieldset>
-        <fieldset id="filter-county">
-          <legend>County</legend>
-        </fieldset>
-        <fieldset id="filter-location-precision">
-          <legend>Location precision</legend>
-        </fieldset>
-        <fieldset id="filter-presence">
-          <legend>Current presence</legend>
-        </fieldset>
-        <p class="location-note">Dashed pins use an approximate city center; faded pins have unverified current presence.</p>
-        <button type="button" id="reset-filters">Reset filters</button>
       </section>
 
-      <section class="tier-guide" aria-labelledby="tier-heading">
-        <h2 id="tier-heading">Suggested first contacts</h2>
-        <dl>
-          <dt>Tier 1</dt>
-          <dd>JETRO San Francisco / Global Acceleration Hub, Japan Innovation Campus</dd>
-          <dt>Tier 2</dt>
-          <dd>Plug and Play Tech Center, 500 Global</dd>
-          <dt>Tier 3</dt>
-          <dd>Stanford ecosystem, major VCs, and Japanese business communities</dd>
-        </dl>
+      <section class="starter-contacts" aria-labelledby="starters-heading">
+        <h2 id="starters-heading">Suggested first contacts</h2>
+        <div class="starter-buttons" role="group" aria-label="Jump to a suggested first contact">
+          <button type="button" data-preset-contact="jetro">JETRO San Francisco</button>
+          <button type="button" data-preset-contact="japan-innovation-campus">Japan Innovation Campus</button>
+          <button type="button" data-preset-contact="plug-and-play">Plug and Play</button>
+          <button type="button" data-preset-contact="500-global">500 Global</button>
+        </div>
+      </section>
+
+      <section class="sector-section" aria-labelledby="sectors-heading">
+        <h2 id="sectors-heading">Explore by sector</h2>
+        <div id="sector-filters" role="group" aria-label="Sector filters">
+          <button type="button" data-sector="technology-ai">Technology &amp; AI</button>
+          <button type="button" data-sector="semiconductors-electronics">Semiconductors &amp; Electronics</button>
+          <button type="button" data-sector="industrial-manufacturing">Industrial &amp; Manufacturing</button>
+          <button type="button" data-sector="mobility-automotive">Mobility &amp; Automotive</button>
+          <button type="button" data-sector="finance-investment">Finance &amp; Investment</button>
+          <button type="button" data-sector="life-sciences">Life Sciences</button>
+          <button type="button" data-sector="energy-materials">Energy &amp; Materials</button>
+          <button type="button" data-sector="business-consumer">Business &amp; Consumer</button>
+        </div>
       </section>
 
       <section class="results-section" aria-labelledby="results-heading">
         <h2 id="results-heading">Results</h2>
+        <div class="result-bar">
+          <label for="sort">Sort</label>
+          <select id="sort" name="sort">
+            <option value="relevance" selected>Relevance</option>
+            <option value="distance">Closest to map center</option>
+            <option value="name">A–Z</option>
+            <option value="updated">Recently updated</option>
+          </select>
+          <span id="results-count" role="status" aria-live="polite">0 results</span>
+        </div>
         <div id="results"></div>
+        <nav id="pagination" aria-label="Result pages"></nav>
       </section>
 
-      <article id="detail" aria-label="Company details" hidden>
-        <button type="button" id="close-detail">Close details</button>
-      </article>
+      <section id="filters" aria-labelledby="filters-heading">
+        <h2 id="filters-heading">Filters</h2>
+        <details id="advanced-filters">
+          <summary>Advanced filters</summary>
+          <p class="filter-logic">Options match OR within a group · groups combine AND across selections.</p>
+          <fieldset id="filter-japan">
+            <legend>Japan connection</legend>
+          </fieldset>
+          <fieldset id="filter-type">
+            <legend>Organization type</legend>
+          </fieldset>
+          <fieldset id="filter-scale">
+            <legend>Scale</legend>
+          </fieldset>
+          <fieldset id="filter-industry">
+            <legend>Industry</legend>
+          </fieldset>
+          <fieldset id="filter-county">
+            <legend>County</legend>
+          </fieldset>
+          <fieldset id="filter-location-precision">
+            <legend>Location precision</legend>
+          </fieldset>
+          <fieldset id="filter-presence">
+            <legend>Current presence</legend>
+          </fieldset>
+          <p class="location-note">Dashed pins use an approximate city center; faded pins have unverified current presence.</p>
+          <button type="button" id="reset-filters">Reset filters</button>
+        </details>
+      </section>
     </aside>
 
     <main>
+      <div class="map-overlay" aria-label="Map tools">
+        <button type="button" id="search-area" hidden>Search this area</button>
+        <button type="button" id="show-all-area" hidden>Show all Bay Area</button>
+      </div>
       <div id="map" role="region" aria-label="Bay Area company map"></div>
     </main>
+
+    <dialog id="detail" aria-label="Company details">
+      <button type="button" id="close-detail">Close details</button>
+      <div id="detail-content"></div>
+    </dialog>
   </body>
 </html>

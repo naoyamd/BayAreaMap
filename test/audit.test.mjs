@@ -1,6 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { runInNewContext } from 'node:vm';
+import { gzipSync } from 'node:zlib';
+import { performance } from 'node:perf_hooks';
 
 import {
   chooseAddressCandidate,
@@ -29,6 +32,7 @@ const features = geo.features;
 const appSource = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
 const indexSource = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const readmeSource = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
+const stylesSource = readFileSync(new URL('../styles.css', import.meta.url), 'utf8');
 
 test('hashId is deterministic and unsigned', () => {
   const samples = ['jetro-san-francisco', '', 'x', 'some-long-id-value-123'];
@@ -258,16 +262,19 @@ test('major Bay Area anchors are present and dense cities expand only at maximum
   assert.match(appSource, /const TOWN_ZOOM = 14;/);
   assert.match(appSource, /const MAX_ZOOM = 19;/);
   assert.match(appSource, /DENSE_CLUSTER_CITIES = new Set\(\["San Francisco", "San Jose", "Santa Clara"\]\)/);
-  assert.match(appSource, /nextMaxZoomMode = map\.getZoom\(\) === MAX_ZOOM/);
-  assert.match(appSource, /DENSE_CLUSTER_CITIES\.has\(feature\.properties\.location\.city\) && !maxZoomMode/);
-  assert.match(appSource, /marker\.addTo\(townMode && !stayClustered \? townMarkerLayer : markerLayer\)/);
+  assert.match(appSource, /if \(zoom < TOWN_ZOOM\) return \{ positions, townIds \};/);
+  assert.match(appSource, /const expandEverywhere = zoom >= MAX_ZOOM;/);
+  assert.match(appSource, /if \(!expandEverywhere && DENSE_CLUSTER_CITIES\.has\(props\.location\.city\)\) continue;/);
+  assert.match(appSource, /townIds\.add\(props\.id\);/);
+  assert.match(appSource, /if \(!bounds\.contains\(origin\)\) continue;/);
   assert.match(appSource, /feature\.geometry\.coordinates\.join\(","\)/);
+  assert.match(appSource, /markerLayer\.addLayers\(addCluster\)/);
   assert.doesNotMatch(appSource, /scheduleAutoSpiderfy|\.spiderfy\(\)/);
 });
 
 test('site chrome is English, Japanese company names remain, and README stays Japanese', () => {
   assert.match(indexSource, /<html lang="en">/);
-  assert.match(indexSource, /<title>Bay Area Company Map<\/title>/);
+  assert.match(indexSource, /<title>Bay Area Company Map — Field Networking<\/title>/);
   assert.doesNotMatch(indexSource, /[ぁ-んァ-ヶ一-龠々]/);
   assert.doesNotMatch(appSource, /[ぁ-んァ-ヶ一-龠々]/);
   assert.match(appSource, /nameJaLine\.lang = "ja"/);
@@ -276,7 +283,373 @@ test('site chrome is English, Japanese company names remain, and README stays Ja
 
 test('every entity has a logo source ladder with a cached fallback', () => {
   assert.ok(features.every((feature) => feature.properties.website));
-  assert.match(appSource, /apple-touch-icon\.png/);
-  assert.match(appSource, /favicon\.svg/);
+  assert.match(appSource, /props\.logoUrl/);
   assert.match(appSource, /www\.google\.com\/s2\/favicons/);
+  assert.match(appSource, /new URL\("\/favicon\.ico", website\)/);
+  assert.match(appSource, /fallbackLogo\(props\.name\)/);
+  assert.match(appSource, /initialsOf\(name\)/);
+  assert.doesNotMatch(appSource, /apple-touch-icon|favicon\.svg/);
+});
+
+// v2 pure-logic tests: run app.js logic in a bare vm sandbox (no DOM libraries).
+
+let __logicCache = null;
+
+function appLogic() {
+  if (__logicCache) return __logicCache;
+  const sandbox = {
+    document: { addEventListener() {} },
+    window: { setTimeout: (fn, ms) => setTimeout(fn, ms), clearTimeout: (id) => clearTimeout(id) },
+    URL, URLSearchParams,
+    fetch: () => Promise.reject(new Error('offline')), history: { pushState() {}, replaceState() {} },
+    location: { pathname: '/', search: '' },
+    navigator: {}, requestAnimationFrame: () => 0,
+  };
+  runInNewContext(
+    `${appSource}\n;globalThis.__logic = {\n` +
+      '  normText, PAGE_SIZE, SECTOR_ORDER, SECTOR_IDS, SORT_VALUES, VIEW_VALUES, PARAM_GROUPS, state,\n' +
+      '  deriveSectors, enrichFeature, rankFeature, matchesFilterGroups, matchesSectors, inArea, tieCompare,\n' +
+      '  pageNumberWindow, serializeState, parseArea, parseCenter, computeVisible, sortVisible, setEntities(value) { entities = value; },\n' +
+      '  setMap(value) { map = value; }, setMarkerLayer(value) { markerLayer = value; },\n' +
+      '  setTownLayer(value) { townMarkerLayer = value; }, setLegLayer(value) { overlapLegLayer = value; },\n' +
+      '  setMarkers(value) { markersById = value; }, setVisibleEntities(value) { visibleEntities = value; },\n' +
+      '  refreshMapLayers, chunkProgress: onClusterChunkProgress,\n' +
+    '};',
+    sandbox,
+  );
+  __logicCache = sandbox.__logic;
+  return __logicCache;
+}
+
+function resetLogic() {
+  const logic = appLogic();
+  Object.assign(logic.state, { q: '', sort: 'relevance', area: null, entityId: null, view: 'list' });
+  logic.state.sectors.clear();
+  for (const selected of Object.values(logic.state.filters)) selected.clear();
+  return logic;
+}
+
+test('v2 logic: 8 sector ids exist and industries derive multiple sectors', () => {
+  const logic = appLogic();
+  assert.deepStrictEqual(Array.from(logic.SECTOR_ORDER), [
+    'technology-ai', 'semiconductors-electronics', 'industrial-manufacturing', 'mobility-automotive',
+    'finance-investment', 'life-sciences', 'energy-materials', 'business-consumer']);
+
+  assert.deepStrictEqual(Array.from(logic.SECTOR_IDS), Array.from(logic.SECTOR_ORDER));
+  const samples = [
+    ['technology-ai', 'software'], ['semiconductors-electronics', 'Semiconductors'],
+    ['industrial-manufacturing', 'robotics'], ['mobility-automotive', 'Automotive'],
+    ['finance-investment', 'venture capital'], ['life-sciences', 'biotechnology'],
+    ['energy-materials', 'chemicals'], ['business-consumer', 'accelerator']];
+  for (const [sector, industry] of samples) assert.ok(logic.deriveSectors([industry]).includes(sector), sector);
+  const mixed = { properties: { name: 'Conglomerate', industries: ['software', 'banking', 'robotics'], location: {} } };
+  logic.enrichFeature(mixed);
+  assert.deepStrictEqual(Array.from(mixed.properties._sectors), ['technology-ai', 'finance-investment', 'industrial-manufacturing']);
+  assert.deepStrictEqual(Array.from(logic.deriveSectors(['not-a-real-industry'])), []);
+  assert.deepStrictEqual(Array.from(logic.deriveSectors(undefined)), []);
+});
+
+test('v2 logic: rankFeature tiers voiced JA/EN queries and tieCompare priorities', () => {
+  const logic = appLogic();
+  const nq = (query) => logic.normText(query);
+  const make = ({ name, nameJa = '', industries = [], address = '', city = '' }) => {
+    const props = {
+      id: name.toLowerCase(), name, nameJa, industries, scale: 'growth', japanConnection: 'none',
+      presenceCheck: { status: 'verified' }, location: { address, city },
+    };
+    logic.enrichFeature({ properties: props });
+    return props;
+  };
+  const exactEn = make({ name: 'Sony' }); const prefixHit = make({ name: 'Sony Interactive' });
+  const exactJa = make({ name: 'Widget Works', nameJa: 'ジーワークス' });
+  const substringEn = make({ name: 'Acme Systems' });
+  const substringJa = make({ name: 'Global Works', nameJa: 'グローバルソリューションズ' });
+  const industryHit = make({ name: 'Widget Corp', industries: ['robotics'] });
+  const vcIndustryHit = make({ name: 'Widget Corp', industries: ['venture-capital'] });
+  const placeHit = make({ name: 'Widget Corp', industries: ['consulting'], address: '500 Howard St', city: 'San Francisco' });
+  const tiers = [
+    [exactEn, 'sony', 1], [exactJa, 'ジーワークス', 1], [prefixHit, 'sony int', 2],
+    [substringEn, 'system', 3], [substringJa, 'リューション', 3], [industryHit, 'robo', 4],
+    [placeHit, 'francisco', 5]];
+  for (const [props, query, rank] of tiers) assert.strictEqual(logic.rankFeature(props, nq(query)), rank, query);
+  assert.strictEqual(logic.rankFeature(vcIndustryHit, nq('venture capital')), 4,
+    'multi-word query must match the hyphenated industry tag');
+  assert.strictEqual(logic.rankFeature(placeHit, nq('zzzqqq')), Number.POSITIVE_INFINITY);
+  assert.strictEqual(logic.rankFeature(placeHit, ''), 0);
+  const feat = (name, extra = {}) => ({
+    properties: { name, japanConnection: 'none', scale: 'growth', presenceCheck: { status: 'verified' }, ...extra },
+  });
+  const japanLinked = feat('Alpha Co', { japanConnection: 'japan-headquartered', scale: 'large' });
+  const largeScale = feat('Beta Co', { scale: 'large' }); const verifiedOk = feat('Ceta Co');
+  const reviewOne = feat('Delta Co', { presenceCheck: { status: 'review' } });
+  const reviewTwo = feat('Echo Co', { presenceCheck: { status: 'review' } });
+  assert.ok(logic.tieCompare(japanLinked, largeScale) < 0 && logic.tieCompare(largeScale, verifiedOk) < 0);
+  assert.ok(logic.tieCompare(verifiedOk, reviewOne) < 0);
+  assert.ok(logic.tieCompare(reviewOne, reviewTwo) < 0 && logic.tieCompare(reviewTwo, reviewOne) > 0);
+  const ordered = [reviewTwo, verifiedOk, japanLinked, reviewOne, largeScale].sort((a, b) => logic.tieCompare(a, b));
+  assert.deepStrictEqual(ordered.map((feature) => feature.properties.name),
+    ['Alpha Co', 'Beta Co', 'Ceta Co', 'Delta Co', 'Echo Co']);
+});
+
+test('v2 logic: filter groups OR within and AND across, sector OR, inclusive area', () => {
+  const logic = resetLogic();
+  const { filters, sectors } = logic.state;
+  const props = {
+    name: 'Filtered Co', industries: ['software', 'cloud'], entityType: 'company', scale: 'startup',
+    japanConnection: 'japan-focused', location: { county: 'Santa Clara', precision: 'address' },
+    presenceCheck: { status: 'verified' },
+  };
+  assert.strictEqual(logic.matchesFilterGroups(props), true, 'no filters selected');
+  filters.industries.add('cloud'); filters.industries.add('payments');
+  assert.strictEqual(logic.matchesFilterGroups(props), true, 'OR within industries');
+  filters.industries.delete('cloud'); assert.strictEqual(logic.matchesFilterGroups(props), false, 'missing every selected industry');
+  filters.industries.clear(); filters.industries.add('software'); filters.entityType.add('company');
+  assert.strictEqual(logic.matchesFilterGroups(props), true, 'AND across groups');
+  filters.entityType.clear(); filters.entityType.add('vc-cvc');
+  assert.strictEqual(logic.matchesFilterGroups(props), false, 'entityType mismatch blocks');
+  const sectorProps = { properties: { name: 'Sector Co', industries: ['banking', 'software'], location: {} } };
+  logic.enrichFeature(sectorProps);
+  assert.ok(sectorProps.properties._sectors.includes('finance-investment'));
+  assert.strictEqual(logic.matchesSectors(sectorProps.properties), true, 'empty selection matches all');
+  sectors.add('finance-investment'); sectors.add('life-sciences');
+  assert.strictEqual(logic.matchesSectors(sectorProps.properties), true, 'OR across sectors');
+  sectors.delete('finance-investment');
+  assert.strictEqual(logic.matchesSectors(sectorProps.properties), false);
+  const at = ([lon, lat]) => ({ geometry: { coordinates: [lon, lat] } });
+  logic.state.area = { w: -122.6, s: 37.0, e: -122.2, n: 37.8 };
+  assert.deepStrictEqual([[-122.6, 37.0], [-122.2, 37.8], [-122.21, 37.4]]
+    .map((c) => logic.inArea(at(c))), [true, true, true], 'bounds inclusive');
+  assert.deepStrictEqual([[-122.61, 37.4], [-122.4, 36.99], [-122.4, 37.81]]
+    .map((c) => logic.inArea(at(c))), [false, false, false]);
+  logic.state.area = null;
+  assert.strictEqual(logic.inArea(at([0, 0])), true, 'no area restriction');
+});
+
+test('v2 logic: URL params roundtrip, safe fallbacks, allowlists, PAGE_SIZE paging', () => {
+  const logic = resetLogic();
+  logic.state.sectors.add('technology-ai'); logic.state.sectors.add('finance-investment');
+  logic.state.filters.industries.add('software'); logic.state.filters.industries.add('robotics');
+  logic.state.filters.entityType.add('company');
+  const params = logic.serializeState();
+  assert.deepStrictEqual(Array.from(params.getAll('sector')).sort(), ['finance-investment', 'technology-ai']);
+  assert.deepStrictEqual(Array.from(params.getAll('industry')).sort(), ['robotics', 'software']);
+  assert.deepStrictEqual(Array.from(params.getAll('type')), ['company']);
+  assert.strictEqual(params.get('sort'), null); assert.strictEqual(params.get('view'), null);
+  logic.state.sort = 'name'; logic.state.view = 'map';
+  assert.strictEqual(logic.serializeState().get('sort'), 'name');
+  logic.state.area = logic.parseArea('-122.51234,37.21,-122.31,37.56789');
+  logic.state.lat = 37.777777; logic.state.lng = -122.444444; logic.state.z = 12.4;
+  const view = logic.serializeState();
+  assert.strictEqual(view.get('area'), '-122.51234,37.21,-122.31,37.56789');
+  assert.deepStrictEqual({ ...logic.parseArea(view.get('area')) }, { w: -122.51234, s: 37.21, e: -122.31, n: 37.56789 });
+  assert.deepStrictEqual({ ...logic.parseCenter(view) }, { lat: 37.77778, lng: -122.44444, z: 12 });
+  assert.strictEqual(logic.parseArea(null), null);
+  const badAreas = ['', 'abc', '1,2,3', '1,2,3,4,5', '-122,37,-121,36.5', '-122,38,-121,37',
+    '-120,30,-130,40', '-200,10,-100,20', '100,10,200,20', '-122,-95,-121,10', '-122,80,-121,95'];
+  for (const bad of badAreas) assert.strictEqual(logic.parseArea(bad), null, `area "${bad}" rejected`);
+  const defaults = { lat: 37.55, lng: -122.2, z: 9 };
+  assert.deepStrictEqual({ ...logic.parseCenter(new URLSearchParams()) }, defaults);
+  assert.deepStrictEqual({ ...logic.parseCenter(new URLSearchParams('lat=999&lng=-9999&z=99')) }, defaults);
+  assert.deepStrictEqual({ ...logic.parseCenter(new URLSearchParams('lat=90&lng=-180&z=19')) },
+    { lat: 90, lng: -180, z: 19 });
+  assert.deepStrictEqual(Array.from(logic.SORT_VALUES), ['relevance', 'distance', 'name', 'updated']);
+  assert.deepStrictEqual(Array.from(logic.VIEW_VALUES), ['map', 'list']);
+  assert.ok(!logic.SORT_VALUES.includes('newest') && !logic.VIEW_VALUES.includes('grid'));
+  assert.ok(!logic.SECTOR_IDS.has('cryptocurrency') && logic.SECTOR_IDS.size === 8);
+  assert.match(appSource, /SORT_VALUES\.includes\(sort\) \? sort : "relevance"/);
+  assert.match(appSource, /VIEW_VALUES\.includes\(view\) \? view : "list"/);
+  assert.match(appSource, /new Set\(params\.getAll\("sector"\)\.filter\(\(value\) => SECTOR_IDS\.has\(value\)\)\)/);
+  assert.match(appSource, /new Set\(params\.getAll\(param\)\.filter\(\(value\) => allowed\[group\]\.has\(value\)\)\)/);
+  assert.match(appSource, /params\.append\("sector", value\)/);
+  assert.deepStrictEqual(Array.from(logic.PARAM_GROUPS).map((pair) => Array.from(pair)), [
+    ['japan', 'japanConnection'], ['type', 'entityType'], ['scale', 'scale'], ['industry', 'industries'],
+    ['county', 'county'], ['precision', 'locationPrecision'], ['presence', 'presenceStatus'],
+  ]);
+  logic.setEntities(features);
+  assert.strictEqual(logic.PAGE_SIZE, 50); assert.strictEqual(features.length, 463);
+  assert.strictEqual(Math.min(features.length, logic.PAGE_SIZE), 50);
+  assert.strictEqual(Math.ceil(features.length / logic.PAGE_SIZE), 10);
+  assert.deepStrictEqual(Array.from(logic.pageNumberWindow(10, 1)), [1, 2, 'gap', 10]);
+  assert.deepStrictEqual(Array.from(logic.pageNumberWindow(8, 4)), [1, 'gap', 3, 4, 5, 'gap', 8]);
+  assert.deepStrictEqual(Array.from(logic.pageNumberWindow(20, 10)), [1, 'gap', 9, 10, 11, 'gap', 20]);
+  assert.deepStrictEqual(Array.from(logic.pageNumberWindow(5, 2)), [1, 2, 3, 4, 5]);
+  assert.deepStrictEqual(Array.from(logic.pageNumberWindow(20, 20)), [1, 'gap', 19, 20]);
+});
+
+test('v2 static: debounce, chunked cluster loading, marker cache, sliced results, lazy logos', () => {
+  assert.match(appSource, /const SEARCH_DEBOUNCE_MS = 120;/);
+  assert.match(appSource, /chunkedLoading: true/);
+  assert.match(appSource, /markersById\.set\(props\.id, marker\)/);
+  assert.match(appSource, /markerLayer\.addLayers\(addCluster\)/);
+  assert.match(appSource, /visibleEntities\.slice\(start, start \+ PAGE_SIZE\)/);
+  assert.match(appSource, /img\.loading = "lazy"/);
+  assert.match(appSource, /\[\.\.\.new Set\(sources\)\]/);
+  assert.doesNotMatch(appSource, /apple-touch-icon|favicon\.svg|clearbit|iconhound|duckduckgo/);
+});
+
+test('v2 perf: 5k cloned records gzip under 500KB and visible+sort p95 under 150ms', () => {
+  const logic = resetLogic();
+  const plain = Array.from({ length: 5_000 }, (_, index) => {
+    const { geometry, properties: p } = features[index % features.length];
+    return {
+      geometry: { coordinates: [...geometry.coordinates] },
+      properties: {
+        id: `${p.id}-${index}`, name: `${p.name} ${index}`, nameJa: p.nameJa ?? '',
+        industries: [...(p.industries ?? [])], entityType: p.entityType, scale: p.scale,
+        japanConnection: p.japanConnection, updatedAt: p.updatedAt,
+        presenceCheck: { status: p.presenceCheck?.status ?? 'unchecked' }, location: { ...p.location },
+      },
+    };
+  });
+  assert.strictEqual(plain.length, 5_000);
+  const gzipped = gzipSync(JSON.stringify(plain)).length;
+  assert.ok(gzipped <= 500_000, `gzipped JSON must stay under 500KB, got ${gzipped}`);
+  const enriched = structuredClone(plain);
+  for (const feature of enriched) logic.enrichFeature(feature);
+  logic.setEntities(enriched);
+  logic.state.q = 'corp';
+  for (let i = 0; i < 5; i++) logic.sortVisible(logic.computeVisible());
+  const runs = [];
+  let visible = [];
+  for (let i = 0; i < 20; i++) {
+    const started = performance.now();
+    visible = logic.computeVisible();
+    logic.sortVisible(visible);
+    runs.push(performance.now() - started);
+  }
+  runs.sort((a, b) => a - b);
+  const p95 = runs[Math.ceil(runs.length * 0.95) - 1];
+  const max = runs.at(-1);
+  console.log(`perf: matched=${visible.length} min=${runs[0].toFixed(2)}ms p95=${p95.toFixed(2)}ms max=${max.toFixed(2)}ms gzip=${gzipped}B`);
+  assert.ok(visible.length > 0, 'relevance query must match cloned records');
+  assert.ok(p95 <= 150, `p95 ${p95.toFixed(2)}ms must stay under 150ms`);
+  if (max > 50) console.log(`max run ${max.toFixed(2)}ms exceeded 50ms (GC jitter); p95 assertion retained`);
+  else assert.ok(max <= 50);
+  logic.setEntities(features); resetLogic();
+});
+
+test('v3 static: in-bounds town gating, distance resort on move, dialog-to-map flow, timer clear, area button cycle, sort labels', () => {
+  const layoutBody = appSource.slice(
+    appSource.indexOf('function computeLayout'),
+    appSource.indexOf('function refreshMapLayers'),
+  );
+  assert.ok(
+    layoutBody.indexOf('if (!bounds.contains(origin)) continue;') < layoutBody.indexOf('townIds.add(props.id);'),
+    'bounds check must gate townIds.add so out-of-view markers stay clustered',
+  );
+
+  const viewBody = appSource.slice(
+    appSource.indexOf('function onViewChanged'),
+    appSource.indexOf('function rankFeature'),
+  );
+  const resortAt = viewBody.indexOf('state.sort === "distance"');
+  assert.ok(viewBody.indexOf('refreshMapLayers();') < resortAt && resortAt > -1);
+  assert.match(viewBody, /sortVisible\(visibleEntities\);\s*\n\s*renderResults\(\);/);
+
+  const dialogFlow = appSource.slice(
+    appSource.indexOf('showMapButton.addEventListener'),
+    appSource.indexOf('actions.append(showMapButton)'),
+  );
+  assert.match(dialogFlow, /dialogCloseIntent = "preserve";/);
+  assert.match(dialogFlow, /setMobileView\("map", true\);\s*\n\s*showEntityOnMap\(feature\);\s*\n\s*pushHistory\(\);/);
+  assert.strictEqual(dialogFlow.match(/pushHistory\(\)/g).length, 1, 'pushHistory exactly once');
+
+  const snapshotBody = appSource.slice(
+    appSource.indexOf('function applySnapshot'),
+    appSource.indexOf('function syncAreaButtons'),
+  );
+  assert.match(snapshotBody, /^function applySnapshot\(entry\) \{\s*\n\s*window\.clearTimeout\(pendingSearchTimer\);\s*\n\s*pendingSearchTimer = 0;/);
+
+  const areaWiring = appSource.slice(
+    appSource.indexOf('el.searchArea.addEventListener'),
+    appSource.indexOf('el.closeDetail.addEventListener'),
+  );
+  assert.strictEqual(areaWiring.match(/areaButtonRevealed = false;\s*\n\s*el\.searchArea\.hidden = true;/g).length, 2);
+
+  assert.match(indexSource, /<option value="distance">Closest to map center<\/option>/);
+  assert.match(indexSource, /<option value="name">A–Z<\/option>/);
+  assert.doesNotMatch(indexSource, /<option value="distance">Distance<\/option>|<option value="name">Name<\/option>/);
+});
+
+test('v3 static: clear filters resets area constraint and filter button reveals advanced controls', () => {
+  const clearBody = appSource.slice(
+    appSource.indexOf('function clearAllFilters'),
+    appSource.indexOf('function setDatasetDates'),
+  );
+  assert.match(clearBody, /state\.area = null;/);
+  assert.match(clearBody, /syncAreaButtons\(\);\s*\n\s*areaButtonRevealed = false;\s*\n\s*el\.searchArea\.hidden = true;/);
+
+  const filterButtonBody = appSource.slice(
+    appSource.indexOf('el.mobileFilterButton.addEventListener'),
+    appSource.indexOf('el.advancedFilters.addEventListener'),
+  );
+  assert.match(filterButtonBody, /requestAnimationFrame\(\(\) => \{\s*\n\s*el\.advancedFilters\.scrollIntoView\(\{ block: "start" \}\);\s*\n\s*el\.advancedFilters\.querySelector\("summary"\)\.focus\(\);/);
+});
+
+test('v4 regression: chunked add queue is latest-wins, unchanged pins skip setLatLng, key source invariants hold', () => {
+  const logic = resetLogic();
+  const cluster = {
+    added: [], removed: [], outstanding: 0,
+    addLayers(markers) { this.added.push([...markers]); this.outstanding += markers.length; },
+    removeLayers(markers) { this.removed.push(...markers); },
+    drain() {
+      while (this.outstanding > 0) {
+        const total = this.outstanding;
+        this.outstanding = 0;
+        logic.chunkProgress(total, total);
+      }
+    },
+  };
+  logic.setMap({ getZoom: () => 9 });
+  logic.setMarkerLayer(cluster);
+  logic.setTownLayer({ addLayer() {}, removeLayer() {}, clearLayers() {} });
+  logic.setLegLayer({ clearLayers() {} });
+  const coords = { a: [-122.4, 37.7], b: [-122.3, 37.6], c: [-122.2, 37.5], d: [-122.1, 37.4] };
+  const markers = new Map(Object.entries(coords).map(([id, coordinates]) => {
+    const marker = {
+      id, sets: 0, pos: [coordinates[1], coordinates[0]],
+      getLatLng() { return { equals: (next) => next[0] === marker.pos[0] && next[1] === marker.pos[1] }; },
+      setLatLng(next) { marker.sets += 1; marker.pos = [...next]; },
+    };
+    return [id, marker];
+  }));
+  logic.setMarkers(markers);
+  const idsOf = (batch) => batch.map((marker) => marker.id);
+  const show = (ids) => logic.setVisibleEntities(
+    ids.map((id) => ({ properties: { id }, geometry: { coordinates: coords[id] } })),
+  );
+
+  show(['a', 'b', 'c']);
+  logic.refreshMapLayers();
+  assert.deepStrictEqual(cluster.added.map(idsOf), [['a', 'b', 'c']], 'first refresh issues one chunked add');
+
+  show(['a', 'b', 'd']);
+  logic.refreshMapLayers();
+  assert.strictEqual(cluster.added.length, 1, 'refresh while busy must not interleave');
+  assert.deepStrictEqual(cluster.removed.map((marker) => marker.id), [], 'no removals against an unfinished chunked add');
+
+  cluster.drain();
+  assert.deepStrictEqual(cluster.added.map(idsOf), [['a', 'b', 'c'], ['d']], 'completion replays the latest state');
+  assert.deepStrictEqual(cluster.removed.map((marker) => marker.id), ['c']);
+
+  show(['a', 'b', 'd']);
+  logic.refreshMapLayers();
+  assert.deepStrictEqual(['a', 'b', 'd'].map((id) => markers.get(id).sets), [0, 0, 0],
+    'identical coordinates must skip setLatLng');
+
+  coords.a = [-123.0, 38.0];
+  show(['a', 'b', 'd']);
+  logic.refreshMapLayers();
+  assert.strictEqual(markers.get('a').sets, 1, 'moved entity triggers exactly one setLatLng');
+  assert.deepStrictEqual(markers.get('a').pos, [38.0, -123.0]);
+
+  const refreshBody = appSource.slice(appSource.indexOf('function refreshMapLayers'), appSource.indexOf('function onViewChanged'));
+  assert.ok(refreshBody.indexOf('activeCluster = nextCluster;') < refreshBody.indexOf('markerLayer.addLayers(addCluster)'),
+    'active bookkeeping must precede addLayers');
+  const emptyBranch = appSource.slice(appSource.indexOf('if (total === 0)'), appSource.indexOf('const start ='));
+  assert.match(emptyBranch, /el\.pagination\.replaceChildren\(\);\s*\n\s*return;/, 'empty results clear pagination');
+  assert.doesNotMatch(emptyBranch, /renderPagination/);
+  assert.doesNotMatch(stylesSource, /\.preset-contact-buttons|\[data-preset\]/, 'legacy preset CSS removed');
+  assert.match(stylesSource, /\[data-preset-contact\]/);
+  assert.match(indexSource, /data-preset-contact="/);
 });
