@@ -3,6 +3,7 @@
 const MAP_CENTER = [37.55, -122.2];
 const MAP_ZOOM = 9;
 const ICON_SIZE = 42;
+const AUTO_SPIDERFY_ZOOM = 14;
 
 const ENTITY_TYPE_LABELS = {
   "vc-cvc": "VC・CVC",
@@ -51,6 +52,7 @@ const PRESENCE_STATUS_LABELS = {
 let map;
 let markerLayer;
 let entities = [];
+let autoSpiderfyTimer;
 const markersById = new Map();
 
 const filterState = {
@@ -92,6 +94,28 @@ function initMap() {
       });
     },
   }).addTo(map);
+  map.on("zoomend", scheduleAutoSpiderfy);
+  map.on("moveend", scheduleAutoSpiderfy);
+  markerLayer.on("animationend", scheduleAutoSpiderfy);
+}
+
+function scheduleAutoSpiderfy() {
+  clearTimeout(autoSpiderfyTimer);
+  if (map.getZoom() < AUTO_SPIDERFY_ZOOM) return;
+  autoSpiderfyTimer = setTimeout(() => {
+    const seen = new Set();
+    let nearest;
+    for (const marker of markersById.values()) {
+      const cluster = markerLayer.getVisibleParent(marker);
+      if (!cluster?.spiderfy || seen.has(cluster)) continue;
+      seen.add(cluster);
+      if (!map.getBounds().contains(cluster.getLatLng())) continue;
+      const distance = map.getCenter().distanceTo(cluster.getLatLng());
+      if (!nearest || distance < nearest.distance) nearest = { cluster, distance };
+    }
+    // ponytail: markercluster displays one spiderfy group; use the one nearest the view center.
+    nearest?.cluster.spiderfy();
+  }, 200);
 }
 
 function latlngOf(feature) {
@@ -184,6 +208,7 @@ function rebuildMarkers(features) {
     marker.addTo(markerLayer);
     markersById.set(props.id, marker);
   }
+  scheduleAutoSpiderfy();
 }
 
 function matchesQuery(props, query) {

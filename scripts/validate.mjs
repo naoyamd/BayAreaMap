@@ -14,7 +14,7 @@ const ENUMS = {
   scale: ["startup", "growth", "large", "not-applicable"],
 };
 const LOCATION_PRECISIONS = ["address", "city"];
-const COORDINATE_SOURCES = ["census-geocoder", "city-centroid", "legacy"];
+const COORDINATE_SOURCES = ["census-geocoder", "openstreetmap", "city-centroid", "legacy"];
 const LOCATION_STATUSES = ["unchecked", "matched", "review"];
 const WEBSITE_STATUSES = ["unchecked", "ok", "review"];
 const PRESENCE_STATUSES = ["unchecked", "verified", "review"];

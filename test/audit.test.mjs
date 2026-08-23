@@ -18,6 +18,7 @@ const geo = JSON.parse(
   readFileSync(new URL('../data/entities.geojson', import.meta.url), 'utf8'),
 );
 const features = geo.features;
+const appSource = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
 
 test('hashId is deterministic and unsigned', () => {
   const samples = ['jetro-san-francisco', '', 'x', 'some-long-id-value-123'];
@@ -115,4 +116,26 @@ test('coordinate and current-presence checks stay independent', () => {
     classifyPresence({ sourceUrl: null, sourceOk: false, sourceHtml: '', location }),
     'unchecked',
   );
+});
+
+test('major Bay Area anchors are present and nearby clusters auto-expand from zoom 14', () => {
+  const ids = [
+    'google', 'apple', 'meta', 'nvidia', 'tesla-fremont', 'cisco', 'intel', 'amd',
+    'oracle', 'linkedin', 'netflix', 'databricks', 'snowflake', 'anthropic', 'doordash',
+    'paypal', 'ebay', 'intuit', 'servicenow', 'zoom',
+  ];
+
+  for (const id of ids) {
+    const feature = features.find((item) => item.properties.id === id);
+    assert.ok(feature, `missing ${id}`);
+    assert.strictEqual(feature.properties.location.precision, 'address', id);
+    assert.strictEqual(feature.properties.presenceCheck.status, 'verified', id);
+  }
+  for (const id of ['google', 'apple', 'meta', 'sf-amazon-web-services', 'sf-microsoft']) {
+    assert.strictEqual(features.find((item) => item.properties.id === id)?.properties.scale, 'large', id);
+  }
+  assert.match(appSource, /const AUTO_SPIDERFY_ZOOM = 14;/);
+  assert.match(appSource, /map\.on\("zoomend", scheduleAutoSpiderfy\);/);
+  assert.match(appSource, /markerLayer\.on\("animationend", scheduleAutoSpiderfy\);/);
+  assert.match(appSource, /nearest\?\.cluster\.spiderfy\(\);/);
 });

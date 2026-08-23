@@ -2538,14 +2538,15 @@
         "id": "sf-amazon-web-services",
         "name": "Amazon Web Services",
         "nameJa": "Amazon Web Services",
-        "website": "https://www.amazon.jobs/en",
+        "website": "https://aws.amazon.com/",
         "entityType": "company",
         "japanConnection": "none",
-        "scale": "growth",
+        "scale": "large",
         "industries": [
-          "technology"
+          "cloud",
+          "enterprise-software"
         ],
-        "profileSourceUrl": "https://github.com/theShiva/sf-companies",
+        "profileSourceUrl": "https://www.amazon.jobs/jp/location/san-francisco-bay-area-ca",
         "location": {
           "address": "475 Sansome St, San Francisco, California 94111",
           "city": "San Francisco",
@@ -2560,14 +2561,14 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.amazon.jobs/jp/location/san-francisco-bay-area-ca"
         }
       }
     },
@@ -9246,44 +9247,46 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4166164,
-          37.7767687
+          -122.070589184837,
+          37.413079858718
         ]
       },
       "properties": {
         "id": "sf-microsoft",
         "name": "Microsoft",
-        "nameJa": "Microsoft",
+        "nameJa": "マイクロソフト",
         "website": "https://www.microsoft.com/en-us/",
         "entityType": "company",
         "japanConnection": "none",
-        "scale": "growth",
+        "scale": "large",
         "industries": [
-          "technology"
+          "cloud",
+          "enterprise-software",
+          "ai"
         ],
-        "profileSourceUrl": "https://github.com/theShiva/sf-companies",
+        "profileSourceUrl": "https://www.microsoft.com/en-us/hub/locations",
         "location": {
-          "address": "1355 Market St, San Francisco, CA 94103",
-          "city": "San Francisco",
+          "address": "1045 La Avenida Street",
+          "city": "Mountain View",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94043",
           "countryCode": "US",
-          "county": "San Francisco County",
+          "county": "Santa Clara County",
           "precision": "address",
-          "coordinateSource": "legacy",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.microsoft.com/en-us/hub/locations",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.microsoft.com/en-us/hub/locations"
         }
       }
     },
@@ -20630,6 +20633,960 @@
           "status": "ok"
         },
         "updatedAt": "2026-08-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.083521249656,
+          37.423120361623
+        ]
+      },
+      "properties": {
+        "id": "google",
+        "name": "Google",
+        "nameJa": "グーグル",
+        "website": "https://www.google.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "internet",
+          "cloud",
+          "ai"
+        ],
+        "profileSourceUrl": "https://about.google/company-info/locations/",
+        "location": {
+          "address": "1600 Amphitheatre Parkway",
+          "city": "Mountain View",
+          "region": "CA",
+          "postalCode": "94043",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://about.google/company-info/locations/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://about.google/company-info/locations/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0108055,
+          37.3371185
+        ]
+      },
+      "properties": {
+        "id": "apple",
+        "name": "Apple",
+        "nameJa": "アップル",
+        "website": "https://www.apple.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "electronics",
+          "software",
+          "services"
+        ],
+        "profileSourceUrl": "https://www.apple.com/contact/",
+        "location": {
+          "address": "1 Apple Park Way",
+          "city": "Cupertino",
+          "region": "CA",
+          "postalCode": "95014",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://www.apple.com/contact/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.apple.com/contact/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.1590645,
+          37.4810509
+        ]
+      },
+      "properties": {
+        "id": "meta",
+        "name": "Meta",
+        "nameJa": "メタ",
+        "website": "https://about.meta.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "social-media",
+          "internet",
+          "ai"
+        ],
+        "profileSourceUrl": "https://investor.atmeta.com/leadership-and-governance/?section=contact",
+        "location": {
+          "address": "1 Meta Way",
+          "city": "Menlo Park",
+          "region": "CA",
+          "postalCode": "94025",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://investor.atmeta.com/leadership-and-governance/?section=contact",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://investor.atmeta.com/leadership-and-governance/?section=contact"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.965830911614,
+          37.371629219403
+        ]
+      },
+      "properties": {
+        "id": "nvidia",
+        "name": "NVIDIA",
+        "nameJa": "エヌビディア",
+        "website": "https://www.nvidia.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "semiconductors",
+          "ai",
+          "computing"
+        ],
+        "profileSourceUrl": "https://www.nvidia.com/content/dam/en-zz/Solutions/license-agreements/enterprise-software/NVIDIA-IsaacSim-Additional-Software-and-Materials-License-9June2025.pdf",
+        "location": {
+          "address": "2788 San Tomas Expressway",
+          "city": "Santa Clara",
+          "region": "CA",
+          "postalCode": "95051",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.nvidia.com/content/dam/en-zz/Solutions/license-agreements/enterprise-software/NVIDIA-IsaacSim-Additional-Software-and-Materials-License-9June2025.pdf",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.nvidia.com/content/dam/en-zz/Solutions/license-agreements/enterprise-software/NVIDIA-IsaacSim-Additional-Software-and-Materials-License-9June2025.pdf"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.9464789,
+          37.4971485
+        ]
+      },
+      "properties": {
+        "id": "tesla-fremont",
+        "name": "Tesla Fremont Factory",
+        "nameJa": "テスラ・フリーモント工場",
+        "website": "https://www.tesla.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "automotive",
+          "manufacturing",
+          "energy"
+        ],
+        "profileSourceUrl": "https://www.tesla.com/findus/location/deliverycenter/fremontdirectydelivery",
+        "location": {
+          "address": "45500 Fremont Boulevard",
+          "city": "Fremont",
+          "region": "CA",
+          "postalCode": "94538",
+          "countryCode": "US",
+          "county": "Alameda County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://www.tesla.com/findus/location/deliverycenter/fremontdirectydelivery",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.tesla.com/findus/location/deliverycenter/fremontdirectydelivery"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.950057979017,
+          37.319140475181
+        ]
+      },
+      "properties": {
+        "id": "cisco",
+        "name": "Cisco",
+        "nameJa": "シスコシステムズ",
+        "website": "https://www.cisco.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "networking",
+          "cybersecurity",
+          "enterprise-software"
+        ],
+        "profileSourceUrl": "https://www.cisco.com/site/us/en/about/contact-cisco/index.html",
+        "location": {
+          "address": "3098 Olsen Drive",
+          "city": "San Jose",
+          "region": "CA",
+          "postalCode": "95128",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.cisco.com/site/us/en/about/contact-cisco/index.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.cisco.com/site/us/en/about/contact-cisco/index.html"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.964939755485,
+          37.388658539275
+        ]
+      },
+      "properties": {
+        "id": "intel",
+        "name": "Intel",
+        "nameJa": "インテル",
+        "website": "https://www.intel.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "semiconductors",
+          "manufacturing",
+          "computing"
+        ],
+        "profileSourceUrl": "https://www.intel.com/content/www/us/en/support/campus-locations.html",
+        "location": {
+          "address": "2200 Mission College Boulevard",
+          "city": "Santa Clara",
+          "region": "CA",
+          "postalCode": "95054",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.intel.com/content/www/us/en/support/campus-locations.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.intel.com/content/www/us/en/support/campus-locations.html"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.971776464229,
+          37.382308045798
+        ]
+      },
+      "properties": {
+        "id": "amd",
+        "name": "AMD",
+        "nameJa": "アドバンスト・マイクロ・デバイセズ",
+        "website": "https://www.amd.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "semiconductors",
+          "computing"
+        ],
+        "profileSourceUrl": "https://www.amd.com/en/corporate/locations.html",
+        "location": {
+          "address": "2485 Augustine Drive",
+          "city": "Santa Clara",
+          "region": "CA",
+          "postalCode": "95054",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.amd.com/en/corporate/locations.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.amd.com/en/corporate/locations.html"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.262768085444,
+          37.531998768904
+        ]
+      },
+      "properties": {
+        "id": "oracle",
+        "name": "Oracle",
+        "nameJa": "オラクル",
+        "website": "https://www.oracle.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "enterprise-software",
+          "cloud",
+          "database"
+        ],
+        "profileSourceUrl": "https://www.oracle.com/corporate/contact/field-offices/",
+        "location": {
+          "address": "500 Oracle Parkway",
+          "city": "Redwood City",
+          "region": "CA",
+          "postalCode": "94065",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.oracle.com/corporate/contact/field-offices/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.oracle.com/corporate/contact/field-offices/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.04206451628,
+          37.393423031735
+        ]
+      },
+      "properties": {
+        "id": "linkedin",
+        "name": "LinkedIn",
+        "nameJa": "リンクトイン",
+        "website": "https://www.linkedin.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "social-media",
+          "enterprise-software",
+          "recruiting"
+        ],
+        "profileSourceUrl": "https://legal.linkedin.com/content/dam/legal/GlobalDataPrivacyNotice_Candidates_Feb2025.pdf",
+        "location": {
+          "address": "1000 West Maude Avenue",
+          "city": "Sunnyvale",
+          "region": "CA",
+          "postalCode": "94085",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://legal.linkedin.com/content/dam/legal/GlobalDataPrivacyNotice_Candidates_Feb2025.pdf",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://legal.linkedin.com/content/dam/legal/GlobalDataPrivacyNotice_Candidates_Feb2025.pdf"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.965540568822,
+          37.256115428815
+        ]
+      },
+      "properties": {
+        "id": "netflix",
+        "name": "Netflix",
+        "nameJa": "ネットフリックス",
+        "website": "https://www.netflix.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "streaming",
+          "media",
+          "technology"
+        ],
+        "profileSourceUrl": "https://help.netflix.com/en/node/134094",
+        "location": {
+          "address": "121 Albright Way",
+          "city": "Los Gatos",
+          "region": "CA",
+          "postalCode": "95032",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://help.netflix.com/en/node/134094",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://help.netflix.com/en/node/134094"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.39318375959,
+          37.791753477841
+        ]
+      },
+      "properties": {
+        "id": "databricks",
+        "name": "Databricks",
+        "nameJa": "データブリックス",
+        "website": "https://www.databricks.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "ai",
+          "data",
+          "enterprise-software"
+        ],
+        "profileSourceUrl": "https://www.databricks.com/legal/reseller-agreement",
+        "location": {
+          "address": "160 Spear Street",
+          "city": "San Francisco",
+          "region": "CA",
+          "postalCode": "94105",
+          "countryCode": "US",
+          "county": "San Francisco County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.databricks.com/legal/reseller-agreement",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.databricks.com/legal/reseller-agreement"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.306625990187,
+          37.55393200425
+        ]
+      },
+      "properties": {
+        "id": "snowflake",
+        "name": "Snowflake",
+        "nameJa": "スノーフレーク",
+        "website": "https://www.snowflake.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "cloud",
+          "data",
+          "enterprise-software"
+        ],
+        "profileSourceUrl": "https://community.snowflake.com/CommunityLogin?startURL=%2Faccess%2Flogout",
+        "location": {
+          "address": "450 Concar Drive",
+          "city": "San Mateo",
+          "region": "CA",
+          "postalCode": "94402",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://community.snowflake.com/CommunityLogin?startURL=%2Faccess%2Flogout",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://community.snowflake.com/CommunityLogin?startURL=%2Faccess%2Flogout"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.400543721307,
+          37.790064792158
+        ]
+      },
+      "properties": {
+        "id": "anthropic",
+        "name": "Anthropic",
+        "nameJa": "アンソロピック",
+        "website": "https://www.anthropic.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "growth",
+        "industries": [
+          "ai",
+          "research",
+          "enterprise-software"
+        ],
+        "profileSourceUrl": "https://www-cdn.anthropic.com/43ec7e770925deabc3f0bc1dbf0133769fd03812.pdf",
+        "location": {
+          "address": "548 Market Street, PMB 90375",
+          "city": "San Francisco",
+          "region": "CA",
+          "postalCode": "94104",
+          "countryCode": "US",
+          "county": "San Francisco County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www-cdn.anthropic.com/43ec7e770925deabc3f0bc1dbf0133769fd03812.pdf",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www-cdn.anthropic.com/43ec7e770925deabc3f0bc1dbf0133769fd03812.pdf"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.395780875424,
+          37.784882406709
+        ]
+      },
+      "properties": {
+        "id": "doordash",
+        "name": "DoorDash",
+        "nameJa": "ドアダッシュ",
+        "website": "https://www.doordash.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "delivery",
+          "marketplace",
+          "logistics"
+        ],
+        "profileSourceUrl": "https://help.doordash.com/en-us/consumers/article/2026-doordash-safety-awareness-month-sweepstakes",
+        "location": {
+          "address": "303 2nd Street, Suite 800",
+          "city": "San Francisco",
+          "region": "CA",
+          "postalCode": "94107",
+          "countryCode": "US",
+          "county": "San Francisco County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://help.doordash.com/en-us/consumers/article/2026-doordash-safety-awareness-month-sweepstakes",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://help.doordash.com/en-us/consumers/article/2026-doordash-safety-awareness-month-sweepstakes"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.921678636217,
+          37.377795110266
+        ]
+      },
+      "properties": {
+        "id": "paypal",
+        "name": "PayPal",
+        "nameJa": "ペイパル",
+        "website": "https://www.paypal.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "fintech",
+          "payments"
+        ],
+        "profileSourceUrl": "https://www.paypal.com/us/legalhub/paypal/platform-seller-agreement",
+        "location": {
+          "address": "2211 North First Street",
+          "city": "San Jose",
+          "region": "CA",
+          "postalCode": "95131",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.paypal.com/us/legalhub/paypal/platform-seller-agreement",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.paypal.com/us/legalhub/paypal/platform-seller-agreement"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.926653602881,
+          37.29445035641
+        ]
+      },
+      "properties": {
+        "id": "ebay",
+        "name": "eBay",
+        "nameJa": "イーベイ",
+        "website": "https://www.ebay.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "e-commerce",
+          "marketplace"
+        ],
+        "profileSourceUrl": "https://www.ebayinc.com/ebay-for-sellers-20k-followers-giveaway-official-rules/",
+        "location": {
+          "address": "2025 Hamilton Avenue",
+          "city": "San Jose",
+          "region": "CA",
+          "postalCode": "95125",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.ebayinc.com/ebay-for-sellers-20k-followers-giveaway-official-rules/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.ebayinc.com/ebay-for-sellers-20k-followers-giveaway-official-rules/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.097999675905,
+          37.430669494634
+        ]
+      },
+      "properties": {
+        "id": "intuit",
+        "name": "Intuit",
+        "nameJa": "インテュイット",
+        "website": "https://www.intuit.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "fintech",
+          "enterprise-software"
+        ],
+        "profileSourceUrl": "https://investors.intuit.com/company-information/contacts",
+        "location": {
+          "address": "2700 Coast Avenue",
+          "city": "Mountain View",
+          "region": "CA",
+          "postalCode": "94043",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://investors.intuit.com/company-information/contacts",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://investors.intuit.com/company-information/contacts"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.962608252725,
+          37.375273638838
+        ]
+      },
+      "properties": {
+        "id": "servicenow",
+        "name": "ServiceNow",
+        "nameJa": "サービスナウ",
+        "website": "https://www.servicenow.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "enterprise-software",
+          "cloud"
+        ],
+        "profileSourceUrl": "https://www.servicenow.com/in/company/investor-relations/corporate-governance.html",
+        "location": {
+          "address": "2225 Lawson Lane",
+          "city": "Santa Clara",
+          "region": "CA",
+          "postalCode": "95054",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.servicenow.com/in/company/investor-relations/corporate-governance.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.servicenow.com/in/company/investor-relations/corporate-governance.html"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.893976994782,
+          37.332650297303
+        ]
+      },
+      "properties": {
+        "id": "zoom",
+        "name": "Zoom",
+        "nameJa": "ズーム",
+        "website": "https://www.zoom.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "enterprise-software",
+          "communications"
+        ],
+        "profileSourceUrl": "https://www.zoom.com/en/trust/grievance-officer/",
+        "location": {
+          "address": "55 Almaden Boulevard, Suite 600",
+          "city": "San Jose",
+          "region": "CA",
+          "postalCode": "95113",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.zoom.com/en/trust/grievance-officer/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.zoom.com/en/trust/grievance-officer/"
+        }
       }
     }
   ],
