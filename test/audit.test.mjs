@@ -3,13 +3,17 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 import {
+  chooseAddressCandidate,
   classifyLocation,
   classifyPresence,
+  discoverOfficialLocationUrls,
   distanceKm,
   extractCaliforniaAddress,
+  extractCaliforniaAddresses,
   hashId,
   officialAddressSource,
   selectFeatures,
+  sourceMentionsEntity,
   sourceMentionsLocation,
   sourceMentionsPresence,
 } from '../scripts/audit.mjs';
@@ -128,13 +132,33 @@ test('city locations use a first-party source and can discover a street address'
     presenceCheck: { sourceUrl: 'https://blog.example.net/company-list' },
   };
   const html = '<address>3975 Freedom Circle, Suite 910<br>Santa Clara, CA 95054</address>';
+  const homepage = `
+    <a href="/contact">Contact</a>
+    <a href="/about-us">About us</a>
+    <a href="https://blog.example.net/locations">Locations blog</a>
+  `;
 
   assert.strictEqual(officialAddressSource(properties), properties.website);
+  assert.deepStrictEqual(
+    discoverOfficialLocationUrls(homepage, properties.website, properties.website),
+    ['https://www.example.co.jp/contact', 'https://www.example.co.jp/about-us'],
+  );
   assert.deepStrictEqual(extractCaliforniaAddress(html, 'Santa Clara'), {
     address: '3975 Freedom Circle, Suite 910',
     postalCode: '95054',
   });
   assert.strictEqual(extractCaliforniaAddress(html, 'San Mateo'), null);
+  const corrected = extractCaliforniaAddresses(
+    '<p>3160 Silicon Valley Office</p><address>70 Rio Robles<br>San Jose, California 95134</address>',
+    ['San Francisco', 'San Jose'],
+  );
+  assert.deepStrictEqual(chooseAddressCandidate(corrected, 'San Francisco'), {
+    address: '70 Rio Robles',
+    city: 'San Jose',
+    postalCode: '95134',
+  });
+  assert.strictEqual(sourceMentionsEntity('<p>Resonac America Inc.</p>', 'Resonac US-JOINT'), false);
+  assert.strictEqual(sourceMentionsEntity('<p>Resonac US-JOINT</p>', 'Resonac US-JOINT'), true);
 });
 
 test('major Bay Area anchors are present and exact overlaps expand at town zoom', () => {

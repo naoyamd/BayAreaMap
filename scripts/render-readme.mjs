@@ -157,7 +157,7 @@ function render(entities, metadata) {
   lines.push("## 分散監査（シャード方式）");
   lines.push("");
   lines.push(
-    `各エンティティIDのハッシュで全件を${SHARD_COUNT}シャードに決定論的に分割し、毎日1シャード分を確認します。約1.5か月で全件を一巡し、サイト疎通、番地と座標の距離、登録済み根拠ページ上の所在表記をゆるく確認します。退去疑いで自動削除はせず「要確認」に留めます。`,
+    `各エンティティIDのハッシュで全件を${SHARD_COUNT}シャードに決定論的に分割し、毎日1シャード分を確認します。約1.5か月で全件を一巡し、公式サイト内の拠点・連絡先ページを優先して都市中心の概略位置を番地へ昇格し、番地と座標、現在の所在をゆるく確認します。退去疑いで自動削除はせず「要確認」に留めます。`,
   );
   lines.push("");
   lines.push("## ホスティング");
@@ -190,7 +190,8 @@ function render(entities, metadata) {
   lines.push("```sh", "npm test                     # テストとデータ検証");
   lines.push("npm run readme               # README.md 再生成");
   lines.push("npm run audit -- --shard 0   # シャード0のデータ監査");
-  lines.push("npm run audit -- --all       # 全件のデータ監査", "```");
+  lines.push("npm run audit -- --all       # 全件のデータ監査");
+  lines.push("npm run audit -- --all --city-only # 都市中心データだけ住所探索", "```");
   lines.push("");
   lines.push("## 掲載データ一覧");
   lines.push("");

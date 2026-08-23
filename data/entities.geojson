@@ -318,19 +318,19 @@
           "county": "Santa Clara County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://www.tri.global/",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.tri.global/"
         }
       }
     },
@@ -339,8 +339,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.946208933888,
+          37.404298238521
         ]
       },
       "properties": {
@@ -357,27 +357,27 @@
         ],
         "profileSourceUrl": "https://usa.honda-ri.com",
         "location": {
-          "address": null,
+          "address": "70 Rio Robles",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95134",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://usa.honda-ri.com/about-us",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://usa.honda-ri.com/about-us"
         }
       }
     },
@@ -417,8 +417,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -464,8 +464,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -511,8 +511,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -574,8 +574,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.0389,
-          37.3688
+          -122.006133304001,
+          37.383867608665
         ]
       },
       "properties": {
@@ -592,27 +592,27 @@
         ],
         "profileSourceUrl": "https://ntt-research.com",
         "location": {
-          "address": null,
+          "address": "940 Stewart Drive",
           "city": "Sunnyvale",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94085",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://ntt-research.com/contact/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://ntt-research.com/contact/"
         }
       }
     },
@@ -621,8 +621,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.786544029713,
+          37.25779302535
         ]
       },
       "properties": {
@@ -639,27 +639,27 @@
         ],
         "profileSourceUrl": "https://www.renesas.com",
         "location": {
-          "address": null,
+          "address": "6024 Silver Creek Valley Road",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95138",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.renesas.com/en/about/profile/global",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.renesas.com/en/about/profile/global"
         }
       }
     },
@@ -668,8 +668,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.974839284299,
+          37.419539158035
         ]
       },
       "properties": {
@@ -686,27 +686,27 @@
         ],
         "profileSourceUrl": "https://americas.kioxia.com",
         "location": {
-          "address": null,
+          "address": "2160 Gold Street",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95002",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://americas.kioxia.com/en-us/business/buy/global-sales.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://americas.kioxia.com/en-us/business/buy/global-sales.html"
         }
       }
     },
@@ -715,8 +715,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.931688781653,
+          37.398319575572
         ]
       },
       "properties": {
@@ -733,27 +733,27 @@
         ],
         "profileSourceUrl": "https://www.advantest.com",
         "location": {
-          "address": null,
+          "address": "3061 Zanker Rd.",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95134",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.advantest.com/en/about/offices/america-offices/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.advantest.com/en/about/offices/america-offices/"
         }
       }
     },
@@ -793,8 +793,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -809,8 +809,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.9066,
-          37.4323
+          -121.920712446772,
+          37.408448156356
         ]
       },
       "properties": {
@@ -827,27 +827,27 @@
         ],
         "profileSourceUrl": "https://www.socionext.com",
         "location": {
-          "address": null,
+          "address": "1455 McCarthy Blvd",
           "city": "Milpitas",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95035",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "http://www.socionext.com/en/about/global-network.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "http://www.socionext.com/en/about/global-network.html"
         }
       }
     },
@@ -887,8 +887,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -934,8 +934,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -981,8 +981,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -1028,8 +1028,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -1075,8 +1075,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -1122,8 +1122,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -1169,8 +1169,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -1216,8 +1216,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -1263,8 +1263,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -1310,8 +1310,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -1326,8 +1326,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.925054724546,
+          37.371991989635
         ]
       },
       "properties": {
@@ -1344,27 +1344,27 @@
         ],
         "profileSourceUrl": "https://www.nidec.com/en/",
         "location": {
-          "address": null,
+          "address": "2099 Gateway Place, Suite 260",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95110",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.nidec.com/en/worldwide_new/sales/america_northcalifornia_sa/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.nidec.com/en/worldwide_new/sales/america_northcalifornia_sa/"
         }
       }
     },
@@ -1404,8 +1404,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -1498,8 +1498,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -1514,8 +1514,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.083906938284,
+          37.385938188065
         ]
       },
       "properties": {
@@ -1532,27 +1532,27 @@
         ],
         "profileSourceUrl": "https://www.mhi.com/",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "800 W El Camino Real #180",
+          "city": "Mountain View",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94040",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.mhi.com/network/alphabetize",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.mhi.com/network/alphabetize"
         }
       }
     },
@@ -1592,8 +1592,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -1639,8 +1639,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -1686,8 +1686,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -15348,19 +15348,19 @@
           "county": "Alameda County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://www.fanucamerica.com/automation-evaluation",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.fanucamerica.com/automation-evaluation"
         }
       }
     },
@@ -15400,8 +15400,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -15416,8 +15416,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.937788500739,
+          37.399771425085
         ]
       },
       "properties": {
@@ -15434,27 +15434,27 @@
         ],
         "profileSourceUrl": "https://www.usa.canon.com/",
         "location": {
-          "address": null,
+          "address": "3300 North First Street",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95134",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.usa.canon.com/business/industrial/contact-industrial-products",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.usa.canon.com/business/industrial/contact-industrial-products"
         }
       }
     },
@@ -15494,8 +15494,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -15510,8 +15510,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.9789,
-          37.7799
+          -122.049245837204,
+          37.595037385688
         ]
       },
       "properties": {
@@ -15528,27 +15528,27 @@
         ],
         "profileSourceUrl": "https://www.kyoceradocumentsolutions.us/",
         "location": {
-          "address": null,
-          "city": "San Ramon",
+          "address": "32900 Alvarado-Niles Road, Suite 100",
+          "city": "Union City",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94587",
           "countryCode": "US",
-          "county": "Contra Costa County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "Alameda County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.kyoceradocumentsolutions.us/en/about-us/contact-us/kyocera-americas-offices.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.kyoceradocumentsolutions.us/en/about-us/contact-us/kyocera-americas-offices.html"
         }
       }
     },
@@ -15588,8 +15588,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -15635,8 +15635,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -15682,8 +15682,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -15724,7 +15724,7 @@
           "county": "Santa Clara County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://toshiba.semicon-storage.com/us/contact.html",
           "checkedAt": null,
           "status": "unchecked"
         },
@@ -15732,11 +15732,11 @@
           "checkedAt": "2026-08-23",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://toshiba.semicon-storage.com/us/contact.html"
         }
       }
     },
@@ -15745,8 +15745,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.0389,
-          37.3688
+          -122.025367371497,
+          37.413423095509
         ]
       },
       "properties": {
@@ -15763,27 +15763,27 @@
         ],
         "profileSourceUrl": "https://www.jsrmicro.com/",
         "location": {
-          "address": null,
+          "address": "1280 N. Mathilda Ave.",
           "city": "Sunnyvale",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94089",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.jsrmicro.com/contact",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.jsrmicro.com/contact"
         }
       }
     },
@@ -15792,8 +15792,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.9886,
-          37.5485
+          -121.899130350289,
+          37.427809272917
         ]
       },
       "properties": {
@@ -15810,27 +15810,27 @@
         ],
         "profileSourceUrl": "https://www.tokamerica.com/",
         "location": {
-          "address": null,
-          "city": "Fremont",
+          "address": "190 Topaz Street",
+          "city": "Milpitas",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95035",
           "countryCode": "US",
-          "county": "Alameda County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.tokamerica.com/about-us/supply-chain-policy-statement/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.tokamerica.com/about-us/supply-chain-policy-statement/"
         }
       }
     },
@@ -15839,8 +15839,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.0389,
-          37.3688
+          -121.961588408207,
+          37.379412277936
         ]
       },
       "properties": {
@@ -15857,27 +15857,27 @@
         ],
         "profileSourceUrl": "https://www.screen.co.jp/spe/en/",
         "location": {
-          "address": null,
-          "city": "Sunnyvale",
+          "address": "3151 Jay Street, Suite 210",
+          "city": "Santa Clara",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95054",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.screen.co.jp/spe/en/company/network/oversea",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.screen.co.jp/spe/en/company/network/oversea"
         }
       }
     },
@@ -15917,8 +15917,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -15933,8 +15933,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.9066,
-          37.4323
+          -121.924922791938,
+          37.45332757065
         ]
       },
       "properties": {
@@ -15951,27 +15951,27 @@
         ],
         "profileSourceUrl": "https://www.hoya.com/",
         "location": {
-          "address": null,
+          "address": "400 North McCarthy Blvd, Suite 220",
           "city": "Milpitas",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95035",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.hoya.com/company/network/america/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.hoya.com/company/network/america/"
         }
       }
     },
@@ -15980,8 +15980,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.790070905123,
+          37.270022075816
         ]
       },
       "properties": {
@@ -15998,27 +15998,27 @@
         ],
         "profileSourceUrl": "https://www.olympusamerica.com/",
         "location": {
-          "address": null,
+          "address": "5325 Hellyer Avenue",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95138",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.olympusamerica.com/index%2ephp/contact-us",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.olympusamerica.com/index%2ephp/contact-us"
         }
       }
     },
@@ -16053,19 +16053,19 @@
           "county": "Santa Clara County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://www.takarabio.com/about",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.takarabio.com/about"
         }
       }
     },
@@ -16074,8 +16074,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.2919,
-          37.8374
+          -122.290981122175,
+          37.84485694034
         ]
       },
       "properties": {
@@ -16092,27 +16092,27 @@
         ],
         "profileSourceUrl": "https://www.santen.com/us/",
         "location": {
-          "address": null,
+          "address": "6401 Hollis Street, Suite 125",
           "city": "Emeryville",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94608",
           "countryCode": "US",
           "county": "Alameda County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.santen.com/us/contact",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.santen.com/us/contact"
         }
       }
     },
@@ -16152,8 +16152,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -16199,8 +16199,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -16246,8 +16246,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -16293,8 +16293,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -16309,8 +16309,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.166594186163,
+          37.452215552383
         ]
       },
       "properties": {
@@ -16327,27 +16327,27 @@
         ],
         "profileSourceUrl": "https://www.mitsui.com/us/en/",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "64 Willow Place, Suite 200",
+          "city": "Menlo Park",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94025",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.mitsui.com/us/en/company/location/index.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.mitsui.com/us/en/company/location/index.html"
         }
       }
     },
@@ -16356,8 +16356,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.173925268326,
+          37.459445955793
         ]
       },
       "properties": {
@@ -16374,27 +16374,27 @@
         ],
         "profileSourceUrl": "https://www.itochu.com/us/en/",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "545 Middlefield Road, Suite 150",
+          "city": "Menlo Park",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94025",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.itochu.com/us/en/about/network/index.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.itochu.com/us/en/about/network/index.html"
         }
       }
     },
@@ -16434,8 +16434,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -16450,8 +16450,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -121.97323863841,
+          37.387098136336
         ]
       },
       "properties": {
@@ -16468,27 +16468,27 @@
         ],
         "profileSourceUrl": "https://www.sumitomocorp.com/en/us",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "3975 Freedom Circle, Suite 910",
+          "city": "Santa Clara",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95054",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.sumitomocorp.com/en/us/about/list",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.sumitomocorp.com/en/us/about/list"
         }
       }
     },
@@ -16497,8 +16497,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -121.922499989633,
+          37.369156075531
         ]
       },
       "properties": {
@@ -16515,27 +16515,27 @@
         ],
         "profileSourceUrl": "https://www.sojitz.com/en/",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "226 Airport Parkway, Suite 340",
+          "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95110",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.sojitz.com/en/corporate/network/americas/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.sojitz.com/en/corporate/network/americas/"
         }
       }
     },
@@ -16622,8 +16622,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -16669,8 +16669,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -16685,15 +16685,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.400564850541,
+          37.793187704369
         ]
       },
       "properties": {
         "id": "mufg-bank-san-francisco",
         "name": "MUFG Bank San Francisco",
         "nameJa": "三菱UFJ銀行サンフランシスコ",
-        "website": "https://www.bk.mufg.jp/global/",
+        "website": "https://www.mufgamericas.com/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
@@ -16701,29 +16701,29 @@
           "finance",
           "banking"
         ],
-        "profileSourceUrl": "https://www.bk.mufg.jp/global/",
+        "profileSourceUrl": "https://www.mufgamericas.com/index.php/who-we-are/locations/san-francisco",
         "location": {
-          "address": null,
+          "address": "350 California Street",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94104",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.mufgamericas.com/index.php/who-we-are/locations/san-francisco",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.mufgamericas.com/index.php/who-we-are/locations/san-francisco"
         }
       }
     },
@@ -16732,8 +16732,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.404136225181,
+          37.792618649436
         ]
       },
       "properties": {
@@ -16750,27 +16750,27 @@
         ],
         "profileSourceUrl": "https://www.smbcgroup.com/",
         "location": {
-          "address": null,
+          "address": "555 California Street",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94104",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.smbcgroup.com/americas/about-us/Our-Americas-Locations",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.smbcgroup.com/americas/about-us/Our-Americas-Locations"
         }
       }
     },
@@ -16779,8 +16779,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.40017847706,
+          37.792145781489
         ]
       },
       "properties": {
@@ -16797,27 +16797,27 @@
         ],
         "profileSourceUrl": "https://www.mizuhogroup.com/americas",
         "location": {
-          "address": null,
+          "address": "235 Pine Street, 19th Floor",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94104",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.mizuhogroup.com/americas/who-we-are/locations",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.mizuhogroup.com/americas/who-we-are/locations"
         }
       }
     },
@@ -16857,8 +16857,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -16904,8 +16904,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -16951,8 +16951,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -16998,8 +16998,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17092,8 +17092,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17139,8 +17139,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17186,8 +17186,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17233,8 +17233,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17280,8 +17280,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17327,8 +17327,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17374,8 +17374,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17421,8 +17421,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17468,8 +17468,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17515,8 +17515,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17531,8 +17531,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.280275919498,
+          37.557039348082
         ]
       },
       "properties": {
@@ -17549,27 +17549,27 @@
         ],
         "profileSourceUrl": "https://www.tinkermode.com/",
         "location": {
-          "address": null,
+          "address": "1840 Gateway Dr. Suite 250",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94404",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.tinkermode.com/about.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.tinkermode.com/about.html"
         }
       }
     },
@@ -17578,8 +17578,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.313835138858,
+          37.551868220025
         ]
       },
       "properties": {
@@ -17596,27 +17596,27 @@
         ],
         "profileSourceUrl": "https://dotdata.com/",
         "location": {
-          "address": null,
+          "address": "1730 S El Camino Real Suite 350",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://dotdata.com/contact-us/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://dotdata.com/contact-us/"
         }
       }
     },
@@ -17651,19 +17651,19 @@
           "county": "San Francisco County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://www.legalontech.com/about",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.legalontech.com/about"
         }
       }
     },
@@ -17698,19 +17698,19 @@
           "county": "Santa Clara County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://woven.toyota/en/company/",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://woven.toyota/en/company/"
         }
       }
     },
@@ -17719,8 +17719,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.1156,
-          37.3852
+          -122.117546808752,
+          37.403898905207
         ]
       },
       "properties": {
@@ -17737,27 +17737,27 @@
         ],
         "profileSourceUrl": "https://toyota.ventures/",
         "location": {
-          "address": null,
+          "address": "4440 El Camino Real",
           "city": "Los Altos",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94022",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://toyota.ventures/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://toyota.ventures/"
         }
       }
     },
@@ -17797,13 +17797,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
-          "status": "verified",
+          "status": "review",
           "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
         }
       }
@@ -17844,8 +17844,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17891,8 +17891,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17938,8 +17938,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17985,8 +17985,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18001,8 +18001,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.417506130811,
+          37.776751494145
         ]
       },
       "properties": {
@@ -18019,27 +18019,27 @@
         ],
         "profileSourceUrl": "https://autify.com/",
         "location": {
-          "address": null,
+          "address": "1390 Market St, Suite 200",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94102",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://autify.com/about",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://autify.com/about"
         }
       }
     },
@@ -18079,8 +18079,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18126,8 +18126,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18168,19 +18168,19 @@
           "county": "Santa Clara County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://www.keyence.com/about-us/network/local.jsp",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.keyence.com/about-us/network/local.jsp"
         }
       }
     },
@@ -18220,8 +18220,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18267,8 +18267,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18283,8 +18283,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8747,
-          37.6624
+          -121.908418726633,
+          37.3821716429
         ]
       },
       "properties": {
@@ -18301,27 +18301,27 @@
         ],
         "profileSourceUrl": "https://www.ssi.shimadzu.com/",
         "location": {
-          "address": null,
-          "city": "Pleasanton",
+          "address": "1880 Hartog Drive",
+          "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95131",
           "countryCode": "US",
-          "county": "Alameda County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.shimadzu.com/links/location.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.shimadzu.com/links/location.html"
         }
       }
     },
@@ -18361,8 +18361,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18377,8 +18377,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.0389,
-          37.3688
+          -122.032237619161,
+          37.386298749967
         ]
       },
       "properties": {
@@ -18395,27 +18395,27 @@
         ],
         "profileSourceUrl": "https://www.horiba.com/usa/",
         "location": {
-          "address": null,
+          "address": "430 Indio Way",
           "city": "Sunnyvale",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94085",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.horiba.com/usa/contact/worldwide-locations/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://www.horiba.com/usa/contact/worldwide-locations/"
         }
       }
     },
@@ -18455,8 +18455,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18502,8 +18502,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18549,8 +18549,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18596,8 +18596,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18643,8 +18643,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18690,8 +18690,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18737,8 +18737,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18784,8 +18784,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18831,8 +18831,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18878,8 +18878,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -18894,8 +18894,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4726,
-          38.1074
+          -122.566489900371,
+          38.121533978502
         ]
       },
       "properties": {
@@ -18912,27 +18912,27 @@
         ],
         "profileSourceUrl": "https://www.buckinstitute.org/",
         "location": {
-          "address": null,
+          "address": "8001 Redwood Blvd.",
           "city": "Novato",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94945",
           "countryCode": "US",
           "county": "Marin County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.buckinstitute.org/contact-us/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.buckinstitute.org/contact-us/"
         }
       }
     },
@@ -18972,8 +18972,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -19014,19 +19014,19 @@
           "county": "Napa County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://www.napavalley.edu/",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.napavalley.edu/"
         }
       }
     },
@@ -19035,8 +19035,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.0399,
-          38.2494
+          -122.142301876087,
+          38.217741904942
         ]
       },
       "properties": {
@@ -19053,27 +19053,27 @@
         ],
         "profileSourceUrl": "https://solanoedc.org/",
         "location": {
-          "address": null,
+          "address": "5050 Business Center Drive, Suite 200",
           "city": "Fairfield",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94534",
           "countryCode": "US",
           "county": "Solano County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://solanoedc.org/welcome-to-solano/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://solanoedc.org/welcome-to-solano/"
         }
       }
     },
@@ -19108,19 +19108,19 @@
           "county": "Alameda County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://skydeck.berkeley.edu/",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://skydeck.berkeley.edu/"
         }
       }
     },
@@ -19160,8 +19160,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -19207,8 +19207,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -19249,19 +19249,19 @@
           "county": "Alameda County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://www.lbl.gov/",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.lbl.gov/"
         }
       }
     },
@@ -19301,8 +19301,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -19343,19 +19343,19 @@
           "county": "San Francisco County",
           "precision": "city",
           "coordinateSource": "city-centroid",
-          "sourceUrl": null,
+          "sourceUrl": "https://www.ycombinator.com/",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.ycombinator.com/"
         }
       }
     },
@@ -19364,8 +19364,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.1822,
-          37.4538
+          -122.212604760795,
+          37.420311620147
         ]
       },
       "properties": {
@@ -19382,27 +19382,27 @@
         ],
         "profileSourceUrl": "https://a16z.com/",
         "location": {
-          "address": null,
+          "address": "2865 Sand Hill Road, Suite 101",
           "city": "Menlo Park",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94025",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://a16z.com/offices/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://a16z.com/offices/"
         }
       }
     },
@@ -19442,8 +19442,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -19458,8 +19458,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.1822,
-          37.4538
+          -122.194025540702,
+          37.424762574691
         ]
       },
       "properties": {
@@ -19476,27 +19476,27 @@
         ],
         "profileSourceUrl": "https://www.khoslaventures.com/",
         "location": {
-          "address": null,
+          "address": "2128 Sand Hill Road",
           "city": "Menlo Park",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94025",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.khoslaventures.com/about/seed-fund",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.khoslaventures.com/about/seed-fund"
         }
       }
     },
@@ -19536,8 +19536,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -19788,8 +19788,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.94822150614,
+          37.405848362286
         ]
       },
       "properties": {
@@ -19806,26 +19806,26 @@
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
-          "address": null,
+          "address": "145 Rio Robles, Suite 100",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95134",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20260522_8524",
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://global.kawasaki.com/en/corp/profile/network/index.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20260522_8524"
+          "sourceUrl": "https://global.kawasaki.com/en/corp/profile/network/index.html"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23"
       }
@@ -19919,8 +19919,8 @@
           "sourceUrl": "https://www.resonac.com/news/2024/07/08/3116.html"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23"
       }
@@ -21586,6 +21586,53 @@
           "checkedAt": "2026-08-23",
           "status": "verified",
           "sourceUrl": "https://www.zoom.com/en/trust/grievance-officer/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.277045479086,
+          38.022624926471
+        ]
+      },
+      "properties": {
+        "id": "bio-rad-laboratories",
+        "name": "Bio-Rad Laboratories",
+        "nameJa": "バイオ・ラッド・ラボラトリーズ",
+        "website": "https://www.bio-rad.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "biotechnology",
+          "life-sciences"
+        ],
+        "profileSourceUrl": "https://www.bio-rad.com/en-us/corporate",
+        "location": {
+          "address": "1000 Alfred Nobel Drive",
+          "city": "Hercules",
+          "region": "CA",
+          "postalCode": "94547",
+          "countryCode": "US",
+          "county": "Contra Costa County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://careers.bio-rad.com/privacy-policy-all",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-23",
+        "presenceCheck": {
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://careers.bio-rad.com/privacy-policy-all"
         }
       }
     }

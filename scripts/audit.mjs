@@ -4,6 +4,7 @@ import { pathToFileURL, fileURLToPath } from "node:url";
 const SHARD_COUNT = 45;
 const TIMEOUT_MS = 12000;
 const CONCURRENCY = 3;
+const MAX_OFFICIAL_PAGES = 8;
 const MAX_LOCATION_DISTANCE_KM = 1;
 const USER_AGENT = "BayAreaMap-Audit/2.0 (+https://github.com/naoyamd/BayAreaMap)";
 const DATA_PATH = fileURLToPath(new URL("../data/entities.geojson", import.meta.url));
@@ -18,9 +19,13 @@ export function hashId(id) {
   return h >>> 0;
 }
 
-export function selectFeatures(features, { all = false, shard = null } = {}) {
-  if (all) return features.filter(() => true);
-  return features.filter((f) => hashId(f?.properties?.id ?? "") % SHARD_COUNT === shard);
+export function selectFeatures(features, { all = false, shard = null, cityOnly = false } = {}) {
+  const selected = all
+    ? features.filter(() => true)
+    : features.filter((f) => hashId(f?.properties?.id ?? "") % SHARD_COUNT === shard);
+  return cityOnly
+    ? selected.filter((f) => f?.properties?.location?.precision === "city")
+    : selected;
 }
 
 export function distanceKm([lon1, lat1], [lon2, lat2]) {
@@ -40,6 +45,16 @@ function normalizedWords(value) {
     .trim()
     .split(/\s+/)
     .filter(Boolean);
+}
+
+export function sourceMentionsEntity(html, name) {
+  const generic = new Set([
+    "america", "americas", "company", "corporation", "inc", "international", "the", "us", "usa",
+  ]);
+  const nameWords = normalizedWords(name)
+    .filter((word) => word.length >= 3 && !generic.has(word));
+  const documentWords = new Set(normalizedWords(html));
+  return nameWords.length > 0 && nameWords.every((word) => documentWords.has(word));
 }
 
 export function sourceMentionsLocation(html, location) {
@@ -67,6 +82,13 @@ function host(url) {
   }
 }
 
+function sameOrganizationHost(a, b) {
+  const aHost = host(a);
+  const bHost = host(b);
+  return aHost && bHost &&
+    (aHost === bHost || aHost.endsWith(`.${bHost}`) || bHost.endsWith(`.${aHost}`));
+}
+
 export function officialAddressSource(properties) {
   const website = properties?.website;
   const websiteHost = host(website);
@@ -80,25 +102,81 @@ export function officialAddressSource(properties) {
   return website ?? null;
 }
 
-export function extractCaliforniaAddress(html, city) {
-  const text = String(html ?? "")
+export function discoverOfficialLocationUrls(html, baseUrl, website) {
+  const candidates = [];
+  const links = String(html ?? "").matchAll(
+    /<a\b[^>]*href\s*=\s*(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi,
+  );
+  for (const match of links) {
+    let url;
+    try {
+      url = new URL(match[2].replace(/&amp;/gi, "&"), baseUrl);
+    } catch {
+      continue;
+    }
+    if (!/^https?:$/.test(url.protocol) || !sameOrganizationHost(url.href, website)) continue;
+    url.hash = "";
+    const label = `${url.pathname} ${match[3].replace(/<[^>]+>/g, " ")}`
+      .toLowerCase().replace(/[^a-z]+/g, " ");
+    if (/\b(privacy|terms|career|jobs|news|press|blog|support|product|login)\b/.test(label)) continue;
+    let score = 0;
+    if (/\b(locations?|offices?|network|branches|where we are|global)\b/.test(label)) score = 4;
+    else if (/\bcontact\b/.test(label)) score = 3;
+    else if (/\b(about|company|corporate|profile)\b/.test(label)) score = 1;
+    if (score) candidates.push({ url: url.href, score });
+  }
+  return [...new Map(
+    candidates.sort((a, b) => b.score - a.score).map((item) => [item.url, item]),
+  ).values()].map((item) => item.url);
+}
+
+function addressText(html) {
+  return String(html ?? "")
+    .replace(/<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>/gi, " ")
     .replace(/&nbsp;|&#160;/gi, " ")
     .replace(/&amp;/gi, "&")
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ");
-  const escapedCity = String(city ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  if (!escapedCity) return null;
-  const suffix = "(?:Street|St\\.?|Avenue|Ave\\.?|Road|Rd\\.?|Boulevard|Blvd\\.?|Drive|Dr\\.?|Lane|Ln\\.?|Way|Circle|Cir\\.?|Court|Ct\\.?|Parkway|Pkwy\\.?|Plaza|Place|Pl\\.?)";
-  const unit = "(?:\\s*,?\\s*(?:Tower|Building|Bldg\\.?|Suite|Ste\\.?|Floor|Fl\\.?|#)\\s*[A-Za-z0-9-]+){0,2}";
-  const match = text.match(new RegExp(
-    `\\b(\\d{1,6}\\s+[A-Za-z0-9.'’& -]{1,70}?\\s${suffix}${unit})\\s*,?\\s*${escapedCity}\\s*,?\\s*(?:California|CA)\\s*[,.]?\\s*(\\d{5}(?:-\\d{4})?)\\b`,
-    "i",
-  ));
-  if (!match) return null;
-  return {
-    address: match[1].replace(/\s*,\s*/g, ", ").replace(/\s+/g, " ").trim(),
-    postalCode: match[2],
-  };
+}
+
+export function extractCaliforniaAddresses(html, cities) {
+  const text = addressText(html);
+  const suffix = "(?:Street|St\\.?|Avenue|Ave\\.?|Road|Rd\\.?|Boulevard|Blvd\\.?|Drive|Dr\\.?|Lane|Ln\\.?|Way|Circle|Cir\\.?|Court|Ct\\.?|Parkway|Pkwy\\.?|Plaza|Place|Pl\\.?|Highway|Hwy\\.?|Expressway|Expy\\.?|Terrace|Trail|Loop|Square|Center|Mall|Real|Robles)";
+  const streetWord = "(?:[A-Za-z.'’&-]+|\\d+(?:st|nd|rd|th))";
+  const unit = "(?:\\s*,?\\s*(?:Tower|Building|Bldg\\.?|Suite|Ste\\.?|Floor|Fl\\.?|Unit|#)\\s*[A-Za-z0-9-]+){0,2}";
+  const results = [];
+  for (const city of [...new Set(cities)].sort((a, b) => b.length - a.length)) {
+    const escapedCity = String(city ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    if (!escapedCity) continue;
+    const matches = text.matchAll(new RegExp(
+      `\\b(\\d{1,6}\\s+(?:${streetWord}\\s+){0,8}${suffix}${unit})\\s*,?\\s*${escapedCity}\\s*,?\\s*(?:California|CA)\\s*[,.]?\\s*(\\d{5}(?:-\\d{4})?)\\b`,
+      "gi",
+    ));
+    for (const match of matches) {
+      results.push({
+        address: match[1].replace(/\s*,\s*/g, ", ").replace(/\s+/g, " ").trim(),
+        city,
+        postalCode: match[2],
+      });
+    }
+  }
+  return results;
+}
+
+export function extractCaliforniaAddress(html, city) {
+  const match = extractCaliforniaAddresses(html, [city])[0];
+  return match ? { address: match.address, postalCode: match.postalCode } : null;
+}
+
+export function chooseAddressCandidate(candidates, currentCity) {
+  const unique = [...new Map(candidates.map((candidate) => [
+    `${candidate.address}|${candidate.city}|${candidate.postalCode}`.toLowerCase(),
+    candidate,
+  ])).values()];
+  const sameCity = unique.filter((candidate) => candidate.city === currentCity);
+  if (sameCity.length === 1) return sameCity[0];
+  if (sameCity.length > 1) return null;
+  return unique.length === 1 ? unique[0] : null;
 }
 
 export function classifyLocation({ distance }) {
@@ -112,12 +190,15 @@ export function classifyPresence({ sourceUrl, sourceOk, sourceHtml, location }) 
 }
 
 function parseArgs(argv) {
-  const opts = { all: false, shard: null };
+  const opts = { all: false, shard: null, cityOnly: false };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === "--all") {
       if (opts.all) throw new Error("--all given more than once");
       opts.all = true;
+    } else if (arg === "--city-only") {
+      if (opts.cityOnly) throw new Error("--city-only given more than once");
+      opts.cityOnly = true;
     } else if (arg === "--shard") {
       if (opts.shard !== null) throw new Error("--shard given more than once");
       const raw = argv[++i];
@@ -149,7 +230,7 @@ async function fetchPage(url, readBody = false) {
     const ok = response.status >= 200 && response.status <= 399;
     const text = readBody && ok ? await response.text() : "";
     if (!readBody) await response.body?.cancel().catch(() => {});
-    return { ok, status: response.status, detail: `HTTP ${response.status}`, text };
+    return { ok, status: response.status, detail: `HTTP ${response.status}`, text, url: response.url };
   } catch (error) {
     return {
       ok: false,
@@ -158,6 +239,26 @@ async function fetchPage(url, readBody = false) {
       text: "",
     };
   }
+}
+
+async function fetchOfficialAddressPages(properties) {
+  const website = properties.website;
+  const queue = [...new Set([officialAddressSource(properties), website].filter(Boolean))];
+  const visited = new Set();
+  const pages = [];
+  while (queue.length && pages.length < MAX_OFFICIAL_PAGES) {
+    const requestedUrl = queue.shift();
+    if (visited.has(requestedUrl)) continue;
+    visited.add(requestedUrl);
+    const page = await fetchPage(requestedUrl, true);
+    const sourceUrl = page.url || requestedUrl;
+    if (!page.ok || !sameOrganizationHost(sourceUrl, website)) continue;
+    pages.push({ sourceUrl, text: page.text });
+    for (const url of discoverOfficialLocationUrls(page.text, sourceUrl, website)) {
+      if (!visited.has(url) && !queue.includes(url)) queue.push(url);
+    }
+  }
+  return pages;
 }
 
 async function geocodeLocation(location) {
@@ -211,7 +312,7 @@ async function audit(argv) {
     opts = parseArgs(argv);
   } catch (error) {
     console.error(error.message);
-    console.error("Usage: node scripts/audit.mjs [--all | --shard N]   (N: 0..44)");
+    console.error("Usage: node scripts/audit.mjs [--all | --shard N] [--city-only]   (N: 0..44)");
     process.exitCode = 1;
     return;
   }
@@ -234,6 +335,11 @@ async function audit(argv) {
     return;
   }
 
+  const countyByCity = new Map(features.map((feature) => [
+    feature.properties.location.city,
+    feature.properties.location.county,
+  ]));
+  const bayAreaCities = [...countyByCity.keys()].filter(Boolean);
   const selected = selectFeatures(features, opts);
   const date = utcToday();
   const shardLabel = opts.all ? "all" : String(opts.shard);
@@ -256,46 +362,64 @@ async function audit(argv) {
   let locationReview = 0;
   let officialSourcesLinked = 0;
   let cityLocationsUpgraded = 0;
+  const cityFeatures = selected.filter((feature) => feature.properties.location.precision === "city");
+  await runPool(cityFeatures, CONCURRENCY, async (feature) => {
+    const props = feature.properties;
+    const location = props.location;
+    const pages = await fetchOfficialAddressPages(props);
+    const candidates = pages.flatMap((page) =>
+      extractCaliforniaAddresses(page.text, bayAreaCities)
+        .map((candidate) => ({
+          ...candidate,
+          sourceUrl: page.sourceUrl,
+          entityMatched: sourceMentionsEntity(page.text, props.name),
+        })),
+    );
+    const candidate = chooseAddressCandidate(
+      candidates.filter((item) => item.city === location.city || item.entityMatched),
+      location.city,
+    );
+    if (!candidate) {
+      const presencePage = pages.find((page) => sourceMentionsPresence(page.text, location));
+      if (presencePage) {
+        location.sourceUrl = presencePage.sourceUrl;
+        props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl: presencePage.sourceUrl };
+        props.updatedAt = date;
+        geo.metadata.updatedAt = date;
+        officialSourcesLinked++;
+      }
+      return;
+    }
+    const geocode = await geocodeLocation({ ...location, ...candidate, region: "CA" });
+    if (!geocode.ok) {
+      console.log(`review  discovery ${props.id} ${geocode.detail}`);
+      return;
+    }
+    const oldCity = location.city;
+    feature.geometry.coordinates = geocode.coordinates;
+    Object.assign(location, {
+      address: candidate.address,
+      city: candidate.city,
+      region: "CA",
+      postalCode: candidate.postalCode,
+      county: countyByCity.get(candidate.city),
+      precision: "address",
+      coordinateSource: "census-geocoder",
+      sourceUrl: candidate.sourceUrl,
+      checkedAt: date,
+      status: "matched",
+    });
+    props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl: candidate.sourceUrl };
+    props.updatedAt = date;
+    geo.metadata.updatedAt = date;
+    officialSourcesLinked++;
+    cityLocationsUpgraded++;
+    console.log(`matched  discovery ${props.id} ${oldCity} -> ${candidate.city} | ${candidate.address}`);
+  });
+
   for (const feature of selected) {
     const props = feature.properties;
     const location = props.location;
-    if (location.precision === "city") {
-      const sourceUrl = officialAddressSource(props);
-      if (!sourceUrl) continue;
-      const source = await fetchPage(sourceUrl, true);
-      if (!source.ok) continue;
-      const candidate = extractCaliforniaAddress(source.text, location.city);
-      if (!candidate) {
-        if (sourceMentionsPresence(source.text, location)) {
-          location.sourceUrl = sourceUrl;
-          props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl };
-          props.updatedAt = date;
-          geo.metadata.updatedAt = date;
-          officialSourcesLinked++;
-        }
-        continue;
-      }
-      const geocode = await geocodeLocation({ ...location, ...candidate });
-      if (!geocode.ok) {
-        console.log(`review  discovery ${props.id} ${geocode.detail}`);
-        continue;
-      }
-      feature.geometry.coordinates = geocode.coordinates;
-      Object.assign(location, candidate, {
-        precision: "address",
-        coordinateSource: "census-geocoder",
-        sourceUrl,
-        checkedAt: date,
-        status: "matched",
-      });
-      props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl };
-      props.updatedAt = date;
-      geo.metadata.updatedAt = date;
-      officialSourcesLinked++;
-      cityLocationsUpgraded++;
-      console.log(`matched  discovery ${props.id} ${candidate.address}`);
-      continue;
-    }
     if (location.precision !== "address") continue;
     if (!location.sourceUrl) {
       const sourceUrl = officialAddressSource(props);
