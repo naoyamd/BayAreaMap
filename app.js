@@ -158,7 +158,6 @@ function fillLogo(container, props) {
   const img = document.createElement("img");
   img.alt = "";
   img.decoding = "async";
-  img.loading = "lazy";
   img.referrerPolicy = "no-referrer";
   let index = 0;
   img.addEventListener("load", () => {
