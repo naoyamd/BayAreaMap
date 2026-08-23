@@ -19,6 +19,8 @@ const geo = JSON.parse(
 );
 const features = geo.features;
 const appSource = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
+const indexSource = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const readmeSource = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
 
 test('hashId is deterministic and unsigned', () => {
   const samples = ['jetro-san-francisco', '', 'x', 'some-long-id-value-123'];
@@ -118,7 +120,7 @@ test('coordinate and current-presence checks stay independent', () => {
   );
 });
 
-test('major Bay Area anchors are present and nearby clusters auto-expand from zoom 14', () => {
+test('major Bay Area anchors are present and exact overlaps expand at town zoom', () => {
   const ids = [
     'google', 'apple', 'meta', 'nvidia', 'tesla-fremont', 'cisco', 'intel', 'amd',
     'oracle', 'linkedin', 'netflix', 'databricks', 'snowflake', 'anthropic', 'doordash',
@@ -134,8 +136,24 @@ test('major Bay Area anchors are present and nearby clusters auto-expand from zo
   for (const id of ['google', 'apple', 'meta', 'sf-amazon-web-services', 'sf-microsoft']) {
     assert.strictEqual(features.find((item) => item.properties.id === id)?.properties.scale, 'large', id);
   }
-  assert.match(appSource, /const AUTO_SPIDERFY_ZOOM = 14;/);
-  assert.match(appSource, /map\.on\("zoomend", scheduleAutoSpiderfy\);/);
-  assert.match(appSource, /markerLayer\.on\("animationend", scheduleAutoSpiderfy\);/);
-  assert.match(appSource, /nearest\?\.cluster\.spiderfy\(\);/);
+  assert.match(appSource, /const TOWN_ZOOM = 13;/);
+  assert.match(appSource, /feature\.geometry\.coordinates\.join\(","\)/);
+  assert.match(appSource, /marker\.addTo\(townMode \? townMarkerLayer : markerLayer\)/);
+  assert.doesNotMatch(appSource, /scheduleAutoSpiderfy|\.spiderfy\(\)/);
+});
+
+test('site chrome is English, Japanese company names remain, and README stays Japanese', () => {
+  assert.match(indexSource, /<html lang="en">/);
+  assert.match(indexSource, /<title>Bay Area Company Map<\/title>/);
+  assert.doesNotMatch(indexSource, /[ぁ-んァ-ヶ一-龠々]/);
+  assert.doesNotMatch(appSource, /[ぁ-んァ-ヶ一-龠々]/);
+  assert.match(appSource, /nameJaLine\.lang = "ja"/);
+  assert.match(readmeSource, /^# ベイエリア企業マップ/m);
+});
+
+test('every entity has a logo source ladder with a cached fallback', () => {
+  assert.ok(features.every((feature) => feature.properties.website));
+  assert.match(appSource, /apple-touch-icon\.png/);
+  assert.match(appSource, /favicon\.svg/);
+  assert.match(appSource, /www\.google\.com\/s2\/favicons/);
 });

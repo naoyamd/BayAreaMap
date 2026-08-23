@@ -3,56 +3,59 @@
 const MAP_CENTER = [37.55, -122.2];
 const MAP_ZOOM = 9;
 const ICON_SIZE = 42;
-const AUTO_SPIDERFY_ZOOM = 14;
+const TOWN_ZOOM = 13;
 
 const ENTITY_TYPE_LABELS = {
-  "vc-cvc": "VC・CVC",
-  support: "支援機関",
-  "university-research": "大学・研究機関",
-  company: "企業",
+  "vc-cvc": "VC / CVC",
+  support: "Support organization",
+  "university-research": "University / research",
+  company: "Company",
 };
 
 const SCALE_LABELS = {
-  large: "大規模",
-  growth: "グロース",
-  startup: "スタートアップ",
-  "not-applicable": "該当なし",
+  large: "Large",
+  growth: "Growth",
+  startup: "Startup",
+  "not-applicable": "Not applicable",
 };
 
 const JAPAN_CONNECTION_LABELS = {
-  "japan-headquartered": "日本本社",
-  "japanese-founded": "日本人創業",
-  "japan-focused": "日本重点",
-  none: "その他",
+  "japan-headquartered": "Japan-headquartered",
+  "japanese-founded": "Japanese-founded",
+  "japan-focused": "Japan-focused",
+  none: "Other",
 };
 
 const CHECK_STATUS_LABELS = {
-  unchecked: "未確認",
-  ok: "確認済み",
-  review: "要確認",
+  unchecked: "Not checked",
+  ok: "OK",
+  review: "Review",
 };
 
 const LOCATION_PRECISION_LABELS = {
-  address: "番地単位",
-  city: "都市中心（概略）",
+  address: "Street address",
+  city: "City center (approx.)",
 };
 
 const LOCATION_STATUS_LABELS = {
-  unchecked: "未照合",
-  matched: "住所と座標が一致",
-  review: "要確認",
+  unchecked: "Not checked",
+  matched: "Address and coordinates match",
+  review: "Review",
 };
 
 const PRESENCE_STATUS_LABELS = {
-  unchecked: "未確認",
-  verified: "確認済み",
-  review: "要確認",
+  unchecked: "Not checked",
+  verified: "Verified",
+  review: "Review",
 };
 
 let map;
 let markerLayer;
+let townMarkerLayer;
+let overlapLegLayer;
 let entities = [];
-let autoSpiderfyTimer;
+let visibleEntities = [];
+let townMode = false;
 const markersById = new Map();
 
 const filterState = {
@@ -94,28 +97,14 @@ function initMap() {
       });
     },
   }).addTo(map);
-  map.on("zoomend", scheduleAutoSpiderfy);
-  map.on("moveend", scheduleAutoSpiderfy);
-  markerLayer.on("animationend", scheduleAutoSpiderfy);
-}
-
-function scheduleAutoSpiderfy() {
-  clearTimeout(autoSpiderfyTimer);
-  if (map.getZoom() < AUTO_SPIDERFY_ZOOM) return;
-  autoSpiderfyTimer = setTimeout(() => {
-    const seen = new Set();
-    let nearest;
-    for (const marker of markersById.values()) {
-      const cluster = markerLayer.getVisibleParent(marker);
-      if (!cluster?.spiderfy || seen.has(cluster)) continue;
-      seen.add(cluster);
-      if (!map.getBounds().contains(cluster.getLatLng())) continue;
-      const distance = map.getCenter().distanceTo(cluster.getLatLng());
-      if (!nearest || distance < nearest.distance) nearest = { cluster, distance };
-    }
-    // ponytail: markercluster displays one spiderfy group; use the one nearest the view center.
-    nearest?.cluster.spiderfy();
-  }, 200);
+  overlapLegLayer = L.layerGroup().addTo(map);
+  townMarkerLayer = L.layerGroup().addTo(map);
+  map.on("zoomend", () => {
+    const nextTownMode = map.getZoom() >= TOWN_ZOOM;
+    if (nextTownMode === townMode) return;
+    townMode = nextTownMode;
+    rebuildMarkers(visibleEntities);
+  });
 }
 
 function latlngOf(feature) {
@@ -130,7 +119,9 @@ function logoSources(props) {
     if (!props.website) return sources;
     const website = new URL(props.website);
     sources.push(
-      `https://www.google.com/s2/favicons?domain=${encodeURIComponent(website.hostname)}&sz=128`,
+      new URL("/apple-touch-icon.png", website).href,
+      new URL("/favicon.svg", website).href,
+      `https://www.google.com/s2/favicons?domain_url=${encodeURIComponent(website.origin)}&sz=128`,
       new URL("/favicon.ico", website).href,
     );
   } catch {
@@ -157,19 +148,29 @@ function fallbackLogo(name) {
 }
 
 function fillLogo(container, props) {
+  delete container.dataset.logoStatus;
   const sources = logoSources(props);
   if (!sources.length) {
+    container.dataset.logoStatus = "fallback";
     container.replaceChildren(fallbackLogo(props.name));
     return;
   }
   const img = document.createElement("img");
   img.alt = "";
+  img.decoding = "async";
+  img.loading = "lazy";
   img.referrerPolicy = "no-referrer";
   let index = 0;
+  img.addEventListener("load", () => {
+    container.dataset.logoStatus = "loaded";
+  });
   img.addEventListener("error", () => {
     index += 1;
     if (index < sources.length) img.src = sources[index];
-    else container.replaceChildren(fallbackLogo(props.name));
+    else {
+      container.dataset.logoStatus = "fallback";
+      container.replaceChildren(fallbackLogo(props.name));
+    }
   });
   img.src = sources[index];
   container.replaceChildren(img);
@@ -191,24 +192,58 @@ function makeIcon(props) {
 
 function rebuildMarkers(features) {
   markerLayer.clearLayers();
+  townMarkerLayer.clearLayers();
+  overlapLegLayer.clearLayers();
   markersById.clear();
+  const displayLatLngs = new Map(
+    features.map((feature) => [feature.properties.id, latlngOf(feature)]),
+  );
+
+  if (townMode) {
+    const groups = new Map();
+    for (const feature of features) {
+      const key = feature.geometry.coordinates.join(",");
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(feature);
+    }
+    for (const group of groups.values()) {
+      if (group.length < 2) continue;
+      const origin = latlngOf(group[0]);
+      const center = map.latLngToLayerPoint(origin);
+      const radius = Math.max(58, (group.length * (ICON_SIZE + 10)) / (2 * Math.PI));
+      group.forEach((feature, index) => {
+        const angle = (index * 2 * Math.PI) / group.length - Math.PI / 2;
+        const display = map.layerPointToLatLng([
+          center.x + Math.cos(angle) * radius,
+          center.y + Math.sin(angle) * radius,
+        ]);
+        displayLatLngs.set(feature.properties.id, display);
+        L.polyline([origin, display], {
+          className: "overlap-leg",
+          interactive: false,
+          opacity: 0.55,
+          weight: 1.5,
+        }).addTo(overlapLegLayer);
+      });
+    }
+  }
+
   for (const feature of features) {
     const props = feature.properties;
-    const marker = L.marker(latlngOf(feature), { icon: makeIcon(props) });
+    const marker = L.marker(displayLatLngs.get(props.id), { icon: makeIcon(props) });
     const notes = [];
-    if (props.location.precision === "city") notes.push("概略位置");
-    if (props.presenceCheck.status !== "verified") notes.push("現所在未確認");
-    marker.bindTooltip(`${props.name}${notes.length ? `（${notes.join("・")}）` : ""}`);
+    if (props.location.precision === "city") notes.push("approximate location");
+    if (props.presenceCheck.status !== "verified") notes.push("presence unverified");
+    marker.bindTooltip(`${props.name}${notes.length ? ` (${notes.join(", ")})` : ""}`);
     marker.on("click", () => selectEntity(feature));
     marker.on("add", () => {
       const el = marker.getElement();
       fillLogo(el, props);
       el.setAttribute("aria-label", props.name);
     });
-    marker.addTo(markerLayer);
+    marker.addTo(townMode ? townMarkerLayer : markerLayer);
     markersById.set(props.id, marker);
   }
-  scheduleAutoSpiderfy();
 }
 
 function matchesQuery(props, query) {
@@ -254,6 +289,7 @@ function applyFilter(rawQuery) {
       (query === "" || matchesQuery(feature.properties, query)) &&
       matchesActiveGroups(feature.properties),
   );
+  visibleEntities = filtered;
   rebuildMarkers(filtered);
   renderResults(filtered);
   document.getElementById("visible-count").textContent = String(filtered.length);
@@ -279,15 +315,20 @@ function makeResultCard(feature) {
   const body = document.createElement("div");
   const heading = document.createElement("h3");
   heading.textContent = props.name;
-  const nameJaLine = document.createElement("p");
-  nameJaLine.textContent = props.nameJa || "";
+  body.append(heading);
+  if (props.nameJa) {
+    const nameJaLine = document.createElement("p");
+    nameJaLine.lang = "ja";
+    nameJaLine.textContent = props.nameJa;
+    body.append(nameJaLine);
+  }
   const placeLine = document.createElement("p");
   placeLine.textContent = [props.location.city, props.location.county]
     .filter(Boolean)
-    .join(" ／ ");
+    .join(" · ");
   const metaLine = document.createElement("p");
-  metaLine.textContent = `${LOCATION_PRECISION_LABELS[props.location.precision]} ／ 現所在 ${PRESENCE_STATUS_LABELS[props.presenceCheck.status]} ${props.presenceCheck.checkedAt || "未確認"} ／ 更新 ${props.updatedAt}`;
-  body.append(heading, nameJaLine, placeLine, metaLine);
+  metaLine.textContent = `${LOCATION_PRECISION_LABELS[props.location.precision]} · Presence: ${statusWithDate(PRESENCE_STATUS_LABELS[props.presenceCheck.status], props.presenceCheck.checkedAt)} · Updated: ${props.updatedAt}`;
+  body.append(placeLine, metaLine);
 
   card.append(logo, body);
   card.addEventListener("click", () => selectEntity(feature));
@@ -314,7 +355,7 @@ function showLoadingError() {
   const results = document.getElementById("results");
   const message = document.createElement("p");
   message.textContent =
-    "データの読み込みに失敗しました。ネットワーク接続を確認して、ページを再読み込みしてください。";
+    "Could not load the company data. Check your connection and reload the page.";
   results.replaceChildren(message);
 }
 
@@ -505,6 +546,10 @@ function textNode(text) {
   return document.createTextNode(String(text ?? ""));
 }
 
+function statusWithDate(status, date) {
+  return date ? `${status} · ${date}` : status;
+}
+
 function linkNode(href) {
   const link = document.createElement("a");
   link.href = href;
@@ -526,7 +571,7 @@ function categoryLabel(props) {
   } else if (props.scale && props.scale !== "not-applicable") {
     parts.push(props.scale);
   }
-  return parts.join("・");
+  return parts.join(" · ");
 }
 
 function showDetail(feature) {
@@ -542,59 +587,72 @@ function showDetail(feature) {
 
   const heading = document.createElement("h3");
   heading.textContent = props.name;
-  const nameJaLine = document.createElement("p");
-  nameJaLine.textContent = props.nameJa || "";
-
+  body.append(heading);
+  if (props.nameJa) {
+    const nameJaLine = document.createElement("p");
+    nameJaLine.lang = "ja";
+    nameJaLine.textContent = props.nameJa;
+    body.append(nameJaLine);
+  }
   const rows = document.createElement("dl");
   const location = props.location;
   const address = [location.address, location.city, location.region, location.postalCode]
     .filter(Boolean)
     .join(", ");
-  rows.append(detailRow("住所", textNode(address)));
+  rows.append(detailRow("Address", textNode(address)));
   rows.append(
-    detailRow("位置精度", textNode(LOCATION_PRECISION_LABELS[location.precision])),
+    detailRow("Location precision", textNode(LOCATION_PRECISION_LABELS[location.precision])),
   );
-  rows.append(detailRow("分類", textNode(categoryLabel(props))));
+  rows.append(detailRow("Category", textNode(categoryLabel(props))));
   rows.append(
-    detailRow("業種", textNode((props.industries || []).join("・"))),
+    detailRow("Industries", textNode((props.industries || []).join(", "))),
   );
-  if (props.website) rows.append(detailRow("公式サイト", linkNode(props.website)));
+  if (props.website) rows.append(detailRow("Official website", linkNode(props.website)));
   if (props.profileSourceUrl) {
-    rows.append(detailRow("掲載根拠", linkNode(props.profileSourceUrl)));
+    rows.append(detailRow("Listing source", linkNode(props.profileSourceUrl)));
   }
   if (location.sourceUrl) {
-    rows.append(detailRow("住所の根拠", linkNode(location.sourceUrl)));
+    rows.append(detailRow("Address source", linkNode(location.sourceUrl)));
   }
   if (props.presenceCheck.sourceUrl) {
-    rows.append(detailRow("現所在の根拠", linkNode(props.presenceCheck.sourceUrl)));
+    rows.append(detailRow("Presence source", linkNode(props.presenceCheck.sourceUrl)));
   }
-  rows.append(detailRow("データ更新日", textNode(props.updatedAt)));
+  rows.append(detailRow("Data updated", textNode(props.updatedAt)));
   rows.append(
     detailRow(
-      "座標照合",
+      "Coordinate check",
       textNode(
-        `${LOCATION_STATUS_LABELS[location.status] || location.status} ／ ${location.checkedAt || "未確認"}`,
+        statusWithDate(
+          LOCATION_STATUS_LABELS[location.status] || location.status,
+          location.checkedAt,
+        ),
       ),
     ),
   );
   rows.append(
     detailRow(
-      "現所在確認",
+      "Presence check",
       textNode(
-        `${PRESENCE_STATUS_LABELS[props.presenceCheck.status] || props.presenceCheck.status} ／ ${props.presenceCheck.checkedAt || "未確認"}`,
+        statusWithDate(
+          PRESENCE_STATUS_LABELS[props.presenceCheck.status] || props.presenceCheck.status,
+          props.presenceCheck.checkedAt,
+        ),
       ),
     ),
   );
   rows.append(
     detailRow(
-      "サイト確認",
+      "Website check",
       textNode(
-        `${CHECK_STATUS_LABELS[props.websiteCheck.status] || props.websiteCheck.status} ／ ${props.websiteCheck.checkedAt || "未確認"}`,
+        statusWithDate(
+          CHECK_STATUS_LABELS[props.websiteCheck.status] || props.websiteCheck.status,
+          props.websiteCheck.checkedAt,
+        ),
       ),
     ),
   );
 
-  body.append(heading, nameJaLine, rows);
+  body.append(rows);
   detail.insertBefore(body, closeButton.nextSibling);
   detail.hidden = false;
 }

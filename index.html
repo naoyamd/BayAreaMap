@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ベイエリア企業マップ</title>
+    <title>Bay Area Company Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="styles.css" />
@@ -13,85 +13,85 @@
   </head>
   <body>
     <header class="site-header">
-      <h1>ベイエリア企業マップ</h1>
+      <h1>Bay Area Company Map</h1>
       <p class="dataset-info">
-        データ更新日: <time id="dataset-date">読み込み中…</time>
-        ／ 現所在確認日: <time id="presence-checked-date">読み込み中…</time>
-        ／ 座標照合日: <time id="location-checked-date">読み込み中…</time>
-        ／ URL確認日: <time id="checked-date">読み込み中…</time>
-        ／ 表示中の企業: <span id="visible-count">0</span> 件
+        Data updated: <time id="dataset-date">Loading…</time>
+        · Presence checked: <time id="presence-checked-date">Loading…</time>
+        · Coordinates checked: <time id="location-checked-date">Loading…</time>
+        · URLs checked: <time id="checked-date">Loading…</time>
+        · Showing: <span id="visible-count">0</span>
       </p>
     </header>
 
     <aside id="sidebar">
       <section class="search-section" aria-labelledby="search-heading">
-        <h2 id="search-heading">企業を検索</h2>
-        <label for="search">企業名やキーワードで絞り込みます</label>
-        <input type="search" id="search" name="search" autocomplete="off" placeholder="例: AI、半導体、サンノゼ" />
-        <button type="button" id="clear-search">検索条件をクリア</button>
+        <h2 id="search-heading">Find companies</h2>
+        <label for="search">Filter by company name or keyword</label>
+        <input type="search" id="search" name="search" autocomplete="off" placeholder="e.g. AI, semiconductors, San Jose" />
+        <button type="button" id="clear-search">Clear search</button>
       </section>
 
       <section id="filters" aria-labelledby="filters-heading">
-        <h2 id="filters-heading">表示を切り替える</h2>
-        <div class="preset-buttons" role="group" aria-label="プリセット絞り込み">
-          <button type="button" data-preset="all">すべて</button>
-          <button type="button" data-preset="japan">日系</button>
-          <button type="button" data-preset="large">大企業</button>
-          <button type="button" data-preset="manufacturing">製造業</button>
-          <button type="button" data-preset="verified">現所在確認済み</button>
-          <button type="button" data-preset="startup">スタートアップ</button>
+        <h2 id="filters-heading">Filter the map</h2>
+        <div class="preset-buttons" role="group" aria-label="Preset filters">
+          <button type="button" data-preset="all">All</button>
+          <button type="button" data-preset="japan">Japan-linked</button>
+          <button type="button" data-preset="large">Large companies</button>
+          <button type="button" data-preset="manufacturing">Manufacturing</button>
+          <button type="button" data-preset="verified">Presence verified</button>
+          <button type="button" data-preset="startup">Startups</button>
           <button type="button" data-preset="vc-cvc">VC/CVC</button>
-          <button type="button" data-preset="support">支援機関</button>
+          <button type="button" data-preset="support">Support</button>
         </div>
         <fieldset id="filter-japan">
-          <legend>日系</legend>
+          <legend>Japan connection</legend>
         </fieldset>
         <fieldset id="filter-type">
-          <legend>企業タイプ</legend>
+          <legend>Organization type</legend>
         </fieldset>
         <fieldset id="filter-scale">
-          <legend>規模</legend>
+          <legend>Scale</legend>
         </fieldset>
         <fieldset id="filter-industry">
-          <legend>業種</legend>
+          <legend>Industry</legend>
         </fieldset>
         <fieldset id="filter-county">
-          <legend>カウンティ</legend>
+          <legend>County</legend>
         </fieldset>
         <fieldset id="filter-location-precision">
-          <legend>位置精度</legend>
+          <legend>Location precision</legend>
         </fieldset>
         <fieldset id="filter-presence">
-          <legend>現所在の確認</legend>
+          <legend>Current presence</legend>
         </fieldset>
-        <p class="location-note">破線は都市中心の概略位置、淡色は現在の所在が未確認のピンです。</p>
-        <button type="button" id="reset-filters">フィルターをリセット</button>
+        <p class="location-note">Dashed pins use an approximate city center; faded pins have unverified current presence.</p>
+        <button type="button" id="reset-filters">Reset filters</button>
       </section>
 
       <section class="tier-guide" aria-labelledby="tier-heading">
-        <h2 id="tier-heading">初回コンタクトの目安（ティア別）</h2>
+        <h2 id="tier-heading">Suggested first contacts</h2>
         <dl>
           <dt>Tier 1</dt>
-          <dd>JETRO San Francisco / Global Acceleration Hub、Japan Innovation Campus</dd>
+          <dd>JETRO San Francisco / Global Acceleration Hub, Japan Innovation Campus</dd>
           <dt>Tier 2</dt>
-          <dd>Plug and Play Tech Center、500 Global</dd>
+          <dd>Plug and Play Tech Center, 500 Global</dd>
           <dt>Tier 3</dt>
-          <dd>Stanford ecosystem、主要VC、日本企業コミュニティ</dd>
+          <dd>Stanford ecosystem, major VCs, and Japanese business communities</dd>
         </dl>
       </section>
 
       <section class="results-section" aria-labelledby="results-heading">
-        <h2 id="results-heading">検索結果</h2>
+        <h2 id="results-heading">Results</h2>
         <div id="results"></div>
       </section>
 
-      <article id="detail" aria-label="企業の詳細情報" hidden>
-        <button type="button" id="close-detail">詳細を閉じる</button>
+      <article id="detail" aria-label="Company details" hidden>
+        <button type="button" id="close-detail">Close details</button>
       </article>
     </aside>
 
     <main>
-      <div id="map" role="region" aria-label="ベイエリアの企業地図"></div>
+      <div id="map" role="region" aria-label="Bay Area company map"></div>
     </main>
   </body>
 </html>
