@@ -1566,18 +1566,18 @@
         ]
       },
       "properties": {
-        "id": "ihi-aerospace-rakunest",
-        "name": "IHI Aerospace",
-        "nameJa": "株式会社IHIエアロスペース",
-        "website": "https://www.ihi.co.jp/ia/en/",
+        "id": "ihi-rakunest",
+        "name": "IHI",
+        "nameJa": "株式会社IHI",
+        "website": "https://www.ihi.co.jp/en/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
         "industries": [
-          "aerospace",
+          "industrial",
           "manufacturing"
         ],
-        "profileSourceUrl": "https://www.ihi.co.jp/ia/en/",
+        "profileSourceUrl": "https://www.ihi.co.jp/en/",
         "location": {
           "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
