@@ -4,6 +4,7 @@ const MAP_CENTER = [37.55, -122.2];
 const MAP_ZOOM = 9;
 const ICON_SIZE = 42;
 const TOWN_ZOOM = 14;
+const DENSE_CLUSTER_CITIES = new Set(["San Francisco", "San Jose", "Santa Clara"]);
 
 const ENTITY_TYPE_LABELS = {
   "vc-cvc": "VC / CVC",
@@ -201,6 +202,7 @@ function rebuildMarkers(features) {
   if (townMode) {
     const groups = new Map();
     for (const feature of features) {
+      if (DENSE_CLUSTER_CITIES.has(feature.properties.location.city)) continue;
       const key = feature.geometry.coordinates.join(",");
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key).push(feature);
@@ -240,7 +242,8 @@ function rebuildMarkers(features) {
       fillLogo(el, props);
       el.setAttribute("aria-label", props.name);
     });
-    marker.addTo(townMode ? townMarkerLayer : markerLayer);
+    const stayClustered = DENSE_CLUSTER_CITIES.has(props.location.city);
+    marker.addTo(townMode && !stayClustered ? townMarkerLayer : markerLayer);
     markersById.set(props.id, marker);
   }
 }

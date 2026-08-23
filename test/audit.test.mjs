@@ -256,8 +256,9 @@ test('major Bay Area anchors are present and exact overlaps expand at town zoom'
     assert.strictEqual(features.find((item) => item.properties.id === id)?.properties.scale, 'large', id);
   }
   assert.match(appSource, /const TOWN_ZOOM = 14;/);
+  assert.match(appSource, /DENSE_CLUSTER_CITIES = new Set\(\["San Francisco", "San Jose", "Santa Clara"\]\)/);
+  assert.match(appSource, /marker\.addTo\(townMode && !stayClustered \? townMarkerLayer : markerLayer\)/);
   assert.match(appSource, /feature\.geometry\.coordinates\.join\(","\)/);
-  assert.match(appSource, /marker\.addTo\(townMode \? townMarkerLayer : markerLayer\)/);
   assert.doesNotMatch(appSource, /scheduleAutoSpiderfy|\.spiderfy\(\)/);
 });
 
