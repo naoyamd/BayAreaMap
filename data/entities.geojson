@@ -1451,8 +1451,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -1958,12 +1958,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -2234,12 +2234,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -3615,12 +3615,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -4535,12 +4535,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -6145,12 +6145,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -9367,12 +9367,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -11990,12 +11990,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -12174,12 +12174,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -12588,12 +12588,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -13324,12 +13324,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -15729,8 +15729,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -16575,8 +16575,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -21532,7 +21532,7 @@
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
-          "status": "ok"
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
