@@ -1765,21 +1765,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -2807,8 +2807,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194155,
-          37.7749295
+          -122.421773102633,
+          37.74404842807
         ]
       },
       "properties": {
@@ -2824,27 +2824,27 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": "60 29th Street #343",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94110",
           "countryCode": "US",
           "county": "San Francisco County",
           "precision": "address",
-          "coordinateSource": "legacy",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://automattic.com/contact/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://automattic.com/contact/"
         }
       }
     },
@@ -3882,21 +3882,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -5262,21 +5262,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -5768,27 +5768,27 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
-          "sourceUrl": null,
+          "precision": "city",
+          "coordinateSource": "city-centroid",
+          "sourceUrl": "https://forkable.com/",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://forkable.com/"
         }
       }
     },
@@ -6182,21 +6182,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -6504,21 +6504,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -7378,21 +7378,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -7516,21 +7516,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -7792,21 +7792,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -8804,21 +8804,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -10739,21 +10739,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -13223,21 +13223,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -14051,21 +14051,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -14557,21 +14557,21 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
+          "precision": "city",
+          "coordinateSource": "city-centroid",
           "sourceUrl": null,
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -14695,27 +14695,27 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "San Francisco",
+          "address": null,
           "city": "San Francisco",
           "region": "CA",
           "postalCode": null,
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "address",
-          "coordinateSource": "legacy",
-          "sourceUrl": null,
+          "precision": "city",
+          "coordinateSource": "city-centroid",
+          "sourceUrl": "https://www.wonderschool.com/corp/?",
           "checkedAt": null,
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-23",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.wonderschool.com/corp/?"
         }
       }
     },
@@ -16215,8 +16215,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.159513466392,
+          37.448438327164
         ]
       },
       "properties": {
@@ -16231,19 +16231,19 @@
           "trading",
           "investment"
         ],
-        "profileSourceUrl": "https://www.mitsubishicorp.com/us/en/",
+        "profileSourceUrl": "https://www.mitsubishicorp.com/us/en/mca/about/locations.html",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "480 Cowper Street, Suite 300",
+          "city": "Palo Alto",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94301",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.mitsubishicorp.com/us/en/mca/about/locations.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
@@ -16252,8 +16252,8 @@
         "updatedAt": "2026-08-23",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
-          "status": "review",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "status": "verified",
+          "sourceUrl": "https://www.mitsubishicorp.com/us/en/mca/about/locations.html"
         }
       }
     },
@@ -16826,15 +16826,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.396450717898,
+          37.793602022837
         ]
       },
       "properties": {
         "id": "daiwa-capital-markets-america-san-francisco",
         "name": "Daiwa Capital Markets America San Francisco",
         "nameJa": "大和キャピタルマーケッツ アメリカ サンフランシスコ",
-        "website": "https://www.daiwacm.com/",
+        "website": "https://us.daiwacm.com/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
@@ -16842,29 +16842,29 @@
           "finance",
           "securities"
         ],
-        "profileSourceUrl": "https://www.daiwacm.com/",
+        "profileSourceUrl": "https://us.daiwacm.com/contact-us/",
         "location": {
-          "address": null,
+          "address": "1 California St, Suite 200",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94111",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://us.daiwacm.com/contact-us/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
           "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://us.daiwacm.com/contact-us/"
         }
       }
     },
@@ -17390,8 +17390,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.166686363666,
+          37.445249249797
         ]
       },
       "properties": {
@@ -17406,29 +17406,29 @@
           "media",
           "software"
         ],
-        "profileSourceUrl": "https://www.smartnews.com/",
+        "profileSourceUrl": "https://about.smartnews.com/en/about/company.html",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "291 Alma Street",
+          "city": "Palo Alto",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94301",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://about.smartnews.com/en/about/company.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://about.smartnews.com/en/about/company.html"
         }
       }
     },
@@ -17578,8 +17578,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.402354602506,
+          37.791199828742
         ]
       },
       "properties": {
@@ -17594,19 +17594,19 @@
           "legaltech",
           "ai"
         ],
-        "profileSourceUrl": "https://www.legalontech.com/",
+        "profileSourceUrl": "https://www.legalontech.com/terms-and-conditions",
         "location": {
-          "address": null,
+          "address": "220 Montgomery St, Suite 1600",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94104",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.legalontech.com/about",
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.legalontech.com/terms-and-conditions",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
@@ -17616,7 +17616,7 @@
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://www.legalontech.com/about"
+          "sourceUrl": "https://www.legalontech.com/terms-and-conditions"
         }
       }
     },
@@ -17813,14 +17813,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.291339469186,
+          37.553765395387
         ]
       },
       "properties": {
-        "id": "nri-america-san-francisco",
-        "name": "NRI America San Francisco",
-        "nameJa": "野村総合研究所アメリカ サンフランシスコ",
+        "id": "nri-it-solutions-america-pacific-branch",
+        "name": "NRI IT Solutions America Pacific Branch",
+        "nameJa": "野村総合研究所 IT Solutions America パシフィック支店",
         "website": "https://www.nri.com/en/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
@@ -17829,29 +17829,29 @@
           "consulting",
           "technology"
         ],
-        "profileSourceUrl": "https://www.nri.com/en/",
+        "profileSourceUrl": "https://www.nri.com/en/company/map/it_solutions.html",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "1900 S Norfolk St, Suite 219",
+          "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94403",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.nri.com/en/company/map/it_solutions.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
-          "status": "ok"
+          "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://www.nri.com/en/company/map/it_solutions.html"
         }
       }
     },
@@ -17860,15 +17860,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.402032436717,
+          37.789625602381
         ]
       },
       "properties": {
-        "id": "cybozu-us",
-        "name": "Cybozu US",
-        "nameJa": "サイボウズUS",
-        "website": "https://www.cybozu.com/us/",
+        "id": "kintone-corporation",
+        "name": "Kintone Corporation (Cybozu Group)",
+        "nameJa": "Kintone Corporation（サイボウズグループ）",
+        "website": "https://www.kintone.com/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "growth",
@@ -17876,29 +17876,29 @@
           "software",
           "collaboration"
         ],
-        "profileSourceUrl": "https://www.cybozu.com/us/",
+        "profileSourceUrl": "https://cybozu.co.jp/en/company/locations/",
         "location": {
-          "address": null,
+          "address": "44 Montgomery St, 3rd Floor",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94104",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://cybozu.co.jp/en/company/locations/",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://cybozu.co.jp/en/company/locations/"
         }
       }
     },
@@ -17978,53 +17978,6 @@
           "postalCode": null,
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
-        },
-        "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "ok"
-        },
-        "updatedAt": "2026-08-22",
-        "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -122.4194,
-          37.7749
-        ]
-      },
-      "properties": {
-        "id": "soracom-us",
-        "name": "SORACOM US",
-        "nameJa": "ソラコムUS",
-        "website": "https://www.soracom.io/",
-        "entityType": "company",
-        "japanConnection": "japan-headquartered",
-        "scale": "growth",
-        "industries": [
-          "iot",
-          "telecommunications"
-        ],
-        "profileSourceUrl": "https://www.soracom.io/",
-        "location": {
-          "address": null,
-          "city": "San Francisco",
-          "region": "CA",
-          "postalCode": null,
-          "countryCode": "US",
-          "county": "San Francisco County",
           "precision": "city",
           "coordinateSource": "city-centroid",
           "sourceUrl": null,
@@ -19082,8 +19035,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.459583565493,
+          37.762922266735
         ]
       },
       "properties": {
@@ -19098,29 +19051,29 @@
           "education",
           "life-sciences"
         ],
-        "profileSourceUrl": "https://www.ucsf.edu/",
+        "profileSourceUrl": "https://ohns.ucsf.edu/locations/parnassus-medical-center",
         "location": {
-          "address": null,
+          "address": "505 Parnassus Ave",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94143",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://ohns.ucsf.edu/locations/parnassus-medical-center",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
           "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-23",
+          "status": "verified",
+          "sourceUrl": "https://ohns.ucsf.edu/locations/parnassus-medical-center"
         }
       }
     },

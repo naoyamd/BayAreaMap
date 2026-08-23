@@ -19,13 +19,22 @@ export function hashId(id) {
   return h >>> 0;
 }
 
-export function selectFeatures(features, { all = false, shard = null, cityOnly = false } = {}) {
+export function locationNeedsAddress(location) {
+  if (location?.precision === "city") return true;
+  const address = normalizedWords(location?.address).join(" ");
+  const city = normalizedWords(location?.city).join(" ");
+  const region = normalizedWords(location?.region).join(" ");
+  return Boolean(city) && (address === city || address === `${city} ${region}`);
+}
+
+export function selectFeatures(features, { all = false, shard = null, cityOnly = false, city = null } = {}) {
   const selected = all
     ? features.filter(() => true)
     : features.filter((f) => hashId(f?.properties?.id ?? "") % SHARD_COUNT === shard);
-  return cityOnly
-    ? selected.filter((f) => f?.properties?.location?.precision === "city")
-    : selected;
+  return selected.filter((feature) => {
+    const location = feature?.properties?.location;
+    return (!city || location?.city === city) && (!cityOnly || locationNeedsAddress(location));
+  });
 }
 
 export function distanceKm([lon1, lat1], [lon2, lat2]) {
@@ -215,7 +224,7 @@ export function classifyPresence({ sourceUrl, sourceOk, sourceHtml, location, en
 }
 
 function parseArgs(argv) {
-  const opts = { all: false, shard: null, cityOnly: false };
+  const opts = { all: false, shard: null, cityOnly: false, city: null };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === "--all") {
@@ -224,6 +233,10 @@ function parseArgs(argv) {
     } else if (arg === "--city-only") {
       if (opts.cityOnly) throw new Error("--city-only given more than once");
       opts.cityOnly = true;
+    } else if (arg === "--city") {
+      if (opts.city !== null) throw new Error("--city given more than once");
+      opts.city = argv[++i];
+      if (!opts.city) throw new Error("--city requires a city name");
     } else if (arg === "--shard") {
       if (opts.shard !== null) throw new Error("--shard given more than once");
       const raw = argv[++i];
@@ -339,7 +352,7 @@ async function audit(argv) {
     opts = parseArgs(argv);
   } catch (error) {
     console.error(error.message);
-    console.error("Usage: node scripts/audit.mjs [--all | --shard N] [--city-only]   (N: 0..44)");
+    console.error('Usage: node scripts/audit.mjs [--all | --shard N] [--city-only] [--city "City"]   (N: 0..44)');
     process.exitCode = 1;
     return;
   }
@@ -389,7 +402,7 @@ async function audit(argv) {
   let locationReview = 0;
   let officialSourcesLinked = 0;
   let cityLocationsUpgraded = 0;
-  const cityFeatures = selected.filter((feature) => feature.properties.location.precision === "city");
+  const cityFeatures = selected.filter((feature) => locationNeedsAddress(feature.properties.location));
   await runPool(cityFeatures, CONCURRENCY, async (feature) => {
     const props = feature.properties;
     const location = props.location;

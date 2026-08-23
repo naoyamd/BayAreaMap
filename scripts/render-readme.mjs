@@ -192,7 +192,8 @@ function render(entities, metadata) {
   lines.push("npm run readme               # README.md 再生成");
   lines.push("npm run audit -- --shard 0   # シャード0のデータ監査");
   lines.push("npm run audit -- --all       # 全件のデータ監査");
-  lines.push("npm run audit -- --all --city-only # 都市中心データだけ住所探索", "```");
+  lines.push("npm run audit -- --all --city-only # 都市中心データだけ住所探索");
+  lines.push('npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って住所探索', "```");
   lines.push("");
   lines.push("## 掲載データ一覧");
   lines.push("");

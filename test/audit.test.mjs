@@ -11,6 +11,7 @@ import {
   extractCaliforniaAddress,
   extractCaliforniaAddresses,
   hashId,
+  locationNeedsAddress,
   officialAddressSource,
   selectFeatures,
   sourceMentionsEntity,
@@ -195,6 +196,10 @@ test('city locations use a first-party source and can discover a street address'
   assert.strictEqual(sourceMentionsEntity('<p>Resonac US-JOINT</p>', 'Resonac US-JOINT'), true);
   assert.strictEqual(sourceMentionsEntity('<p>NRI America</p>', 'NRI America San Francisco'), true);
   assert.strictEqual(sourceMentionsEntity('<p>IHI Aerospace</p>', 'IHI Corporation'), false);
+  assert.strictEqual(locationNeedsAddress({ address: 'San Francisco', city: 'San Francisco', region: 'CA', precision: 'address' }), true);
+  assert.strictEqual(locationNeedsAddress({ address: '1 Market St', city: 'San Francisco', region: 'CA', precision: 'address' }), false);
+  assert.ok(selectFeatures(features, { all: true, cityOnly: true, city: 'San Francisco' })
+    .every((feature) => feature.properties.location.city === 'San Francisco'));
 });
 
 test('a group page cannot assign one subsidiary another subsidiary address', () => {
@@ -216,6 +221,24 @@ test('a group page cannot assign one subsidiary another subsidiary address', () 
   }), 'review');
 });
 
+test('official office pages replace San Francisco city placeholders', () => {
+  const expected = {
+    'daiwa-capital-markets-america-san-francisco': ['San Francisco', '1 California St, Suite 200'],
+    'legalon-technologies-us': ['San Francisco', '220 Montgomery St, Suite 1600'],
+    'kintone-corporation': ['San Francisco', '44 Montgomery St, 3rd Floor'],
+    'nri-it-solutions-america-pacific-branch': ['San Mateo', '1900 S Norfolk St, Suite 219'],
+    'smartnews-us': ['Palo Alto', '291 Alma Street'],
+  };
+
+  for (const [id, [city, address]] of Object.entries(expected)) {
+    const feature = features.find((item) => item.properties.id === id);
+    assert.strictEqual(feature?.properties.location.city, city, id);
+    assert.strictEqual(feature?.properties.location.address, address, id);
+    assert.strictEqual(feature?.properties.location.precision, 'address', id);
+  }
+  assert.ok(!features.some((item) => item.properties.id === 'soracom-us'));
+});
+
 test('major Bay Area anchors are present and exact overlaps expand at town zoom', () => {
   const ids = [
     'google', 'apple', 'meta', 'nvidia', 'tesla-fremont', 'cisco', 'intel', 'amd',
@@ -232,7 +255,7 @@ test('major Bay Area anchors are present and exact overlaps expand at town zoom'
   for (const id of ['google', 'apple', 'meta', 'sf-amazon-web-services', 'sf-microsoft']) {
     assert.strictEqual(features.find((item) => item.properties.id === id)?.properties.scale, 'large', id);
   }
-  assert.match(appSource, /const TOWN_ZOOM = 13;/);
+  assert.match(appSource, /const TOWN_ZOOM = 14;/);
   assert.match(appSource, /feature\.geometry\.coordinates\.join\(","\)/);
   assert.match(appSource, /marker\.addTo\(townMode \? townMarkerLayer : markerLayer\)/);
   assert.doesNotMatch(appSource, /scheduleAutoSpiderfy|\.spiderfy\(\)/);

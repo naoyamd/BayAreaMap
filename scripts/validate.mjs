@@ -162,6 +162,10 @@ for (let i = 0; i < features.length; i++) {
     if (location.precision === "address" && !nonEmptyString(location.address)) {
       err(at("address-precision locations require a street address"));
     }
+    if (location.precision === "address" &&
+        [location.city, `${location.city}, ${location.region}`].includes(location.address)) {
+      err(at("address-precision locations cannot use a city-only placeholder"));
+    }
     if (location.status === "unchecked" && location.checkedAt !== null) {
       err(at("unchecked locations must have checkedAt: null"));
     }

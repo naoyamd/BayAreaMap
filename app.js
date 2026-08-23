@@ -3,7 +3,7 @@
 const MAP_CENTER = [37.55, -122.2];
 const MAP_ZOOM = 9;
 const ICON_SIZE = 42;
-const TOWN_ZOOM = 13;
+const TOWN_ZOOM = 14;
 
 const ENTITY_TYPE_LABELS = {
   "vc-cvc": "VC / CVC",
