@@ -13,12 +13,12 @@
 - 現所在確認日: 2026-08-23
 - 座標照合日: 2026-08-23
 - URL確認日: 2026-08-23
-- 掲載件数: 466件
-- 日本関連: 133件
-- 大規模（scale: large）: 147件
+- 掲載件数: 464件
+- 日本関連: 131件
+- 大規模（scale: large）: 145件
 - 製造業関連: 76件
 - 企業以外（VC/CVC・支援機関・大学など）: 23件
-- 位置精度: 番地単位 380件／都市中心の概略位置 86件
+- 位置精度: 番地単位 381件／都市中心の概略位置 83件
 - 現在のベイエリア所在を確認済み: 109件
 - 対象カウンティ: 全9カウンティ（Alameda County・Contra Costa County・Marin County・Napa County・San Francisco County・San Mateo County・Santa Clara County・Solano County・Sonoma County）
 
@@ -164,9 +164,7 @@ npm run audit -- --all --city-only # 都市中心データだけ住所探索
 | ○ | [Panasonic North America](https://www.panasonic.com/us) | 企業 | 大規模 | Newark／Alameda County | electronics, manufacturing | 都市中心（概略） | 未確認（—） | 未照合（—） | 要確認（2026-08-23） | 2026-08-22 |
 | ○ | [Plug and Play Tech Center](https://www.plugandplaytechcenter.com/) | VC・CVC | 大規模 | Sunnyvale／Santa Clara County | venture-capital, accelerator, corporate-innovation | 番地単位 | 未確認（—） | 未照合（—） | 未確認（—） | 2026-08-22 |
 | ○ | [RakuNest](https://www.rakunest.com/) | 支援機関 | 該当なし | San Mateo／San Mateo County | coworking, startup-support, community | 番地単位 | 確認済み（2026-08-23） | 住所・座標一致（2026-08-23） | 確認済み（2026-08-23） | 2026-08-23 |
-| ○ | [Rakuten Americas](https://global.rakuten.com) | 企業 | 大規模 | San Mateo／San Mateo County | internet, ecommerce | 都市中心（概略） | 確認済み（2026-08-23） | 未照合（—） | 確認済み（2026-08-23） | 2026-08-23 |
-| ○ | [Rakuten Medical](https://rakuten-med.com/) | 企業 | 大規模 | San Mateo／San Mateo County | biotechnology, healthcare | 都市中心（概略） | 未確認（—） | 未照合（—） | 確認済み（2026-08-23） | 2026-08-22 |
-| ○ | [Rakuten Symphony Americas](https://symphony.rakuten.com/) | 企業 | 大規模 | San Mateo／San Mateo County | telecommunications, cloud | 都市中心（概略） | 未確認（—） | 未照合（—） | 確認済み（2026-08-23） | 2026-08-22 |
+| ○ | [Rakuten USA, Inc.](https://global.rakuten.com/corp/about/map/am_us_rchw.html) | 企業 | 大規模 | San Mateo／San Mateo County | internet, ecommerce | 番地単位 | 確認済み（2026-08-23） | 住所・座標一致（2026-08-23） | 確認済み（2026-08-23） | 2026-08-23 |
 | ○ | [Rapidus Design Solutions](https://www.rapidus.inc/en/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, manufacturing | 番地単位 | 確認済み（2026-08-23） | 住所・座標一致（2026-08-23） | 未確認（—） | 2026-08-23 |
 | ○ | [Renesas Electronics America](https://www.renesas.com) | 企業 | 大規模 | San Jose／Santa Clara County | semiconductors, electronics | 番地単位 | 確認済み（2026-08-23） | 住所・座標一致（2026-08-23） | 確認済み（2026-08-23） | 2026-08-23 |
 | ○ | [Resonac US-JOINT](https://www.resonac.com/) | 企業 | 大規模 | Union City／Alameda County | semiconductors, materials, manufacturing | 都市中心（概略） | 確認済み（2026-08-23） | 未照合（—） | 確認済み（2026-08-23） | 2026-08-23 |

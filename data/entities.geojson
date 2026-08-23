@@ -1185,15 +1185,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
+          -122.301126718315,
+          37.555087497011
         ]
       },
       "properties": {
         "id": "rakuten-americas",
-        "name": "Rakuten Americas",
-        "nameJa": "楽天アメリカズ",
-        "website": "https://global.rakuten.com",
+        "name": "Rakuten USA, Inc.",
+        "nameJa": "楽天USA",
+        "website": "https://global.rakuten.com/corp/about/map/am_us_rchw.html",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
@@ -1201,19 +1201,19 @@
           "internet",
           "ecommerce"
         ],
-        "profileSourceUrl": "https://global.rakuten.com",
+        "profileSourceUrl": "https://global.rakuten.com/corp/about/map/am_us_rchw.html",
         "location": {
-          "address": null,
+          "address": "800 Concar Drive",
           "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://corp.rakuten.co.jp/about/map/am_us_rchw.html",
+          "checkedAt": "2026-08-23",
+          "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-08-23",
@@ -1223,7 +1223,7 @@
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
-          "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
+          "sourceUrl": "https://corp.rakuten.co.jp/about/map/am_us_rchw.html"
         }
       }
     },
@@ -16121,53 +16121,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3255,
-          37.563
-        ]
-      },
-      "properties": {
-        "id": "rakuten-medical",
-        "name": "Rakuten Medical",
-        "nameJa": "楽天メディカル",
-        "website": "https://rakuten-med.com/",
-        "entityType": "company",
-        "japanConnection": "japan-headquartered",
-        "scale": "large",
-        "industries": [
-          "biotechnology",
-          "healthcare"
-        ],
-        "profileSourceUrl": "https://rakuten-med.com/",
-        "location": {
-          "address": null,
-          "city": "San Mateo",
-          "region": "CA",
-          "postalCode": null,
-          "countryCode": "US",
-          "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
-        },
-        "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "ok"
-        },
-        "updatedAt": "2026-08-22",
-        "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -122.4066,
           37.6547
         ]
@@ -17837,53 +17790,6 @@
           "postalCode": null,
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
-        },
-        "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "ok"
-        },
-        "updatedAt": "2026-08-22",
-        "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -122.3255,
-          37.563
-        ]
-      },
-      "properties": {
-        "id": "rakuten-symphony-americas",
-        "name": "Rakuten Symphony Americas",
-        "nameJa": "楽天シンフォニーアメリカズ",
-        "website": "https://symphony.rakuten.com/",
-        "entityType": "company",
-        "japanConnection": "japan-headquartered",
-        "scale": "large",
-        "industries": [
-          "telecommunications",
-          "cloud"
-        ],
-        "profileSourceUrl": "https://symphony.rakuten.com/",
-        "location": {
-          "address": null,
-          "city": "San Mateo",
-          "region": "CA",
-          "postalCode": null,
-          "countryCode": "US",
-          "county": "San Mateo County",
           "precision": "city",
           "coordinateSource": "city-centroid",
           "sourceUrl": null,

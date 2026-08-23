@@ -99,6 +99,17 @@ test('RakuNest and its mapped tenants share the verified facility address', () =
   }
 });
 
+test('San Mateo has one Rakuten group pin at the official Rakuten USA office', () => {
+  const rakuten = features.filter((feature) =>
+    feature.properties.location.city === 'San Mateo' && /rakuten/i.test(feature.properties.name),
+  );
+
+  assert.deepStrictEqual(rakuten.map((feature) => feature.properties.name), ['Rakuten USA, Inc.']);
+  assert.strictEqual(rakuten[0].properties.location.address, '800 Concar Drive');
+  assert.ok(distanceKm(rakuten[0].geometry.coordinates, [-122.301126718315, 37.555087497011]) < 0.01);
+  assert.strictEqual(rakuten[0].properties.presenceCheck.status, 'verified');
+});
+
 test('coordinate and current-presence checks stay independent', () => {
   const location = {
     address: '2207 Bridgepointe Pkwy',
