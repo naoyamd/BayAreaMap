@@ -82,7 +82,7 @@ function render(entities) {
   const lines = [];
   lines.push("# ベイエリア企業マップ");
   lines.push("");
-  lines.push(`**公開予定URL: <${SITE_URL}>**`);
+  lines.push(`**公開URL: <${SITE_URL}>**`);
   lines.push("");
   lines.push(
     "サンフランシスコ・ベイエリアの日本関連企業・VC/CVC・支援機関・大学などを地図上に可視化する個人プロジェクトです。ベイエリア進出検討時の初回コンタクト先の把握を目的としています。",
@@ -129,7 +129,7 @@ function render(entities) {
   lines.push("## ホスティング");
   lines.push("");
   lines.push(
-    `GitHub Pages（${SITE_URL}）向けに設定済みで、初回のpush／Pagesデプロイ後に公開されます。将来の独自ドメイン移行に備え、CSS/JS/データはすべて相対パスで参照しています。`,
+    `現在は GitHub Pages（${SITE_URL}）で公開されています。将来の独自ドメイン移行に備え、CSS/JS/データはすべて相対パスで参照しています。`,
   );
   lines.push("");
   lines.push("## 出典");

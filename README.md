@@ -1,6 +1,6 @@
 # ベイエリア企業マップ
 
-**公開予定URL: <https://naoyamd.github.io/BayAreaMap/>**
+**公開URL: <https://naoyamd.github.io/BayAreaMap/>**
 
 サンフランシスコ・ベイエリアの日本関連企業・VC/CVC・支援機関・大学などを地図上に可視化する個人プロジェクトです。ベイエリア進出検討時の初回コンタクト先の把握を目的としています。
 
@@ -36,7 +36,7 @@
 
 ## ホスティング
 
-GitHub Pages（https://naoyamd.github.io/BayAreaMap/）向けに設定済みで、初回のpush／Pagesデプロイ後に公開されます。将来の独自ドメイン移行に備え、CSS/JS/データはすべて相対パスで参照しています。
+現在は GitHub Pages（https://naoyamd.github.io/BayAreaMap/）で公開されています。将来の独自ドメイン移行に備え、CSS/JS/データはすべて相対パスで参照しています。
 
 ## 出典
 
