@@ -793,12 +793,12 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "review",
           "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
         }
@@ -981,12 +981,12 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "review",
           "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
         }
@@ -1353,16 +1353,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.nidec.com/en/worldwide_new/sales/america_northcalifornia_sa/",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "verified",
           "sourceUrl": "https://www.nidec.com/en/worldwide_new/sales/america_northcalifornia_sa/"
         }
@@ -2381,12 +2381,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -2842,16 +2842,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://automattic.com/contact/",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "verified",
           "sourceUrl": "https://automattic.com/contact/"
         }
@@ -3072,12 +3072,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -5008,12 +5008,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "ok"
         },
         "updatedAt": "2026-08-24",
         "presenceCheck": {
@@ -6480,12 +6480,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -7124,12 +7124,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -10531,12 +10531,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -12375,12 +12375,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -12421,12 +12421,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -13617,12 +13617,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -17814,7 +17814,7 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "ok"
         },
         "updatedAt": "2026-08-22",
@@ -19694,16 +19694,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://global.kawasaki.com/en/corp/profile/network/index.html",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "matched"
         },
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "verified",
           "sourceUrl": "https://global.kawasaki.com/en/corp/profile/network/index.html"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "ok"
         },
         "updatedAt": "2026-08-24"
@@ -20308,17 +20308,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.rakunest.com/clients",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "matched"
         },
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "verified",
+          "checkedAt": "2026-08-24",
+          "status": "review",
           "sourceUrl": "https://www.rakunest.com/clients"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "review"
         },
         "updatedAt": "2026-08-23"
       }
