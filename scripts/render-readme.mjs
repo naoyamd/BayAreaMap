@@ -161,6 +161,12 @@ function render(entities, metadata) {
     `各エンティティIDのハッシュで全件を${SHARD_COUNT}シャードに決定論的に分割し、毎日1シャード分を確認します。約1.5か月で全件を一巡し、各社公式サイトの拠点・連絡先・グループ会社ページを探索します。同じ都市というだけでは採用せず、法人名と住所を同時確認できた場合だけ番地へ昇格します。既存の番地も公式ページを探索して出典を補完し、退去疑いで自動削除はせず「要確認」に留めます。`,
   );
   lines.push("");
+  lines.push("## Wikipedia候補探索（月次）");
+  lines.push("");
+  lines.push(
+    "Wikipediaの Silicon Valley企業、Bay Areaテクノロジー企業、大学、研究機関カテゴリを月1回だけ直列取得し、未掲載候補のJSONをGitHub Actions artifactへ保存します。Wikipediaは候補発見にだけ使い、自動登録はしません。現役で、地域的・産業的な重要性が高い大企業／上場企業／主要スタートアップ／大学・研究機関を選び、公式サイトで現住所を確認できたものだけGeoJSONへ採用します。",
+  );
+  lines.push("");
   lines.push("## ホスティング");
   lines.push("");
   lines.push(
@@ -170,16 +176,21 @@ function render(entities, metadata) {
   lines.push("## 掲載候補の探索順");
   lines.push("");
   lines.push(
-    "1. **大手・地域主要企業**: Silicon Valley Leadership Group、Bay Area Council",
-    "2. **日系企業**: Japan Society of Northern California、JCCNC、Japan Innovation Campus、METI・JETRO資料",
-    "3. **スタートアップ**: Built In、Y Combinator、Berkeley SkyDeck、StartX、Alchemist",
-    "4. **住所の努力確認**: 各社公式サイトを優先。退去疑いは自動削除せず要確認にします。CrunchbaseとWellfoundは直接クロールしません。",
+    "1. **候補発見**: WikipediaのSilicon Valley企業・Bay Areaテクノロジー企業・大学・研究機関カテゴリ（月次・直列・自動登録なし）",
+    "2. **大手・地域主要企業**: Silicon Valley Leadership Group、Bay Area Council",
+    "3. **日系企業**: Japan Society of Northern California、JCCNC、Japan Innovation Campus、METI・JETRO資料",
+    "4. **スタートアップ**: Built In、Y Combinator、Berkeley SkyDeck、StartX、Alchemist",
+    "5. **住所の努力確認**: 各社公式サイトを優先。退去疑いは自動削除せず要確認にします。CrunchbaseとWellfoundは直接クロールしません。",
   );
   lines.push("");
   lines.push("## 出典");
   lines.push("");
   lines.push(
     "- Silicon Valley Leadership Group Member Companies: <https://www.svlg.org/member-companies/>",
+    "- Wikipedia Category:Companies based in Silicon Valley: <https://en.wikipedia.org/wiki/Category:Companies_based_in_Silicon_Valley>",
+    "- Wikipedia Category:Technology companies based in the San Francisco Bay Area: <https://en.wikipedia.org/wiki/Category:Technology_companies_based_in_the_San_Francisco_Bay_Area>",
+    "- Wikipedia Category:Universities and colleges in the San Francisco Bay Area: <https://en.wikipedia.org/wiki/Category:Universities_and_colleges_in_the_San_Francisco_Bay_Area>",
+    "- Wikipedia Category:Research institutes in the San Francisco Bay Area: <https://en.wikipedia.org/wiki/Category:Research_institutes_in_the_San_Francisco_Bay_Area>",
     "- Japan Society of Northern California Corporate Members: <https://www.usajapan.org/about/corporate-members/>",
     "- JETRO「ベイエリア進出日本企業調査報告書」: <https://www.jetro.go.jp/usa/topics/survey-report-on-japan-based-companies-operating-in-the-san-francisco-bay-area.html>",
     "- シリコンバレー・サンフランシスコ進出の大手日系企業52社【2024年以降】: <https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/>",
@@ -193,6 +204,7 @@ function render(entities, metadata) {
   lines.push("npm run audit -- --shard 0   # シャード0のデータ監査");
   lines.push("npm run audit -- --all       # 全件のデータ監査");
   lines.push("npm run audit -- --all --city-only # 都市中心データだけ住所探索");
+  lines.push("npm run discover:wikipedia    # Wikipediaから未掲載候補を生成（データへは自動登録しない）");
   lines.push('npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って住所探索', "```");
   lines.push("");
   lines.push("## 掲載データ一覧");

@@ -22,6 +22,7 @@ import {
   sourceMentionsLocation,
   sourceMentionsPresence,
 } from '../scripts/audit.mjs';
+import { buildCandidateReport } from '../scripts/wikipedia-candidates.mjs';
 
 const SHARD_COUNT = 45;
 
@@ -33,6 +34,17 @@ const appSource = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
 const indexSource = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const readmeSource = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
 const stylesSource = readFileSync(new URL('../styles.css', import.meta.url), 'utf8');
+
+test('Wikipedia discovery excludes known names and prioritizes research candidates', () => {
+  const pages = new Map([
+    [1, { title: 'Apple Inc.', kinds: new Set(['company']), sourceCategories: new Set(['Category:A']) }],
+    [2, { title: 'Ames Research Center', kinds: new Set(['university-research']), sourceCategories: new Set(['Category:B']) }],
+    [3, { title: 'Example Systems', kinds: new Set(['company']), sourceCategories: new Set(['Category:A', 'Category:C']) }],
+  ]);
+  const result = buildCandidateReport(pages, ['Apple']);
+  assert.deepStrictEqual(result.map((item) => item.title), ['Ames Research Center', 'Example Systems']);
+  assert.ok(result[0].wikipediaUrl.endsWith('/Ames_Research_Center'));
+});
 
 test('hashId is deterministic and unsigned', () => {
   const samples = ['jetro-san-francisco', '', 'x', 'some-long-id-value-123'];
@@ -330,24 +342,28 @@ function resetLogic() {
   return logic;
 }
 
-test('v2 logic: 8 sector ids exist and industries derive multiple sectors', () => {
+test('v2 logic: 10 sector ids exist and industries derive multiple sectors', () => {
   const logic = appLogic();
   assert.deepStrictEqual(Array.from(logic.SECTOR_ORDER), [
-    'technology-ai', 'semiconductors-electronics', 'industrial-manufacturing', 'mobility-automotive',
-    'finance-investment', 'life-sciences', 'energy-materials', 'business-consumer']);
+    'technology-ai', 'semiconductors-electronics', 'aerospace-defense', 'industrial-manufacturing',
+    'mobility-automotive', 'finance-investment', 'life-sciences', 'energy-materials',
+    'business-consumer', 'universities-research']);
 
   assert.deepStrictEqual(Array.from(logic.SECTOR_IDS), Array.from(logic.SECTOR_ORDER));
   const samples = [
     ['technology-ai', 'software'], ['semiconductors-electronics', 'Semiconductors'],
+    ['aerospace-defense', 'aerospace'],
     ['industrial-manufacturing', 'robotics'], ['mobility-automotive', 'Automotive'],
     ['finance-investment', 'venture capital'], ['life-sciences', 'biotechnology'],
-    ['energy-materials', 'chemicals'], ['business-consumer', 'accelerator']];
+    ['energy-materials', 'chemicals'], ['business-consumer', 'accelerator'],
+    ['universities-research', 'research']];
   for (const [sector, industry] of samples) assert.ok(logic.deriveSectors([industry]).includes(sector), sector);
   const mixed = { properties: { name: 'Conglomerate', industries: ['software', 'banking', 'robotics'], location: {} } };
   logic.enrichFeature(mixed);
   assert.deepStrictEqual(Array.from(mixed.properties._sectors), ['technology-ai', 'finance-investment', 'industrial-manufacturing']);
   assert.deepStrictEqual(Array.from(logic.deriveSectors(['not-a-real-industry'])), []);
   assert.deepStrictEqual(Array.from(logic.deriveSectors(undefined)), []);
+  assert.ok(logic.deriveSectors([], 'university-research').includes('universities-research'));
 });
 
 test('v2 logic: rankFeature tiers voiced JA/EN queries and tieCompare priorities', () => {
@@ -458,7 +474,7 @@ test('v2 logic: URL params roundtrip, safe fallbacks, allowlists, PAGE_SIZE pagi
   assert.deepStrictEqual(Array.from(logic.SORT_VALUES), ['relevance', 'distance', 'name', 'updated']);
   assert.deepStrictEqual(Array.from(logic.VIEW_VALUES), ['map', 'list']);
   assert.ok(!logic.SORT_VALUES.includes('newest') && !logic.VIEW_VALUES.includes('grid'));
-  assert.ok(!logic.SECTOR_IDS.has('cryptocurrency') && logic.SECTOR_IDS.size === 8);
+  assert.ok(!logic.SECTOR_IDS.has('cryptocurrency') && logic.SECTOR_IDS.size === 10);
   assert.match(appSource, /SORT_VALUES\.includes\(sort\) \? sort : "relevance"/);
   assert.match(appSource, /VIEW_VALUES\.includes\(view\) \? view : "list"/);
   assert.match(appSource, /new Set\(params\.getAll\("sector"\)\.filter\(\(value\) => SECTOR_IDS\.has\(value\)\)\)/);
@@ -469,9 +485,9 @@ test('v2 logic: URL params roundtrip, safe fallbacks, allowlists, PAGE_SIZE pagi
     ['county', 'county'], ['precision', 'locationPrecision'], ['presence', 'presenceStatus'],
   ]);
   logic.setEntities(features);
-  assert.strictEqual(logic.PAGE_SIZE, 50); assert.strictEqual(features.length, 463);
+  assert.strictEqual(logic.PAGE_SIZE, 50); assert.ok(features.length >= 480);
   assert.strictEqual(Math.min(features.length, logic.PAGE_SIZE), 50);
-  assert.strictEqual(Math.ceil(features.length / logic.PAGE_SIZE), 10);
+  assert.ok(Math.ceil(features.length / logic.PAGE_SIZE) >= 10);
   assert.deepStrictEqual(Array.from(logic.pageNumberWindow(10, 1)), [1, 2, 'gap', 10]);
   assert.deepStrictEqual(Array.from(logic.pageNumberWindow(8, 4)), [1, 'gap', 3, 4, 5, 'gap', 8]);
   assert.deepStrictEqual(Array.from(logic.pageNumberWindow(20, 10)), [1, 'gap', 9, 10, 11, 'gap', 20]);

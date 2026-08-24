@@ -56,12 +56,14 @@ const PRESENCE_STATUS_LABELS = {
 const SECTOR_ORDER = [
   "technology-ai",
   "semiconductors-electronics",
+  "aerospace-defense",
   "industrial-manufacturing",
   "mobility-automotive",
   "finance-investment",
   "life-sciences",
   "energy-materials",
   "business-consumer",
+  "universities-research",
 ];
 const SECTOR_IDS = new Set(SECTOR_ORDER);
 
@@ -75,6 +77,9 @@ const SECTOR_INDUSTRIES = {
   "semiconductors-electronics": new Set([
     "semiconductors", "electronics", "imaging", "optics",
     "scientific-instruments", "industrial-printing",
+  ]),
+  "aerospace-defense": new Set([
+    "aerospace", "defense", "space", "satellites", "aviation", "drones",
   ]),
   "industrial-manufacturing": new Set([
     "manufacturing", "industrial", "robotics", "automation", "construction",
@@ -101,6 +106,9 @@ const SECTOR_INDUSTRIES = {
     "recruiting", "streaming", "marketplace", "trade-promotion",
     "investment-promotion", "open-innovation", "corporate-innovation",
     "startup-education", "innovation",
+  ]),
+  "universities-research": new Set([
+    "education", "research", "university", "national-laboratory", "research-institute",
   ]),
 };
 
@@ -296,7 +304,7 @@ function filterValueLabel(group, value) {
   return String(value).replace(/-/g, " ");
 }
 
-function deriveSectors(industries) {
+function deriveSectors(industries, entityType) {
   const found = new Set();
   for (const raw of Array.isArray(industries) ? industries : []) {
     const token = normalizeIndustry(raw);
@@ -304,6 +312,7 @@ function deriveSectors(industries) {
       if (SECTOR_INDUSTRIES[sector].has(token)) found.add(sector);
     }
   }
+  if (entityType === "university-research") found.add("universities-research");
   return [...found];
 }
 
@@ -318,7 +327,7 @@ function enrichFeature(feature) {
       .filter(Boolean)
       .join(", "),
   );
-  props._sectors = deriveSectors(props.industries);
+  props._sectors = deriveSectors(props.industries, props.entityType);
   const parsed = Date.parse(props.updatedAt);
   props._updatedTs = Number.isFinite(parsed) ? parsed : 0;
 }

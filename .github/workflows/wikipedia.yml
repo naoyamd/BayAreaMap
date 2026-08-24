@@ -1,0 +1,28 @@
+name: Wikipedia candidate discovery
+
+on:
+  schedule:
+    - cron: '41 9 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wikipedia-candidate-discovery
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Discover candidates without changing map data
+        run: npm run discover:wikipedia
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wikipedia-candidates
+          path: data/wikipedia-candidates.json
+          retention-days: 60

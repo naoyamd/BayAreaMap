@@ -7,6 +7,7 @@
     "validate": "node scripts/validate.mjs",
     "test": "node --test test/audit.test.mjs && node scripts/validate.mjs",
     "audit": "node scripts/audit.mjs",
+    "discover:wikipedia": "node scripts/wikipedia-candidates.mjs",
     "readme": "node scripts/render-readme.mjs"
   }
 }

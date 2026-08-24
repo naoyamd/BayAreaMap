@@ -198,8 +198,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.1697,
-          37.4275
+          -122.1650217,
+          37.4308457
         ]
       },
       "properties": {
@@ -214,29 +214,29 @@
           "education",
           "research"
         ],
-        "profileSourceUrl": "https://www.stanford.edu/",
+        "profileSourceUrl": "https://www.stanford.edu/contact/",
         "location": {
           "address": "450 Jane Stanford Way",
           "city": "Stanford",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94305",
           "countryCode": "US",
           "county": "Santa Clara County",
           "precision": "address",
-          "coordinateSource": "legacy",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://www.stanford.edu/contact/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.stanford.edu/contact/"
         }
       }
     },
@@ -18800,14 +18800,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.7094,
-          38.3477
+          -122.6734192,
+          38.3398266
         ]
       },
       "properties": {
         "id": "sonoma-state-university",
         "name": "Sonoma State University",
-        "nameJa": "Sonoma State University",
+        "nameJa": "ソノマ州立大学",
         "website": "https://www.sonoma.edu/",
         "entityType": "university-research",
         "japanConnection": "none",
@@ -18816,29 +18816,29 @@
           "education",
           "research"
         ],
-        "profileSourceUrl": "https://www.sonoma.edu/",
+        "profileSourceUrl": "https://www.sonoma.edu/contact",
         "location": {
-          "address": null,
+          "address": "1801 East Cotati Avenue",
           "city": "Rohnert Park",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94928",
           "countryCode": "US",
           "county": "Sonoma County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://www.sonoma.edu/contact",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "review"
+          "checkedAt": "2026-08-24",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.sonoma.edu/contact"
         }
       }
     },
@@ -18847,14 +18847,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.2869,
-          38.2975
+          -122.272421800685,
+          38.271945288516
         ]
       },
       "properties": {
         "id": "napa-valley-college",
         "name": "Napa Valley College",
-        "nameJa": "Napa Valley College",
+        "nameJa": "ナパ・バレー・カレッジ",
         "website": "https://www.napavalley.edu/",
         "entityType": "university-research",
         "japanConnection": "none",
@@ -18865,25 +18865,25 @@
         ],
         "profileSourceUrl": "https://www.napavalley.edu/",
         "location": {
-          "address": null,
+          "address": "2277 Napa-Vallejo Highway",
           "city": "Napa",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94558",
           "countryCode": "US",
           "county": "Napa County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
           "sourceUrl": "https://www.napavalley.edu/",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "verified",
           "sourceUrl": "https://www.napavalley.edu/"
         }
@@ -18988,14 +18988,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.2712,
-          37.8715
+          -122.2714,
+          37.8719
         ]
       },
       "properties": {
         "id": "university-of-california-berkeley",
         "name": "University of California Berkeley",
-        "nameJa": "University of California Berkeley",
+        "nameJa": "カリフォルニア大学バークレー校",
         "website": "https://www.berkeley.edu/",
         "entityType": "university-research",
         "japanConnection": "none",
@@ -19004,29 +19004,29 @@
           "education",
           "research"
         ],
-        "profileSourceUrl": "https://www.berkeley.edu/",
+        "profileSourceUrl": "https://vca.berkeley.edu/contact",
         "location": {
-          "address": null,
+          "address": "200 California Hall",
           "city": "Berkeley",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94720",
           "countryCode": "US",
           "county": "Alameda County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://vca.berkeley.edu/contact",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "review"
+          "checkedAt": "2026-08-24",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://vca.berkeley.edu/contact"
         }
       }
     },
@@ -19082,14 +19082,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.2712,
-          37.8715
+          -122.253260954802,
+          37.877095344727
         ]
       },
       "properties": {
         "id": "lawrence-berkeley-national-laboratory",
         "name": "Lawrence Berkeley National Laboratory",
-        "nameJa": "Lawrence Berkeley National Laboratory",
+        "nameJa": "ローレンス・バークレー国立研究所",
         "website": "https://www.lbl.gov/",
         "entityType": "university-research",
         "japanConnection": "none",
@@ -19098,29 +19098,29 @@
           "research",
           "energy"
         ],
-        "profileSourceUrl": "https://www.lbl.gov/",
+        "profileSourceUrl": "https://foundry.lbl.gov/about/contact/",
         "location": {
-          "address": null,
+          "address": "One Cyclotron Road",
           "city": "Berkeley",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94720",
           "countryCode": "US",
           "county": "Alameda County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.lbl.gov/",
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://foundry.lbl.gov/about/contact/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "verified",
-          "sourceUrl": "https://www.lbl.gov/"
+          "sourceUrl": "https://foundry.lbl.gov/about/contact/"
         }
       }
     },
@@ -19129,14 +19129,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.1822,
-          37.4538
+          -122.1981235,
+          37.4213593
         ]
       },
       "properties": {
         "id": "slac-national-accelerator-laboratory",
         "name": "SLAC National Accelerator Laboratory",
-        "nameJa": "SLAC National Accelerator Laboratory",
+        "nameJa": "SLAC国立加速器研究所",
         "website": "https://www6.slac.stanford.edu/",
         "entityType": "university-research",
         "japanConnection": "none",
@@ -19145,29 +19145,29 @@
           "research",
           "science"
         ],
-        "profileSourceUrl": "https://www6.slac.stanford.edu/",
+        "profileSourceUrl": "https://www6.slac.stanford.edu/about/contact-us",
         "location": {
-          "address": null,
+          "address": "2575 Sand Hill Road",
           "city": "Menlo Park",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94025",
           "countryCode": "US",
           "county": "San Mateo County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://www6.slac.stanford.edu/about/contact-us",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-24",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www6.slac.stanford.edu/about/contact-us"
         }
       }
     },
@@ -21494,11 +21494,1063 @@
           "sourceUrl": "https://careers.bio-rad.com/privacy-policy-all"
         }
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.92148861997,
+          37.417904072856
+        ]
+      },
+      "properties": {
+        "id": "sandisk",
+        "name": "Sandisk",
+        "nameJa": "サンディスク",
+        "website": "https://www.sandisk.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "semiconductors",
+          "data-storage",
+          "electronics"
+        ],
+        "profileSourceUrl": "https://www.sandisk.com/en-ie/company/office-locations/",
+        "location": {
+          "address": "951 Sandisk Drive",
+          "city": "Milpitas",
+          "region": "CA",
+          "postalCode": "95035",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.sandisk.com/en-ie/company/office-locations/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.sandisk.com/en-ie/company/office-locations/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.977852799748,
+          37.37676147355
+        ]
+      },
+      "properties": {
+        "id": "applied-materials",
+        "name": "Applied Materials",
+        "nameJa": "アプライド マテリアルズ",
+        "website": "https://www.appliedmaterials.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "semiconductors",
+          "manufacturing",
+          "equipment"
+        ],
+        "profileSourceUrl": "https://www.appliedmaterials.com/us/en/contact/locations.html",
+        "location": {
+          "address": "3050 Bowers Avenue",
+          "city": "Santa Clara",
+          "region": "CA",
+          "postalCode": "95054",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.appliedmaterials.com/us/en/contact/locations.html",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.appliedmaterials.com/us/en/contact/locations.html"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.964505356503,
+          37.483841706834
+        ]
+      },
+      "properties": {
+        "id": "lam-research",
+        "name": "Lam Research",
+        "nameJa": "ラムリサーチ",
+        "website": "https://www.lamresearch.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "semiconductors",
+          "manufacturing",
+          "equipment"
+        ],
+        "profileSourceUrl": "https://www.lamresearch.com/company/locations/",
+        "location": {
+          "address": "4650 Cushing Parkway",
+          "city": "Fremont",
+          "region": "CA",
+          "postalCode": "94538",
+          "countryCode": "US",
+          "county": "Alameda County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.lamresearch.com/company/locations/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.lamresearch.com/company/locations/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.922084107886,
+          37.420978019464
+        ]
+      },
+      "properties": {
+        "id": "kla",
+        "name": "KLA",
+        "nameJa": "KLA",
+        "website": "https://www.kla.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "semiconductors",
+          "manufacturing",
+          "equipment"
+        ],
+        "profileSourceUrl": "https://www.kla.com/company/contact-us",
+        "location": {
+          "address": "One Technology Drive",
+          "city": "Milpitas",
+          "region": "CA",
+          "postalCode": "95035",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.kla.com/company/contact-us",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.kla.com/company/contact-us"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.919626599851,
+          37.397156363085
+        ]
+      },
+      "properties": {
+        "id": "cadence-design-systems",
+        "name": "Cadence Design Systems",
+        "nameJa": "ケイデンス・デザイン・システムズ",
+        "website": "https://www.cadence.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "semiconductors",
+          "software",
+          "eda"
+        ],
+        "profileSourceUrl": "https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/company/investors/form-10-k-2024.pdf",
+        "location": {
+          "address": "2655 Seely Avenue",
+          "city": "San Jose",
+          "region": "CA",
+          "postalCode": "95134",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/company/investors/form-10-k-2024.pdf",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/company/investors/form-10-k-2024.pdf"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.033153769948,
+          37.397794443817
+        ]
+      },
+      "properties": {
+        "id": "synopsys",
+        "name": "Synopsys",
+        "nameJa": "シノプシス",
+        "website": "https://www.synopsys.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "semiconductors",
+          "software",
+          "eda"
+        ],
+        "profileSourceUrl": "https://www.synopsys.com/company/contact-synopsys/office-locations.html",
+        "location": {
+          "address": "675 Almanor Avenue",
+          "city": "Sunnyvale",
+          "region": "CA",
+          "postalCode": "94085",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.synopsys.com/company/contact-synopsys/office-locations.html",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.synopsys.com/company/contact-synopsys/office-locations.html"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.979553646356,
+          37.3842044588
+        ]
+      },
+      "properties": {
+        "id": "palo-alto-networks",
+        "name": "Palo Alto Networks",
+        "nameJa": "パロアルトネットワークス",
+        "website": "https://www.paloaltonetworks.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "cybersecurity",
+          "enterprise-software"
+        ],
+        "profileSourceUrl": "https://www.paloaltonetworks.com/about-us/locations",
+        "location": {
+          "address": "3000 Tannery Way",
+          "city": "Santa Clara",
+          "region": "CA",
+          "postalCode": "95054",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.paloaltonetworks.com/about-us/locations",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.paloaltonetworks.com/about-us/locations"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.9820142,
+          37.4106827
+        ]
+      },
+      "properties": {
+        "id": "marvell-technology",
+        "name": "Marvell Technology",
+        "nameJa": "マーベル・テクノロジー",
+        "website": "https://www.marvell.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "semiconductors",
+          "data-infrastructure",
+          "networking"
+        ],
+        "profileSourceUrl": "https://www.marvell.com/company/directions.html",
+        "location": {
+          "address": "5488 Marvell Lane",
+          "city": "Santa Clara",
+          "region": "CA",
+          "postalCode": "95054",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://www.marvell.com/company/directions.html",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.marvell.com/company/directions.html"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.027784275095,
+          37.40646544943
+        ]
+      },
+      "properties": {
+        "id": "juniper-networks",
+        "name": "Juniper Networks",
+        "nameJa": "ジュニパーネットワークス",
+        "website": "https://www.juniper.net/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "networking",
+          "telecommunications"
+        ],
+        "profileSourceUrl": "https://www.juniper.net/us/en/company/contact-us/worldwide-development-offices.html",
+        "location": {
+          "address": "1133 Innovation Way",
+          "city": "Sunnyvale",
+          "region": "CA",
+          "postalCode": "94089",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.juniper.net/us/en/company/contact-us/worldwide-development-offices.html",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.juniper.net/us/en/company/contact-us/worldwide-development-offices.html"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.94779139682,
+          37.31916634218
+        ]
+      },
+      "properties": {
+        "id": "netapp",
+        "name": "NetApp",
+        "nameJa": "ネットアップ",
+        "website": "https://www.netapp.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "data-storage",
+          "cloud",
+          "enterprise-software"
+        ],
+        "profileSourceUrl": "https://www.netapp.com/company/legal/privacy-policy/",
+        "location": {
+          "address": "3060 Olsen Drive",
+          "city": "San Jose",
+          "region": "CA",
+          "postalCode": "95128",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.netapp.com/company/legal/privacy-policy/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.netapp.com/company/legal/privacy-policy/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.149693370247,
+          37.413842857373
+        ]
+      },
+      "properties": {
+        "id": "hp-inc",
+        "name": "HP Inc.",
+        "nameJa": "HP",
+        "website": "https://www.hp.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "computing",
+          "electronics",
+          "services"
+        ],
+        "profileSourceUrl": "https://www.hp.com/us-en/contact-hp/office-locations.html",
+        "location": {
+          "address": "1501 Page Mill Road",
+          "city": "Palo Alto",
+          "region": "CA",
+          "postalCode": "94304",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.hp.com/us-en/contact-hp/office-locations.html",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.hp.com/us-en/contact-hp/office-locations.html"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.378113990204,
+          37.657114019384
+        ]
+      },
+      "properties": {
+        "id": "genentech",
+        "name": "Genentech",
+        "nameJa": "ジェネンテック",
+        "website": "https://www.gene.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "biotechnology",
+          "life-sciences"
+        ],
+        "profileSourceUrl": "https://www.gene.com/terms-conditions",
+        "location": {
+          "address": "1 DNA Way",
+          "city": "South San Francisco",
+          "region": "CA",
+          "postalCode": "94080",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.gene.com/terms-conditions",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.gene.com/terms-conditions"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.282903870484,
+          37.566410686441
+        ]
+      },
+      "properties": {
+        "id": "gilead-sciences",
+        "name": "Gilead Sciences",
+        "nameJa": "ギリアド・サイエンシズ",
+        "website": "https://www.gilead.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "biotechnology",
+          "life-sciences"
+        ],
+        "profileSourceUrl": "https://www.gilead.com/contact-us",
+        "location": {
+          "address": "333 Lakeside Drive",
+          "city": "Foster City",
+          "region": "CA",
+          "postalCode": "94404",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.gilead.com/contact-us",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.gilead.com/contact-us"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.003635540844,
+          37.373861832252
+        ]
+      },
+      "properties": {
+        "id": "intuitive-surgical",
+        "name": "Intuitive Surgical",
+        "nameJa": "インテュイティブ・サージカル",
+        "website": "https://www.intuitive.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "medical-devices",
+          "robotics",
+          "healthcare"
+        ],
+        "profileSourceUrl": "https://www.intuitive.com/en-us/about-us/contact/office-locations",
+        "location": {
+          "address": "1020 Kifer Road",
+          "city": "Sunnyvale",
+          "region": "CA",
+          "postalCode": "94086",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.intuitive.com/en-us/about-us/contact/office-locations",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.intuitive.com/en-us/about-us/contact/office-locations"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0298604,
+          37.4153625
+        ]
+      },
+      "properties": {
+        "id": "lockheed-martin-space",
+        "name": "Lockheed Martin Space",
+        "nameJa": "ロッキード・マーティン・スペース",
+        "website": "https://www.lockheedmartin.com/en-us/who-we-are/business-areas/space.html",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "large",
+        "industries": [
+          "aerospace",
+          "defense",
+          "space",
+          "manufacturing"
+        ],
+        "profileSourceUrl": "https://www.lockheedmartin.com/en-us/careers/locations/sunnyvale-california.html",
+        "location": {
+          "address": "1111 Lockheed Martin Way",
+          "city": "Sunnyvale",
+          "region": "CA",
+          "postalCode": "94089",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://www.lockheedmartin.com/en-us/careers/locations/sunnyvale-california.html",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.lockheedmartin.com/en-us/careers/locations/sunnyvale-california.html"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0622,
+          37.4156
+        ]
+      },
+      "properties": {
+        "id": "nasa-ames-research-center",
+        "name": "NASA Ames Research Center",
+        "nameJa": "NASAエイムズ研究センター",
+        "website": "https://www.nasa.gov/ames/",
+        "entityType": "university-research",
+        "japanConnection": "none",
+        "scale": "not-applicable",
+        "industries": [
+          "aerospace",
+          "space",
+          "research"
+        ],
+        "profileSourceUrl": "https://www.nasa.gov/archives/arc-archives/",
+        "location": {
+          "address": "Moffett Boulevard",
+          "city": "Moffett Field",
+          "region": "CA",
+          "postalCode": "94035",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://www.nasa.gov/archives/arc-archives/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.nasa.gov/archives/arc-archives/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.706302905562,
+          37.679859135136
+        ]
+      },
+      "properties": {
+        "id": "lawrence-livermore-national-laboratory",
+        "name": "Lawrence Livermore National Laboratory",
+        "nameJa": "ローレンス・リバモア国立研究所",
+        "website": "https://www.llnl.gov/",
+        "entityType": "university-research",
+        "japanConnection": "none",
+        "scale": "not-applicable",
+        "industries": [
+          "research",
+          "science",
+          "energy",
+          "defense"
+        ],
+        "profileSourceUrl": "https://www.llnl.gov/about/contact",
+        "location": {
+          "address": "7000 East Avenue",
+          "city": "Livermore",
+          "region": "CA",
+          "postalCode": "94550",
+          "countryCode": "US",
+          "county": "Alameda County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.llnl.gov/about/contact",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.llnl.gov/about/contact"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.705497780028,
+          37.679742437972
+        ]
+      },
+      "properties": {
+        "id": "sandia-national-laboratories-california",
+        "name": "Sandia National Laboratories, California",
+        "nameJa": "サンディア国立研究所（カリフォルニア）",
+        "website": "https://www.sandia.gov/",
+        "entityType": "university-research",
+        "japanConnection": "none",
+        "scale": "not-applicable",
+        "industries": [
+          "research",
+          "science",
+          "energy",
+          "defense"
+        ],
+        "profileSourceUrl": "https://www.sandia.gov/contact-us/",
+        "location": {
+          "address": "7011 East Avenue",
+          "city": "Livermore",
+          "region": "CA",
+          "postalCode": "94550",
+          "countryCode": "US",
+          "county": "Alameda County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.sandia.gov/contact-us/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.sandia.gov/contact-us/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.176907070274,
+          37.458285267091
+        ]
+      },
+      "properties": {
+        "id": "sri-international",
+        "name": "SRI International",
+        "nameJa": "SRIインターナショナル",
+        "website": "https://www.sri.com/",
+        "entityType": "university-research",
+        "japanConnection": "none",
+        "scale": "not-applicable",
+        "industries": [
+          "research",
+          "technology",
+          "artificial-intelligence"
+        ],
+        "profileSourceUrl": "https://www.sri.com/contact/",
+        "location": {
+          "address": "333 Ravenswood Avenue",
+          "city": "Menlo Park",
+          "region": "CA",
+          "postalCode": "94025",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.sri.com/contact/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.sri.com/contact/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.881225,
+          37.3351902
+        ]
+      },
+      "properties": {
+        "id": "san-jose-state-university",
+        "name": "San José State University",
+        "nameJa": "サンノゼ州立大学",
+        "website": "https://www.sjsu.edu/",
+        "entityType": "university-research",
+        "japanConnection": "none",
+        "scale": "not-applicable",
+        "industries": [
+          "education",
+          "research"
+        ],
+        "profileSourceUrl": "https://blogs.sjsu.edu/wsq/about/",
+        "location": {
+          "address": "One Washington Square",
+          "city": "San Jose",
+          "region": "CA",
+          "postalCode": "95192",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://blogs.sjsu.edu/wsq/about/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://blogs.sjsu.edu/wsq/about/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.933748428648,
+          37.345374774488
+        ]
+      },
+      "properties": {
+        "id": "santa-clara-university",
+        "name": "Santa Clara University",
+        "nameJa": "サンタクララ大学",
+        "website": "https://www.scu.edu/",
+        "entityType": "university-research",
+        "japanConnection": "none",
+        "scale": "not-applicable",
+        "industries": [
+          "education",
+          "research"
+        ],
+        "profileSourceUrl": "https://www.scu.edu/admitted/pvdmap/",
+        "location": {
+          "address": "500 El Camino Real",
+          "city": "Santa Clara",
+          "region": "CA",
+          "postalCode": "95053",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.scu.edu/admitted/pvdmap/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.scu.edu/admitted/pvdmap/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.9766651,
+          37.3797395
+        ]
+      },
+      "properties": {
+        "id": "uc-santa-cruz-silicon-valley-campus",
+        "name": "UC Santa Cruz Silicon Valley Campus",
+        "nameJa": "カリフォルニア大学サンタクルーズ校シリコンバレーキャンパス",
+        "website": "https://siliconvalley.ucsc.edu/",
+        "entityType": "university-research",
+        "japanConnection": "none",
+        "scale": "not-applicable",
+        "industries": [
+          "education",
+          "research"
+        ],
+        "profileSourceUrl": "https://siliconvalley.ucsc.edu/about/contact-us/",
+        "location": {
+          "address": "3175 Bowers Avenue",
+          "city": "Santa Clara",
+          "region": "CA",
+          "postalCode": "95054",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://siliconvalley.ucsc.edu/about/contact-us/",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://siliconvalley.ucsc.edu/about/contact-us/"
+        }
+      }
     }
   ],
   "metadata": {
     "schemaVersion": 3,
-    "updatedAt": "2026-08-23",
+    "updatedAt": "2026-08-24",
     "coordinateSystem": "WGS84 / GeoJSON [longitude, latitude]"
   }
 }
