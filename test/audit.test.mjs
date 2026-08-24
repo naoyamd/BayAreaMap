@@ -308,7 +308,8 @@ function appLogic() {
   runInNewContext(
     `${appSource}\n;globalThis.__logic = {\n` +
       '  normText, PAGE_SIZE, SECTOR_ORDER, SECTOR_IDS, SORT_VALUES, VIEW_VALUES, PARAM_GROUPS, state,\n' +
-      '  deriveSectors, enrichFeature, rankFeature, matchesFilterGroups, matchesSectors, inArea, tieCompare,\n' +
+      '  PRESET_VALUES, SP500_ENTITY_IDS, UNICORN_ENTITY_IDS, deriveSectors, enrichFeature, rankFeature,\n' +
+      '  matchesCompanyPreset, matchesFilterGroups, matchesSectors, inArea, tieCompare,\n' +
       '  pageNumberWindow, serializeState, parseArea, parseCenter, computeVisible, sortVisible, setEntities(value) { entities = value; },\n' +
       '  setMap(value) { map = value; }, setMarkerLayer(value) { markerLayer = value; },\n' +
       '  setTownLayer(value) { townMarkerLayer = value; }, setLegLayer(value) { overlapLegLayer = value; },\n' +
@@ -323,7 +324,7 @@ function appLogic() {
 
 function resetLogic() {
   const logic = appLogic();
-  Object.assign(logic.state, { q: '', sort: 'relevance', area: null, entityId: null, view: 'list' });
+  Object.assign(logic.state, { q: '', sort: 'relevance', preset: null, area: null, entityId: null, view: 'list' });
   logic.state.sectors.clear();
   for (const selected of Object.values(logic.state.filters)) selected.clear();
   return logic;
@@ -430,7 +431,9 @@ test('v2 logic: URL params roundtrip, safe fallbacks, allowlists, PAGE_SIZE pagi
   logic.state.sectors.add('technology-ai'); logic.state.sectors.add('finance-investment');
   logic.state.filters.industries.add('software'); logic.state.filters.industries.add('robotics');
   logic.state.filters.entityType.add('company');
+  logic.state.preset = 'sp500';
   const params = logic.serializeState();
+  assert.strictEqual(params.get('preset'), 'sp500');
   assert.deepStrictEqual(Array.from(params.getAll('sector')).sort(), ['finance-investment', 'technology-ai']);
   assert.deepStrictEqual(Array.from(params.getAll('industry')).sort(), ['robotics', 'software']);
   assert.deepStrictEqual(Array.from(params.getAll('type')), ['company']);
@@ -474,6 +477,29 @@ test('v2 logic: URL params roundtrip, safe fallbacks, allowlists, PAGE_SIZE pagi
   assert.deepStrictEqual(Array.from(logic.pageNumberWindow(20, 10)), [1, 'gap', 9, 10, 11, 'gap', 20]);
   assert.deepStrictEqual(Array.from(logic.pageNumberWindow(5, 2)), [1, 2, 3, 4, 5]);
   assert.deepStrictEqual(Array.from(logic.pageNumberWindow(20, 20)), [1, 'gap', 19, 20]);
+});
+
+test('v5 company presets filter useful cohorts and details link addresses to Google Maps', () => {
+  const logic = resetLogic();
+  const byId = new Map(features.map((feature) => [feature.properties.id, feature]));
+  assert.deepStrictEqual(Array.from(logic.PRESET_VALUES), ['japanese', 'sp500', 'unicorn']);
+  for (const ids of [logic.SP500_ENTITY_IDS, logic.UNICORN_ENTITY_IDS]) {
+    assert.ok(ids.size >= 20);
+    for (const id of ids) assert.ok(byId.has(id), `unknown preset entity ${id}`);
+  }
+  logic.state.preset = 'japanese';
+  assert.strictEqual(logic.matchesCompanyPreset(byId.get('sony')), true);
+  assert.strictEqual(logic.matchesCompanyPreset(byId.get('jetro-san-francisco')), false);
+  logic.state.preset = 'sp500';
+  assert.strictEqual(logic.matchesCompanyPreset(byId.get('apple')), true);
+  assert.strictEqual(logic.matchesCompanyPreset(byId.get('sf-openai')), false);
+  logic.state.preset = 'unicorn';
+  assert.strictEqual(logic.matchesCompanyPreset(byId.get('sf-openai')), true);
+  assert.strictEqual(logic.matchesCompanyPreset(byId.get('apple')), false);
+  assert.match(indexSource, /Company groups[\s\S]*Japanese companies[\s\S]*S&amp;P 500 companies[\s\S]*Unicorn startups/);
+  assert.match(appSource, /addressLine\.append\(actionLink\(mapsUrl, address\)\)/);
+  assert.match(appSource, /params\.set\("preset", state\.preset\)/);
+  assert.match(appSource, /PRESET_VALUES\.has\(preset\) \? preset : null/);
 });
 
 test('v2 static: debounce, chunked cluster loading, marker cache, sliced results, lazy logos', () => {

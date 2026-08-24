@@ -116,6 +116,22 @@ const PARAM_GROUPS = [
   ["presence", "presenceStatus"],
 ];
 
+const PRESET_VALUES = new Set(["japanese", "sp500", "unicorn"]);
+// Curated runtime cohorts; refresh these IDs with the monthly data audit.
+const SP500_ENTITY_IDS = new Set([
+  "sf-accenture", "sf-adobe", "sf-airbnb", "amd", "sf-amazon-web-services", "apple",
+  "cisco", "doordash", "ebay", "google", "intel", "intuit", "sf-mckesson", "meta",
+  "sf-microsoft", "nvidia", "netflix", "oracle", "paypal", "sf-salesforce", "servicenow",
+  "tesla-fremont", "sf-uber",
+]);
+const UNICORN_ENTITY_IDS = new Set([
+  "sf-algolia", "sf-alpha-sense", "anthropic", "sf-appdirect", "sf-automattic", "sf-betterup",
+  "sf-checkr", "sf-collective-health", "databricks", "sf-docker", "sf-envoy", "sf-flexport",
+  "sf-fundbox", "sf-gusto", "sf-intercom", "sf-lattice", "sf-mapbox", "sf-mux", "sf-openai",
+  "sf-plaid", "sf-sentry", "sf-sift-science", "sf-stripe", "sf-thumbtack", "sf-turo",
+  "sf-upgrade", "sf-webflow",
+]);
+
 const FILTER_FIELDSETS = {
   japanConnection: "filter-japan",
   entityType: "filter-type",
@@ -160,6 +176,7 @@ const allowed = {
 const state = {
   q: "",
   sort: "relevance",
+  preset: null,
   sectors: new Set(),
   filters: {},
   area: null,
@@ -584,6 +601,15 @@ function matchesSectors(props) {
   return props._sectors.some((sector) => state.sectors.has(sector));
 }
 
+function matchesCompanyPreset(feature) {
+  if (!state.preset) return true;
+  const props = feature.properties;
+  if (state.preset === "japanese") {
+    return props.japanConnection === "japan-headquartered" && ["company", "vc-cvc"].includes(props.entityType);
+  }
+  return (state.preset === "sp500" ? SP500_ENTITY_IDS : UNICORN_ENTITY_IDS).has(props.id);
+}
+
 function inArea(feature) {
   const area = state.area;
   if (!area) return true;
@@ -596,6 +622,7 @@ function computeVisible() {
   return entities.filter((feature) => {
     const props = feature.properties;
     if (query && rankFeature(props, query) === Number.POSITIVE_INFINITY) return false;
+    if (!matchesCompanyPreset(feature)) return false;
     if (!matchesSectors(props)) return false;
     if (!matchesFilterGroups(props)) return false;
     if (!inArea(feature)) return false;
@@ -908,6 +935,8 @@ function populateDetail(feature) {
   const address = [location.address, location.city, location.region, location.postalCode]
     .filter(Boolean)
     .join(", ");
+  const mapsQuery = encodeURIComponent([props.name, address].filter(Boolean).join(" "));
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
   el.detailContent.replaceChildren();
 
   const heading = document.createElement("h2");
@@ -926,7 +955,7 @@ function populateDetail(feature) {
     .join(" · ");
   const addressLine = document.createElement("p");
   addressLine.className = "detail-address";
-  addressLine.textContent = address;
+  addressLine.append(actionLink(mapsUrl, address));
   el.detailContent.append(categoryLine, addressLine);
 
   const actions = document.createElement("div");
@@ -943,8 +972,7 @@ function populateDetail(feature) {
     pushHistory();
   });
   actions.append(showMapButton);
-  const mapsQuery = encodeURIComponent([props.name, address].filter(Boolean).join(" "));
-  actions.append(actionLink(`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`, "Open in Google Maps"));
+  actions.append(actionLink(mapsUrl, "Open in Google Maps"));
   const [lon, lat] = feature.geometry.coordinates;
   actions.append(actionLink(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`, "Get directions"));
   const copyButton = document.createElement("button");
@@ -1038,6 +1066,7 @@ function serializeState() {
   const query = state.q.trim();
   if (query) params.set("q", query);
   if (state.sort !== "relevance") params.set("sort", state.sort);
+  if (state.preset) params.set("preset", state.preset);
   for (const value of state.sectors) params.append("sector", value);
   for (const [param, group] of PARAM_GROUPS) {
     for (const value of state.filters[group]) params.append(param, value);
@@ -1101,6 +1130,8 @@ function applySnapshot(entry) {
   const sort = params.get("sort");
   state.sort = SORT_VALUES.includes(sort) ? sort : "relevance";
   el.sort.value = state.sort;
+  const preset = params.get("preset");
+  state.preset = PRESET_VALUES.has(preset) ? preset : null;
   state.sectors = new Set(params.getAll("sector").filter((value) => SECTOR_IDS.has(value)));
   for (const [param, group] of PARAM_GROUPS) {
     state.filters[group] = new Set(params.getAll(param).filter((value) => allowed[group].has(value)));
@@ -1116,6 +1147,7 @@ function applySnapshot(entry) {
   state.z = center.z;
   syncFilterCheckboxes();
   syncSectorButtons();
+  syncPresetButtons();
   syncAreaButtons();
   currentPage = 1;
   if (ready && map) map.setView([state.lat, state.lng], state.z, { animate: false });
@@ -1139,6 +1171,12 @@ function syncAreaButtons() {
 function syncSectorButtons() {
   for (const button of document.querySelectorAll("[data-sector]")) {
     button.setAttribute("aria-pressed", state.sectors.has(button.dataset.sector) ? "true" : "false");
+  }
+}
+
+function syncPresetButtons() {
+  for (const button of document.querySelectorAll("[data-preset-contact]")) {
+    button.setAttribute("aria-pressed", state.preset === button.dataset.presetContact ? "true" : "false");
   }
 }
 
@@ -1203,6 +1241,7 @@ function buildFilterControls() {
 }
 
 function clearAllFilters() {
+  state.preset = null;
   state.sectors.clear();
   for (const selected of Object.values(state.filters)) selected.clear();
   state.area = null;
@@ -1210,6 +1249,7 @@ function clearAllFilters() {
   el.search.value = "";
   syncFilterCheckboxes();
   syncSectorButtons();
+  syncPresetButtons();
   syncAreaButtons();
   areaButtonRevealed = false;
   el.searchArea.hidden = true;
@@ -1325,24 +1365,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   for (const button of document.querySelectorAll("[data-preset-contact]")) {
     button.addEventListener("click", () => {
-      const query = button.textContent.trim();
-      state.q = query;
-      el.search.value = query;
+      const preset = button.dataset.presetContact;
+      state.preset = state.preset === preset ? null : preset;
+      syncPresetButtons();
       currentPage = 1;
       rerender();
-      const best = visibleEntities[0];
-      if (best) {
-        state.entityId = best.properties.id;
-        syncSelectionUI();
-        focusEntity(best);
-        const card =
-          el.results.querySelector(".result-card.selected") ||
-          el.results.querySelector(".result-card");
-        if (card) {
-          card.focus();
-          card.scrollIntoView({ block: "nearest" });
-        }
-      }
       pushHistory();
     });
   }
