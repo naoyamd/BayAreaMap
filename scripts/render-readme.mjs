@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const DATA_PATH = fileURLToPath(new URL("../data/entities.geojson", import.meta.url));
 const README_PATH = fileURLToPath(new URL("../README.md", import.meta.url));
-const SITE_URL = "https://naoyamd.github.io/BayAreaMap/";
+const SITE_URL = "https://map.nightly.dedyn.io/";
 
 const MFG_INDUSTRIES = new Set([
   "manufacturing",
@@ -164,19 +164,19 @@ function render(entities, metadata) {
   lines.push("## Wikipedia候補探索（月次）");
   lines.push("");
   lines.push(
-    "Wikipediaの Silicon Valley企業、Bay Areaテクノロジー企業、大学、研究機関カテゴリを月1回だけ直列取得し、未掲載候補のJSONをGitHub Actions artifactへ保存します。Wikipediaは候補発見にだけ使い、自動登録はしません。現役で、地域的・産業的な重要性が高い大企業／上場企業／主要スタートアップ／大学・研究機関を選び、公式サイトで現住所を確認できたものだけGeoJSONへ採用します。",
+    "Wikipediaの Silicon Valley企業、Bay Areaテクノロジー企業、米国の無人航空機メーカー、大学、研究機関カテゴリを月1回だけ直列取得し、未掲載候補のJSONをGitHub Actions artifactへ保存します。Wikipediaは候補発見にだけ使い、自動登録はしません。現役で、地域的・産業的な重要性が高い大企業／上場企業／主要スタートアップ／大学・研究機関を選び、公式サイトで現住所を確認できたものだけGeoJSONへ採用します。",
   );
   lines.push("");
   lines.push("## ホスティング");
   lines.push("");
   lines.push(
-    `現在は GitHub Pages（${SITE_URL}）で公開されています。将来の独自ドメイン移行に備え、CSS/JS/データはすべて相対パスで参照しています。`,
+    `独自ドメイン ${SITE_URL} を割り当てた GitHub Pages で公開しています。CSS/JS/データはすべて相対パスで参照しています。`,
   );
   lines.push("");
   lines.push("## 掲載候補の探索順");
   lines.push("");
   lines.push(
-    "1. **候補発見**: WikipediaのSilicon Valley企業・Bay Areaテクノロジー企業・大学・研究機関カテゴリ（月次・直列・自動登録なし）",
+    "1. **候補発見**: WikipediaのSilicon Valley企業・Bay Areaテクノロジー企業・米国無人航空機メーカー・大学・研究機関カテゴリ（月次・直列・自動登録なし）",
     "2. **大手・地域主要企業**: Silicon Valley Leadership Group、Bay Area Council",
     "3. **日系企業**: Japan Society of Northern California、JCCNC、Japan Innovation Campus、METI・JETRO資料",
     "4. **スタートアップ**: Built In、Y Combinator、Berkeley SkyDeck、StartX、Alchemist",
@@ -189,6 +189,7 @@ function render(entities, metadata) {
     "- Silicon Valley Leadership Group Member Companies: <https://www.svlg.org/member-companies/>",
     "- Wikipedia Category:Companies based in Silicon Valley: <https://en.wikipedia.org/wiki/Category:Companies_based_in_Silicon_Valley>",
     "- Wikipedia Category:Technology companies based in the San Francisco Bay Area: <https://en.wikipedia.org/wiki/Category:Technology_companies_based_in_the_San_Francisco_Bay_Area>",
+    "- Wikipedia Category:Unmanned aerial vehicle manufacturers of the United States: <https://en.wikipedia.org/wiki/Category:Unmanned_aerial_vehicle_manufacturers_of_the_United_States>",
     "- Wikipedia Category:Universities and colleges in the San Francisco Bay Area: <https://en.wikipedia.org/wiki/Category:Universities_and_colleges_in_the_San_Francisco_Bay_Area>",
     "- Wikipedia Category:Research institutes in the San Francisco Bay Area: <https://en.wikipedia.org/wiki/Category:Research_institutes_in_the_San_Francisco_Bay_Area>",
     "- Japan Society of Northern California Corporate Members: <https://www.usajapan.org/about/corporate-members/>",

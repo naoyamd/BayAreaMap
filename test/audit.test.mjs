@@ -34,6 +34,7 @@ const appSource = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
 const indexSource = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const readmeSource = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
 const stylesSource = readFileSync(new URL('../styles.css', import.meta.url), 'utf8');
+const wikipediaSource = readFileSync(new URL('../scripts/wikipedia-candidates.mjs', import.meta.url), 'utf8');
 
 test('Wikipedia discovery excludes known names and prioritizes research candidates', () => {
   const pages = new Map([
@@ -44,6 +45,7 @@ test('Wikipedia discovery excludes known names and prioritizes research candidat
   const result = buildCandidateReport(pages, ['Apple']);
   assert.deepStrictEqual(result.map((item) => item.title), ['Ames Research Center', 'Example Systems']);
   assert.ok(result[0].wikipediaUrl.endsWith('/Ames_Research_Center'));
+  assert.match(wikipediaSource, /Category:Unmanned aerial vehicle manufacturers of the United States/);
 });
 
 test('hashId is deterministic and unsigned', () => {
@@ -291,6 +293,8 @@ test('site chrome is English, Japanese company names remain, and README stays Ja
   assert.doesNotMatch(appSource, /[ぁ-んァ-ヶ一-龠々]/);
   assert.match(appSource, /nameJaLine\.lang = "ja"/);
   assert.match(readmeSource, /^# ベイエリア企業マップ/m);
+  assert.match(readmeSource, /公開URL: <https:\/\/map\.nightly\.dedyn\.io\/>/);
+  assert.match(indexSource, /<h1><a href="\.\/">Bay Area Company Map<\/a><\/h1>/);
 });
 
 test('every entity has a logo source ladder with a cached fallback', () => {
@@ -364,6 +368,31 @@ test('v2 logic: 10 sector ids exist and industries derive multiple sectors', () 
   assert.deepStrictEqual(Array.from(logic.deriveSectors(['not-a-real-industry'])), []);
   assert.deepStrictEqual(Array.from(logic.deriveSectors(undefined)), []);
   assert.ok(logic.deriveSectors([], 'university-research').includes('universities-research'));
+});
+
+test('aerospace retrofits and verified Bay Area drone companies stay covered', () => {
+  const logic = appLogic();
+  const byId = new Map(features.map((feature) => [feature.properties.id, feature]));
+  const aerospaceIds = [
+    'ihi-rakunest', 'mitsubishi-electric-us', 'mitsubishi-heavy-industries-america',
+    'kawasaki-heavy-industries-silicon-valley', 'toray-advanced-composites',
+    'sf-dronedeploy', 'sf-planet',
+  ];
+  for (const id of aerospaceIds) {
+    const feature = byId.get(id);
+    assert.ok(feature, `missing ${id}`);
+    assert.ok(logic.deriveSectors(feature.properties.industries).includes('aerospace-defense'), id);
+  }
+
+  const addedDroneIds = ['skydio', 'zipline', 'matternet', 'pyka', 'elroy-air', 'wing-aviation', 'saildrone'];
+  assert.ok(features.filter((feature) => feature.properties.industries.includes('drones')).length >= 8);
+  for (const id of addedDroneIds) {
+    const feature = byId.get(id);
+    assert.ok(feature, `missing ${id}`);
+    assert.strictEqual(feature.properties.location.precision, 'address', id);
+    assert.strictEqual(feature.properties.location.status, 'matched', id);
+    assert.strictEqual(feature.properties.presenceCheck.status, 'verified', id);
+  }
 });
 
 test('v2 logic: rankFeature tiers voiced JA/EN queries and tieCompare priorities', () => {

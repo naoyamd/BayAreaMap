@@ -1481,7 +1481,10 @@
         "scale": "large",
         "industries": [
           "electronics",
-          "manufacturing"
+          "manufacturing",
+          "aerospace",
+          "space",
+          "satellites"
         ],
         "profileSourceUrl": "https://us.mitsubishielectric.com/",
         "location": {
@@ -1501,7 +1504,7 @@
           "checkedAt": "2026-08-23",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
           "checkedAt": null,
           "status": "unchecked",
@@ -1528,7 +1531,10 @@
         "scale": "large",
         "industries": [
           "industrial",
-          "manufacturing"
+          "manufacturing",
+          "aerospace",
+          "defense",
+          "space"
         ],
         "profileSourceUrl": "https://www.mhi.com/",
         "location": {
@@ -1548,7 +1554,7 @@
           "checkedAt": "2026-08-23",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
@@ -1575,7 +1581,10 @@
         "scale": "large",
         "industries": [
           "industrial",
-          "manufacturing"
+          "manufacturing",
+          "aerospace",
+          "defense",
+          "space"
         ],
         "profileSourceUrl": "https://www.ihi.co.jp/en/",
         "location": {
@@ -1595,7 +1604,7 @@
           "checkedAt": "2026-08-23",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
           "checkedAt": "2026-08-23",
           "status": "verified",
@@ -4982,7 +4991,11 @@
         "japanConnection": "none",
         "scale": "startup",
         "industries": [
-          "technology"
+          "technology",
+          "drones",
+          "software",
+          "data",
+          "imaging"
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
@@ -5002,7 +5015,7 @@
           "checkedAt": null,
           "status": "unchecked"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
           "checkedAt": null,
           "status": "unchecked",
@@ -10597,7 +10610,11 @@
         "japanConnection": "none",
         "scale": "startup",
         "industries": [
-          "technology"
+          "technology",
+          "space",
+          "satellites",
+          "imaging",
+          "data"
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
@@ -10617,7 +10634,7 @@
           "checkedAt": null,
           "status": "unchecked"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
           "checkedAt": null,
           "status": "unchecked",
@@ -18626,7 +18643,8 @@
         "scale": "large",
         "industries": [
           "materials",
-          "manufacturing"
+          "manufacturing",
+          "aerospace"
         ],
         "profileSourceUrl": "https://www.toraytac.com/",
         "location": {
@@ -18646,7 +18664,7 @@
           "checkedAt": "2026-08-23",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-08-24",
         "presenceCheck": {
           "checkedAt": null,
           "status": "unchecked",
@@ -19661,7 +19679,9 @@
         "scale": "large",
         "industries": [
           "robotics",
-          "manufacturing"
+          "manufacturing",
+          "aerospace",
+          "defense"
         ],
         "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
         "location": {
@@ -19686,7 +19706,7 @@
           "checkedAt": "2026-08-23",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23"
+        "updatedAt": "2026-08-24"
       }
     },
     {
@@ -22544,6 +22564,356 @@
           "checkedAt": "2026-08-24",
           "status": "verified",
           "sourceUrl": "https://siliconvalley.ucsc.edu/about/contact-us/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.332908522664,
+          37.53318680516
+        ]
+      },
+      "properties": {
+        "id": "skydio",
+        "name": "Skydio",
+        "nameJa": "スカイディオ",
+        "website": "https://www.skydio.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "growth",
+        "industries": [
+          "drones",
+          "aerospace",
+          "robotics",
+          "artificial-intelligence",
+          "defense"
+        ],
+        "profileSourceUrl": "https://en.wikipedia.org/wiki/Skydio",
+        "location": {
+          "address": "3000 Clearview Way",
+          "city": "San Mateo",
+          "region": "CA",
+          "postalCode": "94402",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.skydio.com/cookie-list",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.skydio.com/cookie-list"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.402144619684,
+          37.64545515474
+        ]
+      },
+      "properties": {
+        "id": "zipline",
+        "name": "Zipline",
+        "nameJa": "ジップライン",
+        "website": "https://www.zipline.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "growth",
+        "industries": [
+          "drones",
+          "aerospace",
+          "delivery",
+          "logistics",
+          "robotics"
+        ],
+        "profileSourceUrl": "https://en.wikipedia.org/wiki/Zipline_(drone_delivery_company)",
+        "location": {
+          "address": "333 Corey Way",
+          "city": "South San Francisco",
+          "region": "CA",
+          "postalCode": "94080",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.zipline.com/privacy-policy",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.zipline.com/privacy-policy"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.052971282125,
+          37.390012892418
+        ]
+      },
+      "properties": {
+        "id": "matternet",
+        "name": "Matternet",
+        "nameJa": "マターネット",
+        "website": "https://www.matternet.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "growth",
+        "industries": [
+          "drones",
+          "aerospace",
+          "delivery",
+          "logistics",
+          "robotics"
+        ],
+        "profileSourceUrl": "https://en.wikipedia.org/wiki/Matternet",
+        "location": {
+          "address": "355 Ravendale Drive",
+          "city": "Mountain View",
+          "region": "CA",
+          "postalCode": "94043",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://investor.matternet.com/sec-filings/all-sec-filings/content/0001213900-26-083327/ea0298822-8k_matternet.htm",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://investor.matternet.com/sec-filings/all-sec-filings/content/0001213900-26-083327/ea0298822-8k_matternet.htm"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3031926,
+          37.7823535
+        ]
+      },
+      "properties": {
+        "id": "pyka",
+        "name": "Pyka",
+        "nameJa": "パイカ",
+        "website": "https://www.flypyka.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "startup",
+        "industries": [
+          "drones",
+          "aerospace",
+          "robotics",
+          "defense",
+          "manufacturing"
+        ],
+        "profileSourceUrl": "https://www.flypyka.com/about-us",
+        "location": {
+          "address": "950 W Tower Avenue",
+          "city": "Alameda",
+          "region": "CA",
+          "postalCode": "94501",
+          "countryCode": "US",
+          "county": "Alameda County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://www.flypyka.com/contact-us",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://www.flypyka.com/contact-us"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.383725016518,
+          37.651298137373
+        ]
+      },
+      "properties": {
+        "id": "elroy-air",
+        "name": "Elroy Air",
+        "nameJa": "エルロイ・エア",
+        "website": "https://elroyair.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "startup",
+        "industries": [
+          "drones",
+          "aerospace",
+          "delivery",
+          "logistics",
+          "robotics"
+        ],
+        "profileSourceUrl": "https://en.wikipedia.org/wiki/Elroy_Air_Chaparral",
+        "location": {
+          "address": "415 E Grand Avenue, Suite 201",
+          "city": "South San Francisco",
+          "region": "CA",
+          "postalCode": "94080",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1808548/000180854824000003/xslFormDX01/primary_doc.xml",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://elroyair.com/contact-us/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.1475366,
+          37.404039
+        ]
+      },
+      "properties": {
+        "id": "wing-aviation",
+        "name": "Wing",
+        "nameJa": "ウィング",
+        "website": "https://wing.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "growth",
+        "industries": [
+          "drones",
+          "aerospace",
+          "delivery",
+          "logistics",
+          "robotics"
+        ],
+        "profileSourceUrl": "https://en.wikipedia.org/wiki/Wing_Aviation",
+        "location": {
+          "address": "3400 Hillview Avenue, Building 4",
+          "city": "Palo Alto",
+          "region": "CA",
+          "postalCode": "94304",
+          "countryCode": "US",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://safer.fmcsa.dot.gov/query.asp?query_param=USDOT&query_string=4469035&query_type=queryCarrierSnapshot&searchtype=ANY",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://wing.com/news/wing-drone-delivery-bay-area"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3051923,
+          37.7827138
+        ]
+      },
+      "properties": {
+        "id": "saildrone",
+        "name": "Saildrone",
+        "nameJa": "セイルドローン",
+        "website": "https://www.saildrone.com/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "growth",
+        "industries": [
+          "drones",
+          "robotics",
+          "defense",
+          "science",
+          "manufacturing"
+        ],
+        "profileSourceUrl": "https://en.wikipedia.org/wiki/Saildrone_(company)",
+        "location": {
+          "address": "1050 W Tower Avenue",
+          "city": "Alameda",
+          "region": "CA",
+          "postalCode": "94501",
+          "countryCode": "US",
+          "county": "Alameda County",
+          "precision": "address",
+          "coordinateSource": "openstreetmap",
+          "sourceUrl": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forp-f22000002707-84cda3d3-4cb9-4236-b132-bf0755041088&directionType=CurrentList&inquirytype=EntityName&listNameOrder=SAILCOVEMANAGEMENT+P050000528030&searchNameOrder=SAILDRONE+F220000027070&searchTerm=SAILBOATS+OF+KEY+BISCAYNE%2C+INC.",
+          "checkedAt": "2026-08-24",
+          "status": "matched"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "ok"
+        },
+        "updatedAt": "2026-08-24",
+        "presenceCheck": {
+          "checkedAt": "2026-08-24",
+          "status": "verified",
+          "sourceUrl": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forp-f22000002707-84cda3d3-4cb9-4236-b132-bf0755041088&directionType=CurrentList&inquirytype=EntityName&listNameOrder=SAILCOVEMANAGEMENT+P050000528030&searchNameOrder=SAILDRONE+F220000027070&searchTerm=SAILBOATS+OF+KEY+BISCAYNE%2C+INC."
         }
       }
     }

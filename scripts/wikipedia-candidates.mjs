@@ -10,6 +10,7 @@ const OUTPUT_PATH = fileURLToPath(new URL("../data/wikipedia-candidates.json", i
 const ROOTS = [
   ["Category:Companies based in Silicon Valley", "company"],
   ["Category:Technology companies based in the San Francisco Bay Area", "company"],
+  ["Category:Unmanned aerial vehicle manufacturers of the United States", "company"],
   ["Category:Universities and colleges in the San Francisco Bay Area", "university-research"],
   ["Category:Research institutes in the San Francisco Bay Area", "university-research"],
 ];
