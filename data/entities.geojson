@@ -178,17 +178,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": "https://500.co/contact",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-08-25",
+          "status": "review",
           "sourceUrl": "https://500.co/contact"
         }
       }
@@ -601,16 +601,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://ntt-research.com/contact/",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "verified",
           "sourceUrl": "https://ntt-research.com/contact/"
         }
@@ -1921,12 +1921,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -4360,12 +4360,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -6342,12 +6342,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -6664,12 +6664,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -7630,12 +7630,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "review"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -8182,12 +8182,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -11087,12 +11087,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -13479,12 +13479,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -15227,12 +15227,12 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "ok"
         },
         "updatedAt": "2026-08-22",
         "presenceCheck": {
@@ -16447,16 +16447,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.sumitomocorp.com/en/us/about/list",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "verified",
           "sourceUrl": "https://www.sumitomocorp.com/en/us/about/list"
         }
@@ -16870,11 +16870,11 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://us.daiwacm.com/contact-us/",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "review"
         },
         "updatedAt": "2026-08-23",
@@ -18845,12 +18845,12 @@
           "precision": "address",
           "coordinateSource": "openstreetmap",
           "sourceUrl": "https://www.sonoma.edu/contact",
-          "checkedAt": "2026-08-24",
-          "status": "matched"
+          "checkedAt": "2026-08-25",
+          "status": "review"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
-          "status": "ok"
+          "checkedAt": "2026-08-25",
+          "status": "review"
         },
         "updatedAt": "2026-08-24",
         "presenceCheck": {
@@ -19930,17 +19930,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.astellas.com/en/contact-us/global-directory?accId=section-n-0",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "matched"
         },
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "verified",
+          "checkedAt": "2026-08-25",
+          "status": "review",
           "sourceUrl": "https://www.astellas.com/en/contact-us/global-directory?accId=section-n-0"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-08-25",
+          "status": "ok"
         },
         "updatedAt": "2026-08-23"
       }
@@ -20835,16 +20835,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.intel.com/content/www/us/en/support/campus-locations.html",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "ok"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-08-25",
           "status": "verified",
           "sourceUrl": "https://www.intel.com/content/www/us/en/support/campus-locations.html"
         }
