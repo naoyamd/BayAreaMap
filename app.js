@@ -938,6 +938,28 @@ async function shareView() {
   }
 }
 
+function correctionIssueUrl(props) {
+  const mapUrl = new URL(window.location.href);
+  mapUrl.searchParams.set("entity", props.id);
+  const url = new URL("https://github.com/naoyamd/BayAreaMap/issues/new");
+  url.searchParams.set("title", `[Data correction] ${props.name}`);
+  url.searchParams.set("body", [
+    `Entity ID: \`${props.id}\``,
+    `Company: ${props.name}`,
+    `Map view: ${mapUrl.href}`,
+    "",
+    "What needs correction?",
+    "- [ ] Address",
+    "- [ ] Current presence",
+    "- [ ] Company / subsidiary relationship",
+    "- [ ] Logo",
+    "- [ ] Other",
+    "",
+    "Details:",
+  ].join("\n"));
+  return url.href;
+}
+
 function populateDetail(feature) {
   const props = feature.properties;
   const location = props.location;
@@ -1000,6 +1022,25 @@ function populateDetail(feature) {
   status.id = "detail-status";
   status.setAttribute("role", "status");
   el.detailContent.append(status);
+
+  const correction = document.createElement("div");
+  correction.className = "correction-flag";
+  const correctionLabel = document.createElement("label");
+  const correctionCheckbox = document.createElement("input");
+  correctionCheckbox.type = "checkbox";
+  const correctionText = document.createElement("span");
+  correctionText.textContent = "Report: needs correction";
+  correctionLabel.append(correctionCheckbox, correctionText);
+  const correctionHelp = document.createElement("small");
+  correctionHelp.textContent = "Opens a prefilled public GitHub issue. Submit it to prioritize this company in the next daily data audit.";
+  correctionLabel.append(correctionHelp);
+  correctionCheckbox.addEventListener("change", () => {
+    if (!correctionCheckbox.checked) return;
+    window.open(correctionIssueUrl(props), "_blank", "noopener,noreferrer");
+    setStatus("GitHub opened. Submit the issue to flag this company.");
+  });
+  correction.append(correctionLabel);
+  el.detailContent.append(correction);
 
   const quality = document.createElement("details");
   quality.className = "data-quality";

@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  issues: read
 
 concurrency:
   group: data-audit
@@ -29,6 +30,26 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+
+      - name: Collect priority correction flags
+        id: correction_flags
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          ids="$(
+            gh issue list --state open --limit 100 --json body --jq '.[].body' |
+              sed -n 's/^Entity ID: `\([a-z0-9][a-z0-9-]*\)`$/\1/p' |
+              sort -u |
+              paste -sd, -
+          )"
+          echo "ids=$ids" >> "$GITHUB_OUTPUT"
+
+      - name: Run priority data audit
+        if: steps.correction_flags.outputs.ids != ''
+        env:
+          PRIORITY_IDS: ${{ steps.correction_flags.outputs.ids }}
+        run: node scripts/audit.mjs --ids "$PRIORITY_IDS"
 
       - name: Run distributed data audit
         shell: bash

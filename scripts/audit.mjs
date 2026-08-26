@@ -27,8 +27,10 @@ export function locationNeedsAddress(location) {
   return Boolean(city) && (address === city || address === `${city} ${region}`);
 }
 
-export function selectFeatures(features, { all = false, shard = null, cityOnly = false, city = null } = {}) {
-  const selected = all
+export function selectFeatures(features, { all = false, shard = null, ids = null, cityOnly = false, city = null } = {}) {
+  const selected = ids
+    ? features.filter((f) => ids.has(f?.properties?.id))
+    : all
     ? features.filter(() => true)
     : features.filter((f) => hashId(f?.properties?.id ?? "") % SHARD_COUNT === shard);
   return selected.filter((feature) => {
@@ -223,8 +225,8 @@ export function classifyPresence({ sourceUrl, sourceOk, sourceHtml, location, en
     sourceMentionsPresence(sourceHtml, location) ? "verified" : "review";
 }
 
-function parseArgs(argv) {
-  const opts = { all: false, shard: null, cityOnly: false, city: null };
+export function parseArgs(argv) {
+  const opts = { all: false, shard: null, ids: null, cityOnly: false, city: null };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === "--all") {
@@ -246,11 +248,21 @@ function parseArgs(argv) {
         throw new Error(`--shard must be between 0 and ${SHARD_COUNT - 1}`);
       }
       opts.shard = n;
+    } else if (arg === "--ids") {
+      if (opts.ids !== null) throw new Error("--ids given more than once");
+      const raw = argv[++i];
+      const ids = String(raw ?? "").split(",").map((id) => id.trim()).filter(Boolean);
+      if (!ids.length || ids.some((id) => !/^[a-z0-9][a-z0-9-]*$/.test(id))) {
+        throw new Error("--ids requires comma-separated entity IDs");
+      }
+      opts.ids = new Set(ids);
     } else {
       throw new Error(`unknown argument: ${arg}`);
     }
   }
-  if (opts.all && opts.shard !== null) throw new Error("--all and --shard are mutually exclusive");
+  if ([opts.all, opts.shard !== null, opts.ids !== null].filter(Boolean).length > 1) {
+    throw new Error("--all, --shard, and --ids are mutually exclusive");
+  }
   return opts;
 }
 
@@ -352,11 +364,11 @@ async function audit(argv) {
     opts = parseArgs(argv);
   } catch (error) {
     console.error(error.message);
-    console.error('Usage: node scripts/audit.mjs [--all | --shard N] [--city-only] [--city "City"]   (N: 0..44)');
+    console.error('Usage: node scripts/audit.mjs [--all | --shard N | --ids id[,id...]] [--city-only] [--city "City"]   (N: 0..44)');
     process.exitCode = 1;
     return;
   }
-  if (!opts.all && opts.shard === null) {
+  if (!opts.all && opts.shard === null && opts.ids === null) {
     opts.shard = Math.floor(Date.now() / 86400000) % SHARD_COUNT;
   }
 
@@ -382,8 +394,8 @@ async function audit(argv) {
   const bayAreaCities = [...countyByCity.keys()].filter(Boolean);
   const selected = selectFeatures(features, opts);
   const date = utcToday();
-  const shardLabel = opts.all ? "all" : String(opts.shard);
-  console.log(`BayAreaMap audit ${date} | shard: ${shardLabel} | selected: ${selected.length}`);
+  const selectionLabel = opts.ids ? "priority" : opts.all ? "all" : `shard ${opts.shard}`;
+  console.log(`BayAreaMap audit ${date} | selection: ${selectionLabel} | selected: ${selected.length}`);
 
   let websiteOk = 0;
   let websiteReview = 0;

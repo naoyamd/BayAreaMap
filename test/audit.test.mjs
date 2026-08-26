@@ -16,6 +16,7 @@ import {
   hashId,
   locationNeedsAddress,
   officialAddressSource,
+  parseArgs,
   selectFeatures,
   sourceMentionsEntity,
   sourceMentionsEntityNearLocation,
@@ -35,6 +36,7 @@ const indexSource = readFileSync(new URL('../index.html', import.meta.url), 'utf
 const readmeSource = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
 const stylesSource = readFileSync(new URL('../styles.css', import.meta.url), 'utf8');
 const wikipediaSource = readFileSync(new URL('../scripts/wikipedia-candidates.mjs', import.meta.url), 'utf8');
+const auditWorkflowSource = readFileSync(new URL('../.github/workflows/audit.yml', import.meta.url), 'utf8');
 
 test('Wikipedia discovery excludes known names and prioritizes research candidates', () => {
   const pages = new Map([
@@ -295,6 +297,24 @@ test('site chrome is English, Japanese company names remain, and README stays Ja
   assert.match(readmeSource, /^# ベイエリア企業マップ/m);
   assert.match(readmeSource, /公開URL: <https:\/\/map\.nightly\.dedyn\.io\/>/);
   assert.match(indexSource, /<h1><a href="\.\/">Bay Area Company Map<\/a><\/h1>/);
+});
+
+test('human correction flags select exact entity IDs before the daily shard', () => {
+  const ids = new Set(['sony', 'ihi-rakunest', 'not-in-the-map']);
+  assert.deepStrictEqual(
+    selectFeatures(features, { ids }).map((feature) => feature.properties.id),
+    ['sony', 'ihi-rakunest'],
+  );
+  assert.deepStrictEqual(Array.from(parseArgs(['--ids', 'sony,ihi-rakunest']).ids), ['sony', 'ihi-rakunest']);
+  assert.throws(() => parseArgs(['--ids', 'sony,$bad']), /comma-separated entity IDs/);
+  assert.throws(() => parseArgs(['--all', '--ids', 'sony']), /mutually exclusive/);
+  assert.match(appSource, /Report: needs correction/);
+  assert.ok(appSource.includes('Entity ID: \\`${props.id}\\`'));
+  assert.match(appSource, /issues\/new/);
+  assert.match(appSource, /\[Data correction\]/);
+  assert.match(auditWorkflowSource, /issues: read/);
+  assert.match(auditWorkflowSource, /gh issue list --state open --limit 100/);
+  assert.match(auditWorkflowSource, /node scripts\/audit\.mjs --ids "\$PRIORITY_IDS"/);
 });
 
 test('every entity has a logo source ladder with a cached fallback', () => {
