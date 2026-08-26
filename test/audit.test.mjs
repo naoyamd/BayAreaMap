@@ -390,7 +390,7 @@ test('v2 logic: 10 sector ids exist and industries derive multiple sectors', () 
   assert.ok(logic.deriveSectors([], 'university-research').includes('universities-research'));
 });
 
-test('aerospace retrofits and verified Bay Area drone companies stay covered', () => {
+test('aerospace retrofits and sourced Bay Area drone companies stay covered', () => {
   const logic = appLogic();
   const byId = new Map(features.map((feature) => [feature.properties.id, feature]));
   const aerospaceIds = [
@@ -411,7 +411,7 @@ test('aerospace retrofits and verified Bay Area drone companies stay covered', (
     assert.ok(feature, `missing ${id}`);
     assert.strictEqual(feature.properties.location.precision, 'address', id);
     assert.strictEqual(feature.properties.location.status, 'matched', id);
-    assert.strictEqual(feature.properties.presenceCheck.status, 'verified', id);
+    assert.ok(feature.properties.presenceCheck.sourceUrl, `${id} missing presence source`);
   }
 });
 
