@@ -114,10 +114,7 @@ export function sourceMentionsLocation(html, location) {
 }
 
 export function sourceMentionsPresence(html, location) {
-  if (location.precision === "address") return sourceMentionsLocation(html, location);
-  const documentWords = new Set(normalizedWords(html));
-  const cityWords = normalizedWords(location.city).filter((word) => word.length >= 3);
-  return cityWords.length > 0 && cityWords.every((word) => documentWords.has(word));
+  return location.precision === "address" && sourceMentionsLocation(html, location);
 }
 
 export function sourceMentionsEntityNearLocation(html, location, name) {
@@ -192,6 +189,7 @@ export function discoverOfficialLocationUrls(html, baseUrl, website) {
 
 function officialLocationScore(value) {
   const label = String(value ?? "").toLowerCase().replace(/[^a-z]+/g, " ");
+  if (/\boffice lunch\b/.test(label)) return 0;
   if (/\b(privacy|terms?|legal|polic(?:y|ies)|agreements?|rules?|careers?|jobs?|news|press|blog|campaigns?|insights?|support|products?|login)\b/.test(label)) return 0;
   if (/\b(locations?|offices?|branches|where we are|global network)\b/.test(label)) return 5;
   if (/\b(contact|subsidiaries|affiliates|group companies)\b/.test(label)) return 4;

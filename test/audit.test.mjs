@@ -184,6 +184,9 @@ test('coordinate and current-presence checks stay independent', () => {
   assert.strictEqual(sourceMentionsLocation(officialPage, location), true);
   assert.strictEqual(sourceMentionsLocation('<p>San Mateo office</p>', location), false);
   assert.strictEqual(sourceMentionsPresence(officialPage, location), true);
+  assert.strictEqual(sourceMentionsPresence('<p>Example Corp — San Mateo</p>', {
+    city: 'San Mateo', precision: 'city',
+  }), false);
   assert.strictEqual(classifyLocation({ distance: 0.2 }), 'matched');
   assert.strictEqual(
     classifyPresence({
@@ -345,6 +348,7 @@ test('attempts without exact evidence become review while news remains ineligibl
   assert.strictEqual(isVerificationSourceUrl('https://cdn.example.com/company-address.pdf'), false);
   assert.strictEqual(isOfficialLocationPageUrl('https://www.example.com/'), false);
   assert.strictEqual(isOfficialLocationPageUrl('https://www.example.com/about/locations'), true);
+  assert.strictEqual(isOfficialLocationPageUrl('https://www.example.com/office-lunch'), false);
   assert.strictEqual(classifyPresence({
     sourceUrl: 'https://news.example.com/2020/office-opening',
     sourceOk: true,
