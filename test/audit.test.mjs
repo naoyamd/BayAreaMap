@@ -39,6 +39,7 @@ const stylesSource = readFileSync(new URL('../styles.css', import.meta.url), 'ut
 const auditSource = readFileSync(new URL('../scripts/audit.mjs', import.meta.url), 'utf8');
 const wikipediaSource = readFileSync(new URL('../scripts/wikipedia-candidates.mjs', import.meta.url), 'utf8');
 const auditWorkflowSource = readFileSync(new URL('../.github/workflows/audit.yml', import.meta.url), 'utf8');
+const pagesWorkflowSource = readFileSync(new URL('../.github/workflows/pages.yml', import.meta.url), 'utf8');
 
 test('Wikipedia discovery excludes known names and prioritizes research candidates', () => {
   const pages = new Map([
@@ -344,6 +345,12 @@ test('human correction flags select exact entity IDs before the daily batch', ()
   assert.match(auditWorkflowSource, /issues: read/);
   assert.match(auditWorkflowSource, /gh issue list --state open --limit 100/);
   assert.match(auditWorkflowSource, /node scripts\/audit\.mjs --ids "\$PRIORITY_IDS"/);
+});
+
+test('a completed data audit deploys the resulting main branch to Pages', () => {
+  assert.match(pagesWorkflowSource, /workflow_run:\s+workflows: \[Data audit\]/);
+  assert.match(pagesWorkflowSource, /workflow_run\.conclusion == 'success'/);
+  assert.match(pagesWorkflowSource, /ref: main/);
 });
 
 test('every entity has a logo source ladder with a cached fallback', () => {
