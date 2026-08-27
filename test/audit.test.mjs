@@ -9,14 +9,25 @@ import {
   chooseAddressCandidate,
   classifyLocation,
   classifyPresence,
+  decodeSitemapBytes,
   discoverOfficialLocationUrls,
   distanceKm,
   extractCaliforniaAddress,
   extractCaliforniaAddresses,
+  extractJsonLdAddressText,
+  extractSitemapUrls,
   hashId,
+  isVerificationSourceUrl,
+  isOfficialLocationPageUrl,
   locationNeedsAddress,
   officialAddressSource,
   parseArgs,
+  parseRobots,
+  rankOfficialLocationUrls,
+  rankSitemapUrls,
+  reviewUnverifiedPresence,
+  robotsAllows,
+  robotsPolicyAllows,
   selectFeatures,
   sourceMentionsEntity,
   sourceMentionsEntityNearLocation,
@@ -252,6 +263,104 @@ test('city locations use a first-party source and can discover a street address'
     .every((feature) => feature.properties.location.city === 'San Francisco'));
 });
 
+test('robots and sitemap discovery stay bounded to useful official URLs', () => {
+  const robots = parseRobots(`
+    User-agent: *
+    Disallow: /private/
+    Allow: /private/office/
+    Sitemap: /sitemap-index.xml
+  `, 'https://www.example.com');
+  assert.deepStrictEqual(robots.sitemaps, ['https://www.example.com/sitemap-index.xml']);
+  assert.strictEqual(robotsAllows('https://www.example.com/private/data', robots.rules), false);
+  assert.strictEqual(robotsAllows('https://www.example.com/private/office/sf', robots.rules), true);
+  const named = parseRobots(`
+    User-agent: *
+    Allow: /
+    User-agent: BayAreaMap-Audit
+    Disallow: /private
+  `, 'https://www.example.com');
+  assert.strictEqual(robotsAllows('https://www.example.com/private', named.rules), false);
+  assert.strictEqual(robotsPolicyAllows('https://www.example.com/', { ok: false, status: 503, rules: [] }), false);
+  assert.strictEqual(robotsPolicyAllows('https://www.example.com/', { ok: false, status: 404, rules: [] }), true);
+
+  const xml = `<?xml version="1.0"?><sitemapindex>
+    <sitemap><loc>https://www.example.com/en-in/sitemap.xml</loc></sitemap>
+    <sitemap><loc>https://www.example.com/us-en/jobpostings-sitemap.xml</loc></sitemap>
+    <sitemap><loc>https://www.example.com/us-en/sitemap.xml</loc></sitemap>
+  </sitemapindex>`;
+  assert.strictEqual(decodeSitemapBytes(gzipSync(xml)), xml);
+  assert.deepStrictEqual(
+    rankSitemapUrls(extractSitemapUrls(xml), 'https://www.example.com/us-en/'),
+    [
+      'https://www.example.com/us-en/sitemap.xml',
+      'https://www.example.com/en-in/sitemap.xml',
+      'https://www.example.com/us-en/jobpostings-sitemap.xml',
+    ],
+  );
+  assert.deepStrictEqual(rankOfficialLocationUrls([
+    'https://www.example.com/us-en/about/location',
+    'https://www.example.com/contact',
+    'https://www.example.com/news/office-opening',
+    'https://other.example.net/locations',
+  ], 'https://www.example.com/us-en/'), [
+    'https://www.example.com/us-en/about/location',
+    'https://www.example.com/contact',
+  ]);
+});
+
+test('JSON-LD addresses and joined brand names are searchable without weakening entity identity', () => {
+  const html = `<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'https://schema.org/Organization',
+    name: 'AlphaSense',
+    address: {
+      '@type': 'https://schema.org/PostalAddress',
+      streetAddress: 'One Sansome St, Suite 3500',
+      addressLocality: 'San Francisco',
+      addressRegion: 'CA',
+      postalCode: '94104',
+    },
+  })}</script>`;
+  assert.match(extractJsonLdAddressText(html), /AlphaSense One Sansome St/);
+  assert.deepStrictEqual(extractCaliforniaAddresses(html, ['San Francisco']), [{
+    address: 'One Sansome St, Suite 3500',
+    city: 'San Francisco',
+    postalCode: '94104',
+  }]);
+  assert.strictEqual(sourceMentionsEntity(html, 'Alpha Sense'), true);
+  assert.strictEqual(sourceMentionsEntity('<p>IHI Aerospace</p>', 'IHI Corporation'), false);
+
+  const adobe = extractCaliforniaAddresses(`
+    <p>Adobe</p><p>601 Townsend Street, San Francisco, CA 94103</p>
+    <p>100 Hooper Street, San Francisco, CA 94107</p>
+  `, ['San Francisco']);
+  assert.strictEqual(chooseAddressCandidate(adobe, 'San Francisco'), null);
+});
+
+test('attempts without exact evidence become review while news remains ineligible', () => {
+  assert.strictEqual(isVerificationSourceUrl('https://www.example.com/about/locations'), true);
+  assert.strictEqual(isVerificationSourceUrl('https://news.example.com/2020/office-opening'), false);
+  assert.strictEqual(isVerificationSourceUrl('https://www.example.com/campaigns/contact-center-guide'), false);
+  assert.strictEqual(isVerificationSourceUrl('https://www.example.com/legal/reseller-agreement'), false);
+  assert.strictEqual(isVerificationSourceUrl('https://cdn.example.com/company-address.pdf'), false);
+  assert.strictEqual(isOfficialLocationPageUrl('https://www.example.com/'), false);
+  assert.strictEqual(isOfficialLocationPageUrl('https://www.example.com/about/locations'), true);
+  assert.strictEqual(classifyPresence({
+    sourceUrl: 'https://news.example.com/2020/office-opening',
+    sourceOk: true,
+    sourceHtml: '<p>Example Corp, 1 Market St, San Francisco, CA 94105</p>',
+    location: { address: '1 Market St', city: 'San Francisco', precision: 'address' },
+    entityName: 'Example Corp',
+  }), 'review');
+
+  const properties = { presenceCheck: { checkedAt: null, status: 'unchecked', sourceUrl: null } };
+  assert.strictEqual(reviewUnverifiedPresence(properties, '2026-08-27'), true);
+  assert.deepStrictEqual(properties.presenceCheck, {
+    checkedAt: '2026-08-27', status: 'review', sourceUrl: null,
+  });
+  assert.match(auditSource, /GITHUB_STEP_SUMMARY/);
+});
+
 test('a group page cannot assign one subsidiary another subsidiary address', () => {
   const html = `
     <section><h2>IHI Aerospace</h2><p>123 Aviation Way, San Mateo, CA 94401</p></section>
@@ -295,13 +404,17 @@ test('major Bay Area anchors are present and dense cities expand only at maximum
     'oracle', 'linkedin', 'netflix', 'databricks', 'snowflake', 'anthropic', 'doordash',
     'paypal', 'ebay', 'intuit', 'servicenow', 'zoom',
   ];
-
   for (const id of ids) {
     const feature = features.find((item) => item.properties.id === id);
     assert.ok(feature, `missing ${id}`);
     assert.strictEqual(feature.properties.location.precision, 'address', id);
-    assert.strictEqual(feature.properties.presenceCheck.status, 'verified', id);
+    assert.notStrictEqual(feature.properties.presenceCheck.status, 'unchecked', id);
   }
+  for (const id of ['anthropic', 'ebay']) {
+    assert.strictEqual(features.find((item) => item.properties.id === id).properties.presenceCheck.status, 'review', id);
+  }
+  assert.ok(features.filter((item) => item.properties.presenceCheck.status === 'verified')
+    .every((item) => item.properties.presenceCheck.sourceUrl));
   for (const id of ['google', 'apple', 'meta', 'sf-amazon-web-services', 'sf-microsoft']) {
     assert.strictEqual(features.find((item) => item.properties.id === id)?.properties.scale, 'large', id);
   }
