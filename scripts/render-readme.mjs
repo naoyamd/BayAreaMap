@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { DEFAULT_BATCH_SIZE } from "./audit.mjs";
 
 const DATA_PATH = fileURLToPath(new URL("../data/entities.geojson", import.meta.url));
 const README_PATH = fileURLToPath(new URL("../README.md", import.meta.url));
@@ -50,8 +51,6 @@ const PRESENCE_STATUS_LABELS = {
   verified: "確認済み",
   review: "要確認",
 };
-
-const SHARD_COUNT = 45;
 
 function escText(value) {
   return String(value ?? "")
@@ -155,10 +154,13 @@ function render(entities, metadata) {
     "- `websiteCheck` はサイト疎通です。データ更新日・現所在確認日・座標照合日・URL確認日を分けて表示します。",
   );
   lines.push("");
-  lines.push("## 分散監査（シャード方式）");
+  lines.push("## 最古優先監査");
   lines.push("");
   lines.push(
-    `各エンティティIDのハッシュで全件を${SHARD_COUNT}シャードに決定論的に分割し、毎日1シャード分を確認します。約1.5か月で全件を一巡し、各社公式サイトの拠点・連絡先・グループ会社ページを探索します。同じ都市というだけでは採用せず、法人名と住所を同時確認できた場合だけ番地へ昇格します。既存の番地も公式ページを探索して出典を補完し、退去疑いで自動削除はせず「要確認」に留めます。`,
+    `URL確認日が未設定または最も古い${DEFAULT_BATCH_SIZE}件を毎日確認します。成功した結果だけをGitHubへ保存するため、途中で失敗した対象は次回も最古のまま再試行され、約${Math.ceil(total / DEFAULT_BATCH_SIZE)}回の成功で全件を一巡します。各社公式サイトの拠点・連絡先・グループ会社ページを探索し、同じ都市というだけでは採用せず、法人名と住所を同時確認できた場合だけ番地へ昇格します。既存の番地も公式ページを探索して出典を補完し、退去疑いで自動削除はせず「要確認」に留めます。`,
+  );
+  lines.push(
+    "GitHub Actionsの定期実行とは別に、OpenClawが6時間ごとに最終成功を監視し、30時間以上成功がなければ同じ監査を再実行します。週2回の公式情報リゾルバーは、未確認・要確認データを最大5件ずつ調べ、公式根拠が取れた変更だけをテスト後に反映します。",
   );
   lines.push("");
   lines.push("## Wikipedia候補探索（月次）");
@@ -202,6 +204,7 @@ function render(entities, metadata) {
   lines.push("");
   lines.push("```sh", "npm test                     # テストとデータ検証");
   lines.push("npm run readme               # README.md 再生成");
+  lines.push(`npm run audit                # 未確認・最古の${DEFAULT_BATCH_SIZE}件を監査`);
   lines.push("npm run audit -- --shard 0   # シャード0のデータ監査");
   lines.push("npm run audit -- --all       # 全件のデータ監査");
   lines.push("npm run audit -- --all --city-only # 都市中心データだけ住所探索");

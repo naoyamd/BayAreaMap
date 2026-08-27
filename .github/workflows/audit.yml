@@ -51,7 +51,7 @@ jobs:
           PRIORITY_IDS: ${{ steps.correction_flags.outputs.ids }}
         run: node scripts/audit.mjs --ids "$PRIORITY_IDS"
 
-      - name: Run distributed data audit
+      - name: Run oldest-first data audit
         shell: bash
         run: |
           if [ "${{ inputs.mode }}" = "all" ]; then

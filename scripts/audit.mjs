@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { pathToFileURL, fileURLToPath } from "node:url";
 
 const SHARD_COUNT = 45;
+export const DEFAULT_BATCH_SIZE = 75;
 const TIMEOUT_MS = 12000;
 const CONCURRENCY = 3;
 const MAX_OFFICIAL_PAGES = 8;
@@ -27,16 +28,23 @@ export function locationNeedsAddress(location) {
   return Boolean(city) && (address === city || address === `${city} ${region}`);
 }
 
-export function selectFeatures(features, { all = false, shard = null, ids = null, cityOnly = false, city = null } = {}) {
-  const selected = ids
+export function selectFeatures(features, { all = false, shard = null, ids = null, cityOnly = false, city = null, limit = DEFAULT_BATCH_SIZE } = {}) {
+  let selected = ids
     ? features.filter((f) => ids.has(f?.properties?.id))
     : all
     ? features.filter(() => true)
-    : features.filter((f) => hashId(f?.properties?.id ?? "") % SHARD_COUNT === shard);
-  return selected.filter((feature) => {
+    : shard !== null
+    ? features.filter((f) => hashId(f?.properties?.id ?? "") % SHARD_COUNT === shard)
+    : [...features].sort((a, b) =>
+      String(a?.properties?.websiteCheck?.checkedAt ?? "").localeCompare(
+        String(b?.properties?.websiteCheck?.checkedAt ?? ""),
+      ) || String(a?.properties?.id ?? "").localeCompare(String(b?.properties?.id ?? "")),
+    );
+  selected = selected.filter((feature) => {
     const location = feature?.properties?.location;
     return (!city || location?.city === city) && (!cityOnly || locationNeedsAddress(location));
   });
+  return !ids && !all && shard === null ? selected.slice(0, limit) : selected;
 }
 
 export function distanceKm([lon1, lat1], [lon2, lat2]) {
@@ -368,10 +376,6 @@ async function audit(argv) {
     process.exitCode = 1;
     return;
   }
-  if (!opts.all && opts.shard === null && opts.ids === null) {
-    opts.shard = Math.floor(Date.now() / 86400000) % SHARD_COUNT;
-  }
-
   let geo;
   try {
     geo = JSON.parse(readFileSync(DATA_PATH, "utf8"));
@@ -394,7 +398,8 @@ async function audit(argv) {
   const bayAreaCities = [...countyByCity.keys()].filter(Boolean);
   const selected = selectFeatures(features, opts);
   const date = utcToday();
-  const selectionLabel = opts.ids ? "priority" : opts.all ? "all" : `shard ${opts.shard}`;
+  const selectionLabel = opts.ids ? "priority" : opts.all ? "all" :
+    opts.shard !== null ? `shard ${opts.shard}` : `oldest ${DEFAULT_BATCH_SIZE}`;
   console.log(`BayAreaMap audit ${date} | selection: ${selectionLabel} | selected: ${selected.length}`);
 
   let websiteOk = 0;
@@ -544,7 +549,7 @@ async function audit(argv) {
   }
 
   console.log(
-    `Summary: shard ${shardLabel} | selected ${selected.length} | website ok ${websiteOk}, review ${websiteReview} | ` +
+    `Summary: ${selectionLabel} | selected ${selected.length} | website ok ${websiteOk}, review ${websiteReview} | ` +
     `address locations checked ${locationChecked}, review ${locationReview} | ` +
     `official sources linked ${officialSourcesLinked}, city locations upgraded ${cityLocationsUpgraded} | ` +
     `presence checked ${presenceChecked}, review ${presenceReview} | ` +

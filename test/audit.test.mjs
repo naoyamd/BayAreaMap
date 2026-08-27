@@ -22,6 +22,7 @@ import {
   sourceMentionsEntityNearLocation,
   sourceMentionsLocation,
   sourceMentionsPresence,
+  DEFAULT_BATCH_SIZE,
 } from '../scripts/audit.mjs';
 import { buildCandidateReport } from '../scripts/wikipedia-candidates.mjs';
 
@@ -35,6 +36,7 @@ const appSource = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
 const indexSource = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const readmeSource = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
 const stylesSource = readFileSync(new URL('../styles.css', import.meta.url), 'utf8');
+const auditSource = readFileSync(new URL('../scripts/audit.mjs', import.meta.url), 'utf8');
 const wikipediaSource = readFileSync(new URL('../scripts/wikipedia-candidates.mjs', import.meta.url), 'utf8');
 const auditWorkflowSource = readFileSync(new URL('../.github/workflows/audit.yml', import.meta.url), 'utf8');
 
@@ -82,6 +84,33 @@ test('shards 0..44 partition every feature id exactly once', () => {
   for (const id of allIds) {
     assert.ok(seen.has(id), `missing id ${id} from all shards`);
   }
+});
+
+test('daily audit advances from unchecked and oldest records without skipping failed work', () => {
+  const sample = [
+    ['newer', '2026-08-26'],
+    ['unchecked-b', null],
+    ['older', '2026-08-20'],
+    ['unchecked-a', null],
+  ].map(([id, checkedAt]) => ({ properties: {
+    id, websiteCheck: { checkedAt }, location: { city: 'Test City', precision: 'address' },
+  } }));
+
+  assert.strictEqual(DEFAULT_BATCH_SIZE, 75);
+  assert.deepStrictEqual(
+    selectFeatures(sample, { limit: 3 }).map((feature) => feature.properties.id),
+    ['unchecked-a', 'unchecked-b', 'older'],
+  );
+  assert.deepStrictEqual(
+    selectFeatures(sample, { limit: 3 }).map((feature) => feature.properties.id),
+    ['unchecked-a', 'unchecked-b', 'older'],
+    'without a committed checkedAt change, the same work must be retried',
+  );
+});
+
+test('audit summary uses the defined selection label', () => {
+  assert.doesNotMatch(auditSource, /shardLabel/);
+  assert.match(auditSource, /`Summary: \$\{selectionLabel\}/);
 });
 
 test('Sony correction moves the pin from the wrong side of US-101', () => {
@@ -299,7 +328,7 @@ test('site chrome is English, Japanese company names remain, and README stays Ja
   assert.match(indexSource, /<h1><a href="\.\/">Bay Area Company Map<\/a><\/h1>/);
 });
 
-test('human correction flags select exact entity IDs before the daily shard', () => {
+test('human correction flags select exact entity IDs before the daily batch', () => {
   const ids = new Set(['sony', 'ihi-rakunest', 'not-in-the-map']);
   assert.deepStrictEqual(
     selectFeatures(features, { ids }).map((feature) => feature.properties.id),
