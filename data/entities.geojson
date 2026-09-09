@@ -323,8 +323,8 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "ok"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -793,12 +793,12 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "review"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "review",
           "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
         }
@@ -836,16 +836,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "http://www.socionext.com/en/about/global-network.html",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "http://www.socionext.com/en/about/global-network.html"
         }
@@ -887,12 +887,12 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "review"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "review",
           "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
         }
@@ -1353,16 +1353,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.nidec.com/en/worldwide_new/sales/america_northcalifornia_sa/",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.nidec.com/en/worldwide_new/sales/america_northcalifornia_sa/"
         }
@@ -1695,13 +1695,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -6756,17 +6756,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -7404,13 +7404,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "review"
+          "checkedAt": "2026-09-09",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -7542,13 +7542,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "review"
+          "checkedAt": "2026-09-09",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -7818,13 +7818,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -8830,13 +8830,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -9288,16 +9288,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.microsoft.com/en-us/hub/locations",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.microsoft.com/en-us/hub/locations"
         }
@@ -9380,17 +9380,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -10071,17 +10071,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://openai.com/policies/privacy-policy/",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "review"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://openai.com/policies/privacy-policy/"
         }
       }
@@ -10769,13 +10769,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -11153,8 +11153,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.3972472,
-          37.787956
+          -122.468828449139,
+          37.763982526332
         ]
       },
       "properties": {
@@ -11170,27 +11170,27 @@
         ],
         "profileSourceUrl": "https://github.com/theShiva/sf-companies",
         "location": {
-          "address": "540 Howard St, San Francisco, CA 94105",
+          "address": "1032 Irving St #984",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94122",
           "countryCode": "US",
           "county": "San Francisco County",
           "precision": "address",
-          "coordinateSource": "legacy",
-          "sourceUrl": null,
-          "checkedAt": "2026-08-23",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://razorfrog.com/contact/",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-09-09",
+          "status": "verified",
+          "sourceUrl": "https://razorfrog.com/contact/"
         }
       }
     },
@@ -12007,17 +12007,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -12191,17 +12191,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -12605,17 +12605,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -12973,17 +12973,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -13253,13 +13253,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "ok"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -13341,17 +13341,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -14081,13 +14081,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "review"
+          "checkedAt": "2026-09-09",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -14587,13 +14587,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -14725,13 +14725,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://www.wonderschool.com/corp/?"
         }
       }
@@ -15652,13 +15652,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -15699,12 +15699,12 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "review",
           "sourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/"
         }
@@ -15715,8 +15715,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.93176600777,
+          37.384569127864
         ]
       },
       "properties": {
@@ -15733,25 +15733,25 @@
         ],
         "profileSourceUrl": "https://toshiba.semicon-storage.com/us/",
         "location": {
-          "address": null,
+          "address": "2610 Orchard Parkway, Suite 110",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95134",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
           "sourceUrl": "https://toshiba.semicon-storage.com/us/contact.html",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-09-09",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://toshiba.semicon-storage.com/us/contact.html"
         }
@@ -15835,19 +15835,19 @@
           "county": "Santa Clara County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://www.tokamerica.com/about-us/supply-chain-policy-statement/",
-          "checkedAt": "2026-08-23",
+          "sourceUrl": "https://www.tokamerica.com/international-locations/",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
-          "sourceUrl": "https://www.tokamerica.com/about-us/supply-chain-policy-statement/"
+          "sourceUrl": "https://www.tokamerica.com/international-locations/"
         }
       }
     },
@@ -16044,8 +16044,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8863,
-          37.3382
+          -121.931424671177,
+          37.381717724573
         ]
       },
       "properties": {
@@ -16062,27 +16062,27 @@
         ],
         "profileSourceUrl": "https://www.takarabio.com/",
         "location": {
-          "address": null,
+          "address": "2560 Orchard Parkway",
           "city": "San Jose",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95131",
           "countryCode": "US",
           "county": "Santa Clara County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.takarabio.com/about",
-          "checkedAt": null,
-          "status": "unchecked"
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.takarabio.com/about/international-contacts-by-region/affiliates-and-distributors",
+          "checkedAt": "2026-09-09",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
-          "sourceUrl": "https://www.takarabio.com/about"
+          "sourceUrl": "https://www.takarabio.com/about/international-contacts-by-region/affiliates-and-distributors"
         }
       }
     },
@@ -16494,16 +16494,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.sojitz.com/en/corporate/network/americas/",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.sojitz.com/en/corporate/network/americas/"
         }
@@ -16545,13 +16545,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -16729,17 +16729,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.smbcgroup.com/americas/about-us/Our-Americas-Locations",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://www.smbcgroup.com/americas/about-us/Our-Americas-Locations"
         }
       }
@@ -16968,13 +16968,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -17344,13 +17344,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -17434,17 +17434,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://about.smartnews.com/en/about/company.html",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://about.smartnews.com/en/about/company.html"
         }
       }
@@ -17485,13 +17485,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -17673,13 +17673,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "review"
+          "checkedAt": "2026-09-09",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://woven.toyota/en/company/"
         }
       }
@@ -17716,11 +17716,11 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://toyota.ventures/",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
         "updatedAt": "2026-08-23",
@@ -18002,13 +18002,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -18096,13 +18096,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -18143,13 +18143,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -18186,16 +18186,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.shimadzu.com/links/location.html",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.shimadzu.com/links/location.html"
         }
@@ -18331,13 +18331,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "review"
+          "checkedAt": "2026-09-09",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -18472,13 +18472,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "review"
         },
-        "updatedAt": "2026-08-22",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": null
         }
       }
@@ -18661,14 +18661,14 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": null,
-          "status": "unchecked",
-          "sourceUrl": null
+          "checkedAt": "2026-09-09",
+          "status": "review",
+          "sourceUrl": "https://www.toraytac.com/contact/locations"
         }
       }
     },
@@ -18891,19 +18891,19 @@
           "county": "Napa County",
           "precision": "address",
           "coordinateSource": "openstreetmap",
-          "sourceUrl": "https://www.napavalley.edu/",
-          "checkedAt": "2026-08-24",
+          "sourceUrl": "https://www.napavalley.edu/student-services-and-resources/office-of-student-life/associated-students/index.html",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
-          "sourceUrl": "https://www.napavalley.edu/"
+          "sourceUrl": "https://www.napavalley.edu/student-services-and-resources/office-of-student-life/associated-students/index.html"
         }
       }
     },
@@ -18939,16 +18939,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://solanoedc.org/welcome-to-solano/",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://solanoedc.org/welcome-to-solano/"
         }
@@ -19080,16 +19080,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://ohns.ucsf.edu/locations/parnassus-medical-center",
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "review"
+          "checkedAt": "2026-09-09",
+          "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://ohns.ucsf.edu/locations/parnassus-medical-center"
         }
@@ -19127,16 +19127,16 @@
           "precision": "address",
           "coordinateSource": "openstreetmap",
           "sourceUrl": "https://foundry.lbl.gov/about/contact/",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://foundry.lbl.gov/about/contact/"
         }
@@ -19225,13 +19225,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://www.ycombinator.com/"
         }
       }
@@ -19694,19 +19694,19 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://global.kawasaki.com/en/corp/profile/network/index.html",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://global.kawasaki.com/en/corp/profile/network/index.html"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24"
+        "updatedAt": "2026-09-09"
       }
     },
     {
@@ -20739,12 +20739,12 @@
           "precision": "address",
           "coordinateSource": "openstreetmap",
           "sourceUrl": "https://www.tesla.com/findus/location/deliverycenter/fremontdirectydelivery",
-          "checkedAt": "2026-08-23",
-          "status": "matched"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
-          "status": "ok"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
         "updatedAt": "2026-08-23",
         "presenceCheck": {
@@ -21094,8 +21094,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.306625990187,
-          37.55393200425
+          -122.175269346719,
+          37.484523057127
         ]
       },
       "properties": {
@@ -21113,27 +21113,27 @@
         ],
         "profileSourceUrl": "https://community.snowflake.com/CommunityLogin?startURL=%2Faccess%2Flogout",
         "location": {
-          "address": "450 Concar Drive",
-          "city": "San Mateo",
+          "address": "135 Constitution Drive",
+          "city": "Menlo Park",
           "region": "CA",
-          "postalCode": "94402",
+          "postalCode": "94025",
           "countryCode": "US",
           "county": "San Mateo County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://community.snowflake.com/CommunityLogin?startURL=%2Faccess%2Flogout",
-          "checkedAt": "2026-08-23",
+          "sourceUrl": "https://www.snowflake.com/en/contact/",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
-          "sourceUrl": "https://community.snowflake.com/CommunityLogin?startURL=%2Faccess%2Flogout"
+          "sourceUrl": "https://www.snowflake.com/en/contact/"
         }
       }
     },
@@ -21452,19 +21452,19 @@
           "county": "Santa Clara County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://www.zoom.com/en/trust/grievance-officer/",
-          "checkedAt": "2026-08-23",
+          "sourceUrl": "https://www.zoom.com/en/contact/contact-sales/?cms_guid=false",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-23",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-23",
+          "checkedAt": "2026-09-09",
           "status": "verified",
-          "sourceUrl": "https://www.zoom.com/en/trust/grievance-officer/"
+          "sourceUrl": "https://www.zoom.com/en/contact/contact-sales/?cms_guid=false"
         }
       }
     },
@@ -21596,12 +21596,12 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.appliedmaterials.com/us/en/contact/locations.html",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
-          "status": "ok"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
         "updatedAt": "2026-08-24",
         "presenceCheck": {
@@ -21644,16 +21644,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.lamresearch.com/company/locations/",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.lamresearch.com/company/locations/"
         }
@@ -21692,17 +21692,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.kla.com/company/contact-us",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://www.kla.com/company/contact-us"
         }
       }
@@ -21740,17 +21740,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/company/investors/form-10-k-2024.pdf",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
-          "status": "ok"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/company/investors/form-10-k-2024.pdf"
         }
       }
@@ -21835,16 +21835,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.paloaltonetworks.com/about-us/locations",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.paloaltonetworks.com/about-us/locations"
         }
@@ -21882,19 +21882,19 @@
           "county": "Santa Clara County",
           "precision": "address",
           "coordinateSource": "openstreetmap",
-          "sourceUrl": "https://www.marvell.com/company/directions.html",
-          "checkedAt": "2026-08-24",
-          "status": "matched"
+          "sourceUrl": "https://www.marvell.com/company/offices.html",
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
-          "sourceUrl": "https://www.marvell.com/company/directions.html"
+          "sourceUrl": "https://www.marvell.com/company/offices.html"
         }
       }
     },
@@ -21930,16 +21930,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.juniper.net/us/en/company/contact-us/worldwide-development-offices.html",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.juniper.net/us/en/company/contact-us/worldwide-development-offices.html"
         }
@@ -21978,17 +21978,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.netapp.com/company/legal/privacy-policy/",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
-          "status": "ok"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://www.netapp.com/company/legal/privacy-policy/"
         }
       }
@@ -22026,16 +22026,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.hp.com/us-en/contact-hp/office-locations.html",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.hp.com/us-en/contact-hp/office-locations.html"
         }
@@ -22072,19 +22072,19 @@
           "county": "San Mateo County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://www.gene.com/terms-conditions",
-          "checkedAt": "2026-08-24",
+          "sourceUrl": "https://www.gene.com/contact-us",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
-          "sourceUrl": "https://www.gene.com/terms-conditions"
+          "sourceUrl": "https://www.gene.com/contact-us"
         }
       }
     },
@@ -22120,16 +22120,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.gilead.com/contact-us",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.gilead.com/contact-us"
         }
@@ -22168,16 +22168,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.intuitive.com/en-us/about-us/contact/office-locations",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.intuitive.com/en-us/about-us/contact/office-locations"
         }
@@ -22217,17 +22217,17 @@
           "precision": "address",
           "coordinateSource": "openstreetmap",
           "sourceUrl": "https://www.lockheedmartin.com/en-us/careers/locations/sunnyvale-california.html",
-          "checkedAt": "2026-08-24",
-          "status": "matched"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://www.lockheedmartin.com/en-us/careers/locations/sunnyvale-california.html"
         }
       }
@@ -22265,16 +22265,16 @@
           "precision": "address",
           "coordinateSource": "openstreetmap",
           "sourceUrl": "https://www.nasa.gov/archives/arc-archives/",
-          "checkedAt": "2026-08-24",
-          "status": "matched"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.nasa.gov/archives/arc-archives/"
         }
@@ -22314,16 +22314,16 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.llnl.gov/about/contact",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.llnl.gov/about/contact"
         }
@@ -22458,16 +22458,16 @@
           "precision": "address",
           "coordinateSource": "openstreetmap",
           "sourceUrl": "https://blogs.sjsu.edu/wsq/about/",
-          "checkedAt": "2026-08-24",
-          "status": "matched"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://blogs.sjsu.edu/wsq/about/"
         }
@@ -22701,19 +22701,19 @@
           "county": "Santa Clara County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://investor.matternet.com/sec-filings/all-sec-filings/content/0001213900-26-083327/ea0298822-8k_matternet.htm",
-          "checkedAt": "2026-08-24",
+          "sourceUrl": "https://www.matternet.com/newsroom/matternet-receives-authorization-from-the-german-aviation-office-to-launch-bvlos-drone-delivery-operations-in-berlin-fgaf6-hmyt5",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
-          "sourceUrl": "https://investor.matternet.com/sec-filings/all-sec-filings/content/0001213900-26-083327/ea0298822-8k_matternet.htm"
+          "sourceUrl": "https://www.matternet.com/newsroom/matternet-receives-authorization-from-the-german-aviation-office-to-launch-bvlos-drone-delivery-operations-in-berlin-fgaf6-hmyt5"
         }
       }
     },
@@ -22752,16 +22752,16 @@
           "precision": "address",
           "coordinateSource": "openstreetmap",
           "sourceUrl": "https://www.flypyka.com/contact-us",
-          "checkedAt": "2026-08-24",
-          "status": "matched"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "verified",
           "sourceUrl": "https://www.flypyka.com/contact-us"
         }
@@ -22802,17 +22802,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1808548/000180854824000003/xslFormDX01/primary_doc.xml",
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
-        "updatedAt": "2026-08-24",
+        "updatedAt": "2026-09-09",
         "presenceCheck": {
-          "checkedAt": "2026-08-24",
-          "status": "verified",
+          "checkedAt": "2026-09-09",
+          "status": "review",
           "sourceUrl": "https://elroyair.com/contact-us/"
         }
       }
@@ -22902,11 +22902,11 @@
           "precision": "address",
           "coordinateSource": "openstreetmap",
           "sourceUrl": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forp-f22000002707-84cda3d3-4cb9-4236-b132-bf0755041088&directionType=CurrentList&inquirytype=EntityName&listNameOrder=SAILCOVEMANAGEMENT+P050000528030&searchNameOrder=SAILDRONE+F220000027070&searchTerm=SAILBOATS+OF+KEY+BISCAYNE%2C+INC.",
-          "checkedAt": "2026-08-24",
-          "status": "matched"
+          "checkedAt": "2026-09-09",
+          "status": "review"
         },
         "websiteCheck": {
-          "checkedAt": "2026-08-24",
+          "checkedAt": "2026-09-09",
           "status": "ok"
         },
         "updatedAt": "2026-08-24",
@@ -22920,7 +22920,7 @@
   ],
   "metadata": {
     "schemaVersion": 3,
-    "updatedAt": "2026-08-27",
+    "updatedAt": "2026-09-09",
     "coordinateSystem": "WGS84 / GeoJSON [longitude, latitude]"
   }
 }
