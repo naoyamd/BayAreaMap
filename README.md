@@ -9,10 +9,10 @@
 
 ## データサマリ
 
-- データ更新日: 2026-09-24
-- 現所在確認日: 2026-09-24
-- 座標照合日: 2026-09-24
-- URL確認日: 2026-09-24
+- データ更新日: 2026-09-25
+- 現所在確認日: 2026-09-25
+- 座標照合日: 2026-09-25
+- URL確認日: 2026-09-25
 - 掲載件数: 492件
 - 日本関連: 130件
 - 大規模（scale: large）: 160件
@@ -159,37 +159,37 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 | ○ | [Mitsui Fudosan San Francisco](https://www.mfamerica.com/) | 企業 | 大規模 | San Francisco／San Francisco County | real-estate, urban-development | 番地単位 | 確認済み（2026-09-24） | 要確認（2026-09-24） | 確認済み（2026-09-24） | 2026-09-24 |
 | ○ | [Mizuho Americas San Francisco](https://www.mizuhogroup.com/americas) | 企業 | 大規模 | San Francisco／San Francisco County | finance, banking | 番地単位 | 要確認（2026-09-24） | 住所・座標一致（2026-09-24） | 確認済み（2026-09-24） | 2026-09-24 |
 | ○ | [MODE Inc](https://www.tinkermode.com/) | 企業 | 大規模 | San Mateo／San Mateo County | iot, software | 番地単位 | 確認済み（2026-09-24） | 住所・座標一致（2026-09-24） | 確認済み（2026-09-24） | 2026-09-24 |
-| ○ | [MSIG USA San Francisco](https://www.msigusa.com/) | 企業 | 大規模 | San Francisco／San Francisco County | insurance, finance | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [MUFG Bank San Francisco](https://www.mufgamericas.com/) | 企業 | 大規模 | San Francisco／San Francisco County | finance, banking | 番地単位 | 確認済み（2026-08-23） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-08-23 |
-| ○ | [Murata Electronics North America](https://www.murata.com) | 企業 | 大規模 | San Mateo／San Mateo County | electronics, manufacturing | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Nagase America](https://www.nagaseamerica.com/) | 企業 | 大規模 | San Jose／Santa Clara County | materials, trading | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [NEC Corporation of America](https://www.necam.com) | 企業 | 大規模 | San Jose／Santa Clara County | electronics, software | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 要確認（2026-09-19） | 2026-09-19 |
-| ○ | [Nidec America](https://www.nidec.com/en/) | 企業 | 大規模 | San Jose／Santa Clara County | motors, manufacturing | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Nikon Research Corporation of America](https://www.nikon.com) | 企業 | 大規模 | Belmont／San Mateo County | optics, manufacturing | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Nippon Life Silicon Valley](https://www.nissay.co.jp/english/) | 企業 | 大規模 | Palo Alto／Santa Clara County | insurance, business-development | 番地単位 | 要確認（2026-09-19） | 住所・座標一致（2026-09-19） | 要確認（2026-09-19） | 2026-09-19 |
-| ○ | [Nissan Research Center Silicon Valley](https://www.nissan-global.com) | 企業 | 大規模 | Sunnyvale／Santa Clara County | automotive, software | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Nitto Denko Technical America Bay Area](https://www.nitto.com/us/en/) | 企業 | 大規模 | San Jose／Santa Clara County | materials, manufacturing | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 要確認（2026-09-19） | 2026-09-19 |
-| ○ | [Nomura Securities International San Francisco](https://www.nomura.com/) | 企業 | 大規模 | San Francisco／San Francisco County | finance, securities | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [NRI IT Solutions America Pacific Branch](https://www.nri.com/en/) | 企業 | 大規模 | San Mateo／San Mateo County | consulting, technology | 番地単位 | 要確認（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [NTT Communications San Francisco](https://www.ntt.com/en/) | 企業 | 大規模 | San Francisco／San Francisco County | telecommunications, cloud | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 要確認（2026-09-19） | 2026-09-19 |
-| ○ | [NTT DATA Silicon Valley](https://us.nttdata.com/) | 企業 | 大規模 | San Jose／Santa Clara County | software, consulting | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [NTT Research](https://ntt-research.com) | 企業 | 大規模 | Sunnyvale／Santa Clara County | research, technology | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Olympus America](https://www.olympusamerica.com/) | 企業 | 大規模 | San Jose／Santa Clara County | medical-devices, imaging | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [OMRON Robotics and Safety Technologies](https://automation.omron.com) | 企業 | 大規模 | Pleasanton／Alameda County | robotics, manufacturing | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [ORIX USA San Francisco](https://www.orix.com/) | 企業 | 大規模 | San Francisco／San Francisco County | finance, investment | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Panasonic North America](https://www.panasonic.com/us) | 企業 | 大規模 | Newark／Alameda County | electronics, manufacturing | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 要確認（2026-09-19） | 2026-09-19 |
-| ○ | [Plug and Play Tech Center](https://www.plugandplaytechcenter.com/) | VC・CVC | 大規模 | Sunnyvale／Santa Clara County | venture-capital, accelerator, corporate-innovation | 番地単位 | 要確認（2026-09-19） | 要確認（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [RakuNest](https://www.rakunest.com/) | 支援機関 | 該当なし | San Mateo／San Mateo County | coworking, startup-support, community | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Rakuten USA, Inc.](https://global.rakuten.com/corp/about/map/am_us_rchw.html) | 企業 | 大規模 | San Mateo／San Mateo County | internet, ecommerce | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Rapidus Design Solutions](https://www.rapidus.inc/en/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, manufacturing | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Renesas Electronics America](https://www.renesas.com) | 企業 | 大規模 | San Jose／Santa Clara County | semiconductors, electronics | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Resonac US-JOINT](https://www.resonac.com/) | 企業 | 大規模 | Union City／Alameda County | semiconductors, materials, manufacturing | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [Ricoh Innovations](https://www.ricoh.com) | 企業 | 大規模 | Menlo Park／San Mateo County | electronics, research | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [ROHM Semiconductor USA](https://www.rohm.com) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, electronics | 都市中心（概略） | 要確認（2026-09-19） | 未照合（—） | 要確認（2026-09-19） | 2026-09-19 |
-| ○ | [Santen](https://www.santen.com/us/) | 企業 | 大規模 | Emeryville／Alameda County | biotechnology, healthcare | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-| ○ | [SCREEN SPE USA](https://www.screen.co.jp/spe/en/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, manufacturing | 番地単位 | 確認済み（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-| ○ | [SCSK USA Silicon Valley](https://www.scskusa.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | information-technology, business-development | 番地単位 | 確認済み（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-| ○ | [Sekisui Chemical Silicon Valley](https://www.sekisuichemical.com/) | 企業 | 大規模 | San Mateo／San Mateo County | materials, manufacturing | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
+| ○ | [MSIG USA San Francisco](https://www.msigusa.com/) | 企業 | 大規模 | San Francisco／San Francisco County | insurance, finance | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [MUFG Bank San Francisco](https://www.mufgamericas.com/) | 企業 | 大規模 | San Francisco／San Francisco County | finance, banking | 番地単位 | 確認済み（2026-08-23） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-08-23 |
+| ○ | [Murata Electronics North America](https://www.murata.com) | 企業 | 大規模 | San Mateo／San Mateo County | electronics, manufacturing | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Nagase America](https://www.nagaseamerica.com/) | 企業 | 大規模 | San Jose／Santa Clara County | materials, trading | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [NEC Corporation of America](https://www.necam.com) | 企業 | 大規模 | San Jose／Santa Clara County | electronics, software | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 要確認（2026-09-25） | 2026-09-25 |
+| ○ | [Nidec America](https://www.nidec.com/en/) | 企業 | 大規模 | San Jose／Santa Clara County | motors, manufacturing | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Nikon Research Corporation of America](https://www.nikon.com) | 企業 | 大規模 | Belmont／San Mateo County | optics, manufacturing | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Nippon Life Silicon Valley](https://www.nissay.co.jp/english/) | 企業 | 大規模 | Palo Alto／Santa Clara County | insurance, business-development | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 要確認（2026-09-25） | 2026-09-25 |
+| ○ | [Nissan Research Center Silicon Valley](https://www.nissan-global.com) | 企業 | 大規模 | Sunnyvale／Santa Clara County | automotive, software | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Nitto Denko Technical America Bay Area](https://www.nitto.com/us/en/) | 企業 | 大規模 | San Jose／Santa Clara County | materials, manufacturing | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 要確認（2026-09-25） | 2026-09-25 |
+| ○ | [Nomura Securities International San Francisco](https://www.nomura.com/) | 企業 | 大規模 | San Francisco／San Francisco County | finance, securities | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [NRI IT Solutions America Pacific Branch](https://www.nri.com/en/) | 企業 | 大規模 | San Mateo／San Mateo County | consulting, technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [NTT Communications San Francisco](https://www.ntt.com/en/) | 企業 | 大規模 | San Francisco／San Francisco County | telecommunications, cloud | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 要確認（2026-09-25） | 2026-09-25 |
+| ○ | [NTT DATA Silicon Valley](https://us.nttdata.com/) | 企業 | 大規模 | San Jose／Santa Clara County | software, consulting | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [NTT Research](https://ntt-research.com) | 企業 | 大規模 | Sunnyvale／Santa Clara County | research, technology | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Olympus America](https://www.olympusamerica.com/) | 企業 | 大規模 | San Jose／Santa Clara County | medical-devices, imaging | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [OMRON Robotics and Safety Technologies](https://automation.omron.com) | 企業 | 大規模 | Pleasanton／Alameda County | robotics, manufacturing | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [ORIX USA San Francisco](https://www.orix.com/) | 企業 | 大規模 | San Francisco／San Francisco County | finance, investment | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Panasonic North America](https://www.panasonic.com/us) | 企業 | 大規模 | Newark／Alameda County | electronics, manufacturing | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 要確認（2026-09-25） | 2026-09-25 |
+| ○ | [Plug and Play Tech Center](https://www.plugandplaytechcenter.com/) | VC・CVC | 大規模 | Sunnyvale／Santa Clara County | venture-capital, accelerator, corporate-innovation | 番地単位 | 要確認（2026-09-25） | 要確認（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [RakuNest](https://www.rakunest.com/) | 支援機関 | 該当なし | San Mateo／San Mateo County | coworking, startup-support, community | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Rakuten USA, Inc.](https://global.rakuten.com/corp/about/map/am_us_rchw.html) | 企業 | 大規模 | San Mateo／San Mateo County | internet, ecommerce | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Rapidus Design Solutions](https://www.rapidus.inc/en/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, manufacturing | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Renesas Electronics America](https://www.renesas.com) | 企業 | 大規模 | San Jose／Santa Clara County | semiconductors, electronics | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Resonac US-JOINT](https://www.resonac.com/) | 企業 | 大規模 | Union City／Alameda County | semiconductors, materials, manufacturing | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Ricoh Innovations](https://www.ricoh.com) | 企業 | 大規模 | Menlo Park／San Mateo County | electronics, research | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [ROHM Semiconductor USA](https://www.rohm.com) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, electronics | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 要確認（2026-09-25） | 2026-09-25 |
+| ○ | [Santen](https://www.santen.com/us/) | 企業 | 大規模 | Emeryville／Alameda County | biotechnology, healthcare | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [SCREEN SPE USA](https://www.screen.co.jp/spe/en/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, manufacturing | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [SCSK USA Silicon Valley](https://www.scskusa.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | information-technology, business-development | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+| ○ | [Sekisui Chemical Silicon Valley](https://www.sekisuichemical.com/) | 企業 | 大規模 | San Mateo／San Mateo County | materials, manufacturing | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 | ○ | [Shimadzu Scientific Instruments Bay Area](https://www.ssi.shimadzu.com/) | 企業 | 大規模 | San Jose／Santa Clara County | scientific-instruments, manufacturing | 番地単位 | 確認済み（2026-09-21） | 住所・座標一致（2026-09-21） | 確認済み（2026-09-21） | 2026-09-21 |
 | ○ | [Shimizu Corporation Silicon Valley](https://www.shimz.co.jp/en/) | 企業 | 大規模 | San Mateo／San Mateo County | construction, technology-scouting | 番地単位 | 要確認（2026-09-24） | 住所・座標一致（2026-09-24） | 確認済み（2026-09-24） | 2026-09-24 |
 | ○ | [Shin-Etsu MicroSi](https://www.microsi.com/) | 企業 | 大規模 | San Jose／Santa Clara County | semiconductors, materials | 都市中心（概略） | 要確認（2026-09-21） | 未照合（—） | 確認済み（2026-09-21） | 2026-09-21 |
@@ -223,40 +223,40 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 | ○ | [Yamaha Motor Ventures](https://www.yamahamotorventures.com) | VC・CVC | 該当なし | Palo Alto／Santa Clara County | venture-capital, mobility | 都市中心（概略） | 要確認（2026-09-21） | 未照合（—） | 確認済み（2026-09-21） | 2026-09-21 |
 | ○ | [Yaskawa America](https://www.yaskawa.com/) | 企業 | 大規模 | Fremont／Alameda County | robotics, manufacturing | 都市中心（概略） | 要確認（2026-09-21） | 未照合（—） | 確認済み（2026-09-21） | 2026-09-21 |
 | ○ | [Yokogawa Corporation of America Bay Area](https://www.yokogawa.com/us/) | 企業 | 大規模 | San Jose／Santa Clara County | automation, manufacturing | 都市中心（概略） | 要確認（2026-09-21） | 未照合（—） | 確認済み（2026-09-21） | 2026-09-21 |
-|  | [140 Proof](https://www.140proof.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 要確認（2026-09-20） | 2026-09-20 |
-|  | [Abl Schools](https://ablschools.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 都市中心（概略） | 要確認（2026-09-20） | 未照合（—） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Abstract](https://www.goabstract.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 要確認（2026-09-20） | 2026-09-20 |
-|  | [Accenture](https://www.accenture.com) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Admitsee](https://www.admitsee.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Adobe](http://www.adobe.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [AdStage](https://www.adstage.io/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Advent Software](https://www.advent.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Affirm](https://www.affirm.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [After College](https://www.aftercollege.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Airbnb](https://www.airbnb.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Airware](https://www.airware.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 要確認（2026-09-20） | 2026-09-20 |
-|  | [AKQA](http://www.akqa.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Aktana](https://www.aktana.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Algolia](https://www.algolia.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Alpha Sense](https://www.alpha-sense.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [AltSchool](https://www.altschool.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 要確認（2026-09-20） | 2026-09-20 |
-|  | [Always Hired](http://www.alwayshired.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Amazon Web Services](https://aws.amazon.com/) | 企業 | 大規模 | San Francisco／San Francisco County | cloud, enterprise-software | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
+|  | [140 Proof](https://www.140proof.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 要確認（2026-09-25） | 2026-09-25 |
+|  | [Abl Schools](https://ablschools.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Abstract](https://www.goabstract.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 要確認（2026-09-25） | 2026-09-25 |
+|  | [Accenture](https://www.accenture.com) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Admitsee](https://www.admitsee.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Adobe](http://www.adobe.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [AdStage](https://www.adstage.io/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Advent Software](https://www.advent.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Affirm](https://www.affirm.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [After College](https://www.aftercollege.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Airbnb](https://www.airbnb.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Airware](https://www.airware.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 要確認（2026-09-25） | 2026-09-25 |
+|  | [AKQA](http://www.akqa.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Aktana](https://www.aktana.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Algolia](https://www.algolia.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Alpha Sense](https://www.alpha-sense.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [AltSchool](https://www.altschool.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 要確認（2026-09-25） | 2026-09-25 |
+|  | [Always Hired](http://www.alwayshired.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Amazon Web Services](https://aws.amazon.com/) | 企業 | 大規模 | San Francisco／San Francisco County | cloud, enterprise-software | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [AMD](https://www.amd.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, computing | 番地単位 | 確認済み（2026-08-23） | 住所・座標一致（2026-09-21） | 要確認（2026-09-21） | 2026-08-27 |
-|  | [Amplitude Analytics](https://amplitude.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
+|  | [Amplitude Analytics](https://amplitude.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Andreessen Horowitz](https://a16z.com/) | VC・CVC | 該当なし | Menlo Park／San Mateo County | venture-capital, technology | 番地単位 | 確認済み（2026-09-21） | 住所・座標一致（2026-09-21） | 確認済み（2026-09-21） | 2026-09-21 |
-|  | [AngelList](https://angel.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
+|  | [AngelList](https://angel.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Anthropic](https://www.anthropic.com/) | 企業 | グロース | San Francisco／San Francisco County | ai, research, enterprise-software | 番地単位 | 要確認（2026-09-21） | 住所・座標一致（2026-09-21） | 確認済み（2026-09-21） | 2026-09-21 |
-|  | [AppDirect](https://www.appdirect.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
+|  | [AppDirect](https://www.appdirect.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Apple](https://www.apple.com/) | 企業 | 大規模 | Cupertino／Santa Clara County | electronics, software, services | 番地単位 | 確認済み（2026-09-21） | 要確認（2026-09-21） | 確認済み（2026-09-21） | 2026-09-21 |
 |  | [Applied Materials](https://www.appliedmaterials.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, manufacturing, equipment | 番地単位 | 確認済み（2026-08-24） | 住所・座標一致（2026-09-21） | 要確認（2026-09-21） | 2026-08-24 |
-|  | [Apteligent](http://www.apteligent.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 要確認（2026-09-20） | 2026-09-20 |
-|  | [Asana](https://asana.com) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Automattic](https://automattic.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Bebo](https://bebo.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
+|  | [Apteligent](http://www.apteligent.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 要確認（2026-09-25） | 2026-09-25 |
+|  | [Asana](https://asana.com) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Automattic](https://automattic.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Bebo](https://bebo.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Berkeley SkyDeck](https://skydeck.berkeley.edu/) | 支援機関 | 該当なし | Berkeley／Alameda County | accelerator, startup-support | 都市中心（概略） | 要確認（2026-09-21） | 未照合（—） | 確認済み（2026-09-21） | 2026-09-21 |
-|  | [BetterUp](https://www.betterup.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [Beyond Games](https://www.beyondgames.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
+|  | [BetterUp](https://www.betterup.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Beyond Games](https://www.beyondgames.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [BigCommerce](https://www.bigcommerce.com) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
 |  | [Binti](https://binti.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-20） | 住所・座標一致（2026-09-20） | 確認済み（2026-09-20） | 2026-09-20 |
 |  | [Bio-Rad Laboratories](https://www.bio-rad.com/) | 企業 | 大規模 | Hercules／Contra Costa County | biotechnology, life-sciences | 番地単位 | 要確認（2026-09-21） | 住所・座標一致（2026-09-21） | 要確認（2026-09-21） | 2026-09-21 |
@@ -427,20 +427,20 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Monkey Inferno](http://monkeyinferno.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [MoogSoft](https://www.moogsoft.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Mux](https://mux.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
-|  | [Napa Valley College](https://www.napavalley.edu/) | 大学・研究機関 | 該当なし | Napa／Napa County | education, community | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-|  | [NASA Ames Research Center](https://www.nasa.gov/ames/) | 大学・研究機関 | 該当なし | Moffett Field／Santa Clara County | aerospace, space, research | 番地単位 | 要確認（2026-09-19） | 要確認（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
+|  | [Napa Valley College](https://www.napavalley.edu/) | 大学・研究機関 | 該当なし | Napa／Napa County | education, community | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [NASA Ames Research Center](https://www.nasa.gov/ames/) | 大学・研究機関 | 該当なし | Moffett Field／Santa Clara County | aerospace, space, research | 番地単位 | 要確認（2026-09-25） | 要確認（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Navdy](https://www.navdy.com/#see-the-road) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 要確認（2026-09-22） | 2026-09-22 |
 |  | [Naytev](https://www.naytev.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [NepFin](https://www.nepfin.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 要確認（2026-09-22） | 2026-09-22 |
-|  | [NetApp](https://www.netapp.com/) | 企業 | 大規模 | San Jose／Santa Clara County | data-storage, cloud, enterprise-software | 番地単位 | 要確認（2026-09-19） | 住所・座標一致（2026-09-19） | 要確認（2026-09-19） | 2026-09-19 |
-|  | [Netflix](https://www.netflix.com/) | 企業 | 大規模 | Los Gatos／Santa Clara County | streaming, media, technology | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
+|  | [NetApp](https://www.netapp.com/) | 企業 | 大規模 | San Jose／Santa Clara County | data-storage, cloud, enterprise-software | 番地単位 | 要確認（2026-09-25） | 住所・座標一致（2026-09-25） | 要確認（2026-09-25） | 2026-09-25 |
+|  | [Netflix](https://www.netflix.com/) | 企業 | 大規模 | Los Gatos／Santa Clara County | streaming, media, technology | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [New Relic](https://newrelic.com) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [No Means No Worldwide](https://www.nomeansnoworldwide.org/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [NoRedInk](https://www.noredink.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Notable Labs](https://www.notablelabs.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 要確認（2026-09-22） | 2026-09-22 |
 |  | [Nova Credit](http://neednova.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Nuna](https://www.nuna.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
-|  | [NVIDIA](https://www.nvidia.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, ai, computing | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
+|  | [NVIDIA](https://www.nvidia.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, ai, computing | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Oath (former Yahoo!)](https://www.oath.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Okta](https://www.okta.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [OpenAI](https://www.openai.com/) | 企業 | 大規模 | San Francisco／San Francisco County | artificial-intelligence, technology | 番地単位 | 要確認（2026-09-21） | 住所・座標一致（2026-09-21） | 要確認（2026-09-21） | 2026-09-21 |
@@ -448,12 +448,12 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Opendoor](https://www.opendoor.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Opentable](https://www.opentable.com) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 要確認（2026-09-22） | 2026-09-22 |
 |  | [Optimizely](https://www.optimizely.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
-|  | [Oracle](https://www.oracle.com/) | 企業 | 大規模 | Redwood City／San Mateo County | enterprise-software, cloud, database | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 要確認（2026-09-19） | 2026-09-19 |
-|  | [Palo Alto Networks](https://www.paloaltonetworks.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | cybersecurity, enterprise-software | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
+|  | [Oracle](https://www.oracle.com/) | 企業 | 大規模 | Redwood City／San Mateo County | enterprise-software, cloud, database | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 要確認（2026-09-25） | 2026-09-25 |
+|  | [Palo Alto Networks](https://www.paloaltonetworks.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | cybersecurity, enterprise-software | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Pantheon](https://pantheon.io/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Parsable](https://www.parsable.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Patagonia](http://www.patagonia.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
-|  | [PayPal](https://www.paypal.com/) | 企業 | 大規模 | San Jose／Santa Clara County | fintech, payments | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
+|  | [PayPal](https://www.paypal.com/) | 企業 | 大規模 | San Jose／Santa Clara County | fintech, payments | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Periscope Data](https://www.periscopedata.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Pinterest](https://www.pinterest.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Pique Tea](https://www.piquetea.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-21） | 住所・座標一致（2026-09-21） | 確認済み（2026-09-21） | 2026-09-21 |
@@ -465,7 +465,7 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Prezi](https://prezi.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Product School](https://www.productschool.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 確認済み（2026-09-22） | 2026-09-22 |
 |  | [Prosperworks](https://www.prosperworks.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 要確認（2026-09-22） | 2026-09-22 |
-|  | [Pyka](https://www.flypyka.com/) | 企業 | スタートアップ | Alameda／Alameda County | drones, aerospace, robotics, defense, manufacturing | 番地単位 | 確認済み（2026-09-19） | 要確認（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
+|  | [Pyka](https://www.flypyka.com/) | 企業 | スタートアップ | Alameda／Alameda County | drones, aerospace, robotics, defense, manufacturing | 番地単位 | 確認済み（2026-09-25） | 要確認（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Qadium](https://qadium.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-22） | 住所・座標一致（2026-09-22） | 要確認（2026-09-22） | 2026-09-22 |
 |  | [Quantcast](https://www.quantcast.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
 |  | [Quid Inc](https://quid.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
@@ -479,22 +479,22 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Remix](https://www.remix.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
 |  | [Rithm School](https://www.rithmschool.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 要確認（2026-09-23） | 2026-09-23 |
 |  | [Runway Incubator](http://www.runway.is/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 要確認（2026-09-23） | 2026-09-23 |
-|  | [Saildrone](https://www.saildrone.com/) | 企業 | グロース | Alameda／Alameda County | drones, robotics, defense, science, manufacturing | 番地単位 | 確認済み（2026-08-24） | 要確認（2026-09-19） | 確認済み（2026-09-19） | 2026-08-24 |
+|  | [Saildrone](https://www.saildrone.com/) | 企業 | グロース | Alameda／Alameda County | drones, robotics, defense, science, manufacturing | 番地単位 | 確認済み（2026-08-24） | 要確認（2026-09-25） | 確認済み（2026-09-25） | 2026-08-24 |
 |  | [Salesforce](https://www.salesforce.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
 |  | [Salon Media Group](https://www.salon.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
-|  | [San José State University](https://www.sjsu.edu/) | 大学・研究機関 | 該当なし | San Jose／Santa Clara County | education, research | 番地単位 | 確認済み（2026-09-19） | 要確認（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-|  | [Sandia National Laboratories, California](https://www.sandia.gov/) | 大学・研究機関 | 該当なし | Livermore／Alameda County | research, science, energy, defense | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
-|  | [Sandisk](https://www.sandisk.com/) | 企業 | 大規模 | Milpitas／Santa Clara County | semiconductors, data-storage, electronics | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
+|  | [San José State University](https://www.sjsu.edu/) | 大学・研究機関 | 該当なし | San Jose／Santa Clara County | education, research | 番地単位 | 確認済み（2026-09-25） | 要確認（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Sandia National Laboratories, California](https://www.sandia.gov/) | 大学・研究機関 | 該当なし | Livermore／Alameda County | research, science, energy, defense | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [Sandisk](https://www.sandisk.com/) | 企業 | 大規模 | Milpitas／Santa Clara County | semiconductors, data-storage, electronics | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Sano](https://sano.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 要確認（2026-09-23） | 2026-09-23 |
-|  | [Santa Clara University](https://www.scu.edu/) | 大学・研究機関 | 該当なし | Santa Clara／Santa Clara County | education, research | 番地単位 | 確認済み（2026-09-19） | 住所・座標一致（2026-09-19） | 確認済み（2026-09-19） | 2026-09-19 |
+|  | [Santa Clara University](https://www.scu.edu/) | 大学・研究機関 | 該当なし | Santa Clara／Santa Clara County | education, research | 番地単位 | 確認済み（2026-09-25） | 住所・座標一致（2026-09-25） | 確認済み（2026-09-25） | 2026-09-25 |
 |  | [Say Media](https://www.saymedia.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
 |  | [Scality](http://www.scality.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
 |  | [Scripted](https://www.scripted.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
 |  | [Segment](https://segment.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
 |  | [Sentry](https://sentry.io) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
 |  | [Sephora](https://www.sephora.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 要確認（2026-09-23） | 2026-09-23 |
-|  | [Sequoia Capital](https://www.sequoiacap.com/) | VC・CVC | 該当なし | Menlo Park／San Mateo County | venture-capital, technology | 都市中心（概略） | 要確認（2026-09-20） | 未照合（—） | 確認済み（2026-09-20） | 2026-09-20 |
-|  | [ServiceNow](https://www.servicenow.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | enterprise-software, cloud | 番地単位 | 確認済み（2026-08-23） | 住所・座標一致（2026-09-20） | 要確認（2026-09-20） | 2026-08-23 |
+|  | [Sequoia Capital](https://www.sequoiacap.com/) | VC・CVC | 該当なし | Menlo Park／San Mateo County | venture-capital, technology | 都市中心（概略） | 要確認（2026-09-25） | 未照合（—） | 確認済み（2026-09-25） | 2026-09-25 |
+|  | [ServiceNow](https://www.servicenow.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | enterprise-software, cloud | 番地単位 | 確認済み（2026-08-23） | 住所・座標一致（2026-09-25） | 要確認（2026-09-25） | 2026-08-23 |
 |  | [Shogun](http://www.shoguninc.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 要確認（2026-09-23） | 2026-09-23 |
 |  | [Shopify](https://www.shopify.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-21） | 住所・座標一致（2026-09-21） | 確認済み（2026-09-21） | 2026-09-21 |
 |  | [Sift Science](https://siftscience.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-09-23） | 住所・座標一致（2026-09-23） | 確認済み（2026-09-23） | 2026-09-23 |
