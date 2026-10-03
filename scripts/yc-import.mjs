@@ -14,18 +14,18 @@ export const PRIORITY_CORRECTION_DATE = "2026-10-03";
 
 const CENSUS_GEOCODER_URL = "https://geocoding.geo.census.gov/geocoder/";
 const OSM_OMRON_URL = "https://www.openstreetmap.org/?mlat=37.6890409&mlon=-121.8927267";
+export const CURATED_PRESENCE_OVERRIDES = Object.freeze({
+  "ihi-rakunest": Object.freeze({
+    facilityId: "rakunest",
+    name: "IHI",
+    nameJa: "株式会社IHI",
+    profileSourceUrl: "https://www.ihi.co.jp/en/",
+    userStatementDate: "2026-10-03",
+    userStatement: "IHI Launch Pad has closed. IHI currently has a private office inside RakuNest.",
+    supportingSourceUrl: "https://www.rakunest.com/contact",
+  }),
+});
 const PRIORITY_CORRECTIONS = Object.freeze({
-  "ihi-rakunest": {
-    name: "IHI Launch Pad",
-    nameJa: "IHIイノベーションセンター",
-    evidenceScope: "entity-page",
-    sourceUrl: "https://www.ihi.co.jp/ihi_launchpad/",
-    address: "963 Industrial Road, Suite D",
-    city: "San Carlos",
-    postalCode: "94070",
-    county: "San Mateo County",
-    coordinates: [-122.249823194785, 37.505417687692],
-  },
   "acario-innovation": {
     nameAliases: ["Acario Innovation", "Acario Office"],
     sourceUrl: "https://acarioinnovation.com/contact-us/",
@@ -617,6 +617,103 @@ export function applyPriorityCorrections(doc, date = PRIORITY_CORRECTION_DATE) {
   return { applied, reviewed };
 }
 
+export function applyCuratedPresenceOverrides(doc, date = PRIORITY_CORRECTION_DATE) {
+  const applied = [];
+  const eligible = new Set();
+  const skipped = new Set();
+  for (const [id, override] of Object.entries(CURATED_PRESENCE_OVERRIDES)) {
+    const feature = doc.features?.find((item) => item.properties?.id === id);
+    const facility = doc.features?.find((item) => item.properties?.id === override.facilityId);
+    if (!feature || !facility?.properties?.location || !Array.isArray(facility.geometry?.coordinates)) continue;
+    eligible.add(id);
+
+    const p = feature.properties;
+    if (p.presenceCheck?.sourceType === "user-confirmed" &&
+        typeof p.presenceCheck.userStatementDate === "string" &&
+        p.presenceCheck.userStatementDate > override.userStatementDate) {
+      skipped.add(id);
+      continue;
+    }
+    const facilityLocation = facility.properties.location;
+    const before = JSON.stringify({
+      name: p.name,
+      nameJa: p.nameJa,
+      profileSourceUrl: p.profileSourceUrl,
+      location: p.location,
+      coordinates: feature.geometry?.coordinates,
+      presenceCheck: p.presenceCheck,
+      correctionSource: p.correctionSource,
+    });
+
+    p.name = override.name;
+    p.nameJa = override.nameJa;
+    p.profileSourceUrl = override.profileSourceUrl;
+    p.location = {
+      ...facilityLocation,
+      sourceUrl: override.supportingSourceUrl,
+    };
+    feature.geometry = {
+      type: facility.geometry.type,
+      coordinates: [...facility.geometry.coordinates],
+    };
+    p.presenceCheck = {
+      checkedAt: override.userStatementDate,
+      status: "verified",
+      sourceUrl: null,
+      sourceType: "user-confirmed",
+      userStatementDate: override.userStatementDate,
+      userStatement: override.userStatement,
+      supportingSourceUrl: override.supportingSourceUrl,
+    };
+    delete p.correctionSource;
+    delete p.dataQualityNote;
+
+    const after = JSON.stringify({
+      name: p.name,
+      nameJa: p.nameJa,
+      profileSourceUrl: p.profileSourceUrl,
+      location: p.location,
+      coordinates: feature.geometry.coordinates,
+      presenceCheck: p.presenceCheck,
+      correctionSource: p.correctionSource,
+    });
+    if (before !== after) {
+      p.updatedAt = date;
+      applied.push(id);
+    }
+  }
+
+  if (!doc.metadata) doc.metadata = {};
+  const ids = eligible;
+  const previous = Array.isArray(doc.metadata.manualCorrections)
+    ? doc.metadata.manualCorrections.filter((item) =>
+      !ids.has(item.id) || skipped.has(item.id) || (typeof item.userStatementDate === "string" &&
+        item.userStatementDate > CURATED_PRESENCE_OVERRIDES[item.id]?.userStatementDate))
+    : [];
+  const current = Object.entries(CURATED_PRESENCE_OVERRIDES)
+    .filter(([id]) => eligible.has(id))
+    .filter(([id]) => !skipped.has(id))
+    .filter(([id, override]) => !previous.some((item) => item.id === id && item.userStatementDate > override.userStatementDate))
+    .map(([id, override]) => ({
+      id,
+      checkedAt: override.userStatementDate,
+      status: "verified",
+      sourceType: "user-confirmed",
+      sourceUrl: null,
+      userStatementDate: override.userStatementDate,
+      userStatement: override.userStatement,
+      supportingSourceUrl: override.supportingSourceUrl,
+    }));
+  doc.metadata.manualCorrections = [
+    ...previous,
+    ...current,
+  ];
+  if (applied.length && (!doc.metadata.updatedAt || doc.metadata.updatedAt < date)) {
+    doc.metadata.updatedAt = date;
+  }
+  return { applied };
+}
+
 export function selectRecords(records, { limit = DEFAULT_LIMIT, all = false } = {}) {
   const candidates = records
     .filter((record) => record?.status === "Active")
@@ -664,6 +761,7 @@ export function importDataset(base, records, { date = DEFAULT_DATE, limit = DEFA
   doc.features = [...features, ...added];
   // The recorded October corrections are a one-time migration, never a recurring override.
   const priorityCorrections = applyCorrections ? applyPriorityCorrections(doc) : null;
+  const curatedPresenceOverrides = applyCuratedPresenceOverrides(doc, date);
   doc.metadata = {
     ...(doc.metadata ?? {}),
     schemaVersion: 3,
@@ -681,6 +779,7 @@ export function importDataset(base, records, { date = DEFAULT_DATE, limit = DEFA
       promoted,
       officialVerified: added.filter((feature) => feature.properties.presenceCheck.sourceType === "official-directory").length,
       ...(priorityCorrections ? { priorityCorrections } : {}),
+      ...(curatedPresenceOverrides.applied.length ? { curatedPresenceOverrides } : {}),
     },
   };
   return { doc, selected: considered, added: added.length, promoted };

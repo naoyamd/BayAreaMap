@@ -1,0 +1,25 @@
+{
+  "version": "2.0.1",
+  "checkedAt": "2026-10-03T12:07:57.999Z",
+  "checks": {
+    "nodeTestsPassed": 54,
+    "schema": "passed",
+    "generatedReadme": "passed",
+    "cityMarkers": "Dedicated pane at z-index 450, below normal marker/cluster pane",
+    "sharedAddresses": "All cities auto-expand at zoom 14–19; manual expanded mode at lower zooms",
+    "ihi": {
+      "currentOffice": "900 Concar Drive, Suite 400",
+      "city": "San Mateo",
+      "evidenceType": "user-confirmed",
+      "originalConfirmationDate": "2026-10-03",
+      "realAudit": {
+        "status": "completed",
+        "websiteAttempts": 1,
+        "websiteOk": 1,
+        "reviewDowngrades": 0
+      }
+    },
+    "browserVisualReview": "Blocked because Browser Use could not verify saved browser permissions."
+  },
+  "deployment": "Release candidate. GitHub Pages workflow records production deployment status."
+}

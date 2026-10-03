@@ -112,10 +112,12 @@ test("startup keeps the list usable when the map CDN is unavailable; notebook, n
 });
 
 test("shared city/radius filters roundtrip; descriptions are searchable", async () => {
-  const ui = app({ query: "?city=San%20Mateo&radius=25" }); ui.startup();
+  const ui = app({ query: "?city=San%20Mateo&radius=25&expand=1" }); ui.startup();
   await new Promise((resolve) => setImmediate(resolve));
   assert.equal(ui.logic.state.city, "San Mateo");
   assert.equal(ui.logic.state.radius, 25);
+  assert.equal(ui.logic.state.expandOffices, true);
+  assert.match(ui.document.getElementById("expand-offices").textContent, /expanded/);
   const params = ui.logic.serializeState();
   assert.equal(params.get("city"), "San Mateo"); assert.equal(params.get("radius"), "25");
   const near = ui.logic.computeVisible()[0];
@@ -184,5 +186,20 @@ test("city centroids produce one clearly approximate aggregate, never individual
   assert.equal(layer.items.length, 1);
   assert.match(layer.items[0].options.icon.className, /city-cluster/);
   assert.equal(layer.items[0].options.icon.html, "<span>2</span>");
+  assert.equal(layer.items[0].options.pane, "city-centroids");
   assert.match(layer.items[0].tooltip, /approximate city locations/);
+});
+
+test("current-office user evidence is clearly distinguished from official web verification", () => {
+  const ui = app(); ui.startup();
+  const current = feature("ihi-rakunest", "IHI", "San Mateo", [-122.300177371754, 37.555182590093]);
+  current.properties.presenceCheck = {
+    status: "verified", sourceUrl: null, sourceType: "user-confirmed", checkedAt: "2026-10-03",
+    userStatementDate: "2026-10-03", userStatement: "IHI now has a private office inside RakuNest.",
+    supportingSourceUrl: "https://www.rakunest.com/contact",
+  };
+  ui.logic.populateDetail(current);
+  assert.match(ui.document.getElementById("detail-content").textContent, /Current office confirmed by user/);
+  assert.match(ui.document.getElementById("detail-content").textContent, /IHI now has a private office inside RakuNest/);
+  assert.match(ui.document.getElementById("detail-content").textContent, /Supporting facility source/);
 });

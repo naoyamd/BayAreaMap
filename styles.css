@@ -676,6 +676,9 @@ main {
   pointer-events: auto;
 }
 
+#expand-offices { border-radius: 999px; box-shadow: var(--shadow); color: var(--accent); background: #fff; }
+#expand-offices[aria-pressed="true"] { color: #fff; background: var(--accent); }
+
 #search-area,
 #show-all-area {
   display: block;

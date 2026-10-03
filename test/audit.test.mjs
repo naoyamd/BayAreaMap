@@ -6,6 +6,7 @@ import { gzipSync } from 'node:zlib';
 import { performance } from 'node:perf_hooks';
 
 import {
+  canAuditLocation,
   chooseAddressCandidate,
   classifyLocation,
   classifyPresence,
@@ -36,6 +37,7 @@ import {
   sourceMentionsOfficialYcProfile,
   DEFAULT_BATCH_SIZE,
 } from '../scripts/audit.mjs';
+import { applyCuratedPresenceOverrides } from '../scripts/yc-import.mjs';
 import { buildCandidateReport } from '../scripts/wikipedia-candidates.mjs';
 
 const SHARD_COUNT = 45;
@@ -244,12 +246,45 @@ test('coordinate and current-presence checks stay independent', () => {
   );
 });
 
-test('IHI uses its current official Launch Pad office rather than a former tenant-list address', () => {
+test('IHI uses its current RakuNest office and keeps user confirmation separate from official sources', () => {
   const ihi = features.find((feature) => feature.properties.id === 'ihi-rakunest');
-  assert.equal(ihi.properties.name, 'IHI Launch Pad');
-  assert.equal(ihi.properties.location.address, '963 Industrial Road, Suite D');
-  assert.equal(ihi.properties.location.city, 'San Carlos');
-  assert.equal(ihi.properties.location.sourceUrl, 'https://www.ihi.co.jp/ihi_launchpad/');
+  const rakunest = features.find((feature) => feature.properties.id === 'rakunest');
+  assert.equal(ihi.properties.name, 'IHI');
+  assert.deepStrictEqual(ihi.geometry.coordinates, rakunest.geometry.coordinates);
+  assert.equal(ihi.properties.location.address, rakunest.properties.location.address);
+  assert.equal(ihi.properties.location.city, rakunest.properties.location.city);
+  assert.equal(ihi.properties.location.county, rakunest.properties.location.county);
+  assert.equal(ihi.properties.presenceCheck.sourceType, 'user-confirmed');
+  assert.equal(ihi.properties.presenceCheck.sourceUrl, null);
+  assert.equal(ihi.properties.presenceCheck.userStatementDate, '2026-10-03');
+  assert.equal(ihi.properties.presenceCheck.supportingSourceUrl, 'https://www.rakunest.com/contact');
+});
+
+test('curated IHI presence is not downgraded by no-source audit cleanup and accepts newer user evidence', () => {
+  const replay = structuredClone(geo);
+  const ihi = replay.features.find((feature) => feature.properties.id === 'ihi-rakunest');
+  ihi.properties.presenceCheck = {
+    checkedAt: '2026-11-01',
+    status: 'verified',
+    sourceUrl: null,
+    sourceType: 'user-confirmed',
+    userStatementDate: '2026-11-01',
+    userStatement: 'IHI has a newer private-office confirmation.',
+    supportingSourceUrl: 'https://www.rakunest.com/contact',
+  };
+  ihi.properties.location.address = '2 Newer Facility Address';
+  applyCuratedPresenceOverrides(replay, '2026-11-02');
+  assert.equal(ihi.properties.presenceCheck.userStatementDate, '2026-11-01');
+  assert.equal(ihi.properties.presenceCheck.userStatement, 'IHI has a newer private-office confirmation.');
+  assert.equal(ihi.properties.location.address, '2 Newer Facility Address');
+
+  const current = structuredClone(geo);
+  const currentIhi = current.features.find((feature) => feature.properties.id === 'ihi-rakunest');
+  assert.equal(reviewUnverifiedPresence(currentIhi.properties, '2026-11-02'), false);
+  assert.equal(currentIhi.properties.presenceCheck.status, 'verified');
+  assert.equal(canAuditLocation(currentIhi), false, 'stale office pages cannot enter the address-discovery or geocoding passes');
+  const websiteVerifiedCompany = current.features.find((feature) => feature.properties.id === 'google');
+  assert.equal(canAuditLocation(websiteVerifiedCompany), true, 'normal official address audits remain enabled');
 });
 
 test('YC city presence uses canonical active profile evidence without accepting generic text', () => {
@@ -512,7 +547,7 @@ test('official office pages replace San Francisco city placeholders', () => {
   assert.ok(!features.some((item) => item.properties.id === 'soracom-us'));
 });
 
-test('major Bay Area anchors are present and dense cities expand only at maximum zoom', () => {
+test('major Bay Area anchors are present and shared offices expand consistently across cities', () => {
   const ids = [
     'google', 'apple', 'meta', 'nvidia', 'tesla-fremont', 'cisco', 'intel', 'amd',
     'oracle', 'linkedin', 'netflix', 'databricks', 'snowflake', 'anthropic', 'doordash',
@@ -528,16 +563,15 @@ test('major Bay Area anchors are present and dense cities expand only at maximum
     assert.ok(['verified', 'review'].includes(features.find((item) => item.properties.id === id).properties.presenceCheck.status), id);
   }
   assert.ok(features.filter((item) => item.properties.presenceCheck.status === 'verified')
-    .every((item) => item.properties.presenceCheck.sourceUrl));
+    .every((item) => item.properties.presenceCheck.sourceUrl ||
+      (item.properties.presenceCheck.sourceType === 'user-confirmed' && item.properties.presenceCheck.userStatementDate)));
   for (const id of ['google', 'apple', 'meta', 'sf-amazon-web-services', 'sf-microsoft']) {
     assert.strictEqual(features.find((item) => item.properties.id === id)?.properties.scale, 'large', id);
   }
   assert.match(appSource, /const TOWN_ZOOM = 14;/);
   assert.match(appSource, /const MAX_ZOOM = 19;/);
-  assert.match(appSource, /DENSE_CLUSTER_CITIES = new Set\(\["San Francisco", "San Jose", "Santa Clara"\]\)/);
-  assert.match(appSource, /if \(zoom < TOWN_ZOOM\) return \{ positions, townIds \};/);
-  assert.match(appSource, /const expandEverywhere = zoom >= MAX_ZOOM;/);
-  assert.match(appSource, /if \(!expandEverywhere && DENSE_CLUSTER_CITIES\.has\(props\.location\.city\)\) continue;/);
+  assert.doesNotMatch(appSource, /DENSE_CLUSTER_CITIES|expandEverywhere/);
+  assert.match(appSource, /if \(zoom < TOWN_ZOOM && !state\.expandOffices\) return \{ positions, townIds \};/);
   assert.match(appSource, /townIds\.add\(props\.id\);/);
   assert.match(appSource, /if \(!bounds\.contains\(origin\)\) continue;/);
   assert.match(appSource, /feature\.geometry\.coordinates\.join\(","\)/);

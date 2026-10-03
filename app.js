@@ -7,7 +7,6 @@ const ICON_SIZE = 42;
 const TOWN_ZOOM = 14;
 const PAGE_SIZE = 50;
 const SEARCH_DEBOUNCE_MS = 120;
-const DENSE_CLUSTER_CITIES = new Set(["San Francisco", "San Jose", "Santa Clara"]);
 const SAN_MATEO = [37.563, -122.3255];
 const PERSONAL_STORAGE_KEY = "bayareamap-notebook-v1";
 
@@ -189,6 +188,7 @@ const state = {
   city: "",
   radius: null,
   savedOnly: false,
+  expandOffices: false,
   sort: "relevance",
   preset: null,
   sectors: new Set(),
@@ -258,10 +258,11 @@ function csvCell(value) {
 }
 
 function buildCsv(features) {
-  const rows = [["Entity ID", "Name", "Japanese name", "City", "County", "Address", "Precision", "Presence", "Presence checked", "Presence source", "Website", "Industries", "Updated", "Saved", "Personal note"]];
+  const rows = [["Entity ID", "Name", "Japanese name", "City", "County", "Address", "Precision", "Presence", "Presence evidence type", "Presence checked", "Presence source", "User confirmation", "Supporting facility source", "Website", "Industries", "Updated", "Saved", "Personal note"]];
   for (const { properties: p } of features) rows.push([
     p.id, p.name, p.nameJa, p.location.city, p.location.county, p.location.address,
-    p.location.precision, p.presenceCheck.status, p.presenceCheck.checkedAt, p.presenceCheck.sourceUrl,
+    p.location.precision, p.presenceCheck.status, p.presenceCheck.sourceType, p.presenceCheck.checkedAt, p.presenceCheck.sourceUrl,
+    p.presenceCheck.userStatement, p.presenceCheck.supportingSourceUrl,
     p.website, p.industries.join("; "), p.updatedAt, personal.saved.has(p.id) ? "yes" : "", personal.notes[p.id],
   ]);
   return "\uFEFF" + rows.map((row) => row.map(csvCell).join(",")).join("\r\n");
@@ -482,6 +483,7 @@ function fillLogo(container, props, lazy) {
 
 function initMap(center, zoom) {
   map = L.map("map", { center, zoom });
+  map.createPane("city-centroids").style.zIndex = 450;
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: MAX_ZOOM,
     attribution:
@@ -556,18 +558,16 @@ function computeLayout() {
   }
   overlapLegLayer.clearLayers();
   const zoom = map.getZoom();
-  if (zoom < TOWN_ZOOM) return { positions, townIds };
-  const expandEverywhere = zoom >= MAX_ZOOM;
+  if (zoom < TOWN_ZOOM && !state.expandOffices) return { positions, townIds };
   const bounds = map.getBounds();
   const groups = new Map();
   for (const feature of visibleEntities) {
     const props = feature.properties;
     // City centroids are shared approximate anchors; spreading them implies false street locations.
     if (props.location.precision === "city") continue;
-    if (!expandEverywhere && DENSE_CLUSTER_CITIES.has(props.location.city)) continue;
     const origin = latlngOf(feature);
     if (!bounds.contains(origin)) continue;
-    townIds.add(props.id);
+    if (zoom >= TOWN_ZOOM) townIds.add(props.id);
     const key = feature.geometry.coordinates.join(",");
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(feature);
@@ -646,7 +646,7 @@ function refreshCityMarkers() {
   }
   for (const group of groups.values()) {
     const city = group[0].properties.location.city;
-    const marker = L.marker(latlngOf(group[0]), { icon: L.divIcon({
+    const marker = L.marker(latlngOf(group[0]), { pane: "city-centroids", icon: L.divIcon({
       className: "company-cluster city-cluster", html: `<span>${group.length}</span>`, iconSize: [48, 48],
     }) });
     marker.bindTooltip(textNode(`${city}: ${group.length} approximate city locations. Open the company list.`));
@@ -867,7 +867,7 @@ function makeResultCard(feature) {
     SCALE_LABELS[props.scale] || props.scale,
     props.location.city,
     LOCATION_PRECISION_LABELS[props.location.precision],
-    `Presence: ${PRESENCE_STATUS_LABELS[props.presenceCheck.status] || props.presenceCheck.status}${props.presenceCheck.sourceType === "official-directory" ? " (city reported)" : ""}`,
+    `Presence: ${props.presenceCheck.sourceType === "user-confirmed" ? "User confirmed" : (PRESENCE_STATUS_LABELS[props.presenceCheck.status] || props.presenceCheck.status)}${props.presenceCheck.sourceType === "official-directory" ? " (city reported)" : ""}`,
   ]
     .filter(Boolean)
     .join(" · ");
@@ -958,6 +958,7 @@ function renderResults() {
   el.resultsCount.textContent = `${total} result${total === 1 ? "" : "s"}`;
   $("export-csv").disabled = total === 0;
   $("fit-results").disabled = total === 0 || !map;
+  $("expand-offices").disabled = !map;
   const summary = $("active-filter-summary");
   const active = [state.savedOnly && "Saved companies", state.city, state.radius !== null && `${state.radius} km of San Mateo`, state.area && "Map area"] .filter(Boolean);
   summary.textContent = active.join(" · ");
@@ -1146,7 +1147,9 @@ function populateDetail(feature) {
   const presence = document.createElement("p");
   presence.className = props.presenceCheck.status === "verified" ? "presence-banner verified" : "presence-banner";
   presence.textContent = props.presenceCheck.status === "verified"
-    ? (props.presenceCheck.sourceType === "official-directory"
+    ? (props.presenceCheck.sourceType === "user-confirmed"
+      ? `✓ Current office confirmed by user · ${props.presenceCheck.userStatementDate}`
+      : props.presenceCheck.sourceType === "official-directory"
       ? `✓ City reported by Y Combinator profile · ${props.presenceCheck.checkedAt}. Street address requires separate evidence.`
       : `✓ Presence verified · ${props.presenceCheck.checkedAt}${location.precision === "city" ? " · City-level location" : ""}`)
     : "◉ Current presence needs review. Check the source before visiting.";
@@ -1262,6 +1265,12 @@ function populateDetail(feature) {
   if (props.presenceCheck.sourceUrl) {
     rows.append(detailRow("Presence source", linkNode(props.presenceCheck.sourceUrl)));
   }
+  if (props.presenceCheck.sourceType === "user-confirmed") {
+    rows.append(detailRow("User confirmation", textNode(props.presenceCheck.userStatement)));
+    if (props.presenceCheck.supportingSourceUrl) {
+      rows.append(detailRow("Supporting facility source", linkNode(props.presenceCheck.supportingSourceUrl)));
+    }
+  }
   rows.append(
     detailRow(
       "Coordinate check",
@@ -1324,6 +1333,7 @@ function serializeState() {
   if (state.city) params.set("city", state.city);
   if (state.radius !== null) params.set("radius", String(state.radius));
   if (state.savedOnly) params.set("saved", "1");
+  if (state.expandOffices) params.set("expand", "1");
   for (const value of state.sectors) params.append("sector", value);
   for (const [param, group] of PARAM_GROUPS) {
     for (const value of state.filters[group]) params.append(param, value);
@@ -1394,6 +1404,9 @@ function applySnapshot(entry) {
   const radius = finiteInRange(params.get("radius"), 1, 100);
   state.radius = [10, 25, 50].includes(radius) ? radius : null;
   state.savedOnly = params.get("saved") === "1";
+  state.expandOffices = params.get("expand") === "1";
+  $("expand-offices").setAttribute("aria-pressed", String(state.expandOffices));
+  $("expand-offices").textContent = state.expandOffices ? "Shared offices: expanded" : "Shared offices: auto";
   state.sectors = new Set(params.getAll("sector").filter((value) => SECTOR_IDS.has(value)));
   for (const [param, group] of PARAM_GROUPS) {
     state.filters[group] = new Set(params.getAll(param).filter((value) => allowed[group].has(value)));
@@ -1704,6 +1717,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!visibleEntities.length) return;
     setMobileView("map", true);
     requestAnimationFrame(() => map.fitBounds(L.latLngBounds(visibleEntities.map(latlngOf)), { padding: [40, 40], maxZoom: 14 }));
+    pushHistory();
+  });
+  $("expand-offices").addEventListener("click", () => {
+    state.expandOffices = !state.expandOffices;
+    $("expand-offices").setAttribute("aria-pressed", String(state.expandOffices));
+    $("expand-offices").textContent = state.expandOffices ? "Shared offices: expanded" : "Shared offices: auto";
+    refreshMapLayers();
     pushHistory();
   });
 

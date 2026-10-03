@@ -1,7 +1,12 @@
-import { appendFileSync, readFileSync, writeFileSync } from "node:fs";
+import { appendFileSync, existsSync, readFileSync, realpathSync, writeFileSync } from "node:fs";
 import { pathToFileURL, fileURLToPath } from "node:url";
 import { gunzipSync } from "node:zlib";
-import { normalizeHost as normalizeYcHost, normalizeName as normalizeYcName, parseOfficialProfile } from "./yc-import.mjs";
+import {
+  applyCuratedPresenceOverrides,
+  normalizeHost as normalizeYcHost,
+  normalizeName as normalizeYcName,
+  parseOfficialProfile,
+} from "./yc-import.mjs";
 
 const SHARD_COUNT = 45;
 export const DEFAULT_BATCH_SIZE = 75;
@@ -551,10 +556,14 @@ async function fetchPage(url, readBody = false) {
 }
 
 export function reviewUnverifiedPresence(properties, date) {
-  if (properties?.presenceCheck?.sourceUrl) return false;
+  if (properties?.presenceCheck?.sourceUrl || properties?.presenceCheck?.sourceType === "user-confirmed") return false;
   updatePresenceCheck(properties, date, "review", null);
   properties.updatedAt = date;
   return true;
+}
+
+export function canAuditLocation(feature) {
+  return feature.properties?.presenceCheck?.sourceType !== "user-confirmed";
 }
 
 function updatePresenceCheck(properties, date, status, sourceUrl, sourceType) {
@@ -871,8 +880,9 @@ async function audit(argv) {
     feature.properties.location.county,
   ]));
   const bayAreaCities = [...countyByCity.keys()].filter(Boolean);
-  const selected = selectFeatures(features, opts);
   const date = utcToday();
+  applyCuratedPresenceOverrides(geo, date);
+  const selected = selectFeatures(features, opts);
   const initialPresence = new Map(selected.map((feature) => [
     feature.properties.id, feature.properties.presenceCheck.status,
   ]));
@@ -956,7 +966,7 @@ async function audit(argv) {
   let locationReview = 0;
   let officialSourcesLinked = 0;
   let cityLocationsUpgraded = 0;
-  const cityFeatures = selected.filter((feature) => locationNeedsAddress(feature.properties.location));
+  const cityFeatures = selected.filter((feature) => canAuditLocation(feature) && locationNeedsAddress(feature.properties.location));
   await runPool(cityFeatures, CONCURRENCY, async (feature) => {
     const props = feature.properties;
     const location = props.location;
@@ -1019,7 +1029,7 @@ async function audit(argv) {
 
   saveCheckpoint("location discovery");
 
-  const addressFeatures = selected.filter((feature) => feature.properties.location.precision === "address");
+  const addressFeatures = selected.filter((feature) => canAuditLocation(feature) && feature.properties.location.precision === "address");
   await runPool(addressFeatures, CONCURRENCY, async (feature) => {
     const props = feature.properties;
     const location = props.location;
@@ -1099,8 +1109,7 @@ async function audit(argv) {
 
   for (const feature of selected) {
     const props = feature.properties;
-    if (props.presenceCheck.sourceUrl) continue;
-    reviewUnverifiedPresence(props, date);
+    if (!reviewUnverifiedPresence(props, date)) continue;
     geo.metadata.updatedAt = date;
     discoveryStats.noEvidence++;
     console.log(`review  presence ${props.id} no exact official evidence`);
@@ -1110,7 +1119,7 @@ async function audit(argv) {
   for (const feature of selected) {
     const props = feature.properties;
     const check = props.presenceCheck;
-    if (!check.sourceUrl) continue;
+    if (!check.sourceUrl || check.sourceType === "user-confirmed") continue;
     presenceChecked++;
     const policy = await getRobots(check.sourceUrl);
     if (!isVerificationSourceUrl(check.sourceUrl)) {
@@ -1155,6 +1164,8 @@ async function audit(argv) {
     console.log(`${props.presenceCheck.status.padEnd(8)} presence ${props.id} ${source.detail}`);
   }
 
+  applyCuratedPresenceOverrides(geo, date);
+
   const presenceReview = selected.filter((feature) => feature.properties.presenceCheck.status === "review").length;
   const newlyVerified = selected.filter((feature) =>
     initialPresence.get(feature.properties.id) !== "verified" &&
@@ -1196,7 +1207,8 @@ async function audit(argv) {
   writeAuditReport(summary);
 }
 
-const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+const isMain = process.argv[1] && existsSync(process.argv[1]) &&
+  import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href;
 if (isMain) {
   audit(process.argv.slice(2)).catch((error) => {
     writeAuditReport({

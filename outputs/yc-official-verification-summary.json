@@ -1,4 +1,7 @@
 {
+  "release": "2.0.0",
+  "releaseCommit": "365a1dcdea3436132c8bcd8482e61bd2aebbbd4c",
+  "supersededEvidence": "The original IHI Launch Pad office evidence was superseded in v2.0.1 by the user's current RakuNest confirmation. The original dataset hash and reproduction command describe release 2.0.0 at the commit above.",
   "generatedAt": "2026-10-03",
   "candidateSource": {
     "url": "https://yc-oss.github.io/api/companies/all.json",

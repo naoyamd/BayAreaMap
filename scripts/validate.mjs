@@ -201,8 +201,8 @@ for (let i = 0; i < features.length; i++) {
     if (presenceCheck.checkedAt !== null && !validDate(presenceCheck.checkedAt)) {
       err(at("properties.presenceCheck.checkedAt must be null or YYYY-MM-DD"));
     }
-    if (presenceCheck.sourceType !== undefined && !["official-directory", "official-location-page", "candidate-mirror"].includes(presenceCheck.sourceType)) {
-      err(at("properties.presenceCheck.sourceType must be official-directory|official-location-page|candidate-mirror when supplied"));
+    if (presenceCheck.sourceType !== undefined && !["official-directory", "official-location-page", "candidate-mirror", "user-confirmed"].includes(presenceCheck.sourceType)) {
+      err(at("properties.presenceCheck.sourceType must be official-directory|official-location-page|candidate-mirror|user-confirmed when supplied"));
     }
     if (presenceCheck.sourceType === "candidate-mirror" && presenceCheck.status === "verified") {
       err(at("candidate mirrors cannot verify current presence"));
@@ -221,6 +221,22 @@ for (let i = 0; i < features.length; i++) {
         err(at("YC directory presence requires a valid sourceUrl"));
       }
     }
+    if (presenceCheck.sourceType === "user-confirmed") {
+      if (presenceCheck.status !== "verified") err(at("user-confirmed presence must be verified"));
+      if (presenceCheck.sourceUrl !== null) err(at("user-confirmed presence must keep sourceUrl: null"));
+      if (!nonEmptyString(presenceCheck.userStatement)) {
+        err(at("user-confirmed presence requires userStatement"));
+      }
+      if (!validDate(presenceCheck.userStatementDate)) {
+        err(at("user-confirmed presence requires userStatementDate YYYY-MM-DD"));
+      }
+      if (presenceCheck.checkedAt !== presenceCheck.userStatementDate) {
+        err(at("user-confirmed checkedAt must equal the original userStatementDate"));
+      }
+      if (!validUrl(presenceCheck.supportingSourceUrl)) {
+        err(at("user-confirmed presence requires supportingSourceUrl"));
+      }
+    }
     if (presenceCheck.status === "unchecked" && presenceCheck.checkedAt !== null) {
       err(at("unchecked presence checks must have checkedAt: null"));
     }
@@ -229,7 +245,9 @@ for (let i = 0; i < features.length; i++) {
     }
     if (presenceCheck.status === "verified") {
       verifiedPresence++;
-      if (!validUrl(presenceCheck.sourceUrl)) err(at("verified presence checks require sourceUrl"));
+      if (presenceCheck.sourceType !== "user-confirmed" && !validUrl(presenceCheck.sourceUrl)) {
+        err(at("verified presence checks require sourceUrl unless sourceType is user-confirmed"));
+      }
     }
   }
 

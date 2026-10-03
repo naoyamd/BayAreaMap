@@ -149,30 +149,61 @@ test("official promotion preserves an existing street address", () => {
   assert.equal(result.doc.features[0].properties.presenceCheck.status, "verified");
 });
 
-test("primary location corrections carry address evidence without changing parent identities", () => {
+test("curated IHI presence uses the RakuNest facility without claiming official IHI evidence", () => {
   const result = importDataset(currentGeo, [], { date: "2026-10-03", all: true });
   const byId = new Map(result.doc.features.map((feature) => [feature.properties.id, feature]));
   const ihi = byId.get("ihi-rakunest");
-  assert.equal(ihi.properties.name, "IHI Launch Pad");
-  assert.equal(ihi.properties.location.address, "963 Industrial Road, Suite D");
-  assert.equal(ihi.properties.location.city, "San Carlos");
-  assert.equal(ihi.properties.presenceCheck.sourceType, "official-location-page");
+  const rakunest = byId.get("rakunest");
+  assert.equal(ihi.properties.name, "IHI");
+  assert.equal(ihi.properties.nameJa, "株式会社IHI");
+  assert.deepStrictEqual(ihi.geometry.coordinates, rakunest.geometry.coordinates);
+  assert.equal(ihi.properties.location.address, rakunest.properties.location.address);
+  assert.equal(ihi.properties.location.city, rakunest.properties.location.city);
+  assert.equal(ihi.properties.location.county, rakunest.properties.location.county);
+  assert.equal(ihi.properties.presenceCheck.status, "verified");
+  assert.equal(ihi.properties.presenceCheck.sourceType, "user-confirmed");
+  assert.equal(ihi.properties.presenceCheck.sourceUrl, null);
+  assert.equal(ihi.properties.presenceCheck.userStatementDate, "2026-10-03");
+  assert.match(ihi.properties.presenceCheck.userStatement, /IHI Launch Pad has closed/);
+  assert.equal(ihi.properties.presenceCheck.supportingSourceUrl, "https://www.rakunest.com/contact");
   assert.equal(byId.get("fujitsu-north-america").properties.name, "Fujitsu North America");
   assert.match(byId.get("panasonic-north-america").properties.dataQualityNote, /Newark, New Jersey/);
 });
 
-test("recurring imports preserve later address corrections and retain the actual data update date", () => {
-  const later = structuredClone(currentGeo);
-  const ihi = later.features.find((feature) => feature.properties.id === "ihi-rakunest");
-  ihi.properties.location.address = "1 Later Verified Address";
-  ihi.properties.location.checkedAt = "2026-11-01";
-  ihi.properties.updatedAt = "2026-11-01";
-  later.metadata.updatedAt = "2026-11-01";
-  const result = importDataset(later, [], { date: "2026-11-02", all: true });
+test("recurring imports restore stale IHI data while retaining user confirmation dates", () => {
+  const replay = structuredClone(currentGeo);
+  const ihi = replay.features.find((feature) => feature.properties.id === "ihi-rakunest");
+  const originalWebsiteCheck = structuredClone(ihi.properties.websiteCheck);
+  ihi.geometry.coordinates = [-122.249823194785, 37.505417687692];
+  ihi.properties.name = "IHI Launch Pad";
+  ihi.properties.location = {
+    ...ihi.properties.location,
+    address: "963 Industrial Road, Suite D",
+    city: "San Carlos",
+    postalCode: "94070",
+    county: "San Mateo County",
+    sourceUrl: "https://www.ihi.co.jp/ihi_launchpad/",
+    checkedAt: "2026-10-03",
+  };
+  ihi.properties.presenceCheck = {
+    checkedAt: "2026-10-03",
+    status: "verified",
+    sourceUrl: "https://www.ihi.co.jp/ihi_launchpad/",
+    sourceType: "official-location-page",
+  };
+  const result = importDataset(replay, [], { date: "2026-11-02", all: true });
   const preserved = result.doc.features.find((feature) => feature.properties.id === "ihi-rakunest");
-  assert.equal(preserved.properties.location.address, "1 Later Verified Address");
-  assert.equal(preserved.properties.location.checkedAt, "2026-11-01");
-  assert.equal(result.doc.metadata.updatedAt, "2026-11-01");
+  const rakunest = result.doc.features.find((feature) => feature.properties.id === "rakunest");
+  assert.equal(preserved.properties.name, "IHI");
+  assert.deepStrictEqual(preserved.properties.industries, ["industrial", "manufacturing", "aerospace", "defense", "space"]);
+  assert.deepStrictEqual(preserved.geometry.coordinates, rakunest.geometry.coordinates);
+  assert.equal(preserved.properties.location.address, rakunest.properties.location.address);
+  assert.equal(preserved.properties.location.checkedAt, rakunest.properties.location.checkedAt);
+  assert.equal(preserved.properties.presenceCheck.checkedAt, "2026-10-03");
+  assert.equal(preserved.properties.presenceCheck.userStatementDate, "2026-10-03");
+  assert.equal(preserved.properties.presenceCheck.sourceUrl, null);
+  assert.deepStrictEqual(preserved.properties.websiteCheck, originalWebsiteCheck);
+  assert.equal(result.doc.metadata.updatedAt, "2026-11-02");
 });
 
 test("selection only includes active Bay Area records with a usable website", () => {

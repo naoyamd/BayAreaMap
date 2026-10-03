@@ -1650,14 +1650,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.249823194785,
-          37.505417687692
+          -122.300177371754,
+          37.555182590093
         ]
       },
       "properties": {
         "id": "ihi-rakunest",
-        "name": "IHI Launch Pad",
-        "nameJa": "IHIイノベーションセンター",
+        "name": "IHI",
+        "nameJa": "株式会社IHI",
         "website": "https://www.ihi.co.jp/en/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
@@ -1669,38 +1669,34 @@
           "defense",
           "space"
         ],
-        "profileSourceUrl": "https://www.ihi.co.jp/ihi_launchpad/",
+        "profileSourceUrl": "https://www.ihi.co.jp/en/",
         "location": {
-          "address": "963 Industrial Road, Suite D",
-          "city": "San Carlos",
+          "address": "900 Concar Drive, Suite 400",
+          "city": "San Mateo",
           "region": "CA",
-          "postalCode": "94070",
+          "postalCode": "94402",
           "countryCode": "US",
           "county": "San Mateo County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://www.ihi.co.jp/ihi_launchpad/",
-          "checkedAt": "2026-10-03",
-          "status": "matched",
-          "coordinateSourceUrl": "https://geocoding.geo.census.gov/geocoder/",
-          "sourceType": "official-location-page"
+          "sourceUrl": "https://www.rakunest.com/contact",
+          "checkedAt": "2026-09-29",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-01",
-          "status": "ok"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
           "status": "verified",
-          "sourceUrl": "https://www.ihi.co.jp/ihi_launchpad/",
-          "sourceType": "official-location-page",
-          "evidenceScope": "entity-page"
-        },
-        "correctionSource": {
-          "sourceUrl": "https://www.ihi.co.jp/ihi_launchpad/",
-          "checkedAt": "2026-10-03",
-          "sourceType": "official-location-page"
+          "sourceUrl": null,
+          "sourceType": "user-confirmed",
+          "userStatementDate": "2026-10-03",
+          "userStatement": "IHI Launch Pad has closed. IHI currently has a private office inside RakuNest.",
+          "supportingSourceUrl": "https://www.rakunest.com/contact"
         }
       }
     },
@@ -59523,13 +59519,6 @@
     "coordinateSystem": "WGS84 / GeoJSON [longitude, latitude]",
     "manualCorrections": [
       {
-        "id": "ihi-rakunest",
-        "checkedAt": "2026-10-03",
-        "status": "verified",
-        "sourceType": "official-location-page",
-        "sourceUrl": "https://www.ihi.co.jp/ihi_launchpad/"
-      },
-      {
         "id": "acario-innovation",
         "checkedAt": "2026-10-03",
         "status": "verified",
@@ -59612,6 +59601,16 @@
         "status": "review",
         "sourceType": "official-location-page",
         "sourceUrl": "https://industry.panasonic.com/ap/en/salesnetwork/globalnetwork/america"
+      },
+      {
+        "id": "ihi-rakunest",
+        "checkedAt": "2026-10-03",
+        "status": "verified",
+        "sourceType": "user-confirmed",
+        "sourceUrl": null,
+        "userStatementDate": "2026-10-03",
+        "userStatement": "IHI Launch Pad has closed. IHI currently has a private office inside RakuNest.",
+        "supportingSourceUrl": "https://www.rakunest.com/contact"
       }
     ],
     "sourceCatalog": {
@@ -59626,7 +59625,6 @@
       "officialVerified": 492,
       "priorityCorrections": {
         "applied": [
-          "ihi-rakunest",
           "acario-innovation",
           "honda-innovations-silicon-valley",
           "hitachi-america",
