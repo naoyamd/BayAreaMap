@@ -23378,8 +23378,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -23564,8 +23565,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.396801685801,
+          37.790291812222
         ]
       },
       "properties": {
@@ -23585,29 +23586,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/apollo-io",
         "location": {
-          "address": null,
+          "address": "415 Mission St, Floor 37",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94105",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/apollo-io",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.apollo.io/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/apollo-io",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.apollo.io/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -23748,8 +23749,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -24043,8 +24045,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -25671,8 +25674,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -25741,8 +25745,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -26667,8 +26672,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.325936501615,
+          37.56312213967
         ]
       },
       "properties": {
@@ -26690,29 +26695,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/alpaca",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "3 East Third Ave Suite 214",
+          "city": "San Mateo",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94401",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/alpaca",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://alpaca.markets/about-us",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/alpaca",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://alpaca.markets/about-us"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -26778,8 +26783,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -26853,8 +26859,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -27449,7 +27456,8 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -27598,8 +27606,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -28864,8 +28873,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -29388,8 +29398,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -29460,8 +29471,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -30501,8 +30513,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -30761,8 +30774,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.395843445958,
+          37.781239952843
         ]
       },
       "properties": {
@@ -30785,29 +30798,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/broccoli-ai",
         "location": {
-          "address": null,
+          "address": "500 3rd St #260",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94107",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/broccoli-ai",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.broccoli.com/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/broccoli-ai",
-          "sourceType": "official-directory"
+          "status": "review",
+          "sourceUrl": "https://www.broccoli.com/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -31395,8 +31408,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -31988,8 +32002,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -32061,8 +32076,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -33090,8 +33106,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -33165,8 +33182,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -33237,8 +33255,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -33535,8 +33554,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -33978,8 +33998,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -34051,8 +34072,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -34127,8 +34149,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -34712,8 +34735,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -34930,8 +34954,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -35005,8 +35030,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -35080,8 +35106,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -36519,8 +36546,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -121.95749950794,
+          37.389677142193
         ]
       },
       "properties": {
@@ -36541,29 +36568,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/ampup",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "1700 Wyatt Drive, Suite 8",
+          "city": "Santa Clara",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "95054",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/ampup",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.ampup.io/resources/ev-charger-rebates-and-incentives",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/ampup",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.ampup.io/resources/ev-charger-rebates-and-incentives"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -37181,8 +37208,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.409873530003,
+          37.788163417409
         ]
       },
       "properties": {
@@ -37203,29 +37230,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/agentcollect",
         "location": {
-          "address": null,
+          "address": "490 Post Street, Suite 640",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94102",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/agentcollect",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.agentcollect.com/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/agentcollect",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.agentcollect.com/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -37292,7 +37319,8 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -40147,8 +40175,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.432212147414,
+          37.764728684114
         ]
       },
       "properties": {
@@ -40170,29 +40198,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/aisdr",
         "location": {
-          "address": null,
+          "address": "2261 Market St",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94114",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/aisdr",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://aisdr.com/case-study-fortune-500-company/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/aisdr",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://aisdr.com/case-study-fortune-500-company/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -40259,8 +40287,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -41002,8 +41031,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -41078,8 +41108,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -41154,8 +41185,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -41227,8 +41259,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -41300,8 +41333,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -43759,8 +43793,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -43830,8 +43865,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -43904,8 +43940,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -43978,7 +44015,8 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -45155,8 +45193,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -45455,8 +45494,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -46868,8 +46908,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -46943,8 +46984,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -47018,8 +47060,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -48765,8 +48808,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.432212147414,
+          37.764728684114
         ]
       },
       "properties": {
@@ -48785,29 +48828,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/agilemd",
         "location": {
-          "address": null,
+          "address": "2261 Market Street #4378",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94114-1600",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/agilemd",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.agilemd.com/about/agilemd-forum-guidelines",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/agilemd",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.agilemd.com/about/agilemd-forum-guidelines"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -48872,8 +48915,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -49021,15 +49065,15 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/atlas-2",
-          "sourceType": "official-directory"
+          "status": "review",
+          "sourceUrl": "https://atlas.so/ticketing"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -49613,8 +49657,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -49688,7 +49733,8 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -49951,8 +49997,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.400819451344,
+          37.791910276345
         ]
       },
       "properties": {
@@ -49975,29 +50021,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/artie",
         "location": {
-          "address": null,
+          "address": "180 Sansome St FL 12",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94104",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/artie",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.artie.com/about",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/artie",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.artie.com/about"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -50617,8 +50663,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.079008890504,
+          37.393906320072
         ]
       },
       "properties": {
@@ -50642,29 +50688,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/activeloop",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "196 Castro St.",
+          "city": "Mountain View",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94041",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/activeloop",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.activeloop.ai/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/activeloop",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.activeloop.ai/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -50731,8 +50777,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -50807,8 +50854,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -50880,8 +50928,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -50956,8 +51005,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -50994,8 +51044,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.100209637012,
+          37.429577549037
         ]
       },
       "properties": {
@@ -51018,29 +51068,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/blueberry-pediatrics",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "2672 Bayshore Parkway Suite 608",
+          "city": "Mountain View",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94043",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/blueberry-pediatrics",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.blueberrypediatrics.com/contact-us",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
           "checkedAt": "2026-10-03",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/blueberry-pediatrics",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.blueberrypediatrics.com/contact-us"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -51105,8 +51155,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -51179,8 +51230,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -54079,8 +54131,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -54154,8 +54207,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -54229,8 +54283,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -54879,8 +54934,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -55466,8 +55522,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -55541,8 +55598,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -55618,8 +55676,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -55690,8 +55749,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -58068,8 +58128,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -58143,8 +58204,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -58217,8 +58279,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
@@ -58293,8 +58356,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-03",
+          "status": "ok",
+          "attemptedAt": "2026-10-03"
         },
         "updatedAt": "2026-10-03",
         "presenceCheck": {
