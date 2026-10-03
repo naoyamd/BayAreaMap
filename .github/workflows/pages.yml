@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   workflow_run:
-    workflows: [Data audit]
+    workflows: [Data audit, Company discovery]
     types: [completed]
   workflow_dispatch:
 
@@ -19,7 +19,12 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    if: >-
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
+      (github.event_name == 'workflow_dispatch') ||
+      (github.event_name == 'push' &&
+       !startsWith(github.event.head_commit.message, 'chore: refresh data audit') &&
+       !startsWith(github.event.head_commit.message, 'chore: refresh company directory'))
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -29,8 +34,15 @@ jobs:
         with:
           ref: main
       - uses: actions/configure-pages@v5
+      - name: Prepare static site
+        shell: bash
+        run: |
+          mkdir -p _site/data
+          cp index.html app.js styles.css .nojekyll _site/
+          cp data/entities.geojson _site/data/
+          if [ -f audit-report.json ]; then cp audit-report.json _site/; fi
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - uses: actions/deploy-pages@v4
         id: deployment

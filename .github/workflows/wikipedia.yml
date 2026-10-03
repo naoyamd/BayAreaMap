@@ -21,8 +21,12 @@ jobs:
           node-version: '22'
       - name: Discover candidates without changing map data
         run: npm run discover:wikipedia
+      - name: Discover current YC Bay Area candidates without changing map data
+        run: node scripts/yc-import.mjs --discover --report=work/yc-discovery.json
       - uses: actions/upload-artifact@v4
         with:
           name: wikipedia-candidates
-          path: data/wikipedia-candidates.json
+          path: |
+            data/wikipedia-candidates.json
+            work/yc-discovery.json
           retention-days: 60

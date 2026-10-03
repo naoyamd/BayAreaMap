@@ -1,6 +1,7 @@
 import { appendFileSync, readFileSync, writeFileSync } from "node:fs";
 import { pathToFileURL, fileURLToPath } from "node:url";
 import { gunzipSync } from "node:zlib";
+import { normalizeHost as normalizeYcHost, normalizeName as normalizeYcName, parseOfficialProfile } from "./yc-import.mjs";
 
 const SHARD_COUNT = 45;
 export const DEFAULT_BATCH_SIZE = 75;
@@ -42,8 +43,8 @@ export function selectFeatures(features, { all = false, shard = null, ids = null
     : shard !== null
     ? features.filter((f) => hashId(f?.properties?.id ?? "") % SHARD_COUNT === shard)
     : [...features].sort((a, b) =>
-      String(a?.properties?.websiteCheck?.checkedAt ?? "").localeCompare(
-        String(b?.properties?.websiteCheck?.checkedAt ?? ""),
+      String(a?.properties?.websiteCheck?.attemptedAt ?? a?.properties?.websiteCheck?.checkedAt ?? "").localeCompare(
+        String(b?.properties?.websiteCheck?.attemptedAt ?? b?.properties?.websiteCheck?.checkedAt ?? ""),
       ) || String(a?.properties?.id ?? "").localeCompare(String(b?.properties?.id ?? "")),
     );
   selected = selected.filter((feature) => {
@@ -75,10 +76,11 @@ function normalizedWords(value) {
 export function sourceMentionsEntity(html, name) {
   const documentWords = normalizedWords(html);
   const document = ` ${documentWords.join(" ")} `;
-  const names = [...new Set([
-    String(name ?? ""),
-    String(name ?? "").replace(/\s+(?:san francisco|san jose|silicon valley|bay area)$/i, ""),
-  ])];
+  const candidates = Array.isArray(name) ? name : [name];
+  const names = [...new Set(candidates.flatMap((candidate) => [
+    String(candidate ?? ""),
+    String(candidate ?? "").replace(/\s+(?:san francisco|san jose|silicon valley|bay area)$/i, ""),
+  ]))];
   const legalSuffixes = new Set([
     "co", "company", "corp", "corporation", "inc", "incorporated", "llc", "ltd", "limited",
   ]);
@@ -106,11 +108,28 @@ export function sourceMentionsEntity(html, name) {
 export function sourceMentionsLocation(html, location) {
   const documentWords = new Set(normalizedWords(html));
   const addressWords = normalizedWords(location.address);
+  const numberWords = new Set(["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]);
   const number = addressWords.find((word) => /^\d+$/.test(word));
   const street = addressWords.find((word) => /^[a-z]{4,}$/.test(word));
   const city = normalizedWords(location.city).filter((word) => word.length >= 4);
-  const required = [number, street, ...city].filter(Boolean);
-  return required.length >= 2 && required.every((word) => documentWords.has(word));
+  const postalCode = normalizedWords(location.postalCode).find((word) => /^\d{5}(?:\d{4})?$/.test(word));
+  const spelledNumber = addressWords.find((word) => numberWords.has(word));
+  const required = [street, ...city].filter(Boolean);
+  const addressNumber = number ?? spelledNumber;
+  const numericNumber = addressNumber && /^\d+$/.test(addressNumber) ? addressNumber : null;
+  const equivalentSpelledNumber = numericNumber && Number(numericNumber) >= 1 && Number(numericNumber) <= 10
+    ? [...numberWords][Number(numericNumber) - 1]
+    : null;
+  const equivalentNumericNumber = spelledNumber ? String([...numberWords].indexOf(spelledNumber) + 1) : null;
+  const addressNumberMatches = addressNumber && (
+    documentWords.has(addressNumber) ||
+    (numericNumber && equivalentSpelledNumber && documentWords.has(equivalentSpelledNumber)) ||
+    (spelledNumber && equivalentNumericNumber && documentWords.has(equivalentNumericNumber))
+  );
+  const hasAddressAnchor = Boolean(
+    addressNumber ? addressNumberMatches : postalCode && documentWords.has(postalCode),
+  );
+  return Boolean(hasAddressAnchor && required.length >= 2 && required.every((word) => documentWords.has(word)));
 }
 
 export function sourceMentionsPresence(html, location) {
@@ -190,7 +209,7 @@ export function discoverOfficialLocationUrls(html, baseUrl, website) {
 function officialLocationScore(value) {
   const label = String(value ?? "").toLowerCase().replace(/[^a-z]+/g, " ");
   if (/\boffice lunch\b/.test(label)) return 0;
-  if (/\b(privacy|terms?|legal|polic(?:y|ies)|agreements?|rules?|careers?|jobs?|news|press|blog|campaigns?|insights?|support|products?|login)\b/.test(label)) return 0;
+  if (/\b(privacy|terms?|legal|polic(?:y|ies)|agreements?|rules?|careers?|jobs?|news|press|blog|campaigns?|insights?|login)\b/.test(label)) return 0;
   if (/\b(locations?|offices?|branches|where we are|global network)\b/.test(label)) return 5;
   if (/\b(contact|subsidiaries|affiliates|group companies)\b/.test(label)) return 4;
   if (/\b(about|company|corporate|profile)\b/.test(label)) return 1;
@@ -202,7 +221,7 @@ export function isVerificationSourceUrl(sourceUrl) {
     const url = new URL(sourceUrl);
     const label = `${url.hostname} ${url.pathname}`.toLowerCase().replace(/[^a-z0-9]+/g, " ");
     if (/\.pdf$/i.test(url.pathname)) return false;
-    if (/\b(privacy|terms?|legal|polic(?:y|ies)|agreements?|rules?|careers?|jobs?|news|press|blog|campaigns?|insights?|products?|support|login)\b/.test(label)) return false;
+    if (/\b(privacy|terms?|legal|polic(?:y|ies)|agreements?|rules?|careers?|jobs?|news|press|blog|campaigns?|insights?|login)\b/.test(label)) return false;
     if (/\/20\d{2}\//.test(url.pathname) && !officialLocationScore(url.pathname)) return false;
     return /^https?:$/.test(url.protocol);
   } catch {
@@ -419,10 +438,50 @@ export function classifyLocation({ distance }) {
   return "matched";
 }
 
-export function classifyPresence({ sourceUrl, sourceOk, sourceHtml, location, entityName, trustedSource = true }) {
+function canonicalYcProfile(sourceUrl) {
+  try {
+    const url = new URL(sourceUrl);
+    const match = url.protocol === "https:" && url.hostname === "www.ycombinator.com" &&
+      !url.search && !url.hash && url.pathname.match(/^\/companies\/([a-z0-9][a-z0-9-]*)\/?$/i);
+    return match ? { slug: match[1].toLowerCase() } : null;
+  } catch {
+    return null;
+  }
+}
+
+export function sourceMentionsOfficialYcProfile(sourceHtml, sourceUrl, properties = {}) {
+  const location = properties.location;
+  const profile = canonicalYcProfile(sourceUrl);
+  if (!profile || !["city", "address"].includes(location?.precision) || location.region !== "CA" || location.countryCode !== "US") return false;
+  const company = parseOfficialProfile(sourceHtml);
+  if (!company || company.id == null || String(company.slug ?? "").toLowerCase() !== profile.slug || company.ycdc_status !== "Active") return false;
+  const companyCity = company.city || company.location;
+  if (normalizedWords(companyCity).join(" ") !== normalizedWords(location.city).join(" ")) return false;
+  if (String(company.country ?? "").toUpperCase() !== "US") return false;
+  const entityNames = officialEntityNames(properties).map((name) => normalizeYcName(name)).filter(Boolean);
+  if (!entityNames.includes(normalizeYcName(company.name))) return false;
+  const officialCompany = properties.source?.officialCompany;
+  if (officialCompany?.id != null && String(company.id) !== String(officialCompany.id)) return false;
+  const expectedWebsite = officialCompany?.website || properties.website;
+  return Boolean(company.website && normalizeYcHost(company.website) && sameOrganizationHost(company.website, expectedWebsite));
+}
+
+export function classifyPresence({ sourceUrl, sourceOk, sourceHtml, location, entityName, entityAliases = [], properties = null, trustedSource = true }) {
   if (!sourceUrl) return "unchecked";
-  return trustedSource && isVerificationSourceUrl(sourceUrl) && sourceOk && sourceMentionsEntity(sourceHtml, entityName) &&
-    sourceMentionsPresence(sourceHtml, location) ? "verified" : "review";
+  const entityNames = [...(Array.isArray(entityName) ? entityName : [entityName]), ...(Array.isArray(entityAliases) ? entityAliases : [entityAliases])].filter(Boolean);
+  const entityEvidence = location?.precision === "address"
+    ? sourceMentionsEntityNearLocation(sourceHtml, location, entityNames)
+    : sourceMentionsEntity(sourceHtml, entityNames);
+  // Dedicated entity pages may put their only address far below the page title.
+  // This exception is explicitly curated; group directories still need local identity evidence.
+  const title = sourceHtml?.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "";
+  const curatedEntityPage = properties?.presenceCheck?.evidenceScope === "entity-page" &&
+    properties?.correctionSource?.sourceUrl === sourceUrl && properties?.location?.sourceUrl === sourceUrl &&
+    sameOrganizationHost(sourceUrl, properties.website) &&
+    sourceMentionsEntity(title, entityNames);
+  const officialYcEvidence = properties && sourceMentionsOfficialYcProfile(sourceHtml, sourceUrl, properties);
+  return sourceOk && isVerificationSourceUrl(sourceUrl) && (officialYcEvidence ||
+    trustedSource && (entityEvidence || curatedEntityPage) && sourceMentionsPresence(sourceHtml, location)) ? "verified" : "review";
 }
 
 export function parseArgs(argv) {
@@ -493,9 +552,17 @@ async function fetchPage(url, readBody = false) {
 
 export function reviewUnverifiedPresence(properties, date) {
   if (properties?.presenceCheck?.sourceUrl) return false;
-  properties.presenceCheck = { checkedAt: date, status: "review", sourceUrl: null };
+  updatePresenceCheck(properties, date, "review", null);
   properties.updatedAt = date;
   return true;
+}
+
+function updatePresenceCheck(properties, date, status, sourceUrl, sourceType) {
+  const previous = properties?.presenceCheck ?? { checkedAt: null, status: "unchecked", sourceUrl: null };
+  properties.presenceCheck = { ...previous, checkedAt: date, status, sourceUrl };
+  if (sourceType !== undefined) properties.presenceCheck.sourceType = sourceType;
+  else if (!sourceUrl || !canonicalYcProfile(sourceUrl)) delete properties.presenceCheck.sourceType;
+  return properties.presenceCheck;
 }
 
 async function getRobots(sourceUrl) {
@@ -631,22 +698,30 @@ async function fetchOfficialAddressPages(properties, stats) {
   return pages;
 }
 
-function officialAddressCandidates(pages, entityName, cities) {
+function officialEntityNames(properties) {
+  return [
+    properties?.name,
+    properties?.sourceName,
+    ...(Array.isArray(properties?.nameAliases) ? properties.nameAliases : []),
+  ].filter((name) => typeof name === "string" && name.trim());
+}
+
+function officialAddressCandidates(pages, entityNames, cities) {
   const candidates = pages.flatMap((page) => {
     let path;
     try { path = new URL(page.sourceUrl).pathname; } catch { return []; }
-    if (!isVerificationSourceUrl(page.sourceUrl) || !isOfficialLocationPageUrl(page.sourceUrl)) return [];
+    if (!isVerificationSourceUrl(page.sourceUrl)) return [];
     const found = extractCaliforniaAddresses(page.text, cities);
     const directory = /\b(locations?|offices?|branches|contact)\b/.test(
       path.toLowerCase().replace(/[^a-z]+/g, " "),
     );
-    const pageMatches = sourceMentionsEntity(page.text, entityName);
+    const pageMatches = sourceMentionsEntity(page.text, entityNames);
     return found.map((candidate) => ({
       ...candidate,
       sourceUrl: page.sourceUrl,
       entityMatched: found.length === 1 || directory
         ? pageMatches
-        : sourceMentionsEntityNearLocation(page.text, candidate, entityName),
+        : sourceMentionsEntityNearLocation(page.text, candidate, entityNames),
     }));
   });
   return {
@@ -660,6 +735,9 @@ function appendGitHubSummary(summary) {
   if (!output) return;
   const rows = [
     ["Selected", summary.selected],
+    ["Website attempts", summary.websiteAttempts],
+    ["Website checks succeeded", summary.websiteOk],
+    ["Website attempts with errors", summary.websiteReview],
     ["Official HTML attempts", summary.pagesFetched],
     ["Sitemaps fetched", summary.sitemapsFetched],
     ["Newly verified", summary.newlyVerified],
@@ -670,6 +748,7 @@ function appendGitHubSummary(summary) {
     ["Network/fetch failures", summary.networkBlocked],
     ["Entity mismatch", summary.entityMismatch],
     ["Address conflict", summary.addressConflict],
+    ["Isolated worker errors", summary.workerErrors],
     ["Website review", summary.websiteReview],
     ["Location review", summary.locationReview],
     ["Presence review", summary.presenceReview],
@@ -687,6 +766,22 @@ function appendGitHubSummary(summary) {
     ].join("\n"));
   } catch (error) {
     console.warn(`failed to append GitHub summary: ${error.message}`);
+  }
+}
+
+function writeAuditReport(summary) {
+  const output = process.env.AUDIT_REPORT_PATH;
+  if (!output) return;
+  try {
+    const attemptedAt = new Date().toISOString();
+    writeFileSync(output, `${JSON.stringify({
+      attemptedAt,
+      generatedAt: attemptedAt,
+      ...summary,
+      status: summary.status ?? "completed",
+    }, null, 2)}\n`);
+  } catch (error) {
+    console.warn(`failed to write audit report: ${error.message}`);
   }
 }
 
@@ -727,10 +822,18 @@ async function geocodeLocation(location) {
   }
 }
 
-async function runPool(items, limit, fn) {
+async function runPool(items, limit, fn, onError = null) {
   let next = 0;
   async function worker() {
-    while (next < items.length) await fn(items[next++]);
+    while (next < items.length) {
+      const item = items[next++];
+      try {
+        await fn(item);
+      } catch (error) {
+        if (!onError) throw error;
+        onError(item, error);
+      }
+    }
   }
   await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => worker()));
 }
@@ -740,6 +843,7 @@ async function audit(argv) {
   try {
     opts = parseArgs(argv);
   } catch (error) {
+    writeAuditReport({ status: "failed", selected: 0, websiteAttempts: 0, websiteOk: 0, newlyVerified: 0 });
     console.error(error.message);
     console.error('Usage: node scripts/audit.mjs [--all | --shard N | --ids id[,id...]] [--city-only] [--city "City"]   (N: 0..44)');
     process.exitCode = 1;
@@ -749,12 +853,14 @@ async function audit(argv) {
   try {
     geo = JSON.parse(readFileSync(DATA_PATH, "utf8"));
   } catch (error) {
+    writeAuditReport({ status: "failed", selected: 0, websiteAttempts: 0, websiteOk: 0, newlyVerified: 0 });
     console.error(`failed to read/parse ${DATA_PATH}: ${error.message}`);
     process.exitCode = 1;
     return;
   }
   const features = geo?.features;
   if (!Array.isArray(features)) {
+    writeAuditReport({ status: "failed", selected: 0, websiteAttempts: 0, websiteOk: 0, newlyVerified: 0 });
     console.error(`${DATA_PATH} is not a FeatureCollection with a features array`);
     process.exitCode = 1;
     return;
@@ -779,6 +885,7 @@ async function audit(argv) {
     entityMismatch: 0,
     addressConflict: 0,
     addressesUpdated: 0,
+    workerErrors: 0,
   };
   const selectionLabel = opts.ids ? "priority" : opts.all ? "all" :
     opts.shard !== null ? `shard ${opts.shard}` : `oldest ${DEFAULT_BATCH_SIZE}`;
@@ -786,16 +893,64 @@ async function audit(argv) {
 
   let websiteOk = 0;
   let websiteReview = 0;
+  const handlePoolError = (phase, feature, error) => {
+    const props = feature?.properties ?? {};
+    discoveryStats.workerErrors++;
+    discoveryStats.networkBlocked++;
+    console.error(`error   ${phase} ${props.id ?? "unknown"} ${error?.message ?? error}`);
+    if (phase === "website") {
+      const previous = props.websiteCheck ?? { status: "unchecked", checkedAt: null };
+      props.websiteCheck = {
+        ...previous,
+        attemptedAt: date,
+        status: previous.status === "unchecked" ? "unchecked" : "review",
+      };
+      websiteReview++;
+      return;
+    }
+    const previousPresence = props.presenceCheck ?? { status: "unchecked", checkedAt: null, sourceUrl: null };
+    props.presenceCheck = {
+      ...previousPresence,
+      checkedAt: previousPresence.status === "verified" ? previousPresence.checkedAt : date,
+      status: previousPresence.status === "verified" ? "verified" : "review",
+      sourceUrl: previousPresence.sourceUrl ?? null,
+    };
+    props.updatedAt = date;
+    geo.metadata.updatedAt = date;
+    if (phase === "location") {
+      if (props.location) {
+        props.location.checkedAt = date;
+        props.location.status = "review";
+      }
+      locationReview++;
+    }
+  };
+  const saveCheckpoint = (label) => {
+    if (!selected.length) return;
+    try {
+      writeFileSync(DATA_PATH, `${JSON.stringify(geo, null, 2)}\n`);
+      console.log(`Checkpoint: ${label} saved`);
+    } catch (error) {
+      console.error(`failed to write ${label} checkpoint ${DATA_PATH}: ${error.message}`);
+      process.exitCode = 1;
+    }
+  };
   await runPool(selected, CONCURRENCY, async (feature) => {
     const props = feature.properties;
+    const previous = props.websiteCheck ?? { status: "unchecked", checkedAt: null };
     const result = await fetchPage(props.website);
     props.websiteCheck = {
-      checkedAt: date,
-      status: result.ok ? "ok" : "review",
+      ...previous,
+      attemptedAt: date,
+      ...(result.ok
+        ? { checkedAt: date, status: "ok" }
+        : { status: previous.status === "unchecked" ? "unchecked" : "review" }),
     };
     if (result.ok) websiteOk++; else websiteReview++;
     console.log(`${props.websiteCheck.status.padEnd(7)} website ${props.id} ${result.detail}`);
-  });
+  }, (feature, error) => handlePoolError("website", feature, error));
+
+  saveCheckpoint("website checks");
 
   let locationChecked = 0;
   let locationReview = 0;
@@ -806,22 +961,25 @@ async function audit(argv) {
     const props = feature.properties;
     const location = props.location;
     const pages = await fetchOfficialAddressPages(props, discoveryStats);
-    const entityName = props.name;
-    const { candidates, matched } = officialAddressCandidates(pages, entityName, bayAreaCities);
+    const entityNames = officialEntityNames(props);
+    const { candidates, matched } = officialAddressCandidates(pages, entityNames, bayAreaCities);
     const candidate = chooseAddressCandidate(matched, location.city);
     if (candidates.length && !matched.length) discoveryStats.entityMismatch++;
     if (matched.length && !candidate) discoveryStats.addressConflict++;
     if (!candidate) {
-      const presencePage = pages.find((page) => isOfficialLocationPageUrl(page.sourceUrl) && classifyPresence({
+      const presencePage = pages.find((page) => classifyPresence({
         sourceUrl: page.sourceUrl,
         sourceOk: true,
         sourceHtml: page.text,
         location,
-        entityName,
+        entityName: entityNames,
+        properties: props,
       }) === "verified");
       if (presencePage) {
         location.sourceUrl = presencePage.sourceUrl;
-        props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl: presencePage.sourceUrl };
+        const sourceType = sourceMentionsOfficialYcProfile(presencePage.text, presencePage.sourceUrl, props)
+          ? "official-directory" : undefined;
+        updatePresenceCheck(props, date, "verified", presencePage.sourceUrl, sourceType);
         props.updatedAt = date;
         geo.metadata.updatedAt = date;
         officialSourcesLinked++;
@@ -830,7 +988,7 @@ async function audit(argv) {
     }
     const geocode = await geocodeLocation({ ...location, ...candidate, region: "CA" });
     if (!geocode.ok) {
-      props.presenceCheck = { checkedAt: date, status: "review", sourceUrl: candidate.sourceUrl };
+      updatePresenceCheck(props, date, "review", candidate.sourceUrl);
       props.updatedAt = date;
       geo.metadata.updatedAt = date;
       console.log(`review  discovery ${props.id} ${geocode.detail}`);
@@ -850,44 +1008,47 @@ async function audit(argv) {
       checkedAt: date,
       status: "matched",
     });
-    props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl: candidate.sourceUrl };
+    updatePresenceCheck(props, date, "verified", candidate.sourceUrl);
     props.updatedAt = date;
     geo.metadata.updatedAt = date;
     officialSourcesLinked++;
     cityLocationsUpgraded++;
     discoveryStats.addressesUpdated++;
     console.log(`matched  discovery ${props.id} ${oldCity} -> ${candidate.city} | ${candidate.address}`);
-  });
+  }, (feature, error) => handlePoolError("location", feature, error));
+
+  saveCheckpoint("location discovery");
 
   const addressFeatures = selected.filter((feature) => feature.properties.location.precision === "address");
   await runPool(addressFeatures, CONCURRENCY, async (feature) => {
     const props = feature.properties;
     const location = props.location;
     if (!location.sourceUrl || !isOfficialLocationPageUrl(location.sourceUrl)) {
-      const entityName = props.name;
+      const entityNames = officialEntityNames(props);
       const pages = await fetchOfficialAddressPages(props, discoveryStats);
-      const source = pages.find((page) => isOfficialLocationPageUrl(page.sourceUrl) && classifyPresence({
+      const source = pages.find((page) => classifyPresence({
         sourceUrl: page.sourceUrl,
         sourceOk: true,
         sourceHtml: page.text,
         location,
-        entityName,
+        entityName: entityNames,
+        properties: props,
       }) === "verified");
       if (source) {
         location.sourceUrl = source.sourceUrl;
-        props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl: source.sourceUrl };
+        updatePresenceCheck(props, date, "verified", source.sourceUrl);
         props.updatedAt = date;
         geo.metadata.updatedAt = date;
         officialSourcesLinked++;
       } else {
-        const { candidates, matched } = officialAddressCandidates(pages, entityName, bayAreaCities);
+        const { candidates, matched } = officialAddressCandidates(pages, entityNames, bayAreaCities);
         const candidate = chooseAddressCandidate(matched, location.city);
         if (candidates.length && !matched.length) discoveryStats.entityMismatch++;
         if (matched.length && !candidate) discoveryStats.addressConflict++;
         if (candidate) {
           const geocode = await geocodeLocation({ ...location, ...candidate, region: "CA" });
           if (!geocode.ok) {
-            props.presenceCheck = { checkedAt: date, status: "review", sourceUrl: candidate.sourceUrl };
+            updatePresenceCheck(props, date, "review", candidate.sourceUrl);
             props.updatedAt = date;
             geo.metadata.updatedAt = date;
             console.log(`review  discovery ${props.id} ${geocode.detail}`);
@@ -906,7 +1067,7 @@ async function audit(argv) {
               checkedAt: date,
               status: "matched",
             });
-            props.presenceCheck = { checkedAt: date, status: "verified", sourceUrl: candidate.sourceUrl };
+            updatePresenceCheck(props, date, "verified", candidate.sourceUrl);
             props.updatedAt = date;
             geo.metadata.updatedAt = date;
             officialSourcesLinked++;
@@ -932,7 +1093,9 @@ async function audit(argv) {
     console.log(
       `${location.status.padEnd(8)} location ${props.id} ${distance.toFixed(2)} km`,
     );
-  });
+  }, (feature, error) => handlePoolError("location", feature, error));
+
+  saveCheckpoint("coordinate checks");
 
   for (const feature of selected) {
     const props = feature.properties;
@@ -970,22 +1133,26 @@ async function audit(argv) {
     }
     const source = await fetchPage(check.sourceUrl, true);
     if (!source.ok && ![404, 410].includes(source.status)) {
+      discoveryStats.networkBlocked++;
       console.log(`${check.status.padEnd(8)} presence ${props.id} ${source.detail}, retained`);
       continue;
     }
-    check.checkedAt = date;
-    check.status = classifyPresence({
+    const status = classifyPresence({
       sourceUrl: check.sourceUrl,
       sourceOk: source.ok,
       sourceHtml: source.text,
       location: props.location,
-      entityName: props.name,
+      entityName: officialEntityNames(props),
+      properties: props,
       trustedSource: sameOrganizationHost(check.sourceUrl, props.website) ||
         (props.location.precision === "address" && check.sourceUrl === props.location.sourceUrl),
     });
+    const sourceType = status === "verified" && sourceMentionsOfficialYcProfile(source.text, check.sourceUrl, props)
+      ? "official-directory" : undefined;
+    updatePresenceCheck(props, date, status, check.sourceUrl, sourceType);
     props.updatedAt = date;
     geo.metadata.updatedAt = date;
-    console.log(`${check.status.padEnd(8)} presence ${props.id} ${source.detail}`);
+    console.log(`${props.presenceCheck.status.padEnd(8)} presence ${props.id} ${source.detail}`);
   }
 
   const presenceReview = selected.filter((feature) => feature.properties.presenceCheck.status === "review").length;
@@ -998,6 +1165,7 @@ async function audit(argv) {
     try {
       writeFileSync(DATA_PATH, `${JSON.stringify(geo, null, 2)}\n`);
     } catch (error) {
+      writeAuditReport({ status: "failed", selected: selected.length, websiteAttempts: selected.length, websiteOk, newlyVerified: 0 });
       console.error(`failed to write ${DATA_PATH}: ${error.message}`);
       process.exitCode = 1;
       return;
@@ -1011,21 +1179,33 @@ async function audit(argv) {
     `presence checked ${presenceChecked}, review ${presenceReview} | ` +
     `${selected.length ? "wrote" : "no changes written"}`,
   );
-  appendGitHubSummary({
+  const summary = {
     selectionLabel,
     selected: selected.length,
+    websiteAttempts: selected.length,
+    websiteOk,
+    status: process.exitCode ? "failed" : "completed",
     ...discoveryStats,
     newlyVerified,
     officialSourcesLinked,
     websiteReview,
     locationReview,
     presenceReview,
-  });
+  };
+  appendGitHubSummary(summary);
+  writeAuditReport(summary);
 }
 
 const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (isMain) {
   audit(process.argv.slice(2)).catch((error) => {
+    writeAuditReport({
+      status: "failed",
+      selected: 0,
+      websiteAttempts: 0,
+      websiteOk: 0,
+      newlyVerified: 0,
+    });
     console.error(`audit failed: ${error.message}`);
     process.exitCode = 1;
   });

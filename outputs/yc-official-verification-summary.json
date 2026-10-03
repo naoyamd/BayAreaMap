@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-10-03",
+  "candidateSource": {
+    "url": "https://yc-oss.github.io/api/companies/all.json",
+    "provider": "YC-OSS API candidate mirror",
+    "sha256": "405f8d7d0d9d40d3e249ae5c12dd296a0d0ca1b0418b215856ec31c025a00fb8",
+    "recordCount": 6269
+  },
+  "officialVerification": {
+    "profileOrigin": "https://www.ycombinator.com/companies/",
+    "policy": "Selected records were fetched from their current official YC company profile and required exact slug match, ycdc_status Active, country US, a mapped Bay Area headquarters city, and a usable website URL.",
+    "candidateCount": 2020,
+    "profilesFetched": 506,
+    "verifiedSourceRecords": 506,
+    "verifiedAdditions": 492,
+    "verifiedExistingMatches": 14,
+    "existingEntitiesPromoted": 12,
+    "distinctSameNameDifferentHostAdded": 3,
+    "rejected": 0
+  },
+  "output": {
+    "featureCount": 984,
+    "ycFeatureCount": 492,
+    "sha256": "c0a4d1226f66ede1f40f947a2c8a32e717b84a8385b4faebaf8fab798cd41305",
+    "presenceSourceType": "official-directory",
+    "locationPrecision": "city",
+    "coordinatePolicy": "Bay Area city centroid; no street address inferred"
+  },
+  "manualCorrections": {
+    "verifiedOfficialLocationPages": 10,
+    "reviewedIdentityOrLocationConflicts": 3,
+    "sourcePolicy": "Street addresses and coordinates were added only from the listed official location pages; OMRON uses an OpenStreetMap building coordinate because Census did not match the official address.",
+    "verifiedIds": [
+      "ihi-rakunest",
+      "acario-innovation",
+      "honda-innovations-silicon-valley",
+      "hitachi-america",
+      "nissan-research-center-silicon-valley",
+      "rohm-semiconductor-usa",
+      "omron-robotics-and-safety-technologies",
+      "denso-international-america",
+      "yamaha-motor-ventures",
+      "tdk-usa"
+    ],
+    "reviewIds": [
+      "fujitsu-north-america",
+      "nec-corporation-of-america",
+      "panasonic-north-america"
+    ],
+    "aliasPolicy": "Explicit Acario, OMRON and DENSO trade/office names; dedicated IHI entity-page title evidence is limited to its curated source URL."
+  },
+  "reproduction": "node scripts/yc-import.mjs --verification=work/yc-official-verification.json --base=work/remote-entities.geojson --output=data/entities.geojson --date=2026-10-03 --apply-priority-corrections"
+}

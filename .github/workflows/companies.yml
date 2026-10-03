@@ -1,0 +1,47 @@
+name: Company discovery
+
+on:
+  schedule:
+    - cron: '17 10 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-audit
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Import current YC Bay Area companies
+        run: npm run import:yc -- --limit=50 --report=work/yc-weekly-verification.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yc-weekly-verification
+          path: work/yc-weekly-verification.json
+          retention-days: 60
+      - name: Test
+        run: npm test
+      - name: Render README
+        run: npm run readme
+      - name: Check generated README
+        run: node scripts/render-readme.mjs --check
+      - name: Commit new company registrations
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -z "$(git status --porcelain -- data/entities.geojson README.md)" ]; then
+            echo "no changes"
+          else
+            git add data/entities.geojson README.md
+            git commit -m "chore: refresh company directory"
+            git push
+          fi

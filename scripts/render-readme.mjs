@@ -104,6 +104,7 @@ function render(entities, metadata) {
   lines.push("# ベイエリア企業マップ");
   lines.push("");
   lines.push(`**公開URL: <${SITE_URL}>**`);
+  lines.push("", "バージョン2.0：企業探索・現所在確認・フィールドノートを統合したディレクトリです。");
   lines.push("");
   lines.push(
     "サンフランシスコ・ベイエリアの日本関連企業・VC/CVC・支援機関・大学などを地図上に可視化する個人プロジェクトです。ベイエリア進出検討時の初回コンタクト先の把握を目的としています。",
@@ -140,9 +141,13 @@ function render(entities, metadata) {
   lines.push("## 使い方");
   lines.push("");
   lines.push(
-    "- 各ピンは公式サイトのロゴ候補（apple-touch-icon / favicon）を使った**正方形アイコン**です。縮小時は近隣企業を件数表示へまとめ、町レベルでは同一座標のピンだけを自動で放射展開します。日本関連は枠色、都市中心の概略位置は破線、現所在未確認は淡色で表示します。",
-    "- **検索ボックス**で社名・日本語名・都市などのキーワードで絞り込めます。",
+    "- 各ピンは公式サイトのロゴ候補（favicon）を使った**正方形アイコン**です。縮小時は近隣企業を件数表示へまとめ、町レベルでは同一番地のピンを放射展開します。日本関連は枠色、都市中心の概略位置は破線、現所在未確認は琥珀色のマークで表示します。都市中心のピンは番地のように展開しません。",
+    "- **検索ボックス**で社名・日本語名・都市・企業紹介などのキーワードで絞り込めます。",
     "- **フィルター**で日系／タイプ／規模／業種／カウンティを組み合わせて絞り込めます（日系・大企業・製造業などのプリセットボタン付き）。",
+    "- **Your field notebook**で企業を保存し、詳細パネルに個別メモを残せます。保存先は利用中のブラウザのlocalStorageです。保存・メモの同期は行いません。ストレージに保存できない場合は警告します。",
+    "- **City / Around San Mateo**で都市やSan Mateoの中心から10・25・50km圏内に絞れます。概略位置の企業では距離も概算です。**Verified presence**は現在の所在確認済みだけを表示します。",
+    "- **Export results CSV**で絞り込み中の全件と個別メモ、確認出典を出力できます。日本語対応のUTF-8 BOM付きです。**Fit results**で表示対象が地図内に収まります。",
+    "- 検索・都市・距離・地図範囲はURLで共有できます。保存リストとメモはブラウザごとの情報です。地図ライブラリが読み込めない場合も企業リストを利用できます。",
   );
   lines.push("");
   lines.push("## 所在地データ設計（schema v3）");
@@ -151,6 +156,7 @@ function render(entities, metadata) {
     "- GeoJSON座標はWGS84の `[経度, 緯度]`。`location.precision` で番地単位（address）と都市中心（city）を区別します。",
     "- `location.status` は住所と座標の照合結果だけを表し、`presenceCheck` は現在もベイエリアに拠点がある根拠を別管理します。住所が座標化できただけでは現所在確認済みにしません。",
     "- `presenceCheck.status: review` は探索済みでも現在地を確定できる公式根拠がない状態です。`sourceUrl: null` の要確認は試行記録であり、確認済み件数には含めません。",
+    "- `presenceCheck.sourceType: official-directory` はYC公式プロフィールが報告する都市を確認したものです。新規登録は都市中心で表示し、既存の番地は住所の出典と座標照合を別管理したまま保持します。YCプロフィールだけでは番地の現状を確認済みにしません。",
     "- 親会社のブランド名と現地法人・子会社名は同一視しません。公式の拠点・連絡先・グループ会社ページ内で、対象法人名と住所が同じ掲載区画にある場合だけ自動採用します。",
     "- `websiteCheck` はサイト疎通です。データ更新日・現所在確認日・座標照合日・URL確認日を分けて表示します。",
   );
@@ -158,10 +164,10 @@ function render(entities, metadata) {
   lines.push("## 最古優先監査");
   lines.push("");
   lines.push(
-    `URL確認日が未設定または最も古い${DEFAULT_BATCH_SIZE}件を毎日確認します。成功した結果だけをGitHubへ保存するため、途中で失敗した対象は次回も最古のまま再試行され、約${Math.ceil(total / DEFAULT_BATCH_SIZE)}回の成功で全件を一巡します。各社公式サイト内リンクに加えてrobots.txtのsitemapとJSON-LDから拠点・連絡先・グループ会社ページを探索します。同じ都市というだけでは採用せず、法人名と住所を同時確認できた場合だけ番地へ昇格します。既存の番地も公式ページを探索して出典を補完し、根拠なしや退去疑いで自動削除はせず「要確認」に留めます。`,
+    `URL監査の試行日が未設定または最も古い${DEFAULT_BATCH_SIZE}件を6時間ごとに確認します。成功日（checkedAt）と試行日（attemptedAt）を分け、接続できない企業だけが毎回選ばれないようにします。約${Math.ceil(total / DEFAULT_BATCH_SIZE)}回で全件を一巡する規模です。フェーズごとに結果を保存し、個別企業の例外は他社の監査から切り離します。各社公式サイト内リンクに加えてrobots.txtのsitemapとJSON-LDから拠点・連絡先・グループ会社ページを探索します。法人名と住所を同時確認できた場合だけ番地へ昇格します。既存の番地も公式ページを探索して出典を補完し、根拠なしや退去疑いは「要確認」に留めます。一時的な取得障害で、以前の所在確認を降格させません。`,
   );
   lines.push(
-    "GitHub Actionsの定期実行とは別に、OpenClawが6時間ごとに最終成功を監視し、30時間以上成功がなければ同じ監査を再実行します。監査がデータを保存すると、完了イベントからPagesを再配信し、Actions由来のコミットも公開地図まで反映します。",
+    "GitHub Actionsの定期実行とは別に、既存のOpenClaw監視も利用しています。監査がデータを保存すると、完了イベントからPagesを再配信します。Issueの優先確認先を取得できなくても通常監査は進みます。公開用audit-report.jsonに試行数・新規確認数・取得失敗数などを残し、地図のData quality datesから最終完了レポートと実行履歴を参照できます。失敗時も監査レポートと途中のデータを14日間のartifactに保管します。Pagesには地図に必要な静的ファイルだけを配信します。",
   );
   lines.push("");
   lines.push("## Wikipedia候補探索（月次）");
@@ -169,6 +175,8 @@ function render(entities, metadata) {
   lines.push(
     "Wikipediaの Silicon Valley企業、Bay Areaテクノロジー企業、米国の無人航空機メーカー、大学、研究機関カテゴリを月1回だけ直列取得し、未掲載候補のJSONをGitHub Actions artifactへ保存します。Wikipediaは候補発見にだけ使い、自動登録はしません。現役で、地域的・産業的な重要性が高い大企業／上場企業／主要スタートアップ／大学・研究機関を選び、公式サイトで現住所を確認できたものだけGeoJSONへ採用します。",
   );
+  lines.push("", "## YC企業の継続登録（週次）", "");
+  lines.push("YC-OSSの公開ミラーは候補の発見に使います。登録前に各社のY Combinator公式プロフィールを取得し、企業の識別・営業状態・米国内のベイエリア都市を照合します。企業名やURLの重複を除いたうえで、週次ワークフローが新規企業を最大50件登録し、READMEと公開地図へ反映します。現在の公式プロフィールに根拠がない候補を、確認済みとして登録することはありません。企業紹介・業種・出典と確認日を保存し、番地の記載がない企業は都市中心で表示します。");
   lines.push("");
   lines.push("## ホスティング");
   lines.push("");
@@ -199,6 +207,8 @@ function render(entities, metadata) {
     "- JETRO「ベイエリア進出日本企業調査報告書」: <https://www.jetro.go.jp/usa/topics/survey-report-on-japan-based-companies-operating-in-the-san-francisco-bay-area.html>",
     "- シリコンバレー・サンフランシスコ進出の大手日系企業52社【2024年以降】: <https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/>",
     "- sf-companies（theShiva）: <https://github.com/theShiva/sf-companies>",
+    "- Y Combinator公式企業ディレクトリ（都市レベルの現所在根拠）: <https://www.ycombinator.com/companies>",
+    "- YC-OSS API（候補発見用ミラー、確認根拠は各社のYC公式プロフィール）: <https://yc-oss.github.io/api/companies/all.json>",
   );
   lines.push("");
   lines.push("## ローカルコマンド");
@@ -210,6 +220,9 @@ function render(entities, metadata) {
   lines.push("npm run audit -- --all       # 全件のデータ監査");
   lines.push("npm run audit -- --all --city-only # 都市中心データだけ住所探索");
   lines.push("npm run discover:wikipedia    # Wikipediaから未掲載候補を生成（データへは自動登録しない）");
+  lines.push("npm run discover:yc           # YCの未掲載候補をwork/へ出力");
+  lines.push("npm run import:yc             # YC公式プロフィール照合後に企業を追加");
+  lines.push("npm run import:yc -- --limit=50 # 追加件数を制限して登録・既存情報を照合");
   lines.push('npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って住所探索', "```");
   lines.push("");
   lines.push("## 掲載データ一覧");

@@ -33,6 +33,7 @@ import {
   sourceMentionsEntityNearLocation,
   sourceMentionsLocation,
   sourceMentionsPresence,
+  sourceMentionsOfficialYcProfile,
   DEFAULT_BATCH_SIZE,
 } from '../scripts/audit.mjs';
 import { buildCandidateReport } from '../scripts/wikipedia-candidates.mjs';
@@ -118,6 +119,17 @@ test('daily audit advances from unchecked and oldest records without skipping fa
     ['unchecked-a', 'unchecked-b', 'older'],
     'without a committed checkedAt change, the same work must be retried',
   );
+
+  const fair = [
+    { properties: { id: 'failed-recent', websiteCheck: { status: 'review', checkedAt: '2026-08-20', attemptedAt: '2026-09-11' } } },
+    { properties: { id: 'stale-success', websiteCheck: { status: 'ok', checkedAt: '2026-08-20' } } },
+    { properties: { id: 'never-attempted', websiteCheck: { status: 'unchecked', checkedAt: null } } },
+  ];
+  assert.deepStrictEqual(
+    selectFeatures(fair, { limit: 3 }).map((feature) => feature.properties.id),
+    ['never-attempted', 'stale-success', 'failed-recent'],
+    'a recent failure records its attempt without jumping ahead of stale work',
+  );
 });
 
 test('audit summary uses the defined selection label', () => {
@@ -142,7 +154,6 @@ test('RakuNest and its mapped tenants share the verified facility address', () =
     'jcb-silicon-valley',
     'jtb-silicon-valley',
     'hakuhodo-dy-irep',
-    'ihi-rakunest',
     'shimizu-rakunest',
     'eneos-rakunest',
     'systena-rakunest',
@@ -182,6 +193,19 @@ test('coordinate and current-presence checks stay independent', () => {
   const officialPage = '<p>2207 Bridgepointe Pkwy, San Mateo, CA 94404</p>';
 
   assert.strictEqual(sourceMentionsLocation(officialPage, location), true);
+  assert.strictEqual(sourceMentionsLocation('<p>Bridgepointe Pkwy, San Mateo, CA</p>', location), false);
+  assert.strictEqual(sourceMentionsLocation('<p>Bridgepointe Pkwy, San Mateo, CA 94404</p>', {
+    ...location, postalCode: '94404',
+  }), false);
+  assert.strictEqual(sourceMentionsLocation('<p>Moffett Boulevard, Mountain View, CA 94043</p>', {
+    address: 'Moffett Boulevard', city: 'Mountain View', postalCode: '94043', precision: 'address',
+  }), true);
+  assert.strictEqual(sourceMentionsLocation('<p>112 Main St, San Francisco, CA 94105</p>', {
+    address: '111 Main St', city: 'San Francisco', postalCode: '94105', precision: 'address',
+  }), false);
+  assert.strictEqual(sourceMentionsLocation('<p>One Main St, San Francisco, CA 94105</p>', {
+    address: '1 Main St', city: 'San Francisco', postalCode: '94105', precision: 'address',
+  }), true);
   assert.strictEqual(sourceMentionsLocation('<p>San Mateo office</p>', location), false);
   assert.strictEqual(sourceMentionsPresence(officialPage, location), true);
   assert.strictEqual(sourceMentionsPresence('<p>Example Corp — San Mateo</p>', {
@@ -218,6 +242,69 @@ test('coordinate and current-presence checks stay independent', () => {
     classifyPresence({ sourceUrl: null, sourceOk: false, sourceHtml: '', location, entityName: 'Example Corp' }),
     'unchecked',
   );
+});
+
+test('IHI uses its current official Launch Pad office rather than a former tenant-list address', () => {
+  const ihi = features.find((feature) => feature.properties.id === 'ihi-rakunest');
+  assert.equal(ihi.properties.name, 'IHI Launch Pad');
+  assert.equal(ihi.properties.location.address, '963 Industrial Road, Suite D');
+  assert.equal(ihi.properties.location.city, 'San Carlos');
+  assert.equal(ihi.properties.location.sourceUrl, 'https://www.ihi.co.jp/ihi_launchpad/');
+});
+
+test('YC city presence uses canonical active profile evidence without accepting generic text', () => {
+  const properties = {
+    name: 'Gusto',
+    website: 'https://gusto.com/',
+    source: { officialCompany: { id: 24, website: 'https://gusto.com/' } },
+    location: { city: 'San Francisco', region: 'CA', countryCode: 'US', precision: 'city' },
+  };
+  const page = (company) => `<div data-page="${JSON.stringify({ props: { company } }).replaceAll('"', '&quot;')}"></div>`;
+  const active = page({ id: 24, slug: 'gusto', name: 'Gusto', ycdc_status: 'Active', city: 'San Francisco', country: 'US', website: 'https://gusto.com/' });
+  const sourceUrl = 'https://www.ycombinator.com/companies/gusto';
+
+  assert.strictEqual(sourceMentionsOfficialYcProfile(active, sourceUrl, properties), true);
+  const withStreet = { ...properties, location: { ...properties.location, precision: 'address', address: '1 Existing Street' } };
+  assert.strictEqual(sourceMentionsOfficialYcProfile(active, sourceUrl, withStreet), true, 'city evidence stays independent of street evidence');
+  assert.strictEqual(classifyPresence({
+    sourceUrl, sourceOk: true, sourceHtml: active, location: properties.location,
+    entityName: properties.name, properties, trustedSource: false,
+  }), 'verified');
+  assert.strictEqual(sourceMentionsOfficialYcProfile(
+    page({ id: 24, slug: 'gusto', name: 'Gusto', ycdc_status: 'Inactive', city: 'San Francisco', country: 'US', website: 'https://gusto.com/' }),
+    sourceUrl, properties,
+  ), false);
+  assert.strictEqual(sourceMentionsOfficialYcProfile(
+    page({ id: 24, slug: 'gusto', name: 'Gusto', ycdc_status: 'Active', city: 'Oakland', country: 'US', website: 'https://gusto.com/' }),
+    sourceUrl, properties,
+  ), false);
+  assert.strictEqual(sourceMentionsOfficialYcProfile(
+    page({ id: 99, slug: 'gusto', name: 'Gusto', ycdc_status: 'Active', city: 'San Francisco', country: 'US', website: 'https://gusto.com/' }),
+    sourceUrl, properties,
+  ), false);
+  assert.strictEqual(sourceMentionsOfficialYcProfile(
+    page({ id: 24, slug: 'gusto', name: 'Gusto', ycdc_status: 'Active', city: 'San Francisco', country: 'US', website: 'https://other.example/' }),
+    sourceUrl, properties,
+  ), false);
+  assert.strictEqual(sourceMentionsOfficialYcProfile('<p>Gusto Active San Francisco</p>', sourceUrl, properties), false);
+});
+
+test('curated entity pages verify a distant address by their exact title without enabling group-page matching', () => {
+  const sourceUrl = 'https://example.test/entity-office';
+  const location = { precision: 'address', address: '123 Main Street', city: 'San Mateo', postalCode: '94401', sourceUrl };
+  const html = '<title>Example Research Office</title><p>' + 'research '.repeat(100) + '</p><address>123 Main Street, San Mateo, CA 94401</address>';
+  const check = { sourceUrl, sourceOk: true, sourceHtml: html, location, entityName: 'Example Research Office' };
+  assert.equal(classifyPresence(check), 'review');
+  const properties = { name: 'Example Research Office', website: 'https://example.test/', location, correctionSource: { sourceUrl }, presenceCheck: { evidenceScope: 'entity-page' } };
+  assert.equal(classifyPresence({ ...check, properties }), 'verified');
+  assert.equal(classifyPresence({ ...check, properties, sourceHtml: html.replace('123 Main', '124 Main') }), 'review');
+  assert.equal(classifyPresence({ ...check, properties: { ...properties, correctionSource: { sourceUrl: 'https://example.test/other' } } }), 'review');
+});
+
+test('explicit source-name variants remain alternatives when the audit passes an array', () => {
+  const location = { precision: 'address', address: '1875 South Grant Street', city: 'San Mateo', postalCode: '94402' };
+  const sourceHtml = '<h2>Acario Office</h2><address>1875 South Grant Street, San Mateo, CA 94402</address>';
+  assert.equal(classifyPresence({ sourceUrl: 'https://acarioinnovation.com/contact-us/', sourceOk: true, sourceHtml, location, entityName: ['Acario Innovation / Tokyo Gas', 'Acario Office'] }), 'verified');
 });
 
 test('city locations use a first-party source and can discover a street address', () => {
@@ -258,6 +345,8 @@ test('city locations use a first-party source and can discover a street address'
   });
   assert.strictEqual(sourceMentionsEntity('<p>Resonac America Inc.</p>', 'Resonac US-JOINT'), false);
   assert.strictEqual(sourceMentionsEntity('<p>Resonac US-JOINT</p>', 'Resonac US-JOINT'), true);
+  assert.strictEqual(sourceMentionsEntity('<p>Acario Office — Tokyo Gas</p>', ['Acario Innovation', 'Acario Office']), true);
+  assert.strictEqual(sourceMentionsEntity('<p>Tokyo Gas office</p>', ['Acario Innovation', 'Acario Office']), false);
   assert.strictEqual(sourceMentionsEntity('<p>NRI America</p>', 'NRI America San Francisco'), true);
   assert.strictEqual(sourceMentionsEntity('<p>IHI Aerospace</p>', 'IHI Corporation'), false);
   assert.strictEqual(locationNeedsAddress({ address: 'San Francisco', city: 'San Francisco', region: 'CA', precision: 'address' }), true);
@@ -342,6 +431,7 @@ test('JSON-LD addresses and joined brand names are searchable without weakening 
 
 test('attempts without exact evidence become review while news remains ineligible', () => {
   assert.strictEqual(isVerificationSourceUrl('https://www.example.com/about/locations'), true);
+  assert.strictEqual(isVerificationSourceUrl('https://support.example.com/contact/locations'), true);
   assert.strictEqual(isVerificationSourceUrl('https://news.example.com/2020/office-opening'), false);
   assert.strictEqual(isVerificationSourceUrl('https://www.example.com/campaigns/contact-center-guide'), false);
   assert.strictEqual(isVerificationSourceUrl('https://www.example.com/legal/reseller-agreement'), false);
@@ -362,7 +452,13 @@ test('attempts without exact evidence become review while news remains ineligibl
   assert.deepStrictEqual(properties.presenceCheck, {
     checkedAt: '2026-08-27', status: 'review', sourceUrl: null,
   });
+  const typed = { presenceCheck: { checkedAt: null, status: 'unchecked', sourceUrl: null, sourceType: 'official-directory' } };
+  assert.strictEqual(reviewUnverifiedPresence(typed, '2026-08-27'), true);
+  assert.strictEqual(typed.presenceCheck.sourceType, undefined, 'no source must not retain a directory verification label');
   assert.match(auditSource, /GITHUB_STEP_SUMMARY/);
+  assert.match(auditSource, /AUDIT_REPORT_PATH/);
+  assert.match(auditSource, /sourceMentionsOfficialYcProfile/);
+  assert.doesNotMatch(auditSource, /isOfficialLocationPageUrl\(page\.sourceUrl\).*classifyPresence/);
 });
 
 test('a group page cannot assign one subsidiary another subsidiary address', () => {
@@ -370,11 +466,25 @@ test('a group page cannot assign one subsidiary another subsidiary address', () 
     <section><h2>IHI Aerospace</h2><p>123 Aviation Way, San Mateo, CA 94401</p></section>
     <section><h2>IHI Corporation</h2><p>800 Concar Drive, San Mateo, CA 94402</p></section>
   `;
-  const aerospace = { address: '123 Aviation Way', city: 'San Mateo', postalCode: '94401' };
-  const corporation = { address: '800 Concar Drive', city: 'San Mateo', postalCode: '94402' };
+  const aerospace = { address: '123 Aviation Way', city: 'San Mateo', postalCode: '94401', precision: 'address' };
+  const corporation = { address: '800 Concar Drive', city: 'San Mateo', postalCode: '94402', precision: 'address' };
 
   assert.strictEqual(sourceMentionsEntityNearLocation(html, aerospace, 'IHI Corporation'), false);
   assert.strictEqual(sourceMentionsEntityNearLocation(html, corporation, 'IHI Corporation'), true);
+  assert.strictEqual(classifyPresence({
+    sourceUrl: 'https://example.com/group-companies',
+    sourceOk: true,
+    sourceHtml: html,
+    location: aerospace,
+    entityName: 'IHI Corporation',
+  }), 'review');
+  assert.strictEqual(classifyPresence({
+    sourceUrl: 'https://example.com/group-companies',
+    sourceOk: true,
+    sourceHtml: html,
+    location: corporation,
+    entityName: 'IHI Corporation',
+  }), 'verified');
   assert.strictEqual(classifyPresence({
     sourceUrl: 'https://example.com/group-companies',
     sourceOk: true,
@@ -462,12 +572,24 @@ test('human correction flags select exact entity IDs before the daily batch', ()
   assert.match(auditWorkflowSource, /issues: read/);
   assert.match(auditWorkflowSource, /gh issue list --state open --limit 100/);
   assert.match(auditWorkflowSource, /node scripts\/audit\.mjs --ids "\$PRIORITY_IDS"/);
+  assert.match(auditWorkflowSource, /AUDIT_REPORT_PATH: audit-report\.json/);
+  assert.match(auditWorkflowSource, /cron: '17 \*\/6 \* \* \*'/);
+  assert.match(auditWorkflowSource, /priority issue lookup failed; continuing with the regular audit/);
+  assert.match(auditWorkflowSource, /cancel-in-progress: false/);
+  assert.match(auditWorkflowSource, /git add data\/entities\.geojson README\.md audit-report\.json/);
 });
 
 test('a completed data audit deploys the resulting main branch to Pages', () => {
-  assert.match(pagesWorkflowSource, /workflow_run:\s+workflows: \[Data audit\]/);
+  assert.match(pagesWorkflowSource, /workflow_run:\s+workflows: \[Data audit, Company discovery\]/);
   assert.match(pagesWorkflowSource, /workflow_run\.conclusion == 'success'/);
+  assert.match(pagesWorkflowSource, /github\.event_name == 'push'[\s\S]*!startsWith\(github\.event\.head_commit\.message, 'chore: refresh data audit'\)/);
+  assert.match(pagesWorkflowSource, /chore: refresh company directory/);
   assert.match(pagesWorkflowSource, /ref: main/);
+  assert.match(pagesWorkflowSource, /mkdir -p _site\/data/);
+  assert.match(pagesWorkflowSource, /cp index\.html app\.js styles\.css \.nojekyll _site\//);
+  assert.match(pagesWorkflowSource, /cp data\/entities\.geojson _site\/data\//);
+  assert.match(pagesWorkflowSource, /cp audit-report\.json _site\//);
+  assert.match(pagesWorkflowSource, /path: _site/);
 });
 
 test('every entity has a logo source ladder with a cached fallback', () => {

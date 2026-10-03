@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "verifiedAt": "2026-10-03T10:26:22.256Z",
+  "dataset": {
+    "baselineListings": 492,
+    "listings": 984,
+    "presenceVerified": 632,
+    "presenceNeedsReview": 352,
+    "newYcCityProfiles": 492,
+    "sha256": "c0a4d1226f66ede1f40f947a2c8a32e717b84a8385b4faebaf8fab798cd41305"
+  },
+  "checks": {
+    "nodeTests": {
+      "passed": 49,
+      "failed": 0
+    },
+    "schema": "passed",
+    "generatedReadme": "passed",
+    "javascriptSyntax": "passed",
+    "diffWhitespace": "passed",
+    "reproduction": "Identical SHA-256 from the verified source snapshot plus explicit one-time priority corrections.",
+    "curatedLiveSources": {
+      "attempted": 10,
+      "http200Verified": 9,
+      "http403": 1,
+      "note": "ROHM blocks this HTTP client; transient audit failures preserve its prior source-grounded verification."
+    },
+    "browserVisualReview": {
+      "status": "blocked",
+      "reason": "Browser Use could not verify saved browser permissions for the local preview. No visual review performed."
+    }
+  },
+  "publication": {
+    "status": "pre-deployment-snapshot",
+    "changes": "Release candidate verification at the recorded time. The GitHub Pages workflow records production deployment status."
+  },
+  "preservedGeneratedFiles": "The automated approval reviewer rejected deleting the pnpm cache and lock due to possible loss of dependency reproducibility or uncommitted work. Both were preserved under work/generated-pnpm-*."
+}

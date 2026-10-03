@@ -1,13 +1,15 @@
 {
   "name": "bayareamap",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate.mjs",
-    "test": "node --test test/audit.test.mjs && node scripts/validate.mjs",
+    "test": "node --test --experimental-test-isolation=none test/*.test.mjs && node scripts/validate.mjs",
     "audit": "node scripts/audit.mjs",
     "discover:wikipedia": "node scripts/wikipedia-candidates.mjs",
+    "discover:yc": "node scripts/yc-import.mjs --discover",
+    "import:yc": "node scripts/yc-import.mjs --verify",
     "readme": "node scripts/render-readme.mjs"
   }
 }

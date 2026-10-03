@@ -15,21 +15,26 @@
     <header class="site-header">
       <div class="brand">
         <h1><a href="./">Bay Area Company Map</a></h1>
-        <p class="header-tagline">Field networking directory for Japan-linked Bay Area outreach</p>
+        <p class="header-tagline">Explore the ecosystem. Build your next connection. <span class="version-tag">v2</span></p>
       </div>
       <div class="dataset-info">
         Showing <span id="visible-count">0</span> companies
         <details id="data-quality-summary">
           <summary>Data quality dates</summary>
           <ul class="dq-list">
+            <li id="quality-counts">Loading coverage…</li>
             <li>Dataset updated: <time id="dataset-date">Loading…</time></li>
             <li>Presence checked: <time id="presence-checked-date">Loading…</time></li>
             <li>Coordinates checked: <time id="location-checked-date">Loading…</time></li>
             <li>URLs checked: <time id="checked-date">Loading…</time></li>
+            <li id="audit-health">Last audit: no run report yet</li>
+            <li><a href="https://github.com/naoyamd/BayAreaMap/actions/workflows/audit.yml" target="_blank" rel="noopener noreferrer">View audit history</a></li>
           </ul>
         </details>
       </div>
     </header>
+
+    <div id="app-status" role="status" aria-live="polite" hidden></div>
 
     <nav class="mobile-toolbar" aria-label="Mobile view switcher">
       <span class="mobile-tabs" role="tablist" aria-label="Map or list view">
@@ -47,6 +52,23 @@
           <input type="search" id="search" name="search" autocomplete="off" placeholder="e.g. AI, semiconductors, San Jose" />
           <button type="button" id="clear-search">Clear</button>
         </div>
+      </section>
+
+      <section class="workspace-section" aria-labelledby="workspace-heading">
+        <h2 id="workspace-heading">Your field notebook</h2>
+        <div class="workspace-actions">
+          <button type="button" id="saved-only" aria-pressed="false">★ Saved <span id="saved-count">0</span></button>
+          <button type="button" id="verified-only" aria-pressed="false">✓ Verified presence</button>
+          <button type="button" id="export-csv">Export results CSV</button>
+        </div>
+        <div class="place-controls">
+          <label for="city">City<select id="city"><option value="">All cities</option></select></label>
+          <label for="radius">Around San Mateo<select id="radius">
+            <option value="">Anywhere</option><option value="10">Within 10 km</option>
+            <option value="25">Within 25 km</option><option value="50">Within 50 km</option>
+          </select></label>
+        </div>
+        <p class="workspace-help">Saved companies and notes stay in this browser. Approximate locations give approximate distances.</p>
       </section>
 
       <section class="starter-contacts" aria-labelledby="starters-heading">
@@ -86,6 +108,7 @@
           </select>
           <span id="results-count" role="status" aria-live="polite">0 results</span>
         </div>
+        <p id="active-filter-summary" class="active-filter-summary" hidden></p>
         <div id="results"></div>
         <nav id="pagination" aria-label="Result pages"></nav>
       </section>
@@ -116,7 +139,7 @@
           <fieldset id="filter-presence">
             <legend>Current presence</legend>
           </fieldset>
-          <p class="location-note">Dashed pins use an approximate city center; faded pins have unverified current presence.</p>
+          <p class="location-note">Dashed pins use an approximate city center; amber marks mean current presence needs review. Verified presence may be confirmed at city level.</p>
           <button type="button" id="reset-filters">Reset filters</button>
         </details>
       </section>
@@ -126,8 +149,10 @@
       <div class="map-overlay" aria-label="Map tools">
         <button type="button" id="search-area" hidden>Search this area</button>
         <button type="button" id="show-all-area" hidden>Show all Bay Area</button>
+        <button type="button" id="fit-results">Fit results</button>
       </div>
       <div id="map" role="region" aria-label="Bay Area company map"></div>
+      <div class="map-legend"><span class="legend-japan">Japan-linked</span><span class="legend-approx">Approximate</span><span class="legend-review">Needs review</span></div>
     </main>
 
     <dialog id="detail" aria-label="Company details">

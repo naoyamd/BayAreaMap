@@ -2,7 +2,7 @@ name: Data audit
 
 on:
   schedule:
-    - cron: '17 8 * * *'
+    - cron: '17 */6 * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -20,10 +20,13 @@ permissions:
 
 concurrency:
   group: data-audit
+  cancel-in-progress: false
 
 jobs:
   audit:
     runs-on: ubuntu-latest
+    env:
+      AUDIT_REPORT_PATH: audit-report.json
     steps:
       - uses: actions/checkout@v4
 
@@ -37,12 +40,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          ids="$(
+          if ! ids="$(
             gh issue list --state open --limit 100 --json body --jq '.[].body' |
               sed -n 's/^Entity ID: `\([a-z0-9][a-z0-9-]*\)`$/\1/p' |
               sort -u |
               paste -sd, -
-          )"
+          )"; then
+            echo "priority issue lookup failed; continuing with the regular audit" >&2
+            ids=""
+          fi
           echo "ids=$ids" >> "$GITHUB_OUTPUT"
 
       - name: Run priority data audit
@@ -68,15 +74,25 @@ jobs:
         shell: bash
         run: npm test
 
+      - name: Preserve audit report and checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-checkpoint
+          path: |
+            audit-report.json
+            data/entities.geojson
+          retention-days: 14
+
       - name: Commit changes
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -z "$(git status --porcelain -- data/entities.geojson README.md)" ]; then
+          if [ -z "$(git status --porcelain -- data/entities.geojson README.md audit-report.json)" ]; then
             echo "no changes"
           else
-            git add data/entities.geojson README.md
+            git add data/entities.geojson README.md audit-report.json
             git commit -m "chore: refresh data audit"
             git push
           fi

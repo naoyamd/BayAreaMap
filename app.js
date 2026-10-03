@@ -8,6 +8,8 @@ const TOWN_ZOOM = 14;
 const PAGE_SIZE = 50;
 const SEARCH_DEBOUNCE_MS = 120;
 const DENSE_CLUSTER_CITIES = new Set(["San Francisco", "San Jose", "Santa Clara"]);
+const SAN_MATEO = [37.563, -122.3255];
+const PERSONAL_STORAGE_KEY = "bayareamap-notebook-v1";
 
 const ENTITY_TYPE_LABELS = {
   "vc-cvc": "VC / CVC",
@@ -154,6 +156,7 @@ let map = null;
 let markerLayer = null;
 let townMarkerLayer = null;
 let overlapLegLayer = null;
+let cityMarkerLayer = null;
 let entities = [];
 let visibleEntities = [];
 let entitiesById = new Map();
@@ -183,6 +186,9 @@ const allowed = {
 
 const state = {
   q: "",
+  city: "",
+  radius: null,
+  savedOnly: false,
   sort: "relevance",
   preset: null,
   sectors: new Set(),
@@ -197,6 +203,78 @@ const state = {
 for (const [, group] of PARAM_GROUPS) state.filters[group] = new Set();
 
 const el = {};
+const personal = readPersonalData();
+
+function readPersonalData() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(PERSONAL_STORAGE_KEY) || "{}");
+    return {
+      saved: new Set(Array.isArray(raw.saved) ? raw.saved.filter((id) => typeof id === "string") : []),
+      notes: Object.fromEntries(Object.entries(raw.notes && typeof raw.notes === "object" && !Array.isArray(raw.notes) ? raw.notes : {}).filter(([id, note]) =>
+        typeof id === "string" && typeof note === "string").map(([id, note]) => [id, note.slice(0, 4000)])),
+    };
+  } catch {
+    return { saved: new Set(), notes: {} };
+  }
+}
+
+function showAppStatus(message) {
+  const node = $("app-status");
+  node.textContent = message;
+  node.hidden = !message;
+}
+
+function persistPersonal() {
+  try {
+    localStorage.setItem(PERSONAL_STORAGE_KEY, JSON.stringify({ saved: [...personal.saved], notes: personal.notes }));
+    showAppStatus(map ? "" : "Map unavailable. Company search and notebook remain available. Reload to retry the map.");
+    return true;
+  } catch {
+    showAppStatus("Browser storage is unavailable. This session's saved companies and notes will be lost when you close it. Export a CSV to keep them.");
+    return false;
+  }
+}
+
+function toggleSaved(id) {
+  if (personal.saved.has(id)) personal.saved.delete(id);
+  else personal.saved.add(id);
+  persistPersonal();
+  syncNotebookControls();
+  rerender();
+}
+
+function syncNotebookControls() {
+  $("saved-count").textContent = [...personal.saved].filter((id) => entitiesById.has(id)).length;
+  $("saved-only").setAttribute("aria-pressed", String(state.savedOnly));
+  $("verified-only").setAttribute("aria-pressed", String(state.filters.presenceStatus.size === 1 && state.filters.presenceStatus.has("verified")));
+  $("city").value = state.city;
+  $("radius").value = state.radius === null ? "" : String(state.radius);
+}
+
+function csvCell(value) {
+  let text = String(value ?? "");
+  if (/^[\s]*[=+@-]/.test(text)) text = "'" + text;
+  return `"${text.replaceAll('"', '""')}"`;
+}
+
+function buildCsv(features) {
+  const rows = [["Entity ID", "Name", "Japanese name", "City", "County", "Address", "Precision", "Presence", "Presence checked", "Presence source", "Website", "Industries", "Updated", "Saved", "Personal note"]];
+  for (const { properties: p } of features) rows.push([
+    p.id, p.name, p.nameJa, p.location.city, p.location.county, p.location.address,
+    p.location.precision, p.presenceCheck.status, p.presenceCheck.checkedAt, p.presenceCheck.sourceUrl,
+    p.website, p.industries.join("; "), p.updatedAt, personal.saved.has(p.id) ? "yes" : "", personal.notes[p.id],
+  ]);
+  return "\uFEFF" + rows.map((row) => row.map(csvCell).join(",")).join("\r\n");
+}
+
+function exportCsv() {
+  const url = URL.createObjectURL(new Blob([buildCsv(visibleEntities)], { type: "text/csv;charset=utf-8" }));
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "bay-area-companies.csv";
+  link.click();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
 
 function $(id) {
   return document.getElementById(id);
@@ -253,15 +331,17 @@ function statusWithDate(status, date) {
 }
 
 function linkNode(href) {
-  const link = document.createElement("a");
-  link.href = href;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.textContent = href;
-  return link;
+  return actionLink(href, href);
 }
 
 function actionLink(href, label) {
+  try {
+    if (!["http:", "https:"].includes(new URL(href).protocol)) throw new Error("invalid link");
+  } catch {
+    const text = document.createElement("span");
+    text.textContent = label;
+    return text;
+  }
   const link = document.createElement("a");
   link.href = href;
   link.target = "_blank";
@@ -327,6 +407,7 @@ function enrichFeature(feature) {
       .filter(Boolean)
       .join(", "),
   );
+  props._normDescription = normText(props.description);
   props._sectors = deriveSectors(props.industries, props.entityType);
   const parsed = Date.parse(props.updatedAt);
   props._updatedTs = Number.isFinite(parsed) ? parsed : 0;
@@ -410,6 +491,7 @@ function initMap(center, zoom) {
     showCoverageOnHover: false,
     maxClusterRadius: 55,
     spiderfyDistanceMultiplier: 1.5,
+    spiderfyOnMaxZoom: false,
     chunkedLoading: true,
     chunkProgress: onClusterChunkProgress,
     iconCreateFunction(cluster) {
@@ -422,6 +504,7 @@ function initMap(center, zoom) {
   }).addTo(map);
   overlapLegLayer = L.layerGroup().addTo(map);
   townMarkerLayer = L.layerGroup().addTo(map);
+  cityMarkerLayer = L.layerGroup().addTo(map);
   map.on("moveend", onViewChanged);
 }
 
@@ -441,13 +524,14 @@ function makeIcon(props, selected) {
 function buildMarkersOnce() {
   for (const feature of entities) {
     const props = feature.properties;
+    if (props.location.precision === "city") continue;
     const marker = L.marker(latlngOf(feature), { icon: makeIcon(props, false) });
     marker._feature = feature;
     marker._town = false;
     const notes = [];
     if (props.location.precision === "city") notes.push("approximate location");
     if (props.presenceCheck.status !== "verified") notes.push("presence unverified");
-    marker.bindTooltip(`${props.name}${notes.length ? ` (${notes.join(", ")})` : ""}`);
+    marker.bindTooltip(textNode(`${props.name}${notes.length ? ` (${notes.join(", ")})` : ""}`));
     marker.on("click", () => selectEntity(feature));
     marker.on("add", () => {
       const node = marker.getElement();
@@ -478,6 +562,8 @@ function computeLayout() {
   const groups = new Map();
   for (const feature of visibleEntities) {
     const props = feature.properties;
+    // City centroids are shared approximate anchors; spreading them implies false street locations.
+    if (props.location.precision === "city") continue;
     if (!expandEverywhere && DENSE_CLUSTER_CITIES.has(props.location.city)) continue;
     const origin = latlngOf(feature);
     if (!bounds.contains(origin)) continue;
@@ -517,9 +603,11 @@ function refreshMapLayers() {
     return;
   }
   const { positions, townIds } = computeLayout();
+  refreshCityMarkers();
   const nextCluster = [];
   const nextTown = [];
   for (const feature of visibleEntities) {
+    if (feature.properties.location?.precision === "city") continue;
     const marker = markersById.get(feature.properties.id);
     if (!marker) continue;
     const next = positions.get(feature.properties.id) || latlngOf(feature);
@@ -544,6 +632,36 @@ function refreshMapLayers() {
     markerLayer.addLayers(addCluster);
   }
   for (const marker of addTown) townMarkerLayer.addLayer(marker);
+}
+
+function refreshCityMarkers() {
+  if (!cityMarkerLayer) return;
+  cityMarkerLayer.clearLayers();
+  const groups = new Map();
+  for (const feature of visibleEntities) {
+    if (feature.properties.location.precision !== "city") continue;
+    const key = feature.geometry.coordinates.join(",");
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(feature);
+  }
+  for (const group of groups.values()) {
+    const city = group[0].properties.location.city;
+    const marker = L.marker(latlngOf(group[0]), { icon: L.divIcon({
+      className: "company-cluster city-cluster", html: `<span>${group.length}</span>`, iconSize: [48, 48],
+    }) });
+    marker.bindTooltip(textNode(`${city}: ${group.length} approximate city locations. Open the company list.`));
+    marker.on("click", () => {
+      state.city = city;
+      currentPage = 1;
+      setMobileView("list", false);
+      syncNotebookControls();
+      rerender();
+      pushHistory();
+      el.results.scrollIntoView({ block: "start" });
+    });
+    marker.on("add", () => marker.getElement()?.setAttribute("aria-label", `${city}: show ${group.length} companies with approximate locations`));
+    marker.addTo(cityMarkerLayer);
+  }
 }
 
 function onClusterChunkProgress(processed, total) {
@@ -581,6 +699,7 @@ function rankFeature(props, query) {
   const industryQuery = normalizeIndustry(query);
   if (props._normIndustries.some((industry) => industry.includes(industryQuery))) return 4;
   if (props._normPlace.includes(query)) return 5;
+  if (props._normDescription?.includes(query)) return 6;
   return Number.POSITIVE_INFINITY;
 }
 
@@ -630,6 +749,12 @@ function computeVisible() {
   const query = normText(state.q);
   return entities.filter((feature) => {
     const props = feature.properties;
+    if (state.savedOnly && !personal.saved.has(props.id)) return false;
+    if (state.city && props.location.city !== state.city) return false;
+    if (state.radius !== null) {
+      const [lat, lng] = latlngOf(feature);
+      if (haversineKm(SAN_MATEO[0], SAN_MATEO[1], lat, lng) > state.radius) return false;
+    }
     if (query && rankFeature(props, query) === Number.POSITIVE_INFINITY) return false;
     if (!matchesCompanyPreset(feature)) return false;
     if (!matchesSectors(props)) return false;
@@ -656,7 +781,7 @@ function tieCompare(a, b) {
 
 function sortVisible(list) {
   if (state.sort === "distance") {
-    const center = map.getCenter();
+    const center = map ? map.getCenter() : { lat: state.lat, lng: state.lng };
     const distances = new Map(
       list.map((feature) => {
         const [lat, lng] = latlngOf(feature);
@@ -695,8 +820,8 @@ function makeResultCard(feature) {
   const card = document.createElement("div");
   card.className = "result-card";
   card.dataset.id = props.id;
-  card.setAttribute("role", "button");
-  card.tabIndex = 0;
+  card.setAttribute("role", "group");
+  card.setAttribute("aria-label", props.name);
   if (state.entityId === props.id) {
     card.classList.add("selected");
     card.setAttribute("aria-current", "true");
@@ -712,9 +837,13 @@ function makeResultCard(feature) {
   const body = document.createElement("div");
   body.className = "result-body";
   const heading = document.createElement("h3");
-  heading.textContent = props.name;
+  const title = document.createElement("button");
+  title.type = "button";
+  title.className = "company-title";
+  title.textContent = props.name;
+  heading.append(title);
   body.append(heading);
-  if (props.nameJa) {
+  if (props.nameJa && props.nameJa !== props.name) {
     const nameJaLine = document.createElement("p");
     nameJaLine.lang = "ja";
     nameJaLine.className = "result-name-ja";
@@ -738,20 +867,29 @@ function makeResultCard(feature) {
     SCALE_LABELS[props.scale] || props.scale,
     props.location.city,
     LOCATION_PRECISION_LABELS[props.location.precision],
-    `Presence: ${PRESENCE_STATUS_LABELS[props.presenceCheck.status] || props.presenceCheck.status}`,
+    `Presence: ${PRESENCE_STATUS_LABELS[props.presenceCheck.status] || props.presenceCheck.status}${props.presenceCheck.sourceType === "official-directory" ? " (city reported)" : ""}`,
   ]
     .filter(Boolean)
     .join(" · ");
   body.append(industryLine, metaLine);
+  if (props.description) {
+    const description = document.createElement("p");
+    description.className = "result-description";
+    description.textContent = props.description;
+    body.append(description);
+  }
 
   card.append(logo, body);
+  const save = document.createElement("button");
+  save.type = "button";
+  save.className = "save-company";
+  save.textContent = personal.saved.has(props.id) ? "★" : "☆";
+  save.setAttribute("aria-label", personal.saved.has(props.id) ? `Remove ${props.name} from saved companies` : `Save ${props.name}`);
+  save.setAttribute("aria-pressed", String(personal.saved.has(props.id)));
+  save.addEventListener("click", (event) => { event.stopPropagation(); toggleSaved(props.id); });
+  save.addEventListener("keydown", (event) => event.stopPropagation());
+  card.append(save);
   card.addEventListener("click", () => selectEntity(feature));
-  card.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      selectEntity(feature);
-    }
-  });
   return card;
 }
 
@@ -818,6 +956,12 @@ function renderResults() {
   const total = visibleEntities.length;
   el.visibleCount.textContent = String(total);
   el.resultsCount.textContent = `${total} result${total === 1 ? "" : "s"}`;
+  $("export-csv").disabled = total === 0;
+  $("fit-results").disabled = total === 0 || !map;
+  const summary = $("active-filter-summary");
+  const active = [state.savedOnly && "Saved companies", state.city, state.radius !== null && `${state.radius} km of San Mateo`, state.area && "Map area"] .filter(Boolean);
+  summary.textContent = active.join(" · ");
+  summary.hidden = active.length === 0;
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
   if (currentPage > totalPages) currentPage = totalPages;
   if (total === 0) {
@@ -856,6 +1000,11 @@ function syncSelectionUI() {
 }
 
 function focusEntity(feature) {
+  if (!map) return;
+  if (feature.properties.location.precision === "city") {
+    map.setView(latlngOf(feature), TOWN_ZOOM);
+    return;
+  }
   const marker = markersById.get(feature.properties.id);
   if (!marker) {
     map.setView(latlngOf(feature), Math.max(map.getZoom(), TOWN_ZOOM));
@@ -973,7 +1122,7 @@ function populateDetail(feature) {
   const heading = document.createElement("h2");
   heading.textContent = props.name;
   el.detailContent.append(heading);
-  if (props.nameJa) {
+  if (props.nameJa && props.nameJa !== props.name) {
     const nameJaLine = document.createElement("p");
     nameJaLine.lang = "ja";
     nameJaLine.textContent = props.nameJa;
@@ -988,12 +1137,59 @@ function populateDetail(feature) {
   addressLine.className = "detail-address";
   addressLine.append(actionLink(mapsUrl, address));
   el.detailContent.append(categoryLine, addressLine);
+  if (props.description) {
+    const description = document.createElement("p");
+    description.className = "detail-description";
+    description.textContent = props.description;
+    el.detailContent.append(description);
+  }
+  const presence = document.createElement("p");
+  presence.className = props.presenceCheck.status === "verified" ? "presence-banner verified" : "presence-banner";
+  presence.textContent = props.presenceCheck.status === "verified"
+    ? (props.presenceCheck.sourceType === "official-directory"
+      ? `✓ City reported by Y Combinator profile · ${props.presenceCheck.checkedAt}. Street address requires separate evidence.`
+      : `✓ Presence verified · ${props.presenceCheck.checkedAt}${location.precision === "city" ? " · City-level location" : ""}`)
+    : "◉ Current presence needs review. Check the source before visiting.";
+  el.detailContent.append(presence);
+  if (props.dataQualityNote) {
+    const note = document.createElement("p");
+    note.className = "presence-banner";
+    note.textContent = props.dataQualityNote;
+    el.detailContent.append(note);
+  }
+  const notebook = document.createElement("section");
+  notebook.className = "company-notebook";
+  const save = document.createElement("button");
+  save.type = "button";
+  const syncSave = () => {
+    save.textContent = personal.saved.has(props.id) ? "★ Saved to notebook" : "☆ Save to notebook";
+    save.setAttribute("aria-pressed", String(personal.saved.has(props.id)));
+  };
+  syncSave();
+  save.addEventListener("click", () => { toggleSaved(props.id); syncSave(); });
+  const label = document.createElement("label");
+  label.htmlFor = "company-note";
+  label.textContent = "Your notes (this browser only)";
+  const note = document.createElement("textarea");
+  note.id = "company-note";
+  note.rows = 3;
+  note.maxLength = 4000;
+  note.placeholder = "Contact, next action, or a reminder…";
+  note.value = personal.notes[props.id] || "";
+  note.addEventListener("input", () => {
+    if (note.value) personal.notes[props.id] = note.value;
+    else delete personal.notes[props.id];
+    persistPersonal();
+  });
+  notebook.append(save, label, note);
+  el.detailContent.append(notebook);
 
   const actions = document.createElement("div");
   actions.className = "detail-actions";
   if (props.website) actions.append(actionLink(props.website, "Open official website"));
   const showMapButton = document.createElement("button");
   showMapButton.type = "button";
+  showMapButton.disabled = !map;
   showMapButton.textContent = "Show on map";
   showMapButton.addEventListener("click", () => {
     dialogCloseIntent = "preserve";
@@ -1005,7 +1201,9 @@ function populateDetail(feature) {
   actions.append(showMapButton);
   actions.append(actionLink(mapsUrl, "Open in Google Maps"));
   const [lon, lat] = feature.geometry.coordinates;
-  actions.append(actionLink(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`, "Get directions"));
+  if (location.precision === "address") {
+    actions.append(actionLink(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`, "Get directions"));
+  }
   const copyButton = document.createElement("button");
   copyButton.type = "button";
   copyButton.textContent = "Copy address";
@@ -1048,6 +1246,7 @@ function populateDetail(feature) {
   summary.textContent = "Data quality";
   quality.append(summary);
   const rows = document.createElement("dl");
+  if (props.profileSourceUrl) rows.append(detailRow("Company profile source", linkNode(props.profileSourceUrl)));
   if (location.sourceUrl) rows.append(detailRow("Address source", linkNode(location.sourceUrl)));
   rows.append(
     detailRow(
@@ -1093,6 +1292,11 @@ function openDetail(feature, trackOpener = true) {
 }
 
 function showEntityOnMap(feature) {
+  if (!map) return;
+  if (feature.properties.location.precision === "city") {
+    map.setView(latlngOf(feature), TOWN_ZOOM);
+    return;
+  }
   const marker = markersById.get(feature.properties.id);
   if (!marker) {
     map.setView(latlngOf(feature), Math.max(map.getZoom(), 16));
@@ -1117,6 +1321,9 @@ function serializeState() {
   if (query) params.set("q", query);
   if (state.sort !== "relevance") params.set("sort", state.sort);
   if (state.preset) params.set("preset", state.preset);
+  if (state.city) params.set("city", state.city);
+  if (state.radius !== null) params.set("radius", String(state.radius));
+  if (state.savedOnly) params.set("saved", "1");
   for (const value of state.sectors) params.append("sector", value);
   for (const [param, group] of PARAM_GROUPS) {
     for (const value of state.filters[group]) params.append(param, value);
@@ -1182,6 +1389,11 @@ function applySnapshot(entry) {
   el.sort.value = state.sort;
   const preset = params.get("preset");
   state.preset = PRESET_VALUES.has(preset) ? preset : null;
+  const city = params.get("city");
+  state.city = entities.some((feature) => feature.properties.location.city === city) ? city : "";
+  const radius = finiteInRange(params.get("radius"), 1, 100);
+  state.radius = [10, 25, 50].includes(radius) ? radius : null;
+  state.savedOnly = params.get("saved") === "1";
   state.sectors = new Set(params.getAll("sector").filter((value) => SECTOR_IDS.has(value)));
   for (const [param, group] of PARAM_GROUPS) {
     state.filters[group] = new Set(params.getAll(param).filter((value) => allowed[group].has(value)));
@@ -1198,6 +1410,7 @@ function applySnapshot(entry) {
   syncFilterCheckboxes();
   syncSectorButtons();
   syncPresetButtons();
+  syncNotebookControls();
   syncAreaButtons();
   currentPage = 1;
   if (ready && map) map.setView([state.lat, state.lng], state.z, { animate: false });
@@ -1255,6 +1468,14 @@ function setMobileView(view, invalidate) {
 }
 
 function buildFilterControls() {
+  const cityCounts = new Map();
+  for (const { properties: p } of entities) cityCounts.set(p.location.city, (cityCounts.get(p.location.city) || 0) + 1);
+  for (const [city, count] of [...cityCounts].sort(([a], [b]) => a.localeCompare(b))) {
+    const option = document.createElement("option");
+    option.value = city;
+    option.textContent = `${city} (${count})`;
+    $("city").append(option);
+  }
   for (const [param, group] of PARAM_GROUPS) {
     void param;
     const values = new Set();
@@ -1280,6 +1501,7 @@ function buildFilterControls() {
         else state.filters[group].delete(value);
         currentPage = 1;
         rerender();
+        syncNotebookControls();
         pushHistory();
       });
       const label = document.createElement("label");
@@ -1296,10 +1518,14 @@ function clearAllFilters() {
   for (const selected of Object.values(state.filters)) selected.clear();
   state.area = null;
   state.q = "";
+  state.city = "";
+  state.radius = null;
+  state.savedOnly = false;
   el.search.value = "";
   syncFilterCheckboxes();
   syncSectorButtons();
   syncPresetButtons();
+  syncNotebookControls();
   syncAreaButtons();
   areaButtonRevealed = false;
   el.searchArea.hidden = true;
@@ -1319,6 +1545,9 @@ function setDatasetDates(geojson) {
   $("presence-checked-date").textContent = maxOf((props) => props.presenceCheck.checkedAt);
   $("location-checked-date").textContent = maxOf((props) => props.location.checkedAt);
   $("checked-date").textContent = maxOf((props) => props.websiteCheck.checkedAt);
+  const verified = entities.filter(({ properties: p }) => p.presenceCheck.status === "verified").length;
+  const precise = entities.filter(({ properties: p }) => p.location.precision === "address").length;
+  $("quality-counts").textContent = `${entities.length} listings · ${verified} presence verified · ${precise} street locations`;
 }
 
 function showLoadingError() {
@@ -1336,7 +1565,7 @@ function showLoadingError() {
 
 async function loadEntities() {
   try {
-    const response = await fetch("./data/entities.geojson");
+    const response = await fetch("./data/entities.geojson", { cache: "no-cache", signal: AbortSignal.timeout(20000) });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const geojson = await response.json();
     entities = Array.isArray(geojson.features) ? geojson.features : [];
@@ -1344,12 +1573,26 @@ async function loadEntities() {
     entitiesById = new Map(entities.map((feature) => [feature.properties.id, feature]));
     setDatasetDates(geojson);
     buildFilterControls();
-    buildMarkersOnce();
+    if (map) buildMarkersOnce();
     applySnapshot(history.state && typeof history.state.q === "string" ? history.state : undefined);
     ready = true;
-    map.invalidateSize();
+    if (map) map.invalidateSize();
   } catch {
     showLoadingError();
+  }
+}
+
+async function loadAuditHealth() {
+  try {
+    const response = await fetch("./audit-report.json", { cache: "no-cache", signal: AbortSignal.timeout(10000) });
+    if (!response.ok) return;
+    const report = await response.json();
+    if (report.status !== "completed" || !Number.isFinite(Date.parse(report.generatedAt))) return;
+    const count = (value) => Number.isInteger(value) && value >= 0 ? value : 0;
+    const date = new Date(report.generatedAt).toLocaleString();
+    $("audit-health").textContent = `Last completed audit: ${date} · ${count(report.selected)} attempted · ${count(report.newlyVerified)} newly verified · ${count(report.websiteReview)} website errors · ${count(report.networkBlocked)} source fetch issues`;
+  } catch {
+    // The run report is optional; dataset availability is independent of audit telemetry.
   }
 }
 
@@ -1377,7 +1620,12 @@ document.addEventListener("DOMContentLoaded", () => {
   state.lng = initial.lng;
   state.z = initial.z;
 
-  initMap([initial.lat, initial.lng], initial.z);
+  if (typeof L !== "undefined" && typeof L.markerClusterGroup === "function") {
+    initMap([initial.lat, initial.lng], initial.z);
+  } else {
+    $("map").textContent = "The map library could not load. You can still search companies and use your notebook in the list.";
+    showAppStatus("Map unavailable. Company search and notebook remain available. Reload to retry the map.");
+  }
   const bootstrapView = bootstrap.get("view");
   setMobileView(VIEW_VALUES.includes(bootstrapView) ? bootstrapView : "list", false);
 
@@ -1425,6 +1673,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   $("reset-filters").addEventListener("click", () => clearAllFilters());
+  $("export-csv").addEventListener("click", exportCsv);
+  $("saved-only").addEventListener("click", () => {
+    state.savedOnly = !state.savedOnly;
+    currentPage = 1;
+    syncNotebookControls();
+    rerender();
+    pushHistory();
+  });
+  $("verified-only").addEventListener("click", () => {
+    const selected = state.filters.presenceStatus;
+    const active = selected.size === 1 && selected.has("verified");
+    selected.clear();
+    if (!active) selected.add("verified");
+    currentPage = 1;
+    syncNotebookControls();
+    syncFilterCheckboxes();
+    rerender();
+    pushHistory();
+  });
+  for (const id of ["city", "radius"]) $(id).addEventListener("change", () => {
+    state.city = $("city").value;
+    state.radius = $("radius").value ? Number($("radius").value) : null;
+    currentPage = 1;
+    if (map && id === "radius" && state.radius !== null) map.setView(SAN_MATEO, 11);
+    rerender();
+    pushHistory();
+  });
+  $("fit-results").addEventListener("click", () => {
+    if (!visibleEntities.length) return;
+    setMobileView("map", true);
+    requestAnimationFrame(() => map.fitBounds(L.latLngBounds(visibleEntities.map(latlngOf)), { padding: [40, 40], maxZoom: 14 }));
+    pushHistory();
+  });
 
   el.searchArea.addEventListener("click", () => {
     if (!map) return;
@@ -1502,4 +1783,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   loadEntities();
+  loadAuditHealth();
 });

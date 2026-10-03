@@ -29,7 +29,11 @@ const errors = [];
 const err = (msg) => errors.push(msg);
 const nonEmptyString = (v) => typeof v === "string" && v.trim().length > 0;
 const countyKey = (c) => c.replace(/\s+County$/i, "").toLowerCase();
-const validDate = (v) => nonEmptyString(v) && DATE_RE.test(v.trim());
+const validDate = (v) => {
+  if (typeof v !== "string" || !DATE_RE.test(v)) return false;
+  const parsed = new Date(`${v}T00:00:00Z`);
+  return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === v;
+};
 
 function validUrl(value) {
   if (!nonEmptyString(value)) return false;
@@ -111,6 +115,12 @@ for (let i = 0; i < features.length; i++) {
   for (const key of ["website", "profileSourceUrl"]) {
     if (p[key] !== undefined && !validUrl(p[key])) err(at(`properties.${key} must be an http(s) URL`));
   }
+  if (p.description !== undefined && !nonEmptyString(p.description)) {
+    err(at("properties.description must be a nonempty string when supplied"));
+  }
+  if (p.nameAliases !== undefined && (!Array.isArray(p.nameAliases) || !p.nameAliases.every(nonEmptyString))) {
+    err(at("properties.nameAliases must be an array of nonempty strings when supplied"));
+  }
   if (nonEmptyString(p.updatedAt) && !validDate(p.updatedAt)) {
     err(at(`properties.updatedAt must match YYYY-MM-DD (got ${JSON.stringify(p.updatedAt)})`));
   }
@@ -130,6 +140,9 @@ for (let i = 0; i < features.length; i++) {
   } else {
     for (const key of ["city", "region", "countryCode", "county"]) {
       if (!nonEmptyString(location[key])) err(at(`properties.location.${key} must be a nonempty string`));
+    }
+    if (location.region !== "CA" || location.countryCode !== "US") {
+      err(at("Bay Area locations require region: CA and countryCode: US"));
     }
     if (!LOCATION_PRECISIONS.includes(location.precision)) {
       err(at(`properties.location.precision must be ${LOCATION_PRECISIONS.join("|")}`));
@@ -188,6 +201,26 @@ for (let i = 0; i < features.length; i++) {
     if (presenceCheck.checkedAt !== null && !validDate(presenceCheck.checkedAt)) {
       err(at("properties.presenceCheck.checkedAt must be null or YYYY-MM-DD"));
     }
+    if (presenceCheck.sourceType !== undefined && !["official-directory", "official-location-page", "candidate-mirror"].includes(presenceCheck.sourceType)) {
+      err(at("properties.presenceCheck.sourceType must be official-directory|official-location-page|candidate-mirror when supplied"));
+    }
+    if (presenceCheck.sourceType === "candidate-mirror" && presenceCheck.status === "verified") {
+      err(at("candidate mirrors cannot verify current presence"));
+    }
+    if (presenceCheck.evidenceScope !== undefined && presenceCheck.evidenceScope !== "entity-page") {
+      err(at("properties.presenceCheck.evidenceScope must be entity-page when supplied"));
+    }
+    if (presenceCheck.sourceType === "official-directory") {
+      try {
+        const source = new URL(presenceCheck.sourceUrl);
+        if (source.protocol !== "https:" || source.hostname !== "www.ycombinator.com" ||
+            !/^\/companies\/[^/]+\/?$/.test(source.pathname)) {
+          err(at("YC directory presence requires a canonical HTTPS company profile URL"));
+        }
+      } catch {
+        err(at("YC directory presence requires a valid sourceUrl"));
+      }
+    }
     if (presenceCheck.status === "unchecked" && presenceCheck.checkedAt !== null) {
       err(at("unchecked presence checks must have checkedAt: null"));
     }
@@ -209,6 +242,9 @@ for (let i = 0; i < features.length; i++) {
     }
     if (websiteCheck.checkedAt !== null && !validDate(websiteCheck.checkedAt)) {
       err(at("properties.websiteCheck.checkedAt must be null or YYYY-MM-DD"));
+    }
+    if (websiteCheck.attemptedAt !== undefined && !validDate(websiteCheck.attemptedAt)) {
+      err(at("properties.websiteCheck.attemptedAt must be YYYY-MM-DD when supplied"));
     }
     if (websiteCheck.status === "unchecked" && websiteCheck.checkedAt !== null) {
       err(at("unchecked website checks must have checkedAt: null"));
