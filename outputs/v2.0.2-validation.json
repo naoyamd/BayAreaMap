@@ -1,0 +1,15 @@
+{
+  "version": "2.0.2",
+  "reportedSymptoms": ["RakuNest spokes contained blue cluster counters", "SF shared buildings showed empty spokes"],
+  "cause": "Leaflet.markercluster 1.5.3 bulk removal retains marker move listeners, allowing detached display markers to rejoin clusters on later zooms.",
+  "changes": ["Individual native-layer removal before coordinate changes", "Disable conflicting delayed cluster animation", "Spacing accounts for square logo diagonal"],
+  "verification": {
+    "testsPassed": 56,
+    "rakuNest": "12 real dataset pins remain independently owned and visible through zoom 13–19, reverse zoom and viewport exit/reentry.",
+    "sf": "Shared-building fixture keeps visible pins at every spoke after repeated zoom changes.",
+    "nativeBehaviorModel": "Regression models v1.5.3 move and removal listener semantics; it failed before the repair.",
+    "dataValidation": "passed with latest main audit data",
+    "browserVisualAfterRepair": "Not performed: Browser Use permission lookup and Windows Computer Use URL safety checks prevented browser observation. User screenshots established the reported appearance."
+  },
+  "publication": "GitHub Pages workflow records deployment status."
+}

@@ -494,6 +494,7 @@ function initMap(center, zoom) {
     maxClusterRadius: 55,
     spiderfyDistanceMultiplier: 1.5,
     spiderfyOnMaxZoom: false,
+    animate: false,
     chunkedLoading: true,
     chunkProgress: onClusterChunkProgress,
     iconCreateFunction(cluster) {
@@ -576,7 +577,7 @@ function computeLayout() {
     if (group.length < 2) continue;
     const origin = latlngOf(group[0]);
     const centerPoint = map.latLngToLayerPoint(origin);
-    const radius = Math.max(58, (group.length * (ICON_SIZE + 10)) / (2 * Math.PI));
+    const radius = Math.max(58, (Math.SQRT2 * ICON_SIZE + 10) / (2 * Math.sin(Math.PI / group.length)));
     group.forEach((feature, index) => {
       const angle = (index * 2 * Math.PI) / group.length - Math.PI / 2;
       const display = map.layerPointToLatLng([
@@ -606,22 +607,30 @@ function refreshMapLayers() {
   refreshCityMarkers();
   const nextCluster = [];
   const nextTown = [];
+  const nextPositions = new Map();
   for (const feature of visibleEntities) {
     if (feature.properties.location?.precision === "city") continue;
     const marker = markersById.get(feature.properties.id);
     if (!marker) continue;
     const next = positions.get(feature.properties.id) || latlngOf(feature);
-    if (!marker.getLatLng().equals(next)) marker.setLatLng(next);
+    nextPositions.set(marker, next);
     marker._town = townIds.has(feature.properties.id);
     (marker._town ? nextTown : nextCluster).push(marker);
   }
   const nextClusterSet = new Set(nextCluster);
   const nextTownSet = new Set(nextTown);
-  const removeCluster = activeCluster.filter((marker) => !nextClusterSet.has(marker));
+  const removeCluster = activeCluster.filter((marker) => !nextClusterSet.has(marker) ||
+    !marker.getLatLng().equals(nextPositions.get(marker)));
   const removeTown = activeTown.filter((marker) => !nextTownSet.has(marker));
-  if (removeCluster.length) markerLayer.removeLayers(removeCluster);
+  // v1.5.3 bulk removal leaves move listeners attached: later display moves re-add town pins.
+  // Individual removal unbinds them and must happen before setting display coordinates.
+  for (const marker of removeCluster) markerLayer.removeLayer(marker);
   for (const marker of removeTown) townMarkerLayer.removeLayer(marker);
-  const previousCluster = new Set(activeCluster);
+  for (const [marker, next] of nextPositions) {
+    if (!marker.getLatLng().equals(next)) marker.setLatLng(next);
+  }
+  const removedCluster = new Set(removeCluster);
+  const previousCluster = new Set(activeCluster.filter((marker) => !removedCluster.has(marker)));
   const previousTown = new Set(activeTown);
   const addCluster = nextCluster.filter((marker) => !previousCluster.has(marker));
   const addTown = nextTown.filter((marker) => !previousTown.has(marker));

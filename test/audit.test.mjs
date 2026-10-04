@@ -993,6 +993,7 @@ test('v4 regression: chunked add queue is latest-wins, unchanged pins skip setLa
     added: [], removed: [], outstanding: 0,
     addLayers(markers) { this.added.push([...markers]); this.outstanding += markers.length; },
     removeLayers(markers) { this.removed.push(...markers); },
+    removeLayer(marker) { this.removed.push(marker); },
     drain() {
       while (this.outstanding > 0) {
         const total = this.outstanding;
