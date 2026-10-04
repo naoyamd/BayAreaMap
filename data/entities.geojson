@@ -25393,12 +25393,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/observe-ai",
           "sourceType": "official-directory"
@@ -26131,12 +26132,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/lively-inc",
           "sourceType": "official-directory"
@@ -26208,12 +26210,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mezmo",
           "sourceType": "official-directory"
@@ -26395,8 +26398,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.432212147414,
+          37.764728684114
         ]
       },
       "properties": {
@@ -26417,29 +26420,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/modern-treasury",
         "location": {
-          "address": null,
+          "address": "2261 Market Street STE 5607",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94114",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/modern-treasury",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.moderntreasury.com/about",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/modern-treasury",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.moderntreasury.com/about"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -27031,12 +27034,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mashgin",
           "sourceType": "official-directory"
@@ -27105,11 +27109,12 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mbx",
           "sourceType": "official-directory"
@@ -27663,8 +27668,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.399945576085,
+          37.788205917382
         ]
       },
       "properties": {
@@ -27685,29 +27690,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/middesk",
         "location": {
-          "address": null,
+          "address": "85 2nd St, Suite 710",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94105",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/middesk",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.middesk.com/contact",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/middesk",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.middesk.com/contact"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -27771,12 +27776,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/nimblerx",
           "sourceType": "official-directory"
@@ -28407,8 +28413,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.119558127736,
+          37.45161366497
         ]
       },
       "properties": {
@@ -28431,29 +28437,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/mattermost",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "2100 Geng Road Suite 210",
+          "city": "Palo Alto",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94303",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/mattermost",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://mattermost.com/company/about-us/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/mattermost",
-          "sourceType": "official-directory"
+          "checkedAt": "2026-10-04",
+          "status": "review",
+          "sourceUrl": "https://mattermost.com/company/about-us/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -28971,12 +28977,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/numeral",
           "sourceType": "official-directory"
@@ -29231,8 +29238,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.432212147414,
+          37.764728684114
         ]
       },
       "properties": {
@@ -29254,29 +29261,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/nanonets",
         "location": {
-          "address": null,
+          "address": "2261 Market Street #4010",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94114",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/nanonets",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://nanonets.com/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/nanonets",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://nanonets.com/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -31589,12 +31596,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mintlify",
           "sourceType": "official-directory"
@@ -32772,13 +32780,14 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
-          "status": "verified",
+          "checkedAt": "2026-10-04",
+          "status": "review",
           "sourceUrl": "https://www.ycombinator.com/companies/long-term-stock-exchange",
           "sourceType": "official-directory"
         },
@@ -32992,12 +33001,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/numerion-labs",
           "sourceType": "official-directory"
@@ -33365,12 +33375,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/motion",
           "sourceType": "official-directory"
@@ -33890,11 +33901,12 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/nobell-foods",
           "sourceType": "official-directory"
@@ -34333,11 +34345,12 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/lygos",
           "sourceType": "official-directory"
@@ -34405,12 +34418,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/meru-health",
           "sourceType": "official-directory"
@@ -34844,12 +34858,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/new-incentives",
           "sourceType": "official-directory"
@@ -35598,12 +35613,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/latent",
           "sourceType": "official-directory"
@@ -35672,12 +35688,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/leadgenius",
           "sourceType": "official-directory"
@@ -35746,12 +35763,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/luminai",
           "sourceType": "official-directory"
@@ -35819,12 +35837,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mesh",
           "sourceType": "official-directory"
@@ -37517,12 +37536,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mindsdb",
           "sourceType": "official-directory"
@@ -38036,12 +38056,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/kivo-health",
           "sourceType": "official-directory"
@@ -38108,12 +38129,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/legalist",
           "sourceType": "official-directory"
@@ -38183,12 +38205,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/living-carbon",
           "sourceType": "official-directory"
@@ -38221,8 +38244,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.403798053512,
+          37.789241929487
         ]
       },
       "properties": {
@@ -38244,29 +38267,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/middleware",
         "location": {
-          "address": null,
+          "address": "133 Kearny St., Suite 400",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94108",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/middleware",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://middleware.io/contact-us/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/middleware",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://middleware.io/contact-us/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -38334,12 +38357,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/nash",
           "sourceType": "official-directory"
@@ -39414,8 +39438,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.389765503376,
+          37.752351354706
         ]
       },
       "properties": {
@@ -39435,29 +39459,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/multiply-labs",
         "location": {
-          "address": null,
+          "address": "1426 Minnesota St.",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94107",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/multiply-labs",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.multiplylabs.com/visit",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/multiply-labs",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.multiplylabs.com/visit"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -39787,8 +39811,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.431521459681,
+          37.758742281968
         ]
       },
       "properties": {
@@ -39811,29 +39835,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/lancedb",
         "location": {
-          "address": null,
+          "address": "352 Cumberland Street",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94114",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/lancedb",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.lancedb.com/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/lancedb",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.lancedb.com/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -42293,12 +42317,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/kinter",
           "sourceType": "official-directory"
@@ -42331,8 +42356,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.432212147414,
+          37.764728684114
         ]
       },
       "properties": {
@@ -42355,29 +42380,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/mastra",
         "location": {
-          "address": null,
+          "address": "2261 Market Street STE 5559",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94114",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/mastra",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://mastra.ai/customers/marsh",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/mastra",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://mastra.ai/customers/marsh"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -42445,12 +42470,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/okteto",
           "sourceType": "official-directory"
@@ -43087,8 +43113,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.432212147414,
+          37.764728684114
         ]
       },
       "properties": {
@@ -43111,29 +43137,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/metriport",
         "location": {
-          "address": null,
+          "address": "2261 Market Street #4818",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94114",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/metriport",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.metriport.com/about",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/metriport",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.metriport.com/about"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -43196,12 +43222,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/moichor",
           "sourceType": "official-directory"
@@ -43644,12 +43671,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/lago",
           "sourceType": "official-directory"
@@ -44609,12 +44637,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mach9",
           "sourceType": "official-directory"
@@ -44647,8 +44676,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.432212147414,
+          37.764728684114
         ]
       },
       "properties": {
@@ -44665,29 +44694,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/mdhub",
         "location": {
-          "address": null,
+          "address": "2261 Market Street #10462",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94114",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/mdhub",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.mdhub.ai/about",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/mdhub",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.mdhub.ai/about"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -44749,12 +44778,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/nexgent",
           "sourceType": "official-directory"
@@ -45422,12 +45452,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mozart-data",
           "sourceType": "official-directory"
@@ -46329,12 +46360,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/kernel",
           "sourceType": "official-directory"
@@ -47672,12 +47704,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/lemonbox",
           "sourceType": "official-directory"
@@ -47744,11 +47777,12 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/lendtable",
           "sourceType": "official-directory"
@@ -47819,12 +47853,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/litellm",
           "sourceType": "official-directory"
@@ -47894,12 +47929,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/loopfour",
           "sourceType": "official-directory"
@@ -47968,11 +48004,12 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/medicare-vox-fka-fair-square",
           "sourceType": "official-directory"
@@ -48040,12 +48077,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/medplum",
           "sourceType": "official-directory"
@@ -48113,12 +48151,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/names-and-faces",
           "sourceType": "official-directory"
@@ -48187,12 +48226,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/nestor",
           "sourceType": "official-directory"
@@ -49495,8 +49535,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.392211109291,
+          37.779195983185
         ]
       },
       "properties": {
@@ -49518,29 +49558,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/momentic",
         "location": {
-          "address": null,
+          "address": "177 Townsend Street, Unit 930",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94107",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/momentic",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://momentic.ai/about",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/momentic",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://momentic.ai/about"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -49570,8 +49610,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.4561278839,
+          37.764031241384
         ]
       },
       "properties": {
@@ -49592,29 +49632,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/numen",
         "location": {
-          "address": null,
+          "address": "350 Parnassus Ave, Suite 300",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94117",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/numen",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.numen.com/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/numen",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.numen.com/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -52380,12 +52420,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/lamar-health",
           "sourceType": "official-directory"
@@ -52453,12 +52494,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/laminar-com",
           "sourceType": "official-directory"
@@ -52528,12 +52570,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/lapel",
           "sourceType": "official-directory"
@@ -52603,12 +52646,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/lexi",
           "sourceType": "official-directory"
@@ -52679,12 +52723,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/modernloop",
           "sourceType": "official-directory"
@@ -52750,12 +52795,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/numero",
           "sourceType": "official-directory"
@@ -52827,12 +52873,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/olark",
           "sourceType": "official-directory"
@@ -54615,12 +54662,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/meadow",
           "sourceType": "official-directory"
@@ -55118,12 +55166,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/leaping-ai",
           "sourceType": "official-directory"
@@ -55191,12 +55240,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mederva",
           "sourceType": "official-directory"
@@ -57059,12 +57109,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/levro",
           "sourceType": "official-directory"
@@ -57131,12 +57182,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/luel",
           "sourceType": "official-directory"
@@ -57207,12 +57259,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mentra",
           "sourceType": "official-directory"
@@ -58925,12 +58978,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/koala",
           "sourceType": "official-directory"
@@ -58999,12 +59053,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/labdoor",
           "sourceType": "official-directory"
@@ -59074,12 +59129,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/lanesurf",
           "sourceType": "official-directory"
@@ -59148,12 +59204,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/layerup",
           "sourceType": "official-directory"
@@ -59223,12 +59280,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/legion-health",
           "sourceType": "official-directory"
@@ -59299,12 +59357,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/locale",
           "sourceType": "official-directory"
@@ -59374,12 +59433,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/lollipuff",
           "sourceType": "official-directory"
@@ -59446,12 +59506,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mino-games",
           "sourceType": "official-directory"
@@ -59520,12 +59581,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mth-sense",
           "sourceType": "official-directory"
@@ -59594,12 +59656,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-04",
+          "status": "ok",
+          "attemptedAt": "2026-10-04"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-04",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-04",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/nash-2",
           "sourceType": "official-directory"
