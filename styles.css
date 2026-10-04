@@ -586,8 +586,11 @@ button:hover {
 }
 
 .logo-pin.presence-unverified {
-  position: relative;
   box-shadow: inset 0 -4px #e3a12d;
+}
+
+.result-card .logo-pin.presence-unverified {
+  position: relative;
 }
 
 .logo-pin.presence-unverified::after {

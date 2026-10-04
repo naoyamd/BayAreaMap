@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../app.js", import.meta.url), "utf8");
+const styles = readFileSync(new URL("../styles.css", import.meta.url), "utf8");
 
 function mapLogic() {
   const legs = [];
@@ -73,4 +74,33 @@ test("manual expansion reveals shared offices at wider zooms without expanding c
   logic.state.expandOffices = false;
   assert.equal(logic.computeLayout().townIds.size, 0);
   assert.equal(logic.serializeState().get("expand"), null);
+});
+
+test("shared offices use a circle below 9 pins and a spaced spiral from 9, with matching connector endpoints", () => {
+  for (const count of [2, 8, 9, 12, 40]) {
+    const logic = mapLogic();
+    const features = Array.from({ length: count }, (_, index) => point(`office-${index}`, "San Mateo"));
+    logic.setVisible(features);
+    const layout = logic.computeLayout();
+    const center = logic.map.latLngToLayerPoint([37.55, -122.3]);
+    const points = features.map(f => {
+      const position = layout.positions.get(f.properties.id);
+      assert.deepEqual(logic.legs[Number(f.properties.id.split("-")[1])][1], position,
+        "connector ends at the exact display position used by the marker");
+      return logic.map.latLngToLayerPoint([position.lat, position.lng]);
+    });
+    const radii = points.map(p => Math.hypot(p.x - center.x, p.y - center.y));
+    const spread = Math.max(...radii) - Math.min(...radii);
+    assert.ok(count < 9 ? spread < 0.001 : spread > 20, `${count} pins choose the correct layout`);
+    for (let i = 0; i < points.length; i++) for (let j = i + 1; j < points.length; j++) {
+      assert.ok(Math.abs(points[i].x - points[j].x) >= 42 || Math.abs(points[i].y - points[j].y) >= 42,
+        `${count} square logos must not overlap`);
+    }
+  }
+});
+
+test("review badges keep Leaflet's absolute marker positioning and use relative positioning only in cards", () => {
+  const reviewRule = styles.match(/\.logo-pin\.presence-unverified\s*\{([^}]+)\}/)[1];
+  assert.doesNotMatch(reviewRule, /position\s*:/, "map markers must inherit absolute positioning from Leaflet");
+  assert.match(styles, /\.result-card\s+\.logo-pin\.presence-unverified\s*\{\s*position:\s*relative;/);
 });

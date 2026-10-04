@@ -39,6 +39,7 @@ jobs:
         run: |
           mkdir -p _site/data
           cp index.html app.js styles.css .nojekyll _site/
+          cp -r licenses _site/
           cp data/entities.geojson _site/data/
           if [ -f audit-report.json ]; then cp audit-report.json _site/; fi
       - uses: actions/upload-pages-artifact@v3

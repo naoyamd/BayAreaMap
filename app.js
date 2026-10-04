@@ -551,6 +551,32 @@ function buildMarkersOnce() {
   }
 }
 
+function sharedOfficePoints(count, center) {
+  const separation = Math.SQRT2 * ICON_SIZE + 10;
+  if (count < 9) {
+    const radius = Math.max(58, separation / (2 * Math.sin(Math.PI / count)));
+    return Array.from({ length: count }, (_, index) => {
+      const angle = index * 2 * Math.PI / count - Math.PI / 2;
+      return [center.x + Math.cos(angle) * radius, center.y + Math.sin(angle) * radius];
+    });
+  }
+  // Leaflet.markercluster 1.5.3 spiral geometry; see licenses/Leaflet.markercluster.txt.
+  // Scale native spacing for 42px square logos, including their diagonal and a gap.
+  const multiplier = separation / 28;
+  let radius = 11 * multiplier;
+  const lengthFactor = 5 * multiplier * 2 * Math.PI;
+  let angle = 0;
+  const points = new Array(count);
+  for (let index = count; index >= 0; index--) {
+    if (index < count) {
+      points[index] = [center.x + radius * Math.cos(angle), center.y + radius * Math.sin(angle)];
+    }
+    angle += separation / radius + index * 0.0005;
+    radius += lengthFactor / angle;
+  }
+  return points;
+}
+
 function computeLayout() {
   const positions = new Map();
   const townIds = new Set();
@@ -577,13 +603,9 @@ function computeLayout() {
     if (group.length < 2) continue;
     const origin = latlngOf(group[0]);
     const centerPoint = map.latLngToLayerPoint(origin);
-    const radius = Math.max(58, (Math.SQRT2 * ICON_SIZE + 10) / (2 * Math.sin(Math.PI / group.length)));
+    const points = sharedOfficePoints(group.length, centerPoint);
     group.forEach((feature, index) => {
-      const angle = (index * 2 * Math.PI) / group.length - Math.PI / 2;
-      const display = map.layerPointToLatLng([
-        centerPoint.x + Math.cos(angle) * radius,
-        centerPoint.y + Math.sin(angle) * radius,
-      ]);
+      const display = map.layerPointToLatLng(points[index]);
       positions.set(feature.properties.id, display);
       townIds.add(feature.properties.id);
       L.polyline([origin, display], {

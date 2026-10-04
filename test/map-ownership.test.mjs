@@ -9,7 +9,7 @@ const geo = JSON.parse(readFileSync(new URL("../data/entities.geojson", import.m
 function ownershipHarness(features) {
   const markers = new Map();
   const town = { members: new Set(), addTo() { return this; }, addLayer(m) { this.members.add(m); m.visible = true; }, removeLayer(m) { this.members.delete(m); m.visible = false; } };
-  const lines = { count: 0, addTo() { return this; }, clearLayers() { this.count = 0; } };
+  const lines = { count: 0, points: [], addTo() { return this; }, clearLayers() { this.count = 0; this.points = []; } };
   const city = { addTo() { return this; }, clearLayers() {} };
   let logic;
   const map = {
@@ -58,7 +58,7 @@ function ownershipHarness(features) {
   const sandbox = { URLSearchParams, document: { addEventListener() {} }, L: {
     map: () => map, tileLayer: () => ({ addTo() {} }),
     markerClusterGroup: options => { cluster.options = options; return cluster; },
-    layerGroup: () => layerGroups.shift(), polyline: () => ({ addTo(group) { group.count++; } }),
+    layerGroup: () => layerGroups.shift(), polyline: points => ({ addTo(group) { group.count++; group.points.push(points); } }),
   } };
   runInNewContext(source + "\n;globalThis.logic = { initMap, refreshMapLayers, state, chunkProgress: onClusterChunkProgress, setData(value, cache) { visibleEntities = value; markersById = cache; } };", sandbox);
   logic = sandbox.logic;
@@ -83,6 +83,10 @@ test("RakuNest's 12 pins leave native clustering before moving and never reclust
     assert.equal(h.town.members.size, 12);
     assert.equal([...h.markers.values()].filter(m => m.visible).length, 12, "every line has a visible pin");
     assert.equal(h.lines.count, 12);
+    rakuOffices.forEach((feature, index) => assert.deepEqual(
+      [h.lines.points[index][1].lat, h.lines.points[index][1].lng],
+      h.markers.get(feature.properties.id).pos,
+      "verified and review pins both stay at their connector endpoint"));
     assert.equal(h.cluster.moveEvents, 0, "display motion must not trigger native reclustering");
   }
   const points = [...h.markers.values()].map(m => h.map.latLngToLayerPoint(m.pos));

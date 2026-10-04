@@ -1,0 +1,15 @@
+{
+  "version": "2.0.3",
+  "reportedSymptoms": ["Large shared-office groups ignored the existing spiral layout", "Review-marked pins drifted below their connector endpoints"],
+  "causes": ["Custom shared-office layout always chose a circle", "Review badge CSS overrode Leaflet absolute positioning with relative positioning"],
+  "changes": ["Use circle below 9 pins and Leaflet.markercluster spiral geometry from 9", "Scale spacing for 42px square logos", "Limit relative badge positioning to result cards"],
+  "verification": {
+    "testsPassed": 58,
+    "regressionBeforeRepair": "Both new circle/spiral and CSS positioning checks fail against v2.0.2, and pass against v2.0.3.",
+    "layout": "2, 8, 9, 12 and 40 pins select the expected geometry without square-logo collisions; connector endpoints match marker positions.",
+    "rakuNest": "12 actual dataset pins retain ownership and matching endpoints through zoom 13–19, reverse zoom and viewport exit/reentry.",
+    "dataValidation": "passed for 984 entities; entity data unchanged",
+    "browserVisualAfterRepair": "Not performed: prior Browser Use permission verification and Windows Computer Use URL safety failures prevent live browser observation. The user's screenshot was used to diagnose the CSS drift."
+  },
+  "publication": "GitHub Pages workflow records deployment status."
+}
