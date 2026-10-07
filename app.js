@@ -4,7 +4,7 @@ const MAP_CENTER = [37.55, -122.2];
 const MAP_ZOOM = 9;
 const MAX_ZOOM = 19;
 const ICON_SIZE = 42;
-const TOWN_ZOOM = 14;
+const TOWN_ZOOM = 17;
 const PAGE_SIZE = 50;
 const CITY_PAGE_SIZE = 24;
 const SEARCH_DEBOUNCE_MS = 120;
@@ -496,6 +496,7 @@ function initMap(center, zoom) {
   markerLayer = L.markerClusterGroup({
     showCoverageOnHover: false,
     maxClusterRadius: 55,
+    disableClusteringAtZoom: TOWN_ZOOM,
     spiderfyDistanceMultiplier: 1.5,
     spiderfyOnMaxZoom: true,
     animate: false,
@@ -630,18 +631,16 @@ function computeLayout() {
     }
     const centerPoint = map.latLngToLayerPoint(origin);
     let points = approximate ? sharedOfficePoints(group.length, centerPoint) : addressLayouts.get(fullGroup);
-    if (!approximate && !state.expandOffices && !group.some(feature => feature.properties.id === state.entityId)) {
-      const conflicts = [...addressLayouts].filter(([other, otherPoints]) => other !== fullGroup && logoPointsOverlap(points, otherPoints));
-      // One adjacent office pin should not collapse a whole shared building like RakuNest.
-      if (conflicts.length > 1 || conflicts.some(([other]) => other.length > 1)) continue;
-      if (conflicts.length) {
+    if (!approximate) {
+      const neighbors = [...addressLayouts].filter(([other]) => other !== fullGroup);
+      if (neighbors.some(([, otherPoints]) => logoPointsOverlap(points, otherPoints))) {
         for (let turn = 1; turn < 4; turn++) {
           const angle = turn * Math.PI / 2;
           const rotated = points.map(([x, y]) => [
             centerPoint.x + (x - centerPoint.x) * Math.cos(angle) - (y - centerPoint.y) * Math.sin(angle),
             centerPoint.y + (x - centerPoint.x) * Math.sin(angle) + (y - centerPoint.y) * Math.cos(angle),
           ]);
-          if ([...addressLayouts].some(([other, otherPoints]) => other !== fullGroup && logoPointsOverlap(rotated, otherPoints))) continue;
+          if (neighbors.some(([, otherPoints]) => logoPointsOverlap(rotated, otherPoints))) continue;
           points = rotated;
           addressLayouts.set(fullGroup, points);
           break;
@@ -1432,7 +1431,7 @@ function showEntityOnMap(feature) {
   prepareCityPage(feature);
   const marker = markersById.get(feature.properties.id);
   if (!marker) {
-    map.setView(latlngOf(feature), Math.max(map.getZoom(), 16));
+    map.setView(latlngOf(feature), Math.max(map.getZoom(), TOWN_ZOOM));
     return;
   }
   if (marker._town) {
@@ -1440,7 +1439,7 @@ function showEntityOnMap(feature) {
   } else if (markerLayer.hasLayer(marker)) {
     markerLayer.zoomToShowLayer(marker);
   } else {
-    map.setView(latlngOf(feature), Math.max(map.getZoom(), 16));
+    map.setView(latlngOf(feature), Math.max(map.getZoom(), TOWN_ZOOM));
   }
 }
 

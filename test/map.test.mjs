@@ -11,7 +11,7 @@ function mapLogic() {
   const layers = [];
   const panes = { markerPane: { style: { zIndex: 600 } } };
   const map = {
-    zoom: 14,
+    zoom: 17,
     getZoom() { return this.zoom; },
     getBounds: () => ({ contains: value => (Array.isArray(value) ? value[0] : value.lat) < 38 }),
     latLngToLayerPoint: ([lat, lng]) => ({ x: lng * 10000, y: lat * 10000 }),
@@ -44,12 +44,17 @@ test("approximate city counts have a pane below every normal marker and cluster"
   assert.ok(Number(logic.panes["city-icons"].style.zIndex) > Number(logic.panes["city-centroids"].style.zIndex));
 });
 
-test("shared addresses expand from street zoom in every city and stay expanded through maximum zoom", () => {
+test("shared addresses stay clustered through zoom 16 and expand from 17 in every city", () => {
   for (const city of ["San Francisco", "San Jose", "Santa Clara", "San Mateo"]) {
     const logic = mapLogic();
     const shared = [point("first", city), point("second", city)];
     logic.setVisible(shared);
-    for (const zoom of [14, 15, 17, 18, 19]) {
+    for (const zoom of [14, 15, 16]) {
+      logic.map.zoom = zoom;
+      assert.equal(logic.computeLayout().townIds.size, 0, `${city} at zoom ${zoom}`);
+      assert.equal(logic.legs.length, 0);
+    }
+    for (const zoom of [17, 18, 19]) {
       logic.map.zoom = zoom;
       const layout = logic.computeLayout();
       assert.equal(layout.townIds.size, 2, `${city} at zoom ${zoom}`);

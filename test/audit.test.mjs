@@ -568,7 +568,7 @@ test('major Bay Area anchors are present and shared offices expand consistently 
   for (const id of ['google', 'apple', 'meta', 'sf-amazon-web-services', 'sf-microsoft']) {
     assert.strictEqual(features.find((item) => item.properties.id === id)?.properties.scale, 'large', id);
   }
-  assert.match(appSource, /const TOWN_ZOOM = 14;/);
+  assert.match(appSource, /const TOWN_ZOOM = 17;/);
   assert.match(appSource, /const MAX_ZOOM = 19;/);
   assert.doesNotMatch(appSource, /DENSE_CLUSTER_CITIES|expandEverywhere/);
   assert.match(appSource, /if \(zoom < TOWN_ZOOM && !state\.expandOffices\) return \{ positions, townIds \};/);

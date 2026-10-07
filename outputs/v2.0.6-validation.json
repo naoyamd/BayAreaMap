@@ -1,0 +1,24 @@
+{
+  "version": "2.0.6",
+  "request": "Keep nearby companies clustered below zoom 17 and automatically reveal all street-address icons at zoom 17.",
+  "changes": [
+    "Use zoom 17 for automatic circle/spiral expansion",
+    "Disable native address clustering from zoom 17 so single-location pins also remain individual",
+    "Remove density-based suppression above the expansion threshold; keep rotation where it avoids neighboring pins",
+    "Use the same threshold when opening a company from its detail panel",
+    "Preserve the existing 24-company paging for large approximate city groups"
+  ],
+  "verification": {
+    "testsPassed": 65,
+    "dataset": "1034 records validated; entity data unchanged",
+    "localBrowser": [
+      "San Francisco Financial District at zoom 16: 63 native count markers",
+      "Zoom 17: zero native count markers and 221 individual street-address icons in the DOM; all logo images loaded",
+      "Zoom 17 to 16 to 17 restores count markers and individual icons without empty pins",
+      "RakuNest at zoom 16 is clustered; at 17 IHI and RakuNest appear individually with zero native counts",
+      "San Jose at zoom 16 has zero approximate icons; at 17 it has 21 icons and 21 connectors"
+    ],
+    "screenshots": ["sf-v2.0.6-z16.jpg", "sf-v2.0.6-z17.jpg"]
+  },
+  "publication": "GitHub Pages workflow records deployment status; the published page is also checked through Browser Use."
+}

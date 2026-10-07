@@ -193,7 +193,7 @@ test("collapsed city counts expand on click and yield to individually marked app
   ui.logic.setMap({ getZoom: () => 11, setView: (center, zoom) => views.push({ center, zoom }) });
   layer.items[0].events.click();
   assert.deepEqual([...views[0].center], [37.563, -122.3255]);
-  assert.equal(views[0].zoom, 14);
+  assert.equal(views[0].zoom, 17);
   assert.equal(ui.logic.state.city, "", "expansion keeps the current search and filters");
   ui.logic.refreshCityMarkers(new Set(["one", "two"]));
   assert.equal(layer.items.length, 0, "expanded icons replace the yellow count");
