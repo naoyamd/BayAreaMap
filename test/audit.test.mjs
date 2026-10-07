@@ -582,7 +582,7 @@ test('major Bay Area anchors are present and shared offices expand consistently 
 test('site chrome is English, Japanese company names remain, and README stays Japanese', () => {
   assert.match(indexSource, /<html lang="en">/);
   assert.match(indexSource, /<title>Bay Area Company Map — Field Networking<\/title>/);
-  assert.doesNotMatch(indexSource, /[ぁ-んァ-ヶ一-龠々]/);
+  assert.doesNotMatch(indexSource.slice(indexSource.indexOf("<body")), /[ぁ-んァ-ヶ一-龠々]/);
   assert.doesNotMatch(appSource, /[ぁ-んァ-ヶ一-龠々]/);
   assert.match(appSource, /nameJaLine\.lang = "ja"/);
   assert.match(readmeSource, /^# ベイエリア企業マップ/m);

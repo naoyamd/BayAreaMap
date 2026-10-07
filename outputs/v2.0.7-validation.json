@@ -1,0 +1,22 @@
+{
+  "version": "2.0.7",
+  "request": "Make shared URLs recognizable with a restrained business-oriented OGP card.",
+  "changes": [
+    "Add static Open Graph and Twitter large-image metadata with a Japanese title and description",
+    "Add canonical URL and page description",
+    "Publish a 1200×630 JPEG at assets/og-bay-area-v1.jpg",
+    "Use the actual company map screenshot, navy typography and an off-white background",
+    "Include OpenStreetMap attribution in the image"
+  ],
+  "verification": {
+    "testsPassed": 67,
+    "imageBytes": 96556,
+    "imageFormat": "JPEG",
+    "imageDimensions": [1200, 630],
+    "visualInspection": "Browser-rendered card inspected at 1200×630 and 600×315.",
+    "metadata": "Open Graph and Twitter title, description, image and alt text match; HTTPS image URL is absolute.",
+    "deploymentBoundary": "Pages workflow includes the assets directory; the actual JPEG dimensions and signature are checked in CI.",
+    "dataset": "1034 entities validated; entity data unchanged"
+  },
+  "publication": "GitHub Pages workflow records deployment status; published metadata and the image are checked through Browser Use."
+}
