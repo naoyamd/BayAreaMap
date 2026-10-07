@@ -13,7 +13,7 @@ function mapLogic() {
   const map = {
     zoom: 14,
     getZoom() { return this.zoom; },
-    getBounds: () => ({ contains: ([lat]) => lat < 38 }),
+    getBounds: () => ({ contains: value => (Array.isArray(value) ? value[0] : value.lat) < 38 }),
     latLngToLayerPoint: ([lat, lng]) => ({ x: lng * 10000, y: lat * 10000 }),
     layerPointToLatLng: ([x, y]) => ({ lat: y / 10000, lng: x / 10000 }),
     createPane(name) { return panes[name] = { style: {} }; },
@@ -58,7 +58,7 @@ test("shared addresses expand from street zoom in every city and stay expanded t
   }
 });
 
-test("manual expansion reveals shared offices at wider zooms without expanding centroids or isolated pins", () => {
+test("manual expansion reveals shared offices and city pins at wider zooms without expanding isolated street pins", () => {
   const logic = mapLogic();
   logic.map.zoom = 11;
   logic.setVisible([
@@ -69,7 +69,7 @@ test("manual expansion reveals shared offices at wider zooms without expanding c
   ]);
   assert.equal(logic.computeLayout().townIds.size, 0);
   logic.state.expandOffices = true;
-  assert.deepEqual([...logic.computeLayout().townIds].sort(), ["first", "second"]);
+  assert.deepEqual([...logic.computeLayout().townIds].sort(), ["city", "first", "second"]);
   assert.equal(logic.serializeState().get("expand"), "1");
   logic.state.expandOffices = false;
   assert.equal(logic.computeLayout().townIds.size, 0);
@@ -77,7 +77,7 @@ test("manual expansion reveals shared offices at wider zooms without expanding c
 });
 
 test("shared offices use a circle below 9 pins and a spaced spiral from 9, with matching connector endpoints", () => {
-  for (const count of [2, 8, 9, 12, 40]) {
+  for (const count of [2, 8, 9, 12, 40, 481]) {
     const logic = mapLogic();
     const features = Array.from({ length: count }, (_, index) => point(`office-${index}`, "San Mateo"));
     logic.setVisible(features);
@@ -103,4 +103,19 @@ test("review badges keep Leaflet's absolute marker positioning and use relative 
   const reviewRule = styles.match(/\.logo-pin\.presence-unverified\s*\{([^}]+)\}/)[1];
   assert.doesNotMatch(reviewRule, /position\s*:/, "map markers must inherit absolute positioning from Leaflet");
   assert.match(styles, /\.result-card\s+\.logo-pin\.presence-unverified\s*\{\s*position:\s*relative;/);
+});
+
+test("large approximate spirals remain expanded while panning to an outer company beyond the city anchor", () => {
+  const logic = mapLogic();
+  logic.setVisible(Array.from({ length: 481 }, (_, index) => point(`city-${index}`, "San Francisco", [-122.4194, 37.7749], "city")));
+  const outer = logic.computeLayout().positions.get("city-0");
+  const contains = value => {
+    const p = Array.isArray(value) ? { lat: value[0], lng: value[1] } : value;
+    return Math.abs(p.lat - outer.lat) < 0.0001 && Math.abs(p.lng - outer.lng) < 0.0001;
+  };
+  assert.equal(contains([37.7749, -122.4194]), false, "panned viewport excludes the representative anchor");
+  logic.map.getBounds = () => ({ contains });
+  const layout = logic.computeLayout();
+  assert.equal(layout.townIds.size, 481, "visible outer pins keep their entire group expanded");
+  assert.equal(logic.legs.length, 481);
 });

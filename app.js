@@ -527,7 +527,6 @@ function makeIcon(props, selected) {
 function buildMarkersOnce() {
   for (const feature of entities) {
     const props = feature.properties;
-    if (props.location.precision === "city") continue;
     const marker = L.marker(latlngOf(feature), { icon: makeIcon(props, false) });
     marker._feature = feature;
     marker._town = false;
@@ -571,7 +570,8 @@ function sharedOfficePoints(count, center) {
     if (index < count) {
       points[index] = [center.x + radius * Math.cos(angle), center.y + radius * Math.sin(angle)];
     }
-    angle += separation / radius + index * 0.0005;
+    // A count-dependent angle nudge compresses large city groups into overlapping turns.
+    angle += separation / radius;
     radius += lengthFactor / angle;
   }
   return points;
@@ -590,26 +590,31 @@ function computeLayout() {
   const groups = new Map();
   for (const feature of visibleEntities) {
     const props = feature.properties;
-    // City centroids are shared approximate anchors; spreading them implies false street locations.
-    if (props.location.precision === "city") continue;
-    const origin = latlngOf(feature);
-    if (!bounds.contains(origin)) continue;
-    if (zoom >= TOWN_ZOOM) townIds.add(props.id);
-    const key = feature.geometry.coordinates.join(",");
+    // Keep approximate city anchors separate from confirmed shared office addresses.
+    const key = `${props.location.precision}:${feature.geometry.coordinates.join(",")}`;
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(feature);
   }
   for (const group of groups.values()) {
-    if (group.length < 2) continue;
     const origin = latlngOf(group[0]);
+    if (group.length < 2) {
+      if (!bounds.contains(origin)) continue;
+      const props = group[0].properties;
+      if (zoom >= TOWN_ZOOM || props.location.precision === "city") townIds.add(props.id);
+      continue;
+    }
     const centerPoint = map.latLngToLayerPoint(origin);
-    const points = sharedOfficePoints(group.length, centerPoint);
+    const displays = sharedOfficePoints(group.length, centerPoint).map(point => map.layerPointToLatLng(point));
+    // Large city spirals extend beyond their anchor: keep them visible while panning to an outer pin.
+    if (!bounds.contains(origin) && !displays.some(display => bounds.contains(display))) continue;
     group.forEach((feature, index) => {
-      const display = map.layerPointToLatLng(points[index]);
+      const display = displays[index];
       positions.set(feature.properties.id, display);
       townIds.add(feature.properties.id);
+      const approximate = feature.properties.location.precision === "city";
       L.polyline([origin, display], {
-        className: "overlap-leg",
+        className: approximate ? "overlap-leg approximate-leg" : "overlap-leg",
+        dashArray: approximate ? "4 4" : null,
         interactive: false,
         opacity: 0.55,
         weight: 1.5,
@@ -626,17 +631,18 @@ function refreshMapLayers() {
     return;
   }
   const { positions, townIds } = computeLayout();
-  refreshCityMarkers();
+  refreshCityMarkers(townIds);
   const nextCluster = [];
   const nextTown = [];
   const nextPositions = new Map();
   for (const feature of visibleEntities) {
-    if (feature.properties.location?.precision === "city") continue;
     const marker = markersById.get(feature.properties.id);
     if (!marker) continue;
+    marker._town = townIds.has(feature.properties.id);
+    // Collapsed city pins use the representative count, never ordinary street clusters.
+    if (feature.properties.location?.precision === "city" && !marker._town) continue;
     const next = positions.get(feature.properties.id) || latlngOf(feature);
     nextPositions.set(marker, next);
-    marker._town = townIds.has(feature.properties.id);
     (marker._town ? nextTown : nextCluster).push(marker);
   }
   const nextClusterSet = new Set(nextCluster);
@@ -647,7 +653,10 @@ function refreshMapLayers() {
   // v1.5.3 bulk removal leaves move listeners attached: later display moves re-add town pins.
   // Individual removal unbinds them and must happen before setting display coordinates.
   for (const marker of removeCluster) markerLayer.removeLayer(marker);
-  for (const marker of removeTown) townMarkerLayer.removeLayer(marker);
+  for (const marker of removeTown) {
+    townMarkerLayer.removeLayer(marker);
+    marker._town = false;
+  }
   for (const [marker, next] of nextPositions) {
     if (!marker.getLatLng().equals(next)) marker.setLatLng(next);
   }
@@ -665,12 +674,12 @@ function refreshMapLayers() {
   for (const marker of addTown) townMarkerLayer.addLayer(marker);
 }
 
-function refreshCityMarkers() {
+function refreshCityMarkers(expandedIds = new Set()) {
   if (!cityMarkerLayer) return;
   cityMarkerLayer.clearLayers();
   const groups = new Map();
   for (const feature of visibleEntities) {
-    if (feature.properties.location.precision !== "city") continue;
+    if (feature.properties.location.precision !== "city" || expandedIds.has(feature.properties.id)) continue;
     const key = feature.geometry.coordinates.join(",");
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(feature);
@@ -680,17 +689,11 @@ function refreshCityMarkers() {
     const marker = L.marker(latlngOf(group[0]), { pane: "city-centroids", icon: L.divIcon({
       className: "company-cluster city-cluster", html: `<span>${group.length}</span>`, iconSize: [48, 48],
     }) });
-    marker.bindTooltip(textNode(`${city}: ${group.length} approximate city locations. Open the company list.`));
+    marker.bindTooltip(textNode(`${city}: ${group.length} approximate city locations. Click to expand company icons.`));
     marker.on("click", () => {
-      state.city = city;
-      currentPage = 1;
-      setMobileView("list", false);
-      syncNotebookControls();
-      rerender();
-      pushHistory();
-      el.results.scrollIntoView({ block: "start" });
+      map.setView(latlngOf(group[0]), Math.max(map.getZoom(), TOWN_ZOOM));
     });
-    marker.on("add", () => marker.getElement()?.setAttribute("aria-label", `${city}: show ${group.length} companies with approximate locations`));
+    marker.on("add", () => marker.getElement()?.setAttribute("aria-label", `${city}: expand ${group.length} company icons with approximate locations`));
     marker.addTo(cityMarkerLayer);
   }
 }
@@ -1033,10 +1036,6 @@ function syncSelectionUI() {
 
 function focusEntity(feature) {
   if (!map) return;
-  if (feature.properties.location.precision === "city") {
-    map.setView(latlngOf(feature), TOWN_ZOOM);
-    return;
-  }
   const marker = markersById.get(feature.properties.id);
   if (!marker) {
     map.setView(latlngOf(feature), Math.max(map.getZoom(), TOWN_ZOOM));
@@ -1333,10 +1332,6 @@ function openDetail(feature, trackOpener = true) {
 
 function showEntityOnMap(feature) {
   if (!map) return;
-  if (feature.properties.location.precision === "city") {
-    map.setView(latlngOf(feature), TOWN_ZOOM);
-    return;
-  }
   const marker = markersById.get(feature.properties.id);
   if (!marker) {
     map.setView(latlngOf(feature), Math.max(map.getZoom(), 16));

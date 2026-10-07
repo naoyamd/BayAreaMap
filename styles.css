@@ -649,6 +649,10 @@ button:hover {
   stroke: var(--accent-mid);
 }
 
+.overlap-leg.approximate-leg {
+  stroke: #c37d0a;
+}
+
 main {
   grid-area: main;
   position: relative;

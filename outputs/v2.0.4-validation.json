@@ -1,0 +1,15 @@
+{
+  "version": "2.0.4",
+  "request": "Expand yellow approximate city count markers into individual company icons.",
+  "changes": ["City counts expand on click, at zoom 14+, or with manual expansion", "Use existing circle below 9 and spiral from 9", "Preserve dashed approximate icons and add amber dashed connectors", "Remove count-dependent spiral compression for large city groups", "Keep groups expanded when panning to visible outer pins"],
+  "verification": {
+    "testsPassed": 60,
+    "sanJose": "21 real dataset city pins expand and collapse across zoom, manual expansion, filtering and viewport transitions; connector endpoints match pins.",
+    "largeGroups": "481 square logos do not overlap; a viewport excluding the anchor but containing an outer pin keeps the group expanded.",
+    "accuracy": "Stored coordinates and location precision remain unchanged; approximate locations still have no directions link.",
+    "compatibility": "RakuNest ownership, CSS marker positioning, chunked loading and list/notebook regressions pass.",
+    "dataValidation": "passed for latest origin/main data: 1034 entities; this change does not edit entity data",
+    "browserVisualAfterChange": "Not performed. Prior Browser Use permission verification and Windows Computer Use URL safety failures prevent live observation. The supplied user screenshot establishes the requested city count appearance."
+  },
+  "publication": "GitHub Pages workflow records deployment status."
+}

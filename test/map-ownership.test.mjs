@@ -9,14 +9,15 @@ const geo = JSON.parse(readFileSync(new URL("../data/entities.geojson", import.m
 function ownershipHarness(features) {
   const markers = new Map();
   const town = { members: new Set(), addTo() { return this; }, addLayer(m) { this.members.add(m); m.visible = true; }, removeLayer(m) { this.members.delete(m); m.visible = false; } };
-  const lines = { count: 0, points: [], addTo() { return this; }, clearLayers() { this.count = 0; this.points = []; } };
-  const city = { addTo() { return this; }, clearLayers() {} };
+  const lines = { count: 0, points: [], options: [], addTo() { return this; }, clearLayers() { this.count = 0; this.points = []; this.options = []; } };
+  const city = { members: new Set(), addTo() { return this; }, clearLayers() { this.members.clear(); } };
   let logic;
   const map = {
     zoom: 13, inBounds: true,
     getZoom() { return this.zoom; },
     getBounds() { return { contains: () => this.inBounds }; },
     createPane: () => ({ style: {} }), on() {},
+    setView(center, zoom) { this.zoom = zoom; logic.refreshMapLayers(); cluster.render(); },
     latLngToLayerPoint([lat, lng]) {
       const size = 256 * 2 ** this.zoom;
       const sin = Math.sin(lat * Math.PI / 180);
@@ -31,6 +32,7 @@ function ownershipHarness(features) {
   const cluster = {
     members: new Set(), moveEvents: 0,
     addTo() { return this; },
+    hasLayer(marker) { return this.members.has(marker); },
     addLayer(m) {
       this.members.add(m);
       // MarkerClusterGroup 1.5.3 _childMarkerMoved/_moveChild remove and re-add on move.
@@ -55,17 +57,19 @@ function ownershipHarness(features) {
     markers.set(m.id, m);
   }
   const layerGroups = [lines, town, city];
-  const sandbox = { URLSearchParams, document: { addEventListener() {} }, L: {
+  const sandbox = { URLSearchParams, document: { addEventListener() {}, createTextNode: text => ({ textContent: text }) }, L: {
     map: () => map, tileLayer: () => ({ addTo() {} }),
     markerClusterGroup: options => { cluster.options = options; return cluster; },
-    layerGroup: () => layerGroups.shift(), polyline: points => ({ addTo(group) { group.count++; group.points.push(points); } }),
+    layerGroup: () => layerGroups.shift(), polyline: (points, options) => ({ addTo(group) { group.count++; group.points.push(points); group.options.push(options); } }),
+    divIcon: options => options,
+    marker: () => ({ events: {}, bindTooltip() {}, on(event, fn) { this.events[event] = fn; }, addTo(group) { group.members.add(this); } }),
   } };
-  runInNewContext(source + "\n;globalThis.logic = { initMap, refreshMapLayers, state, chunkProgress: onClusterChunkProgress, setData(value, cache) { visibleEntities = value; markersById = cache; } };", sandbox);
+  runInNewContext(source + "\n;globalThis.logic = { initMap, refreshMapLayers, focusEntity, state, chunkProgress: onClusterChunkProgress, setData(value, cache) { visibleEntities = value; markersById = cache; } };", sandbox);
   logic = sandbox.logic;
   logic.initMap([37.55, -122.3], 13);
   logic.setData(features, markers);
   const refresh = zoom => { map.zoom = zoom; logic.refreshMapLayers(); cluster.render(); };
-  return { map, cluster, town, lines, markers, refresh };
+  return { map, cluster, town, city, lines, markers, refresh, focus: logic.focusEntity, state: logic.state, setVisible: value => logic.setData(value, markers) };
 }
 
 const raku = geo.features.find(f => f.properties.id === "rakunest");
@@ -120,4 +124,47 @@ test("SF shared buildings retain visible pins rather than empty spokes across zo
     assert.equal(h.lines.count, shared.length);
   }
   assert.equal(h.cluster.options.animate, false, "native delayed animation cleanup cannot remove transferred pins");
+});
+
+test("San Jose's approximate count expands 21 selectable pins and collapses cleanly on zoom or filter changes", () => {
+  const companies = geo.features.filter(f => f.properties.location.precision === "city" && f.properties.location.city === "San Jose");
+  assert.equal(companies.length, 21);
+  const original = JSON.stringify(companies);
+  const h = ownershipHarness(companies);
+  h.refresh(13);
+  assert.equal(h.city.members.size, 1); assert.equal(h.town.members.size, 0);
+  [...h.city.members][0].events.click();
+  for (const zoom of [14, 16, 19, 15]) {
+    h.refresh(zoom);
+    assert.equal(h.city.members.size, 0); assert.equal(h.town.members.size, 21);
+    assert.equal(h.cluster.members.size, 0, "city pins never enter exact-address clusters");
+    assert.equal(h.lines.count, 21);
+    assert.ok(h.lines.options.every(options => options.dashArray === "4 4"));
+    companies.forEach((feature, index) => assert.deepEqual(
+      [h.lines.points[index][1].lat, h.lines.points[index][1].lng], h.markers.get(feature.properties.id).pos));
+  }
+  h.refresh(13);
+  assert.equal(h.city.members.size, 1); assert.equal(h.town.members.size, 0); assert.equal(h.lines.count, 0);
+  assert.ok([...h.markers.values()].every(marker => marker._town === false), "collapsed pins reset their expansion state");
+  h.focus(companies[0]);
+  assert.equal(h.map.zoom, 14, "selecting a collapsed city company zooms back to its expanded icons");
+  assert.equal(h.town.members.size, 21);
+  h.refresh(13);
+  h.state.expandOffices = true; h.refresh(11);
+  assert.equal(h.city.members.size, 0); assert.equal(h.town.members.size, 21);
+  h.setVisible(companies.slice(0, 2)); h.refresh(11);
+  assert.equal(h.town.members.size, 2); assert.equal(h.lines.count, 2);
+  assert.equal(h.markers.get(companies[2].properties.id)._town, false, "filtered-out pins do not retain stale expansion state");
+  h.focus(companies[2]);
+  assert.equal(h.map.zoom, 14, "a filtered-out selection does not focus a stale spiral position at wide zoom");
+  assert.equal(h.town.members.size, 2, "focusing a hidden company preserves the current filter");
+  h.setVisible(companies); h.refresh(11);
+  assert.equal(h.town.members.size, 21);
+  h.map.inBounds = false; h.refresh(11);
+  assert.equal(h.town.members.size, 0); assert.equal(h.lines.count, 0);
+  h.map.inBounds = true; h.refresh(11);
+  assert.equal(h.town.members.size, 21);
+  h.state.expandOffices = false; h.refresh(11);
+  assert.equal(h.city.members.size, 1); assert.equal(h.town.members.size, 0);
+  assert.equal(JSON.stringify(companies), original, "visual expansion never changes stored location precision or coordinates");
 });
