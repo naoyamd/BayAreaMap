@@ -6,16 +6,16 @@
     <title>Bay Area Company Map — Field Networking</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="styles.css?v=2.0.4" />
+    <link rel="stylesheet" href="styles.css?v=2.0.5" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
-    <script src="app.js?v=2.0.4" defer></script>
+    <script src="app.js?v=2.0.5" defer></script>
   </head>
   <body class="mobile-view-list">
     <header class="site-header">
       <div class="brand">
         <h1><a href="./">Bay Area Company Map</a></h1>
-        <p class="header-tagline">Explore the ecosystem. Build your next connection. <span class="version-tag">v2.0.4</span></p>
+        <p class="header-tagline">Explore the ecosystem. Build your next connection. <span class="version-tag">v2.0.5</span></p>
       </div>
       <div class="dataset-info">
         Showing <span id="visible-count">0</span> companies
@@ -153,6 +153,15 @@
         <button type="button" id="expand-offices" aria-pressed="false" title="Switch between automatic street-level expansion and expansion at any zoom">Shared offices: auto</button>
       </div>
       <div id="map" role="region" aria-label="Bay Area company map"></div>
+      <div id="city-expansion" role="group" aria-label="Approximate city companies" hidden>
+        <small>Approximate company locations</small>
+        <div id="city-expansion-summary" aria-live="polite"></div>
+        <div class="city-page-controls">
+          <button type="button" id="city-page-prev">Previous</button>
+          <button type="button" id="city-page-next">Next</button>
+          <button type="button" id="city-expansion-close">Collapse</button>
+        </div>
+      </div>
       <div class="map-legend"><span class="legend-japan">Japan-linked</span><span class="legend-approx">Approximate</span><span class="legend-review">Needs review</span></div>
     </main>
 

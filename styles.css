@@ -686,6 +686,23 @@ main {
 #expand-offices { border-radius: 999px; box-shadow: var(--shadow); color: var(--accent); background: #fff; }
 #expand-offices[aria-pressed="true"] { color: #fff; background: var(--accent); }
 
+#city-expansion {
+  position: absolute;
+  left: 12px;
+  bottom: 55px;
+  z-index: 900;
+  max-width: calc(100% - 24px);
+  padding: 10px;
+  border: 1px dashed #c37d0a;
+  border-radius: 8px;
+  background: #fff7e4;
+  color: #724d0b;
+  box-shadow: var(--shadow);
+}
+#city-expansion[hidden] { display: none; }
+#city-expansion-summary { margin: 4px 0 8px; font-weight: 700; }
+.city-page-controls { display: flex; gap: 6px; }
+
 #search-area,
 #show-all-area {
   display: block;

@@ -6,6 +6,7 @@ const MAX_ZOOM = 19;
 const ICON_SIZE = 42;
 const TOWN_ZOOM = 14;
 const PAGE_SIZE = 50;
+const CITY_PAGE_SIZE = 24;
 const SEARCH_DEBOUNCE_MS = 120;
 const SAN_MATEO = [37.563, -122.3255];
 const PERSONAL_STORAGE_KEY = "bayareamap-notebook-v1";
@@ -189,6 +190,8 @@ const state = {
   radius: null,
   savedOnly: false,
   expandOffices: false,
+  cityExpansion: null,
+  cityPage: 0,
   sort: "relevance",
   preset: null,
   sectors: new Set(),
@@ -484,6 +487,7 @@ function fillLogo(container, props, lazy) {
 function initMap(center, zoom) {
   map = L.map("map", { center, zoom });
   map.createPane("city-centroids").style.zIndex = 450;
+  map.createPane("city-icons").style.zIndex = 550;
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: MAX_ZOOM,
     attribution:
@@ -493,7 +497,7 @@ function initMap(center, zoom) {
     showCoverageOnHover: false,
     maxClusterRadius: 55,
     spiderfyDistanceMultiplier: 1.5,
-    spiderfyOnMaxZoom: false,
+    spiderfyOnMaxZoom: true,
     animate: false,
     chunkedLoading: true,
     chunkProgress: onClusterChunkProgress,
@@ -527,7 +531,10 @@ function makeIcon(props, selected) {
 function buildMarkersOnce() {
   for (const feature of entities) {
     const props = feature.properties;
-    const marker = L.marker(latlngOf(feature), { icon: makeIcon(props, false) });
+    const marker = L.marker(latlngOf(feature), {
+      icon: makeIcon(props, false),
+      pane: props.location.precision === "city" ? "city-icons" : "markerPane",
+    });
     marker._feature = feature;
     marker._town = false;
     const notes = [];
@@ -577,6 +584,11 @@ function sharedOfficePoints(count, center) {
   return points;
 }
 
+function logoPointsOverlap(first, second) {
+  return first.some(([x, y]) => second.some(([otherX, otherY]) =>
+    Math.abs(x - otherX) < ICON_SIZE && Math.abs(y - otherY) < ICON_SIZE));
+}
+
 function computeLayout() {
   const positions = new Map();
   const townIds = new Set();
@@ -591,27 +603,58 @@ function computeLayout() {
   for (const feature of visibleEntities) {
     const props = feature.properties;
     // Keep approximate city anchors separate from confirmed shared office addresses.
-    const key = `${props.location.precision}:${feature.geometry.coordinates.join(",")}`;
+    const key = props.location.precision === "city" ? `city:${props.location.city}` : `address:${feature.geometry.coordinates.join(",")}`;
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(feature);
   }
+  const addressLayouts = new Map();
   for (const group of groups.values()) {
-    const origin = latlngOf(group[0]);
+    if (group[0].properties.location.precision !== "address") continue;
+    const center = map.latLngToLayerPoint(latlngOf(group[0]));
+    addressLayouts.set(group, group.length > 1 ? sharedOfficePoints(group.length, center) : [[center.x, center.y]]);
+  }
+  for (const fullGroup of groups.values()) {
+    let group = fullGroup;
+    const approximate = group[0].properties.location.precision === "city";
+    if (approximate && group.length > CITY_PAGE_SIZE) {
+      if (state.cityExpansion !== group[0].properties.location.city) continue;
+      state.cityPage = Math.max(0, Math.min(state.cityPage, Math.ceil(group.length / CITY_PAGE_SIZE) - 1));
+      group = group.slice(state.cityPage * CITY_PAGE_SIZE, (state.cityPage + 1) * CITY_PAGE_SIZE);
+    }
+    const origin = latlngOf(fullGroup[0]);
     if (group.length < 2) {
       if (!bounds.contains(origin)) continue;
       const props = group[0].properties;
-      if (zoom >= TOWN_ZOOM || props.location.precision === "city") townIds.add(props.id);
+      if (props.location.precision === "city") townIds.add(props.id);
       continue;
     }
     const centerPoint = map.latLngToLayerPoint(origin);
-    const displays = sharedOfficePoints(group.length, centerPoint).map(point => map.layerPointToLatLng(point));
+    let points = approximate ? sharedOfficePoints(group.length, centerPoint) : addressLayouts.get(fullGroup);
+    if (!approximate && !state.expandOffices && !group.some(feature => feature.properties.id === state.entityId)) {
+      const conflicts = [...addressLayouts].filter(([other, otherPoints]) => other !== fullGroup && logoPointsOverlap(points, otherPoints));
+      // One adjacent office pin should not collapse a whole shared building like RakuNest.
+      if (conflicts.length > 1 || conflicts.some(([other]) => other.length > 1)) continue;
+      if (conflicts.length) {
+        for (let turn = 1; turn < 4; turn++) {
+          const angle = turn * Math.PI / 2;
+          const rotated = points.map(([x, y]) => [
+            centerPoint.x + (x - centerPoint.x) * Math.cos(angle) - (y - centerPoint.y) * Math.sin(angle),
+            centerPoint.y + (x - centerPoint.x) * Math.sin(angle) + (y - centerPoint.y) * Math.cos(angle),
+          ]);
+          if ([...addressLayouts].some(([other, otherPoints]) => other !== fullGroup && logoPointsOverlap(rotated, otherPoints))) continue;
+          points = rotated;
+          addressLayouts.set(fullGroup, points);
+          break;
+        }
+      }
+    }
+    const displays = points.map(point => map.layerPointToLatLng(point));
     // Large city spirals extend beyond their anchor: keep them visible while panning to an outer pin.
     if (!bounds.contains(origin) && !displays.some(display => bounds.contains(display))) continue;
     group.forEach((feature, index) => {
       const display = displays[index];
       positions.set(feature.properties.id, display);
       townIds.add(feature.properties.id);
-      const approximate = feature.properties.location.precision === "city";
       L.polyline([origin, display], {
         className: approximate ? "overlap-leg approximate-leg" : "overlap-leg",
         dashArray: approximate ? "4 4" : null,
@@ -632,6 +675,7 @@ function refreshMapLayers() {
   }
   const { positions, townIds } = computeLayout();
   refreshCityMarkers(townIds);
+  refreshCityPager(townIds);
   const nextCluster = [];
   const nextTown = [];
   const nextPositions = new Map();
@@ -679,23 +723,71 @@ function refreshCityMarkers(expandedIds = new Set()) {
   cityMarkerLayer.clearLayers();
   const groups = new Map();
   for (const feature of visibleEntities) {
-    if (feature.properties.location.precision !== "city" || expandedIds.has(feature.properties.id)) continue;
-    const key = feature.geometry.coordinates.join(",");
+    if (feature.properties.location.precision !== "city") continue;
+    const key = feature.properties.location.city;
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(feature);
   }
   for (const group of groups.values()) {
+    if (group.every(feature => expandedIds.has(feature.properties.id))) continue;
     const city = group[0].properties.location.city;
     const marker = L.marker(latlngOf(group[0]), { pane: "city-centroids", icon: L.divIcon({
       className: "company-cluster city-cluster", html: `<span>${group.length}</span>`, iconSize: [48, 48],
     }) });
-    marker.bindTooltip(textNode(`${city}: ${group.length} approximate city locations. Click to expand company icons.`));
-    marker.on("click", () => {
+    const action = group.length > CITY_PAGE_SIZE ? `Browse company icons ${CITY_PAGE_SIZE} at a time.` : "Click to expand company icons.";
+    marker.bindTooltip(textNode(`${city}: ${group.length} approximate city locations. ${action}`));
+    const expand = () => {
+      state.cityExpansion = city;
+      state.cityPage = 0;
       map.setView(latlngOf(group[0]), Math.max(map.getZoom(), TOWN_ZOOM));
+      refreshMapLayers();
+    };
+    marker.on("click", expand);
+    marker.on("add", () => {
+      const node = marker.getElement();
+      if (!node) return;
+      node.setAttribute("aria-label", `${city}: expand ${group.length} company icons with approximate locations`);
+      node.setAttribute("role", "button");
+      node.addEventListener("keydown", event => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        event.stopPropagation();
+        expand();
+      });
     });
-    marker.on("add", () => marker.getElement()?.setAttribute("aria-label", `${city}: expand ${group.length} company icons with approximate locations`));
     marker.addTo(cityMarkerLayer);
   }
+}
+
+function expandedCityGroup() {
+  return visibleEntities.filter(feature => feature.properties.location.precision === "city" &&
+    feature.properties.location.city === state.cityExpansion);
+}
+
+function refreshCityPager(expandedIds) {
+  const panel = $("city-expansion");
+  if (!panel) return;
+  const group = expandedCityGroup();
+  panel.hidden = group.length <= CITY_PAGE_SIZE || !group.some(feature => expandedIds.has(feature.properties.id));
+  if (panel.hidden) return;
+  const start = state.cityPage * CITY_PAGE_SIZE;
+  $("city-expansion-summary").textContent = `${group[0].properties.location.city} · ${start + 1}–${Math.min(start + CITY_PAGE_SIZE, group.length)} of ${group.length}`;
+  $("city-page-prev").disabled = state.cityPage === 0;
+  $("city-page-next").disabled = start + CITY_PAGE_SIZE >= group.length;
+}
+
+function prepareCityPage(feature) {
+  if (feature.properties.location.precision !== "city") return;
+  const key = feature.properties.location.city;
+  const group = visibleEntities.filter(item => item.properties.location.precision === "city" &&
+    item.properties.location.city === key);
+  const index = group.findIndex(item => item.properties.id === feature.properties.id);
+  if (group.length <= CITY_PAGE_SIZE || index < 0) return;
+  const page = Math.floor(index / CITY_PAGE_SIZE);
+  if (state.cityExpansion === key && state.cityPage === page) return;
+  state.cityExpansion = key;
+  state.cityPage = page;
+  refreshMapLayers();
 }
 
 function onClusterChunkProgress(processed, total) {
@@ -1036,6 +1128,7 @@ function syncSelectionUI() {
 
 function focusEntity(feature) {
   if (!map) return;
+  prepareCityPage(feature);
   const marker = markersById.get(feature.properties.id);
   if (!marker) {
     map.setView(latlngOf(feature), Math.max(map.getZoom(), TOWN_ZOOM));
@@ -1332,6 +1425,11 @@ function openDetail(feature, trackOpener = true) {
 
 function showEntityOnMap(feature) {
   if (!map) return;
+  if (state.entityId !== feature.properties.id) {
+    state.entityId = feature.properties.id;
+    syncSelectionUI();
+  }
+  prepareCityPage(feature);
   const marker = markersById.get(feature.properties.id);
   if (!marker) {
     map.setView(latlngOf(feature), Math.max(map.getZoom(), 16));
@@ -1343,10 +1441,6 @@ function showEntityOnMap(feature) {
     markerLayer.zoomToShowLayer(marker);
   } else {
     map.setView(latlngOf(feature), Math.max(map.getZoom(), 16));
-  }
-  if (state.entityId !== feature.properties.id) {
-    state.entityId = feature.properties.id;
-    syncSelectionUI();
   }
 }
 
@@ -1431,6 +1525,8 @@ function applySnapshot(entry) {
   state.radius = [10, 25, 50].includes(radius) ? radius : null;
   state.savedOnly = params.get("saved") === "1";
   state.expandOffices = params.get("expand") === "1";
+  state.cityExpansion = null;
+  state.cityPage = 0;
   $("expand-offices").setAttribute("aria-pressed", String(state.expandOffices));
   $("expand-offices").textContent = state.expandOffices ? "Shared offices: expanded" : "Shared offices: auto";
   state.sectors = new Set(params.getAll("sector").filter((value) => SECTOR_IDS.has(value)));
@@ -1552,6 +1648,8 @@ function buildFilterControls() {
 }
 
 function clearAllFilters() {
+  state.cityExpansion = null;
+  state.cityPage = 0;
   state.preset = null;
   state.sectors.clear();
   for (const selected of Object.values(state.filters)) selected.clear();
@@ -1751,6 +1849,17 @@ document.addEventListener("DOMContentLoaded", () => {
     $("expand-offices").textContent = state.expandOffices ? "Shared offices: expanded" : "Shared offices: auto";
     refreshMapLayers();
     pushHistory();
+  });
+  for (const [id, direction] of [["city-page-prev", -1], ["city-page-next", 1]]) {
+    $(id).addEventListener("click", () => {
+      state.cityPage += direction;
+      refreshMapLayers();
+    });
+  }
+  $("city-expansion-close").addEventListener("click", () => {
+    state.cityExpansion = null;
+    state.cityPage = 0;
+    refreshMapLayers();
   });
 
   el.searchArea.addEventListener("click", () => {

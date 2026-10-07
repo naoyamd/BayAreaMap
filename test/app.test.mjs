@@ -63,7 +63,7 @@ function app({ storage = "{}", failStorage = false, query = "" } = {}) {
     history: { state: null, pushState() {}, replaceState() {} }, navigator: {},
     fetch: async () => ({ ok: true, json: async () => structuredClone(geo) }),
   };
-  runInNewContext(source + "\n;globalThis.logic = { state, personal, computeVisible, buildCsv, csvCell, readPersonalData, enrichFeature, rankFeature, clearAllFilters, serializeState, populateDetail, loadEntities, actionLink, refreshCityMarkers, buildMarkersOnce, setMap(value) { map = value; }, setEntities(value) { entities = value; }, getMarkers() { return markersById; }, setCityLayer(value) { cityMarkerLayer = value; }, setVisible(value) { visibleEntities = value; } };", sandbox);
+  runInNewContext(source + "\n;globalThis.logic = { state, personal, computeVisible, buildCsv, csvCell, readPersonalData, enrichFeature, rankFeature, clearAllFilters, serializeState, populateDetail, loadEntities, actionLink, refreshCityMarkers, buildMarkersOnce, setMap(value) { map = value; }, setLegLayer(value) { overlapLegLayer = value; }, setEntities(value) { entities = value; }, getMarkers() { return markersById; }, setCityLayer(value) { cityMarkerLayer = value; }, setVisible(value) { visibleEntities = value; } };", sandbox);
   return { document, sandbox, logic: sandbox.logic, startup, stored: () => stored };
 }
 
@@ -189,6 +189,7 @@ test("collapsed city counts expand on click and yield to individually marked app
   assert.equal(layer.items[0].options.pane, "city-centroids");
   assert.match(layer.items[0].tooltip, /approximate city locations/);
   const views = [];
+  ui.logic.setLegLayer({ clearLayers() {} });
   ui.logic.setMap({ getZoom: () => 11, setView: (center, zoom) => views.push({ center, zoom }) });
   layer.items[0].events.click();
   assert.deepEqual([...views[0].center], [37.563, -122.3255]);
@@ -198,6 +199,7 @@ test("collapsed city counts expand on click and yield to individually marked app
   assert.equal(layer.items.length, 0, "expanded icons replace the yellow count");
   ui.logic.setEntities([first, second, street]); ui.logic.buildMarkersOnce();
   const cityPin = ui.logic.getMarkers().get("one");
+  assert.equal(cityPin.options.pane, "city-icons", "approximate icons stay below real-address pins and counts");
   assert.match(cityPin.options.icon.className, /approximate/);
   assert.match(cityPin.tooltip, /approximate location/);
   assert.equal(typeof cityPin.events.click, "function", "each expanded company can open its detail");

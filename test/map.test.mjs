@@ -40,6 +40,8 @@ function point(id, city, coordinates = [-122.3, 37.55], precision = "address") {
 test("approximate city counts have a pane below every normal marker and cluster", () => {
   const logic = mapLogic();
   assert.ok(Number(logic.panes["city-centroids"].style.zIndex) < Number(logic.panes.markerPane.style.zIndex));
+  assert.ok(Number(logic.panes["city-icons"].style.zIndex) < Number(logic.panes.markerPane.style.zIndex));
+  assert.ok(Number(logic.panes["city-icons"].style.zIndex) > Number(logic.panes["city-centroids"].style.zIndex));
 });
 
 test("shared addresses expand from street zoom in every city and stay expanded through maximum zoom", () => {
@@ -105,10 +107,18 @@ test("review badges keep Leaflet's absolute marker positioning and use relative 
   assert.match(styles, /\.result-card\s+\.logo-pin\.presence-unverified\s*\{\s*position:\s*relative;/);
 });
 
-test("large approximate spirals remain expanded while panning to an outer company beyond the city anchor", () => {
+test("dense city groups expand only one bounded page after selection and stay visible while panning", () => {
   const logic = mapLogic();
-  logic.setVisible(Array.from({ length: 481 }, (_, index) => point(`city-${index}`, "San Francisco", [-122.4194, 37.7749], "city")));
-  const outer = logic.computeLayout().positions.get("city-0");
+  logic.setVisible(Array.from({ length: 481 }, (_, index) => point(`city-${index}`, "San Francisco",
+    index % 2 ? [-122.4194155, 37.7749295] : [-122.4194, 37.7749], "city")));
+  assert.equal(logic.computeLayout().townIds.size, 0, "hundreds of city pins never auto-expand");
+  logic.state.expandOffices = true;
+  assert.equal(logic.computeLayout().townIds.size, 0, "manual shared offices does not trigger hundreds of city spokes");
+  logic.state.cityExpansion = "San Francisco";
+  const first = logic.computeLayout();
+  assert.equal(first.townIds.size, 24);
+  assert.equal(logic.legs.length, 24);
+  const outer = first.positions.get("city-0");
   const contains = value => {
     const p = Array.isArray(value) ? { lat: value[0], lng: value[1] } : value;
     return Math.abs(p.lat - outer.lat) < 0.0001 && Math.abs(p.lng - outer.lng) < 0.0001;
@@ -116,6 +126,27 @@ test("large approximate spirals remain expanded while panning to an outer compan
   assert.equal(contains([37.7749, -122.4194]), false, "panned viewport excludes the representative anchor");
   logic.map.getBounds = () => ({ contains });
   const layout = logic.computeLayout();
-  assert.equal(layout.townIds.size, 481, "visible outer pins keep their entire group expanded");
-  assert.equal(logic.legs.length, 481);
+  assert.equal(layout.townIds.size, 24, "visible outer pins keep their bounded page expanded");
+  assert.equal(logic.legs.length, 24);
+  logic.map.getBounds = () => ({ contains: () => true });
+  const visited = new Set();
+  for (let page = 0; page < 21; page++) {
+    logic.state.cityPage = page;
+    const current = logic.computeLayout();
+    assert.ok(current.townIds.size <= 24);
+    for (const id of current.townIds) visited.add(id);
+  }
+  assert.equal(visited.size, 481, "every company remains reachable through pages");
+  logic.state.cityExpansion = null;
+  assert.equal(logic.computeLayout().townIds.size, 0, "collapse clears all city spokes");
+});
+
+test("isolated exact addresses remain in native clustering at street zoom instead of becoming overlapping town pins", () => {
+  const logic = mapLogic();
+  logic.setVisible([point("first", "San Francisco"), point("second", "San Francisco", [-122.3001, 37.5501])]);
+  for (const zoom of [14, 16, 19]) {
+    logic.map.zoom = zoom;
+    assert.equal(logic.computeLayout().townIds.size, 0);
+    assert.equal(logic.legs.length, 0);
+  }
 });

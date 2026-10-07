@@ -1,0 +1,30 @@
+{
+  "version": "2.0.5",
+  "reportedProblem": "v2.0.4 filled central San Francisco with hundreds of approximate icons and connector lines.",
+  "observedCause": "The live browser reproduced 471 expanded city pins plus a nearby 15-company approximate anchor. Shared exact-address layouts also overlapped neighboring buildings.",
+  "changes": [
+    "Group approximate anchors by city without changing stored coordinates",
+    "More than 24 approximate companies stay collapsed until opened, then use 24-icon pages",
+    "Previous, Next and Collapse keep all companies accessible; list selection opens the matching page",
+    "Keep nearby exact addresses in native clustering when shared-building layouts would swamp the neighborhood",
+    "Rotate shared-building layouts away from a single nearby office when space permits",
+    "Put approximate icons below exact-address icons and counts"
+  ],
+  "verification": {
+    "testsPassed": 64,
+    "dataset": "1034 entities validated; entity data unchanged from origin/main",
+    "liveBrowserBaseline": "Production at San Francisco zoom 14 visibly reproduced the icon and line overflow.",
+    "localBrowser": [
+      "San Francisco default view has no expanded city icons or approximate spokes",
+      "486 approximate companies share one representative marker",
+      "Opening the marker displays exactly 24 approximate icons and 24 connectors",
+      "Next, Previous, keyboard activation and Collapse work; Collapse returns to zero approximate icons and spokes",
+      "Expanded company icon opens its detail panel",
+      "RakuNest zoom 16 displays its 12 tenant icons and separates the neighboring Rakuten USA pin",
+      "San Jose zoom 16 displays 21 approximate icons and 21 connectors"
+    ],
+    "regressions": "All companies are reachable through bounded pages; layer ownership, zoom transitions, source precision, notebook and filters pass.",
+    "screenshots": ["sf-v2.0.4-before.jpg", "sf-v2.0.5-after.jpg", "sf-v2.0.5-rakunest.jpg"]
+  },
+  "publication": "GitHub Pages workflow records deployment status; the published page is also checked through Browser Use."
+}

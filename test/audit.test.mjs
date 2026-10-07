@@ -643,7 +643,7 @@ let __logicCache = null;
 function appLogic() {
   if (__logicCache) return __logicCache;
   const sandbox = {
-    document: { addEventListener() {} },
+    document: { addEventListener() {}, getElementById: () => null },
     window: { setTimeout: (fn, ms) => setTimeout(fn, ms), clearTimeout: (id) => clearTimeout(id) },
     URL, URLSearchParams,
     fetch: () => Promise.reject(new Error('offline')), history: { pushState() {}, replaceState() {} },
@@ -1048,7 +1048,8 @@ test('v4 regression: chunked add queue is latest-wins, unchanged pins skip setLa
   const refreshBody = appSource.slice(appSource.indexOf('function refreshMapLayers'), appSource.indexOf('function onViewChanged'));
   assert.ok(refreshBody.indexOf('activeCluster = nextCluster;') < refreshBody.indexOf('markerLayer.addLayers(addCluster)'),
     'active bookkeeping must precede addLayers');
-  const emptyBranch = appSource.slice(appSource.indexOf('if (total === 0)'), appSource.indexOf('const start ='));
+  const resultsBody = appSource.slice(appSource.indexOf('function renderResults'), appSource.indexOf('function syncSelectionUI'));
+  const emptyBranch = resultsBody.slice(resultsBody.indexOf('if (total === 0)'), resultsBody.indexOf('const start ='));
   assert.match(emptyBranch, /el\.pagination\.replaceChildren\(\);\s*\n\s*return;/, 'empty results clear pagination');
   assert.doesNotMatch(emptyBranch, /renderPagination/);
   assert.doesNotMatch(stylesSource, /\.preset-contact-buttons|\[data-preset\]/, 'legacy preset CSS removed');

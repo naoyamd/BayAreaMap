@@ -57,7 +57,7 @@ function ownershipHarness(features) {
     markers.set(m.id, m);
   }
   const layerGroups = [lines, town, city];
-  const sandbox = { URLSearchParams, document: { addEventListener() {}, createTextNode: text => ({ textContent: text }) }, L: {
+  const sandbox = { URLSearchParams, document: { addEventListener() {}, getElementById: () => null, createTextNode: text => ({ textContent: text }) }, L: {
     map: () => map, tileLayer: () => ({ addTo() {} }),
     markerClusterGroup: options => { cluster.options = options; return cluster; },
     layerGroup: () => layerGroups.shift(), polyline: (points, options) => ({ addTo(group) { group.count++; group.points.push(points); group.options.push(options); } }),
@@ -126,6 +126,23 @@ test("SF shared buildings retain visible pins rather than empty spokes across zo
   assert.equal(h.cluster.options.animate, false, "native delayed animation cleanup cannot remove transferred pins");
 });
 
+test("RakuNest still expands beside the neighboring Rakuten USA office in the real dataset", () => {
+  const neighbor = geo.features.find(feature => feature.properties.name === "Rakuten USA, Inc.");
+  assert.ok(neighbor);
+  const h = ownershipHarness([...rakuOffices, neighbor]);
+  for (const zoom of [14, 15, 16, 19, 15]) {
+    h.refresh(zoom);
+    assert.equal(h.town.members.size, 12);
+    assert.equal(h.cluster.members.size, 1);
+    assert.equal(h.lines.count, 12);
+    const points = [...h.markers.values()].map(marker => h.map.latLngToLayerPoint(marker.pos));
+    for (let i = 0; i < points.length; i++) for (let j = i + 1; j < points.length; j++) {
+      assert.ok(Math.abs(points[i].x - points[j].x) >= 42 || Math.abs(points[i].y - points[j].y) >= 42,
+        "shared-building pins and the neighboring office must remain separate");
+    }
+  }
+});
+
 test("San Jose's approximate count expands 21 selectable pins and collapses cleanly on zoom or filter changes", () => {
   const companies = geo.features.filter(f => f.properties.location.precision === "city" && f.properties.location.city === "San Jose");
   assert.equal(companies.length, 21);
@@ -167,4 +184,46 @@ test("San Jose's approximate count expands 21 selectable pins and collapses clea
   h.state.expandOffices = false; h.refresh(11);
   assert.equal(h.city.members.size, 1); assert.equal(h.town.members.size, 0);
   assert.equal(JSON.stringify(companies), original, "visual expansion never changes stored location precision or coordinates");
+});
+
+test("nearby shared buildings stay clustered until their logo layouts fit at the current zoom", () => {
+  const offices = Array.from({ length: 4 }, (_, index) => ({
+    properties: { id: `office-${index}`, location: { precision: "address", city: "San Francisco" } },
+    geometry: { coordinates: [-122.4 + (index >= 2 ? 0.0006 : 0), 37.79] },
+  }));
+  const h = ownershipHarness(offices);
+  h.refresh(14);
+  assert.equal(h.cluster.members.size, 4); assert.equal(h.town.members.size, 0); assert.equal(h.lines.count, 0);
+  h.refresh(19);
+  assert.equal(h.cluster.members.size, 0); assert.equal(h.town.members.size, 4); assert.equal(h.lines.count, 4);
+  h.refresh(14);
+  assert.equal(h.cluster.members.size, 4); assert.equal(h.town.members.size, 0);
+  h.state.entityId = "office-0"; h.refresh(14);
+  assert.equal(h.town.members.size, 2, "selected building remains accessible even when the neighborhood is dense");
+  assert.equal(h.cluster.members.size, 2);
+  assert.equal(h.cluster.options.spiderfyOnMaxZoom, true, "native counts remain openable at maximum zoom");
+});
+
+test("SF's nearby approximate anchors share one count and bounded pages reach every company", () => {
+  const companies = geo.features.filter(f => f.properties.location.precision === "city" && f.properties.location.city === "San Francisco");
+  const h = ownershipHarness(companies);
+  h.refresh(14);
+  assert.equal(h.city.members.size, 1); assert.equal(h.town.members.size, 0); assert.equal(h.lines.count, 0);
+  h.state.expandOffices = true; h.refresh(14);
+  assert.equal(h.town.members.size, 0, "global expansion keeps hundreds of city pins collapsed");
+  [...h.city.members][0].events.click();
+  const seen = new Set();
+  for (let page = 0; page < Math.ceil(companies.length / 24); page++) {
+    h.state.cityPage = page; h.refresh(14);
+    assert.ok(h.town.members.size <= 24);
+    assert.equal(h.city.members.size, 1, "total count remains available while browsing pages");
+    assert.equal(h.cluster.members.size, 0);
+    for (const marker of h.town.members) { assert.ok(!seen.has(marker.id)); seen.add(marker.id); }
+  }
+  assert.equal(seen.size, companies.length);
+  h.state.cityExpansion = null; h.refresh(14);
+  assert.equal(h.town.members.size, 0); assert.equal(h.lines.count, 0);
+  h.focus(companies.at(-1));
+  assert.equal(h.state.cityPage, Math.floor((companies.length - 1) / 24));
+  assert.ok(h.town.members.has(h.markers.get(companies.at(-1).properties.id)), "selecting an off-page company opens its page");
 });
