@@ -23867,13 +23867,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/athelas",
           "sourceType": "official-directory"
@@ -23943,13 +23943,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/clipboard",
           "sourceType": "official-directory"
@@ -24087,20 +24087,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.apollo.io/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/apollo-io",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.apollo.io/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -24242,13 +24241,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/benchling",
           "sourceType": "official-directory"
@@ -24541,13 +24540,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/astranis",
           "sourceType": "official-directory"
@@ -25444,13 +25443,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/captivateiq",
           "sourceType": "official-directory"
@@ -26191,13 +26190,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/apollo",
           "sourceType": "official-directory"
@@ -26262,13 +26261,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/cambly",
           "sourceType": "official-directory"
@@ -26334,13 +26333,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/candid-health",
           "sourceType": "official-directory"
@@ -27234,17 +27233,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://alpaca.markets/about-us",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://alpaca.markets/about-us"
         },
@@ -27312,13 +27311,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/ambient-ai",
           "sourceType": "official-directory"
@@ -27388,13 +27387,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/awesomic",
           "sourceType": "official-directory"
@@ -27993,11 +27992,11 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/bitmovin",
           "sourceType": "official-directory"
@@ -28143,13 +28142,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/bellabeat",
           "sourceType": "official-directory"
@@ -29424,13 +29423,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/ashby",
           "sourceType": "official-directory"
@@ -29725,13 +29724,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/campfire-2",
           "sourceType": "official-directory"
@@ -30028,13 +30027,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/angle-health",
           "sourceType": "official-directory"
@@ -30101,13 +30100,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/careerist",
           "sourceType": "official-directory"
@@ -30173,17 +30172,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.classdojo.com/es-es/contact/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/classdojo",
           "sourceType": "official-directory"
@@ -31380,20 +31379,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.broccoli.com/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/broccoli-ai",
-          "sourceType": "official-directory"
+          "checkedAt": "2026-10-07",
+          "status": "review",
+          "sourceUrl": "https://www.broccoli.com/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -31988,13 +31986,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/atob",
           "sourceType": "official-directory"
@@ -32553,8 +32551,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.28808662044,
+          37.847551777825
         ]
       },
       "properties": {
@@ -32574,30 +32572,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/ansa-biotechnologies",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "1198 65th St #250",
+          "city": "Emeryville",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94608",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/ansa-biotechnologies",
+          "county": "Alameda County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://ansabio.com/company/contact/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-10-07",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/ansa-biotechnologies",
-          "sourceType": "official-directory"
+          "checkedAt": "2026-10-07",
+          "status": "review",
+          "sourceUrl": "https://ansabio.com/company/contact/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -32662,13 +32659,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/balance",
           "sourceType": "official-directory"
@@ -33779,13 +33776,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/be-go",
           "sourceType": "official-directory"
@@ -33852,13 +33849,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/bland-ai",
           "sourceType": "official-directory"
@@ -34154,13 +34151,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/cambio-2",
           "sourceType": "official-directory"
@@ -34677,13 +34674,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/anjuna",
           "sourceType": "official-directory"
@@ -34754,13 +34751,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/bik",
           "sourceType": "official-directory"
@@ -35199,13 +35196,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/chatfuel",
           "sourceType": "official-directory"
@@ -35347,13 +35344,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/astro-mechanica",
           "sourceType": "official-directory"
@@ -35644,13 +35641,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/arintra",
           "sourceType": "official-directory"
@@ -35720,13 +35717,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/artisan",
           "sourceType": "official-directory"
@@ -37211,17 +37208,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.ampup.io/resources/ev-charger-rebates-and-incentives",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ampup.io/resources/ev-charger-rebates-and-incentives"
         },
@@ -37961,11 +37958,11 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/backerkit",
           "sourceType": "official-directory"
@@ -38187,13 +38184,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/casca",
           "sourceType": "official-directory"
@@ -40887,20 +40884,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://aisdr.com/case-study-fortune-500-company/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/aisdr",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://aisdr.com/case-study-fortune-500-company/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -40967,13 +40963,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/bretton-ai",
           "sourceType": "official-directory"
@@ -41873,13 +41869,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/alex-com",
           "sourceType": "official-directory"
@@ -41947,13 +41943,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/array-labs",
           "sourceType": "official-directory"
@@ -42021,13 +42017,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/bunkerhill-health",
           "sourceType": "official-directory"
@@ -42096,13 +42092,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/cleva",
           "sourceType": "official-directory"
@@ -44584,13 +44580,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/atlas-3",
           "sourceType": "official-directory"
@@ -44659,13 +44655,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/atomic",
           "sourceType": "official-directory"
@@ -44735,11 +44731,11 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/beacons",
           "sourceType": "official-directory"
@@ -44810,13 +44806,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/charge-robotics",
           "sourceType": "official-directory"
@@ -44884,13 +44880,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/codeant-ai",
           "sourceType": "official-directory"
@@ -45927,13 +45923,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/apero-health",
           "sourceType": "official-directory"
@@ -46231,13 +46227,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/archform",
           "sourceType": "official-directory"
@@ -46763,13 +46759,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/canix",
           "sourceType": "official-directory"
@@ -47738,13 +47734,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/bolto",
           "sourceType": "official-directory"
@@ -47814,13 +47810,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/brainkey",
           "sourceType": "official-directory"
@@ -49692,13 +49688,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/bodyport",
           "sourceType": "official-directory"
@@ -49843,16 +49839,15 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/atlas-2",
-          "sourceType": "official-directory"
+          "checkedAt": "2026-10-07",
+          "status": "review",
+          "sourceUrl": "https://atlas.so/ticketing"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -50442,13 +50437,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/arini",
           "sourceType": "official-directory"
@@ -50519,11 +50514,11 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/cairns-health",
           "sourceType": "official-directory"
@@ -50819,20 +50814,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.artie.com/about",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/artie",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.artie.com/about"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -51651,13 +51645,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/algen-biotechnologies",
           "sourceType": "official-directory"
@@ -51725,13 +51719,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/anthrogen",
           "sourceType": "official-directory"
@@ -51802,13 +51796,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/arnata",
           "sourceType": "official-directory"
@@ -51875,17 +51869,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.blueberrypediatrics.com/contact-us",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.blueberrypediatrics.com/contact-us"
         },
@@ -51952,13 +51946,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/bluedot",
           "sourceType": "official-directory"
@@ -52027,13 +52021,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/buildbuddy",
           "sourceType": "official-directory"
@@ -52104,13 +52098,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/carma",
           "sourceType": "official-directory"
@@ -52175,17 +52169,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.cekura.ai/contact",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-03",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.cekura.ai/contact"
         },
@@ -55039,13 +55033,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/brighterway",
           "sourceType": "official-directory"
@@ -55115,13 +55109,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/calltree",
           "sourceType": "official-directory"
@@ -55774,13 +55768,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/bindwell",
           "sourceType": "official-directory"
@@ -56369,13 +56363,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/aivideo-com",
           "sourceType": "official-directory"
@@ -56445,13 +56439,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/andromeda-surgical",
           "sourceType": "official-directory"
@@ -56523,13 +56517,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/assembly-hoa",
           "sourceType": "official-directory"
@@ -56596,13 +56590,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/athenahq",
           "sourceType": "official-directory"
@@ -56674,13 +56668,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/cartage",
           "sourceType": "official-directory"
@@ -56751,13 +56745,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/chatwoot",
           "sourceType": "official-directory"
@@ -59156,13 +59150,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/andon-labs",
           "sourceType": "official-directory"
@@ -59233,13 +59227,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-07",
           "status": "ok",
-          "attemptedAt": "2026-10-03"
+          "attemptedAt": "2026-10-07"
         },
-        "updatedAt": "2026-10-05",
+        "updatedAt": "2026-10-07",
         "presenceCheck": {
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-07",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/archil",
           "sourceType": "official-directory"
