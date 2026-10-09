@@ -79,17 +79,17 @@ const raku = geo.features.find(f => f.properties.id === "rakunest");
 const rakuOffices = geo.features.filter(f => f.properties.location.precision === "address" &&
   f.geometry.coordinates.join() === raku.geometry.coordinates.join());
 
-test("RakuNest's 12 pins leave native clustering before moving and never recluster on later zooms", () => {
-  assert.equal(rakuOffices.length, 12);
+test("RakuNest's growing tenant group leaves native clustering before moving and never reclusters on later zooms", () => {
+  assert.ok(rakuOffices.length >= 12);
   const h = ownershipHarness(rakuOffices);
   h.refresh(13);
-  assert.equal(h.cluster.members.size, 12);
+  assert.equal(h.cluster.members.size, rakuOffices.length);
   for (const zoom of [17, 18, 19, 18, 17]) {
     h.refresh(zoom);
     assert.equal(h.cluster.members.size, 0, `no blue clusters among spokes at zoom ${zoom}`);
-    assert.equal(h.town.members.size, 12);
-    assert.equal([...h.markers.values()].filter(m => m.visible).length, 12, "every line has a visible pin");
-    assert.equal(h.lines.count, 12);
+    assert.equal(h.town.members.size, rakuOffices.length);
+    assert.equal([...h.markers.values()].filter(m => m.visible).length, rakuOffices.length, "every line has a visible pin");
+    assert.equal(h.lines.count, rakuOffices.length);
     rakuOffices.forEach((feature, index) => assert.deepEqual(
       [h.lines.points[index][1].lat, h.lines.points[index][1].lng],
       h.markers.get(feature.properties.id).pos,
@@ -104,8 +104,8 @@ test("RakuNest's 12 pins leave native clustering before moving and never reclust
   h.map.inBounds = false; h.refresh(17);
   assert.equal(h.town.members.size, 0); assert.equal(h.lines.count, 0);
   h.map.inBounds = true; h.refresh(17);
-  assert.equal(h.cluster.members.size, 0); assert.equal(h.town.members.size, 12);
-  h.refresh(13); assert.equal(h.cluster.members.size, 12);
+  assert.equal(h.cluster.members.size, 0); assert.equal(h.town.members.size, rakuOffices.length);
+  h.refresh(13); assert.equal(h.cluster.members.size, rakuOffices.length);
   h.refresh(17); assert.equal(h.cluster.members.size, 0);
 });
 
@@ -135,9 +135,9 @@ test("RakuNest still expands beside the neighboring Rakuten USA office in the re
   const h = ownershipHarness([...rakuOffices, neighbor]);
   for (const zoom of [17, 18, 19, 17]) {
     h.refresh(zoom);
-    assert.equal(h.town.members.size, 12);
+    assert.equal(h.town.members.size, rakuOffices.length);
     assert.equal(h.cluster.members.size, 1);
-    assert.equal(h.lines.count, 12);
+    assert.equal(h.lines.count, rakuOffices.length);
     const points = [...h.markers.values()].map(marker => h.map.latLngToLayerPoint(marker.pos));
     for (let i = 0; i < points.length; i++) for (let j = i + 1; j < points.length; j++) {
       assert.ok(Math.abs(points[i].x - points[j].x) >= 42 || Math.abs(points[i].y - points[j].y) >= 42,

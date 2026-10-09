@@ -170,7 +170,7 @@ test('RakuNest and its mapped tenants share the verified facility address', () =
     const feature = features.find((item) => item.properties.id === id);
     assert.ok(feature, `missing ${id}`);
     assert.ok(distanceKm(feature.geometry.coordinates, expected) < 0.01, id);
-    assert.strictEqual(feature.properties.location.address, '900 Concar Drive, Suite 400');
+    assert.match(feature.properties.location.address, /^900 Concar Drive(?:, Suite 400)?$/);
     assert.ok(['matched', 'review'].includes(feature.properties.location.status), id);
   }
 });

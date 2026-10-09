@@ -1,0 +1,592 @@
+{
+  "checkedAt": "2026-10-09",
+  "scope": "写真の48ロゴ中、IHIを除く47候補。物理的入居の公開根拠とロゴ対象の法人・拠点を照合。",
+  "policy": "オンライン会員を含む一般ロゴ一覧だけでは住所確定しない。公開根拠未確認は退去・不在を意味しない。写真そのものは公開しない。",
+  "added": [
+    "morisawa-usa-rakunest",
+    "nagashima-us-silicon-valley",
+    "mori-hamada-us-san-mateo",
+    "hitachi-solutions-america-san-mateo",
+    "revvo-technologies-rakunest",
+    "nissan-chemical-america-open-innovation"
+  ],
+  "updated": [
+    "jcb-silicon-valley",
+    "jtb-silicon-valley",
+    "hakuhodo-dy-irep",
+    "systena-rakunest",
+    "exedy-rakunest"
+  ],
+  "protected": {
+    "id": "ihi-rakunest",
+    "unchanged": true,
+    "serializedFeatureSha256": "6c011109aa10884a6a63a988dd4d62f3dabb39d642bc4f0ce623284a2aa98109"
+  },
+  "appliedRecords": [
+    {
+      "id": "jcb-silicon-valley",
+      "action": "updated",
+      "name": "JCB International Credit Card Co., Ltd. — Silicon Valley Office",
+      "nameJa": "JCB米国法人 シリコンバレーオフィス",
+      "sourceUrl": "https://www.global.jcb/en/about-us/company/locations/index.html",
+      "profileSourceUrl": "https://www.global.jcb/en/about-us/company/locations/index.html",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive, Suite 400",
+      "presenceStatus": "verified",
+      "note": "JCB lists the Silicon Valley office under JCB International Credit Card Co., Ltd. RakuNest also identifies this office as JCB USA: https://www.rakunest.com/jcb"
+    },
+    {
+      "id": "jtb-silicon-valley",
+      "action": "updated",
+      "name": "JTB Group Silicon Valley",
+      "nameJa": "JTBグループ シリコンバレー拠点",
+      "sourceUrl": "https://www.rakunest.com/jtb",
+      "profileSourceUrl": "https://www.rakunest.com/jtb",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive, Suite 400",
+      "presenceStatus": "verified",
+      "note": "RakuNest identifies JTB as a coworking member. The interview includes JTB Americas and JTB USA; the specific contracting subsidiary is not published, so this record retains its group-level identity."
+    },
+    {
+      "id": "hakuhodo-dy-irep",
+      "action": "updated",
+      "name": "Irep Inc.",
+      "nameJa": "Irep Inc.（アイレップ米国法人）",
+      "sourceUrl": "https://irep.inc/contact/",
+      "profileSourceUrl": "https://irep.inc/contact/",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive, Suite 400",
+      "presenceStatus": "verified",
+      "note": "The logo and official contact page identify Irep Inc., rather than the whole Hakuhodo DY Group."
+    },
+    {
+      "id": "systena-rakunest",
+      "action": "updated",
+      "name": "Systena America Inc. — Silicon Valley Mobility Center",
+      "nameJa": "システナアメリカ シリコンバレー・モビリティセンター",
+      "sourceUrl": "https://mobility.systena.co.jp/",
+      "profileSourceUrl": "https://mobility.systena.co.jp/",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive",
+      "presenceStatus": "verified",
+      "note": "Systena America is identified by its own site and its parent group directory. Its Mobility Business page links to the official mobility site publishing 900 Concar Dr. No suite number is published on that location page."
+    },
+    {
+      "id": "exedy-rakunest",
+      "action": "updated",
+      "name": "EXEDY Corporation — Silicon Valley Office",
+      "nameJa": "株式会社エクセディ シリコンバレーオフィス",
+      "sourceUrl": "https://exm.exedy.com/ja/assets/pdf/stockholder/FY2023Mid_FinancialStatement.pdf",
+      "profileSourceUrl": "https://exm.exedy.com/ja/assets/pdf/stockholder/FY2023Mid_FinancialStatement.pdf",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive, Suite 400",
+      "presenceStatus": "review",
+      "note": "EXEDY Corporation publicly identifies its Silicon Valley office inside RakuNest in its 2023-12-26 financial presentation (PDF page 16, slide label 17/25). This is historical tenancy evidence, not a current office directory; current presence remains under review. Do not relabel this office as EXEDY Globalparts Corporation."
+    },
+    {
+      "id": "morisawa-usa-rakunest",
+      "action": "added",
+      "name": "Morisawa USA Inc.",
+      "nameJa": "モリサワUSA",
+      "sourceUrl": "https://en.morisawa.co.jp/about/outline/",
+      "profileSourceUrl": "https://en.morisawa.co.jp/about/outline/",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive, Suite 400",
+      "presenceStatus": "verified",
+      "note": null
+    },
+    {
+      "id": "nagashima-us-silicon-valley",
+      "action": "added",
+      "name": "Nagashima Ohno & Tsunematsu US LLP — Silicon Valley",
+      "nameJa": "長島・大野・常松 US LLP シリコンバレー事務所",
+      "sourceUrl": "https://www.nagashima.com/en/locations/silicon_valley/",
+      "profileSourceUrl": "https://www.nagashima.com/en/locations/silicon_valley/",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive, Suite 400",
+      "presenceStatus": "verified",
+      "note": null
+    },
+    {
+      "id": "mori-hamada-us-san-mateo",
+      "action": "added",
+      "name": "Mori Hamada US LLP — San Mateo",
+      "nameJa": "森・濱田松本 US LLP サンマテオ事務所",
+      "sourceUrl": "https://www.morihamada.com/en/about-us/locations/sanfrancisco-bayarea",
+      "profileSourceUrl": "https://www.morihamada.com/en/about-us/locations/sanfrancisco-bayarea",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive, Suite 400",
+      "presenceStatus": "verified",
+      "note": null
+    },
+    {
+      "id": "hitachi-solutions-america-san-mateo",
+      "action": "added",
+      "name": "Hitachi Solutions America, Ltd. — Bay Area",
+      "nameJa": "日立ソリューションズアメリカ ベイエリア拠点",
+      "sourceUrl": "https://global.hitachi-solutions.com/contact-us/",
+      "profileSourceUrl": "https://global.hitachi-solutions.com/contact-us/",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive",
+      "presenceStatus": "verified",
+      "note": "The parent group directory links this corporate website to Hitachi Solutions America, Ltd. The contact page lists its Bay Area office at 900 Concar Drive, without a suite number. Hitachi America, Ltd. is a separate company and retains its Santa Clara address. Corporate publisher identity is corroborated by https://www.hitachi-solutions.com/group_companies/ and https://global.hitachi-solutions.com/privacy-policy/."
+    },
+    {
+      "id": "revvo-technologies-rakunest",
+      "action": "added",
+      "name": "Revvo Technologies, Inc.",
+      "nameJa": "Revvo Technologies",
+      "sourceUrl": "https://www.rakunest.com/revvo",
+      "profileSourceUrl": "https://www.revvo.ai/job/senior-data-analyst/",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive",
+      "presenceStatus": "verified",
+      "note": "Revvo names its legal employer and workplace address on its official careers page. RakuNest also publishes a dedicated member profile: https://www.rakunest.com/revvo. No company-specific suite number is published."
+    },
+    {
+      "id": "nissan-chemical-america-open-innovation",
+      "action": "added",
+      "name": "Nissan Chemical America Corporation — Open Innovation Office",
+      "nameJa": "日産化学アメリカ オープンイノベーション拠点",
+      "sourceUrl": "https://nissanchem-usa.com/open-innovation-office/contact-open-innovation/",
+      "profileSourceUrl": "https://nissanchem-usa.com/open-innovation-office/contact-open-innovation/",
+      "locationPrecision": "address",
+      "address": "900 Concar Drive, Suite 400",
+      "presenceStatus": "verified",
+      "note": "The dedicated Open Innovation contact page distinguishes the office address (900 Concar Drive, Suite 400) from 800 Concar Drive, Suite 400, its mailing address. The general corporate contact page lists the mailing address; the map uses the explicitly published office address."
+    }
+  ],
+  "heldCandidates": [
+    {
+      "logo": "清水建設 / SHIMZ",
+      "entityCandidate": "Shimizu Corporation / Shimizu America, Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.shimz.co.jp/en/company/about/news-release/2020/2020012.html",
+        "https://www.shimz-global.com/sai/en/about/locations/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "ENEOS",
+      "entityCandidate": "ENEOS USA, Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.eneos.co.jp/english/rd/research/open-innovation/open-innovation.html",
+        "https://www.eneos.us/contact-us/",
+        "https://www.eneos.us/corporate/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "Kurita",
+      "entityCandidate": "Kurita America, Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.kurita-water.com/en/location/northamerica.html",
+        "https://www.kuritaamerica.com/connect/contact-kurita-america",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "TOSOH",
+      "entityCandidate": "Tosoh USA, Inc. California Sales Office",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://tosoh-sgm.jp/en/contact/",
+        "https://www.tosoh.co.jp/company/network/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "SEKISUI",
+      "entityCandidate": "SEKISUI America Corporation / SEKISUI Products, LLC",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.sekisui-corp.com/contact-us/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "SEKISUI S-LEC",
+      "entityCandidate": "SEKISUI S-Lec America",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.sekisui-corp.com/contact-us/",
+        "https://www.sekisui-corp.com/companies/sekisui-s-lec-america/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "Mitsubishi HC Capital",
+      "entityCandidate": "Mitsubishi HC Capital America, Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.mitsubishi-hc-capital.com/english/news/2023/20230803-01.html",
+        "https://www.mitsubishi-hc-capital.com/corporate/network.html",
+        "https://www.mhccna.com/en-us/about-us/press-release/mitsubishi-hc-capital-america-mitsubishi-hc-capital-usa-and-engs-commercial?page=7",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "Rakuten Securities / 楽天証券",
+      "entityCandidate": "Rakuten Securities, Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.rakuten-sec.co.jp/smartphone/company/profile/?l-id=select_sp",
+        "https://global.rakuten.com/corp/about/map/am_us_rchw.html",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "DAIKIN",
+      "entityCandidate": "Daikin Open Innovation Lab Silicon Valley",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.dsv.daikin.com/who-we-are/",
+        "https://www.daikin.co.jp/tic/facilities",
+        "https://www.daikin.com/about/design/2020/08/entry-65",
+        "https://www.northamerica-daikin.com/contact",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "Canon",
+      "entityCandidate": "Canon U.S.A., Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://l.csa.canon.com/ca/san-jose/3300-north-first-street.html",
+        "https://www.usa.canon.com/business/industrial/contact-semiconductor-products",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "KOBELCO",
+      "entityCandidate": "Kobe Steel USA Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.kobelco.co.jp/english/about-kobelco/overseas-location.html",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "FUJIFILM Pharmaceuticals U.S.A.",
+      "entityCandidate": "FUJIFILM Pharmaceuticals U.S.A., Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.fujifilmpharma.com/about-us/",
+        "https://www.fujifilm.com/us/en/about/region/affiliates",
+        "https://www.fujifilm.com/us/en/about/region/affiliates/graphic-systems/contact-us",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "TOPPAN",
+      "entityCandidate": "TOPPAN America Inc. (San Jose electronics office)",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.toppan.com/en/electronics/profile/addr_overseas/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "NEC",
+      "entityCandidate": "NEC Corporation of America / NEC Laboratories America (separate entities; unresolved)",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.nec.com/en/global/rd/labs/america/index.html",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "Furukawa Electric Group",
+      "entityCandidate": "Furukawa Electric Co., Ltd. / U.S. affiliate unresolved",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.furukawa.co.jp/rd/profile/svil.html",
+        "https://www.furukawaelectric.com/en/company/outline.html",
+        "https://www.furukawaelectric.com/jyotsutop/english/inquiry/fiberdevice.htm",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "BIPROGY",
+      "entityCandidate": "BIPROGY USA, Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.rakunest.com/clients",
+        "https://www.biprogy-us.com/",
+        "https://www.biprogy.com/e/about/profile.html",
+        "https://www.linkedin.com/company/biprogy-us"
+      ]
+    },
+    {
+      "logo": "F.C.C.",
+      "entityCandidate": "F.C.C. Co., Ltd. / FCC (North America), Inc. (brand-level logo)",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://fcc-na.com/us-overseas-locations/",
+        "https://fcc-na.com/about/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "AISIN",
+      "entityCandidate": "AISIN group / AISIN World Corp. of America (affiliate unresolved)",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.aisinworld.com/about-aisin-group/north-and-central-american-network/locations/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "NGK",
+      "entityCandidate": "NGK Insulators, Ltd. (日本ガイシ); U.S. affiliate unresolved",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.ngk-global.com/info/network/sort-northamerica/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "Mitsubishi Electric",
+      "entityCandidate": "Mitsubishi Electric US, Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://us.mitsubishielectric.com/fa/en/about-us/locations/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "TANAKA",
+      "entityCandidate": "TANAKA America Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://tanaka-preciousmetals.com/en/corporate/outline.html",
+        "https://wovn-origin.tanaka-preciousmetals.com/en/corporate/offices.html",
+        "https://tanaka-preciousmetals.com/en/news/sites/topics/en/20151001_01.pdf",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "SANKO SEIKA",
+      "entityCandidate": "SANKO SEIKA Co., Ltd.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.sanko-seika.co.jp/company/profile/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "コンピュータマインド",
+      "entityCandidate": "Computer Mind Co., Ltd.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.computermind.co.jp/company",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "Intralink",
+      "entityCandidate": "Intralink Group Limited (Silicon Valley office)",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.intralinkgroup.com/Contact-Us",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "Kansai Electric Power",
+      "entityCandidate": "The Kansai Electric Power Company, Incorporated",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.kepco.co.jp/english/corporate/info/profile/outline.html",
+        "https://www.kepco.co.jp/english/corporate/info/international/offices/index.html"
+      ]
+    },
+    {
+      "logo": "K&Associates",
+      "entityCandidate": "K&associates Co., Ltd.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.bizprofile.net/ca/san-mateo/k-associates-co-ltd",
+        "https://www.nsp-inc.com/",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "SCSK",
+      "entityCandidate": "SCSK USA Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.scskusa.com/company.html",
+        "https://www.scskusa.com/contact.html",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "DUNLOP",
+      "entityCandidate": "Dunlop Tires North America, Inc. (tire business) / Dunlop Sports Americas (sports business); exact photo entity unresolved",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.dunloptires.com/contact-us/customer-contact",
+        "https://us.dunlopsports.com/dunlop/contact-us.html",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "Kubota",
+      "entityCandidate": "Kubota brand; current North American entities include Kubota Tractor Corporation, Kubota North America Corporation, and Kubota Credit Corporation",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.kubotausa.com/locations",
+        "https://www.kubotausa.com/terms-of-use"
+      ]
+    },
+    {
+      "logo": "Innovation Core SEI",
+      "entityCandidate": "Innovation Core SEI, Inc. (ICS)",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://sumitomoelectric.com/company/office_group_companies/innovation-core-sei-inc",
+        "https://sumitomoelectric.com/jp/company/office_group_companies/innovation-core-sei-inc",
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "MARUEI",
+      "entityCandidate": null,
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.rakunest.com/clients"
+      ]
+    },
+    {
+      "logo": "HD Systems",
+      "entityCandidate": "HD Systems, Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.hds.co.jp/english/company/group/"
+      ]
+    },
+    {
+      "logo": "TMI Associates",
+      "entityCandidate": "TMI Associates Silicon Valley LLP",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.tmi.gr.jp/about/bases/siliconvalley-office.html"
+      ]
+    },
+    {
+      "logo": "STech I USA",
+      "entityCandidate": "Sojitz Tech-Innovation USA Co., Ltd.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://sojitz-ti.us/ja/about-ja/"
+      ]
+    },
+    {
+      "logo": "Mitsubishi Research Institute",
+      "entityCandidate": "Mitsubishi Research Institute, Inc.",
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.mri.co.jp/"
+      ]
+    },
+    {
+      "logo": "Hitachi",
+      "entityCandidate": null,
+      "outcome": "公開物理入居根拠不足のため更新・追加しない",
+      "checkedSources": [
+        "https://www.hitachi.co.jp/rd/about/location/"
+      ]
+    }
+  ],
+  "limitations": [
+    "JTBは個別入居インタビューを確認できるが、契約法人がJTB Americas/JTB USAのどちらか未公表のためグループ拠点名を保持。",
+    "EXEDYの個別入居根拠は2023-12-26の過去資料（PDF page 16、印刷番号17/25）。現所在ステータスはreviewを維持。",
+    "日産化学の専用拠点contact頁はOffice Addressを900 Concar、Mailing Addressを800 Concarと区別。900 Concarを番地・現所在確認済みとして採用。",
+    "森・濱田松本の公開location頁はWeb閲覧で確認したが、監査用直接HTTPアクセスには403を返す。公式根拠は保持し、サイト疎通はunchecked。"
+  ],
+  "verification": {
+    "featureCount": 1040,
+    "testsPassed": 70,
+    "liveSourceChecks": [
+      {
+        "id": "jcb-silicon-valley",
+        "sourceUrl": "https://www.global.jcb/en/about-us/company/locations/index.html",
+        "sourceHttpStatus": 200,
+        "automatedPresence": "verified",
+        "websiteHttpStatus": 200
+      },
+      {
+        "id": "jtb-silicon-valley",
+        "sourceUrl": "https://www.rakunest.com/jtb",
+        "sourceHttpStatus": 200,
+        "automatedPresence": "verified",
+        "websiteHttpStatus": 200
+      },
+      {
+        "id": "hakuhodo-dy-irep",
+        "sourceUrl": "https://irep.inc/contact/",
+        "sourceHttpStatus": 200,
+        "automatedPresence": "verified",
+        "websiteHttpStatus": 200
+      },
+      {
+        "id": "systena-rakunest",
+        "sourceUrl": "https://mobility.systena.co.jp/",
+        "sourceHttpStatus": 200,
+        "automatedPresence": "verified",
+        "websiteHttpStatus": 200
+      },
+      {
+        "id": "exedy-rakunest",
+        "sourceUrl": "https://exm.exedy.com/ja/assets/pdf/stockholder/FY2023Mid_FinancialStatement.pdf",
+        "sourceHttpStatus": 200,
+        "websiteHttpStatus": 200
+      },
+      {
+        "id": "morisawa-usa-rakunest",
+        "sourceUrl": "https://en.morisawa.co.jp/about/outline/",
+        "sourceHttpStatus": 200,
+        "automatedPresence": "verified",
+        "websiteHttpStatus": 200
+      },
+      {
+        "id": "nagashima-us-silicon-valley",
+        "sourceUrl": "https://www.nagashima.com/en/locations/silicon_valley/",
+        "sourceHttpStatus": 200,
+        "automatedPresence": "verified",
+        "websiteHttpStatus": 200
+      },
+      {
+        "id": "mori-hamada-us-san-mateo",
+        "sourceUrl": "https://www.morihamada.com/en/about-us/locations/sanfrancisco-bayarea",
+        "sourceHttpStatus": 403,
+        "websiteHttpStatus": 403
+      },
+      {
+        "id": "hitachi-solutions-america-san-mateo",
+        "sourceUrl": "https://global.hitachi-solutions.com/contact-us/",
+        "sourceHttpStatus": 200,
+        "automatedPresence": "verified",
+        "websiteHttpStatus": 200
+      },
+      {
+        "id": "revvo-technologies-rakunest",
+        "sourceUrl": "https://www.rakunest.com/revvo",
+        "sourceHttpStatus": 200,
+        "automatedPresence": "verified",
+        "websiteHttpStatus": 200
+      },
+      {
+        "id": "nissan-chemical-america-open-innovation",
+        "sourceUrl": "https://nissanchem-usa.com/open-innovation-office/contact-open-innovation/",
+        "sourceHttpStatus": 200,
+        "automatedPresence": "verified",
+        "websiteHttpStatus": 200
+      }
+    ]
+  }
+}

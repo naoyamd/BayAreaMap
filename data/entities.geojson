@@ -19956,8 +19956,8 @@
       },
       "properties": {
         "id": "jcb-silicon-valley",
-        "name": "JCB Silicon Valley",
-        "nameJa": "JCB",
+        "name": "JCB International Credit Card Co., Ltd. — Silicon Valley Office",
+        "nameJa": "JCB米国法人 シリコンバレーオフィス",
         "website": "https://www.global.jcb/en/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
@@ -19966,7 +19966,7 @@
           "payments",
           "finance"
         ],
-        "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
+        "profileSourceUrl": "https://www.global.jcb/en/about-us/company/locations/index.html",
         "location": {
           "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
@@ -19976,21 +19976,27 @@
           "county": "San Mateo County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://www.rakunest.com/clients",
-          "checkedAt": "2026-10-07",
+          "sourceUrl": "https://www.global.jcb/en/about-us/company/locations/index.html",
+          "checkedAt": "2026-10-09",
           "status": "matched"
         },
         "presenceCheck": {
-          "checkedAt": "2026-10-07",
-          "status": "review",
-          "sourceUrl": "https://www.rakunest.com/clients"
+          "checkedAt": "2026-10-09",
+          "status": "verified",
+          "sourceUrl": "https://www.global.jcb/en/about-us/company/locations/index.html"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-07",
+          "checkedAt": "2026-10-09",
           "status": "ok",
-          "attemptedAt": "2026-10-07"
+          "attemptedAt": "2026-10-09"
         },
-        "updatedAt": "2026-10-07"
+        "updatedAt": "2026-10-09",
+        "nameAliases": [
+          "JCB International Credit Card Co., Ltd.",
+          "JCB USA",
+          "JCB Silicon Valley"
+        ],
+        "dataQualityNote": "JCB lists the Silicon Valley office under JCB International Credit Card Co., Ltd. RakuNest also identifies this office as JCB USA: https://www.rakunest.com/jcb"
       }
     },
     {
@@ -20005,7 +20011,7 @@
       "properties": {
         "id": "jtb-silicon-valley",
         "name": "JTB Group Silicon Valley",
-        "nameJa": "JTBグループ",
+        "nameJa": "JTBグループ シリコンバレー拠点",
         "website": "https://www.jtbcorp.jp/en/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
@@ -20014,7 +20020,7 @@
           "travel",
           "business-development"
         ],
-        "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
+        "profileSourceUrl": "https://www.rakunest.com/jtb",
         "location": {
           "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
@@ -20024,21 +20030,25 @@
           "county": "San Mateo County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://www.rakunest.com/clients",
-          "checkedAt": "2026-10-07",
+          "sourceUrl": "https://www.rakunest.com/jtb",
+          "checkedAt": "2026-10-09",
           "status": "matched"
         },
         "presenceCheck": {
-          "checkedAt": "2026-10-07",
-          "status": "review",
-          "sourceUrl": "https://www.rakunest.com/clients"
+          "checkedAt": "2026-10-09",
+          "status": "verified",
+          "sourceUrl": "https://www.rakunest.com/jtb"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-07",
+          "checkedAt": "2026-10-09",
           "status": "ok",
-          "attemptedAt": "2026-10-07"
+          "attemptedAt": "2026-10-09"
         },
-        "updatedAt": "2026-10-07"
+        "updatedAt": "2026-10-09",
+        "nameAliases": [
+          "JTB"
+        ],
+        "dataQualityNote": "RakuNest identifies JTB as a coworking member. The interview includes JTB Americas and JTB USA; the specific contracting subsidiary is not published, so this record retains its group-level identity."
       }
     },
     {
@@ -20052,9 +20062,9 @@
       },
       "properties": {
         "id": "hakuhodo-dy-irep",
-        "name": "Hakuhodo DY Group / Irep",
-        "nameJa": "博報堂DYグループ（Irep）",
-        "website": "https://www.hakuhodody-holdings.co.jp/english/",
+        "name": "Irep Inc.",
+        "nameJa": "Irep Inc.（アイレップ米国法人）",
+        "website": "https://irep.inc/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
@@ -20062,7 +20072,7 @@
           "advertising",
           "marketing"
         ],
-        "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
+        "profileSourceUrl": "https://irep.inc/contact/",
         "location": {
           "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
@@ -20072,21 +20082,26 @@
           "county": "San Mateo County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://www.rakunest.com/clients",
-          "checkedAt": "2026-10-06",
+          "sourceUrl": "https://irep.inc/contact/",
+          "checkedAt": "2026-10-09",
           "status": "matched"
         },
         "presenceCheck": {
-          "checkedAt": "2026-10-06",
-          "status": "review",
-          "sourceUrl": "https://www.rakunest.com/clients"
+          "checkedAt": "2026-10-09",
+          "status": "verified",
+          "sourceUrl": "https://irep.inc/contact/"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-06",
+          "checkedAt": "2026-10-09",
           "status": "ok",
-          "attemptedAt": "2026-10-06"
+          "attemptedAt": "2026-10-09"
         },
-        "updatedAt": "2026-10-06"
+        "updatedAt": "2026-10-09",
+        "nameAliases": [
+          "Irep",
+          "アイレップ"
+        ],
+        "dataQualityNote": "The logo and official contact page identify Irep Inc., rather than the whole Hakuhodo DY Group."
       }
     },
     {
@@ -20691,9 +20706,9 @@
       },
       "properties": {
         "id": "systena-rakunest",
-        "name": "Systena Silicon Valley",
-        "nameJa": "システナ",
-        "website": "https://www.systena.co.jp/eng/",
+        "name": "Systena America Inc. — Silicon Valley Mobility Center",
+        "nameJa": "システナアメリカ シリコンバレー・モビリティセンター",
+        "website": "https://www.systena.us/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
         "scale": "large",
@@ -20701,9 +20716,9 @@
           "information-technology",
           "business-development"
         ],
-        "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
+        "profileSourceUrl": "https://mobility.systena.co.jp/",
         "location": {
-          "address": "900 Concar Drive, Suite 400",
+          "address": "900 Concar Drive",
           "city": "San Mateo",
           "region": "CA",
           "postalCode": "94402",
@@ -20711,21 +20726,28 @@
           "county": "San Mateo County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://www.rakunest.com/clients",
-          "checkedAt": "2026-10-06",
+          "sourceUrl": "https://mobility.systena.co.jp/",
+          "checkedAt": "2026-10-09",
           "status": "matched"
         },
         "presenceCheck": {
-          "checkedAt": "2026-10-06",
-          "status": "review",
-          "sourceUrl": "https://www.rakunest.com/clients"
+          "checkedAt": "2026-10-09",
+          "status": "verified",
+          "sourceUrl": "https://mobility.systena.co.jp/"
         },
         "websiteCheck": {
-          "checkedAt": "2026-09-29",
-          "status": "review",
-          "attemptedAt": "2026-10-06"
+          "checkedAt": "2026-10-09",
+          "status": "ok",
+          "attemptedAt": "2026-10-09"
         },
-        "updatedAt": "2026-10-06"
+        "updatedAt": "2026-10-09",
+        "nameAliases": [
+          "Systena",
+          "Systena America Inc.",
+          "ノースアメリカ モビリティセンター",
+          "Systena Silicon Valley"
+        ],
+        "dataQualityNote": "Systena America is identified by its own site and its parent group directory. Its Mobility Business page links to the official mobility site publishing 900 Concar Dr. No suite number is published on that location page."
       }
     },
     {
@@ -20739,8 +20761,8 @@
       },
       "properties": {
         "id": "exedy-rakunest",
-        "name": "EXEDY Silicon Valley",
-        "nameJa": "エクセディ",
+        "name": "EXEDY Corporation — Silicon Valley Office",
+        "nameJa": "株式会社エクセディ シリコンバレーオフィス",
         "website": "https://www.exedy.com/en/",
         "entityType": "company",
         "japanConnection": "japan-headquartered",
@@ -20749,7 +20771,7 @@
           "automotive",
           "manufacturing"
         ],
-        "profileSourceUrl": "https://blog.nightly.dedyn.io/daily/2026-08-05-japanese-companies-silicon-valley-2024/",
+        "profileSourceUrl": "https://exm.exedy.com/ja/assets/pdf/stockholder/FY2023Mid_FinancialStatement.pdf",
         "location": {
           "address": "900 Concar Drive, Suite 400",
           "city": "San Mateo",
@@ -20759,21 +20781,26 @@
           "county": "San Mateo County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://www.rakunest.com/clients",
-          "checkedAt": "2026-10-06",
+          "sourceUrl": "https://exm.exedy.com/ja/assets/pdf/stockholder/FY2023Mid_FinancialStatement.pdf",
+          "checkedAt": "2026-10-09",
           "status": "matched"
         },
         "presenceCheck": {
-          "checkedAt": "2026-10-06",
+          "checkedAt": "2026-10-09",
           "status": "review",
-          "sourceUrl": "https://www.rakunest.com/clients"
+          "sourceUrl": "https://exm.exedy.com/ja/assets/pdf/stockholder/FY2023Mid_FinancialStatement.pdf"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-06",
+          "checkedAt": "2026-10-09",
           "status": "ok",
-          "attemptedAt": "2026-10-06"
+          "attemptedAt": "2026-10-09"
         },
-        "updatedAt": "2026-10-06"
+        "updatedAt": "2026-10-09",
+        "nameAliases": [
+          "EXEDY",
+          "エクセディ"
+        ],
+        "dataQualityNote": "EXEDY Corporation publicly identifies its Silicon Valley office inside RakuNest in its 2023-12-26 financial presentation (PDF page 16, slide label 17/25). This is historical tenancy evidence, not a current office directory; current presence remains under review. Do not relabel this office as EXEDY Globalparts Corporation."
       }
     },
     {
@@ -64169,6 +64196,340 @@
           "headquarters": "San Francisco, CA, USA",
           "batch": "S24",
           "teamSize": 10
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.300177371754,
+          37.555182590093
+        ]
+      },
+      "properties": {
+        "id": "morisawa-usa-rakunest",
+        "name": "Morisawa USA Inc.",
+        "nameJa": "モリサワUSA",
+        "website": "https://en.morisawa.co.jp/",
+        "entityType": "company",
+        "japanConnection": "japan-headquartered",
+        "scale": "growth",
+        "industries": [
+          "software",
+          "typography"
+        ],
+        "nameAliases": [
+          "Morisawa USA Inc.",
+          "Morisawa",
+          "モリサワ"
+        ],
+        "profileSourceUrl": "https://en.morisawa.co.jp/about/outline/",
+        "description": "US subsidiary of Morisawa developing and supplying digital font software.",
+        "location": {
+          "address": "900 Concar Drive, Suite 400",
+          "city": "San Mateo",
+          "region": "CA",
+          "postalCode": "94402",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://en.morisawa.co.jp/about/outline/",
+          "checkedAt": "2026-10-09",
+          "status": "matched"
+        },
+        "presenceCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "verified",
+          "sourceUrl": "https://en.morisawa.co.jp/about/outline/"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "ok",
+          "attemptedAt": "2026-10-09"
+        },
+        "updatedAt": "2026-10-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.300177371754,
+          37.555182590093
+        ]
+      },
+      "properties": {
+        "id": "nagashima-us-silicon-valley",
+        "name": "Nagashima Ohno & Tsunematsu US LLP — Silicon Valley",
+        "nameJa": "長島・大野・常松 US LLP シリコンバレー事務所",
+        "website": "https://www.nagashima.com/en/",
+        "entityType": "company",
+        "japanConnection": "japan-headquartered",
+        "scale": "large",
+        "industries": [
+          "legal-services",
+          "startup-support"
+        ],
+        "nameAliases": [
+          "Nagashima Ohno & Tsunematsu US LLP",
+          "Nagashima",
+          "長島・大野・常松"
+        ],
+        "profileSourceUrl": "https://www.nagashima.com/en/locations/silicon_valley/",
+        "description": "Silicon Valley office opened in August 2026, providing legal support for Japan-US investments, startups and business alliances.",
+        "location": {
+          "address": "900 Concar Drive, Suite 400",
+          "city": "San Mateo",
+          "region": "CA",
+          "postalCode": "94402",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.nagashima.com/en/locations/silicon_valley/",
+          "checkedAt": "2026-10-09",
+          "status": "matched"
+        },
+        "presenceCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "verified",
+          "sourceUrl": "https://www.nagashima.com/en/locations/silicon_valley/"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "ok",
+          "attemptedAt": "2026-10-09"
+        },
+        "updatedAt": "2026-10-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.300177371754,
+          37.555182590093
+        ]
+      },
+      "properties": {
+        "id": "mori-hamada-us-san-mateo",
+        "name": "Mori Hamada US LLP — San Mateo",
+        "nameJa": "森・濱田松本 US LLP サンマテオ事務所",
+        "website": "https://www.morihamada.com/en/",
+        "entityType": "company",
+        "japanConnection": "japan-headquartered",
+        "scale": "large",
+        "industries": [
+          "legal-services",
+          "startup-support"
+        ],
+        "nameAliases": [
+          "Mori Hamada US LLP",
+          "Mori Hamada",
+          "森・濱田松本"
+        ],
+        "profileSourceUrl": "https://www.morihamada.com/en/about-us/locations/sanfrancisco-bayarea",
+        "description": "San Mateo office of Mori Hamada US LLP supporting business between the Americas and Japan/Asia. The firm also lists a separate San Francisco office.",
+        "location": {
+          "address": "900 Concar Drive, Suite 400",
+          "city": "San Mateo",
+          "region": "CA",
+          "postalCode": "94402",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.morihamada.com/en/about-us/locations/sanfrancisco-bayarea",
+          "checkedAt": "2026-10-09",
+          "status": "matched"
+        },
+        "presenceCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "verified",
+          "sourceUrl": "https://www.morihamada.com/en/about-us/locations/sanfrancisco-bayarea"
+        },
+        "websiteCheck": {
+          "checkedAt": null,
+          "status": "unchecked"
+        },
+        "updatedAt": "2026-10-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.300177371754,
+          37.555182590093
+        ]
+      },
+      "properties": {
+        "id": "hitachi-solutions-america-san-mateo",
+        "name": "Hitachi Solutions America, Ltd. — Bay Area",
+        "nameJa": "日立ソリューションズアメリカ ベイエリア拠点",
+        "website": "https://global.hitachi-solutions.com/",
+        "entityType": "company",
+        "japanConnection": "japan-headquartered",
+        "scale": "large",
+        "industries": [
+          "information-technology",
+          "consulting"
+        ],
+        "nameAliases": [
+          "Hitachi Solutions",
+          "Hitachi Solutions America, Ltd."
+        ],
+        "profileSourceUrl": "https://global.hitachi-solutions.com/contact-us/",
+        "description": "Bay Area office of Hitachi Solutions America, providing cloud, systems integration and consulting services.",
+        "dataQualityNote": "The parent group directory links this corporate website to Hitachi Solutions America, Ltd. The contact page lists its Bay Area office at 900 Concar Drive, without a suite number. Hitachi America, Ltd. is a separate company and retains its Santa Clara address. Corporate publisher identity is corroborated by https://www.hitachi-solutions.com/group_companies/ and https://global.hitachi-solutions.com/privacy-policy/.",
+        "location": {
+          "address": "900 Concar Drive",
+          "city": "San Mateo",
+          "region": "CA",
+          "postalCode": "94402",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://global.hitachi-solutions.com/contact-us/",
+          "checkedAt": "2026-10-09",
+          "status": "matched"
+        },
+        "presenceCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "verified",
+          "sourceUrl": "https://global.hitachi-solutions.com/contact-us/",
+          "evidenceScope": "entity-page"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "ok",
+          "attemptedAt": "2026-10-09"
+        },
+        "updatedAt": "2026-10-09",
+        "correctionSource": {
+          "sourceUrl": "https://global.hitachi-solutions.com/contact-us/",
+          "checkedAt": "2026-10-09"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.300177371754,
+          37.555182590093
+        ]
+      },
+      "properties": {
+        "id": "revvo-technologies-rakunest",
+        "name": "Revvo Technologies, Inc.",
+        "nameJa": "Revvo Technologies",
+        "website": "https://www.revvo.ai/",
+        "entityType": "company",
+        "japanConnection": "none",
+        "scale": "startup",
+        "industries": [
+          "automotive",
+          "iot",
+          "ai"
+        ],
+        "nameAliases": [
+          "Revvo Technologies, Inc.",
+          "Revvo"
+        ],
+        "profileSourceUrl": "https://www.revvo.ai/job/senior-data-analyst/",
+        "description": "Tire intelligence startup combining sensors, AI and fleet operations.",
+        "dataQualityNote": "Revvo names its legal employer and workplace address on its official careers page. RakuNest also publishes a dedicated member profile: https://www.rakunest.com/revvo. No company-specific suite number is published.",
+        "location": {
+          "address": "900 Concar Drive",
+          "city": "San Mateo",
+          "region": "CA",
+          "postalCode": "94402",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.rakunest.com/revvo",
+          "checkedAt": "2026-10-09",
+          "status": "matched"
+        },
+        "presenceCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "verified",
+          "sourceUrl": "https://www.rakunest.com/revvo"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "ok",
+          "attemptedAt": "2026-10-09"
+        },
+        "updatedAt": "2026-10-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.300177371754,
+          37.555182590093
+        ]
+      },
+      "properties": {
+        "id": "nissan-chemical-america-open-innovation",
+        "name": "Nissan Chemical America Corporation — Open Innovation Office",
+        "nameJa": "日産化学アメリカ オープンイノベーション拠点",
+        "website": "https://nissanchem-usa.com/",
+        "entityType": "company",
+        "japanConnection": "japan-headquartered",
+        "scale": "large",
+        "industries": [
+          "chemicals",
+          "research"
+        ],
+        "nameAliases": [
+          "Nissan Chemical America Corporation",
+          "Nissan Chemical"
+        ],
+        "profileSourceUrl": "https://nissanchem-usa.com/open-innovation-office/contact-open-innovation/",
+        "description": "Open innovation office publicly identified by Nissan Chemical America as Nissan Chemical @ RakuNest.",
+        "dataQualityNote": "The dedicated Open Innovation contact page distinguishes the office address (900 Concar Drive, Suite 400) from 800 Concar Drive, Suite 400, its mailing address. The general corporate contact page lists the mailing address; the map uses the explicitly published office address.",
+        "location": {
+          "address": "900 Concar Drive, Suite 400",
+          "city": "San Mateo",
+          "region": "CA",
+          "postalCode": "94402",
+          "countryCode": "US",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://nissanchem-usa.com/open-innovation-office/contact-open-innovation/",
+          "checkedAt": "2026-10-09",
+          "status": "matched"
+        },
+        "presenceCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "verified",
+          "sourceUrl": "https://nissanchem-usa.com/open-innovation-office/contact-open-innovation/",
+          "evidenceScope": "entity-page"
+        },
+        "websiteCheck": {
+          "checkedAt": "2026-10-09",
+          "status": "ok",
+          "attemptedAt": "2026-10-09"
+        },
+        "updatedAt": "2026-10-09",
+        "correctionSource": {
+          "sourceUrl": "https://nissanchem-usa.com/open-innovation-office/contact-open-innovation/",
+          "checkedAt": "2026-10-09"
         }
       }
     }

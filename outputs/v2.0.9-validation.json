@@ -1,0 +1,21 @@
+{
+  "version": "2.0.9",
+  "request": "Use the RakuNest photo as identity leads, add only publicly disclosed physical tenants, and leave IHI unchanged.",
+  "verification": {
+    "photoLogos": 48,
+    "candidatesResearchedExcludingIhi": 47,
+    "existingRecordsUpdated": 5,
+    "recordsAdded": 6,
+    "heldCandidates": 36,
+    "entitiesValidated": 1040,
+    "testsPassed": 70,
+    "unchangedIhiSerializedFeatureSha256": "6c011109aa10884a6a63a988dd4d62f3dabb39d642bc4f0ce623284a2aa98109",
+    "unrelatedRecords": "Every existing record except the five named updates is identical to the baseline; no deletions.",
+    "sourceChecks": "Nine verified records passed the existing presence classifier against live HTTP 200 source HTML. Mori Hamada's public location was confirmed through Web research, while direct audit HTTP returned 403. EXEDY historical PDF remains review.",
+    "nissanChemical": "The dedicated contact page separates Office Address (900 Concar) from Mailing Address (800 Concar); office street precision is verified.",
+    "browser": "Local browser showed the 18-pin shared-building layout and the new Nissan Chemical detail with 900 Concar and its mailing-address note; geometry/ownership regressions also pass."
+  },
+  "publicReview": "outputs/rakunest-public-review-2026-10-09.json",
+  "limitations": "General facility logos mix physical and digital membership; no unsupported logos were registered. JTB's exact contracting subsidiary remains unspecified, and EXEDY's individual tenancy document is historical.",
+  "publication": "GitHub Pages workflow records deployment status; production is checked through Browser Use after deployment."
+}
