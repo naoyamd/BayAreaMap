@@ -730,7 +730,14 @@ function refreshCityMarkers(expandedIds = new Set()) {
   for (const group of groups.values()) {
     if (group.every(feature => expandedIds.has(feature.properties.id))) continue;
     const city = group[0].properties.location.city;
-    const marker = L.marker(latlngOf(group[0]), { pane: "city-centroids", icon: L.divIcon({
+    let countPosition = latlngOf(group[0]);
+    if (city === "San Francisco") {
+      // SF's approximate anchor coincides with Mitsui Fudosan; leave its real-address icon in place.
+      if (group.some(feature => expandedIds.has(feature.properties.id))) continue;
+      const anchor = map.latLngToLayerPoint(countPosition);
+      countPosition = map.layerPointToLatLng([anchor.x - 72, anchor.y]);
+    }
+    const marker = L.marker(countPosition, { pane: "city-centroids", icon: L.divIcon({
       className: "company-cluster city-cluster", html: `<span>${group.length}</span>`, iconSize: [48, 48],
     }) });
     const action = group.length > CITY_PAGE_SIZE ? `Browse company icons ${CITY_PAGE_SIZE} at a time.` : "Click to expand company icons.";

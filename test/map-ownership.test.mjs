@@ -65,7 +65,7 @@ function ownershipHarness(features) {
     markerClusterGroup: options => { cluster.options = options; return cluster; },
     layerGroup: () => layerGroups.shift(), polyline: (points, options) => ({ addTo(group) { group.count++; group.points.push(points); group.options.push(options); } }),
     divIcon: options => options,
-    marker: () => ({ events: {}, bindTooltip() {}, on(event, fn) { this.events[event] = fn; }, addTo(group) { group.members.add(this); } }),
+    marker: (position, options) => ({ position, options, events: {}, bindTooltip() {}, on(event, fn) { this.events[event] = fn; }, addTo(group) { group.members.add(this); } }),
   } };
   runInNewContext(source + "\n;globalThis.logic = { initMap, refreshMapLayers, focusEntity, state, chunkProgress: onClusterChunkProgress, setData(value, cache) { visibleEntities = value; markersById = cache; } };", sandbox);
   logic = sandbox.logic;
@@ -232,7 +232,7 @@ test("SF's nearby approximate anchors share one count and bounded pages reach ev
   for (let page = 0; page < Math.ceil(companies.length / 24); page++) {
     h.state.cityPage = page; h.refresh(17);
     assert.ok(h.town.members.size <= 24);
-    assert.equal(h.city.members.size, 1, "total count remains available while browsing pages");
+    assert.equal(h.city.members.size, 0, "SF's count yields to its page icons; the pager shows the total");
     assert.equal(h.cluster.members.size, 0);
     for (const marker of h.town.members) { assert.ok(!seen.has(marker.id)); seen.add(marker.id); }
   }
@@ -242,4 +242,31 @@ test("SF's nearby approximate anchors share one count and bounded pages reach ev
   h.focus(companies.at(-1));
   assert.equal(h.state.cityPage, Math.floor((companies.length - 1) / 24));
   assert.ok(h.town.members.has(h.markers.get(companies.at(-1).properties.id)), "selecting an off-page company opens its page");
+});
+
+test("only SF's representative count shifts clear of its co-located street icon across zoom changes", () => {
+  const companies = geo.features.filter(f => f.properties.location.precision === "city" && f.properties.location.city === "San Francisco");
+  const street = structuredClone(geo.features.find(f => f.properties.id === "mitsui-fudosan-san-francisco"));
+  // Keep the reported collision reproducible if a later address audit refines the street coordinate.
+  street.geometry.coordinates = [...companies[0].geometry.coordinates];
+  const original = JSON.stringify([...companies, street]);
+  const h = ownershipHarness([...companies, street]);
+  for (const zoom of [13, 16, 17, 18, 19, 17]) {
+    h.refresh(zoom);
+    const count = [...h.city.members][0];
+    const countPoint = h.map.latLngToLayerPoint([count.position.lat, count.position.lng]);
+    const streetPoint = h.map.latLngToLayerPoint(h.markers.get(street.properties.id).pos);
+    assert.ok(Math.abs(countPoint.x - streetPoint.x) > (48 + 42) / 2 + 10,
+      `the complete count remains clickable beside the street icon at zoom ${zoom}`);
+    assert.ok(Math.abs(countPoint.y - streetPoint.y) < 0.001);
+  }
+  h.setVisible(companies.slice(0, 2)); h.refresh(13);
+  [...h.city.members][0].events.click();
+  assert.equal(h.city.members.size, 0); assert.equal(h.town.members.size, 2);
+  assert.equal(JSON.stringify([...companies, street]), original, "display exception never moves stored coordinates");
+  const sanJose = geo.features.filter(f => f.properties.location.precision === "city" && f.properties.location.city === "San Jose");
+  const other = ownershipHarness(sanJose); other.refresh(13);
+  const otherCount = [...other.city.members][0];
+  assert.deepEqual(Array.from(otherCount.position), [sanJose[0].geometry.coordinates[1], sanJose[0].geometry.coordinates[0]],
+    "other cities retain their representative positions");
 });

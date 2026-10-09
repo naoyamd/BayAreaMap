@@ -1,0 +1,18 @@
+{
+  "version": "2.0.8",
+  "request": "Apply a local exception for the SF approximate city count hidden behind another company icon.",
+  "cause": "The San Francisco city anchor and Mitsui Fudosan San Francisco have identical stored coordinates.",
+  "changes": [
+    "Move only the SF representative count 72 screen pixels left",
+    "Hide that count while SF company pages are expanded; the existing pager retains totals and navigation",
+    "Preserve all stored coordinates and other cities' representative positions"
+  ],
+  "verification": {
+    "testsPassed": 68,
+    "dataValidation": "1034 entities passed; entity data unchanged",
+    "regression": "Real SF/Mitsui fixtures remain separated across zoom 13, 16, 17, 18 and 19; all SF pages remain reachable and San Jose retains its original position.",
+    "browserBefore": "Observed the production SF count hidden beneath Mitsui Fudosan at zoom 17.",
+    "browserAfter": "Local preview at zoom 17 showed the complete count beside Mitsui Fudosan; clicking it opened 1–24 of 483 company icons and hid the count. DOM rectangle checks found no count/icon collisions at zoom 16 and 18."
+  },
+  "publication": "GitHub Pages workflow records deployment status; production is checked through Browser Use after deployment."
+}
