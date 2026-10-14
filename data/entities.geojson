@@ -24944,13 +24944,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/trm-labs",
           "sourceType": "official-directory"
@@ -25395,16 +25395,15 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/sendbird",
-          "sourceType": "official-directory"
+          "checkedAt": "2026-10-14",
+          "status": "review",
+          "sourceUrl": "https://sendbird.com/about"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -25622,13 +25621,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/teleport",
           "sourceType": "official-directory"
@@ -25843,13 +25842,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/snappr",
           "sourceType": "official-directory"
@@ -27185,13 +27184,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/tempo",
           "sourceType": "official-directory"
@@ -27863,16 +27862,15 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/singlestore",
-          "sourceType": "official-directory"
+          "checkedAt": "2026-10-14",
+          "status": "review",
+          "sourceUrl": "https://www.singlestore.com/company/jay-schaufeld/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -27934,17 +27932,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://standard.ai/contact-us/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/standard-ai",
           "sourceType": "official-directory"
@@ -29068,13 +29066,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/short-story",
           "sourceType": "official-directory"
@@ -29146,13 +29144,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/supabase",
           "sourceType": "official-directory"
@@ -30875,13 +30873,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/treasury-prime",
           "sourceType": "official-directory"
@@ -31177,13 +31175,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/shogun",
           "sourceType": "official-directory"
@@ -31253,11 +31251,11 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/substack",
           "sourceType": "official-directory"
@@ -31926,22 +31924,21 @@
           "county": "San Francisco County",
           "precision": "address",
           "coordinateSource": "census-geocoder",
-          "sourceUrl": "https://get.talkable.com/about-talkable",
+          "sourceUrl": "https://www.talkable.com/about-talkable",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/talkable",
-          "sourceType": "official-directory"
+          "checkedAt": "2026-10-14",
+          "status": "review",
+          "sourceUrl": "https://www.talkable.com/about-talkable"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -32456,13 +32453,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/tavus",
           "sourceType": "official-directory"
@@ -32978,13 +32975,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/shef",
           "sourceType": "official-directory"
@@ -33045,17 +33042,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.slash.com/products/corporate-cards",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-09",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.slash.com/products/corporate-cards"
         },
@@ -33121,13 +33118,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/stark-bank",
           "sourceType": "official-directory"
@@ -34396,13 +34393,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/shepherd",
           "sourceType": "official-directory"
@@ -34546,13 +34543,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/stayflexi",
           "sourceType": "official-directory"
@@ -35140,13 +35137,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/storylane",
           "sourceType": "official-directory"
@@ -35286,20 +35283,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.tesorio.com/about",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/tesorio",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.tesorio.com/about"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -36636,20 +36632,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.sinai.com/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/sinai",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.sinai.com/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -36715,13 +36710,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/suger",
           "sourceType": "official-directory"
@@ -37522,17 +37517,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.taxgpt.com/contact",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/taxgpt",
           "sourceType": "official-directory"
@@ -37826,13 +37821,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sully",
           "sourceType": "official-directory"
@@ -39483,13 +39478,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/speak",
           "sourceType": "official-directory"
@@ -39559,13 +39554,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/thunkable",
           "sourceType": "official-directory"
@@ -39629,20 +39624,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.tint.ai/about-us",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/tint",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.tint.ai/about-us"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -39782,13 +39776,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/signoz",
           "sourceType": "official-directory"
@@ -39857,13 +39851,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/snackpass",
           "sourceType": "official-directory"
@@ -40528,13 +40522,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/simplyinsured",
           "sourceType": "official-directory"
@@ -40606,11 +40600,11 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sourceress",
           "sourceType": "official-directory"
@@ -40674,20 +40668,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.streak.com/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/streak",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.streak.com/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -40756,13 +40749,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/unlayer",
           "sourceType": "official-directory"
@@ -41135,13 +41128,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sieve",
           "sourceType": "official-directory"
@@ -41204,17 +41197,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.stacksync.com/contact",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/stacksync",
           "sourceType": "official-directory"
@@ -41284,13 +41277,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/trellis-ai",
           "sourceType": "official-directory"
@@ -41580,17 +41573,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://segmed.ai/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-09",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://segmed.ai/"
         },
@@ -43545,13 +43538,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/spellbrush",
           "sourceType": "official-directory"
@@ -43622,13 +43615,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/truewind",
           "sourceType": "official-directory"
@@ -43920,13 +43913,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/synthio-labs",
           "sourceType": "official-directory"
@@ -44148,13 +44141,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/two-dots",
           "sourceType": "official-directory"
@@ -45563,13 +45556,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/seam",
           "sourceType": "official-directory"
@@ -45641,13 +45634,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/stably-ai-orca",
           "sourceType": "official-directory"
@@ -45708,20 +45701,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.syntheticfi.com/faq",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/syntheticfi",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.syntheticfi.com/faq"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -45787,13 +45779,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/terra-api",
           "sourceType": "official-directory"
@@ -45858,17 +45850,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://testrigor.com/about/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/testrigor",
           "sourceType": "official-directory"
@@ -46699,13 +46691,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/snapmagic",
           "sourceType": "official-directory"
@@ -47225,13 +47217,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/socksoho",
           "sourceType": "official-directory"
@@ -47300,13 +47292,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/tandem-2",
           "sourceType": "official-directory"
@@ -47599,13 +47591,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/strada",
           "sourceType": "official-directory"
@@ -49254,13 +49246,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/swif-ai",
           "sourceType": "official-directory"
@@ -49330,13 +49322,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/tamarind-bio",
           "sourceType": "official-directory"
@@ -49403,13 +49395,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/tarjimly-acquired",
           "sourceType": "official-directory"
@@ -49481,13 +49473,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/toma",
           "sourceType": "official-directory"
@@ -50755,13 +50747,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/topkey",
           "sourceType": "official-directory"
@@ -51353,13 +51345,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/slope",
           "sourceType": "official-directory"
@@ -54064,13 +54056,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sirum",
           "sourceType": "official-directory"
@@ -54139,13 +54131,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/stream",
           "sourceType": "official-directory"
@@ -54211,13 +54203,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sunflower",
           "sourceType": "official-directory"
@@ -54287,13 +54279,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/syncly",
           "sourceType": "official-directory"
@@ -54363,13 +54355,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/toothy-ai",
           "sourceType": "official-directory"
@@ -54435,20 +54427,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.ubicloud.com/about-ubicloud",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/ubicloud",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.ubicloud.com/about-ubicloud"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -54515,13 +54506,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/unison",
           "sourceType": "official-directory"
@@ -55637,13 +55628,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/semble",
           "sourceType": "official-directory"
@@ -55708,13 +55699,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sphinx",
           "sourceType": "official-directory"
@@ -56075,20 +56066,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://sync.so/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/sync-2",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://sync.so/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -56159,11 +56149,11 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/tara-ai",
           "sourceType": "official-directory"
@@ -58182,13 +58172,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sigmamind-ai",
           "sourceType": "official-directory"
@@ -58257,13 +58247,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sixtyfour",
           "sourceType": "official-directory"
@@ -58333,13 +58323,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/svix",
           "sourceType": "official-directory"
@@ -58404,20 +58394,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.telm.ai/about-us/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/telmai",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.telm.ai/about-us/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -58482,13 +58471,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/token-transit",
           "sourceType": "official-directory"
@@ -58557,13 +58546,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/tolmo",
           "sourceType": "official-directory"
@@ -58631,13 +58620,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-14",
           "status": "ok",
-          "attemptedAt": "2026-10-09"
+          "attemptedAt": "2026-10-14"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-14",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-14",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/truss",
           "sourceType": "official-directory"
