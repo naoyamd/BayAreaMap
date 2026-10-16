@@ -23669,9 +23669,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -23819,9 +23819,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -24046,7 +24046,7 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -25017,9 +25017,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -25092,9 +25092,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -26138,9 +26138,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -26432,9 +26432,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -26507,9 +26507,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -26807,13 +26807,13 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://focal.systems/contact/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -27482,13 +27482,13 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://gigs.com/contact",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -28683,17 +28683,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.gridware.io/about-gridware",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
-        "updatedAt": "2026-10-13",
+        "updatedAt": "2026-10-16",
         "presenceCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "verified",
           "sourceUrl": "https://www.gridware.io/about-gridware"
         },
@@ -28913,9 +28913,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -30420,9 +30420,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -31021,9 +31021,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -31475,9 +31475,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -31550,9 +31550,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -32073,20 +32073,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://exa.ai/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-16",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/exa",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://exa.ai/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -32522,20 +32521,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.tryfinch.com/product/organization",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
-        "updatedAt": "2026-10-12",
+        "updatedAt": "2026-10-16",
         "presenceCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/finch",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.tryfinch.com/product/organization"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -32819,17 +32817,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.golinks.io/sales.php",
           "sourceType": "official-directory",
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
-        "updatedAt": "2026-10-13",
+        "updatedAt": "2026-10-16",
         "presenceCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "verified",
           "sourceUrl": "https://www.golinks.io/sales.php"
         },
@@ -33637,9 +33635,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -34837,9 +34835,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -35881,9 +35879,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -35959,9 +35957,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -37148,9 +37146,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -37294,9 +37292,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -37371,7 +37369,7 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -37741,9 +37739,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -38042,9 +38040,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -38418,9 +38416,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -38493,9 +38491,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -39996,9 +39994,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -40217,9 +40215,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -40293,9 +40291,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -41422,9 +41420,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -41498,9 +41496,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -41647,9 +41645,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -42325,9 +42323,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -42400,9 +42398,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -42475,9 +42473,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -42549,9 +42547,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -42622,9 +42620,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -42696,7 +42694,7 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -43686,9 +43684,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -44956,9 +44954,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -45027,9 +45025,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -45100,9 +45098,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -46376,9 +46374,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -46452,9 +46450,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -48183,9 +48181,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -48259,9 +48257,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -49760,9 +49758,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -49909,9 +49907,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -49983,9 +49981,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -51036,9 +51034,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -52545,9 +52543,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -52619,9 +52617,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -52693,9 +52691,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -52769,9 +52767,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -55249,9 +55247,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -57110,9 +57108,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -57182,9 +57180,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -57257,9 +57255,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -57330,9 +57328,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -59440,9 +59438,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-12",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-12"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-12",
         "presenceCheck": {
@@ -64642,9 +64640,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -67573,9 +67571,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -67648,9 +67646,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -67721,9 +67719,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -67796,9 +67794,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -67871,13 +67869,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
-        "updatedAt": "2026-10-13",
+        "updatedAt": "2026-10-16",
         "presenceCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "review",
           "sourceUrl": "https://careforce.ai/"
         },
@@ -67946,9 +67944,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -68018,9 +68016,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -68090,9 +68088,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -68165,9 +68163,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-10-13",
+          "checkedAt": "2026-10-16",
           "status": "ok",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
@@ -68244,7 +68242,7 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-10-13"
+          "attemptedAt": "2026-10-16"
         },
         "updatedAt": "2026-10-13",
         "presenceCheck": {
