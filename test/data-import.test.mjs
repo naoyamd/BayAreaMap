@@ -9,6 +9,7 @@ import {
   parseOfficialProfile,
   selectRecords,
   verifyOfficialRecord,
+  verifyOfficialRecords,
 } from "../scripts/yc-import.mjs";
 
 const sourceRecord = {
@@ -74,7 +75,7 @@ test("mirror flags cannot self certify presence and same-city mismatches stay re
   assert.equal(untrusted.properties.presenceCheck.status, "review");
   assert.equal(untrusted.properties.presenceCheck.sourceType, "candidate-mirror");
 
-  const existing = featureFromRecord({ ...sourceRecord, website: "https://different-legal-entity.test" }, "2026-09-01", { trustedOfficial: true });
+  const existing = featureFromRecord({ ...sourceRecord, id: 123455, website: "https://different-legal-entity.test" }, "2026-09-01", { trustedOfficial: true });
   existing.properties.presenceCheck = { checkedAt: null, status: "review", sourceUrl: null };
   const result = importDataset({ ...base, features: [existing] }, [sourceRecord], {
     date: "2026-10-03",
@@ -84,6 +85,36 @@ test("mirror flags cannot self certify presence and same-city mismatches stay re
   assert.equal(result.promoted, 0);
   assert.equal(result.added, 1, "same-name different-host entity is retained separately");
   assert.equal(result.doc.features[0].properties.presenceCheck.status, "review");
+});
+
+test("a changed website cannot create a second feature with the same YC ID", () => {
+  const existing = featureFromRecord(sourceRecord, "2026-09-01", { trustedOfficial: true });
+  const changed = { ...sourceRecord, website: "https://new-example.test" };
+  const result = importDataset({ ...base, features: [existing] }, [changed], {
+    date: "2026-11-02", all: true, trustedOfficial: true,
+  });
+  assert.equal(result.added, 0);
+  assert.equal(result.promoted, 0);
+  assert.deepStrictEqual(result.doc.features, [existing]);
+});
+
+test("YC verification does not count an existing ID against the additions limit", async (t) => {
+  const existing = featureFromRecord(sourceRecord, "2026-09-01", { trustedOfficial: true });
+  const changed = { ...sourceRecord, website: "https://new-example.test", team_size: 30 };
+  const next = { ...sourceRecord, id: 123457, slug: "next-company", name: "Next Company", website: "https://next.test" };
+  t.mock.method(globalThis, "fetch", async (url) => {
+    const record = String(url).includes("next-company") ? next : changed;
+    return new Response(officialPage({
+      id: record.id, slug: record.slug, name: record.name, website: record.website,
+      city: "San Carlos", country: "US", ycdc_status: "Active", team_size: record.team_size,
+    }), { status: 200 });
+  });
+  const result = await verifyOfficialRecords([changed, next], { ...base, features: [existing] }, {
+    date: "2026-11-02", limit: 1,
+  });
+  assert.equal(result.promotedCount, 1);
+  assert.equal(result.verifiedCount, 1);
+  assert.equal(result.records[0].id, next.id);
 });
 
 function officialPage(company) {
@@ -172,6 +203,7 @@ test("curated IHI presence uses the RakuNest facility without claiming official 
 
 test("recurring imports restore stale IHI data while retaining user confirmation dates", () => {
   const replay = structuredClone(currentGeo);
+  replay.features.find((feature) => feature.properties.id !== "ihi-rakunest").properties.updatedAt = "2099-01-01";
   const ihi = replay.features.find((feature) => feature.properties.id === "ihi-rakunest");
   const originalWebsiteCheck = structuredClone(ihi.properties.websiteCheck);
   ihi.geometry.coordinates = [-122.249823194785, 37.505417687692];
@@ -203,7 +235,8 @@ test("recurring imports restore stale IHI data while retaining user confirmation
   assert.equal(preserved.properties.presenceCheck.userStatementDate, "2026-10-03");
   assert.equal(preserved.properties.presenceCheck.sourceUrl, null);
   assert.deepStrictEqual(preserved.properties.websiteCheck, originalWebsiteCheck);
-  assert.equal(result.doc.metadata.updatedAt, "2026-11-02");
+  assert.equal(preserved.properties.updatedAt, "2026-11-02");
+  assert.equal(result.doc.metadata.updatedAt, "2099-01-01");
 });
 
 test("selection only includes active Bay Area records with a usable website", () => {
