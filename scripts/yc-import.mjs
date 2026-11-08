@@ -371,8 +371,10 @@ export async function verifyOfficialRecord(record, fetchImpl = fetch) {
 export async function verifyOfficialRecords(records, base, { date = DEFAULT_DATE, limit = DEFAULT_LIMIT, concurrency = 8 } = {}) {
   const names = new Map();
   const domains = new Map();
+  const ids = new Map();
   for (const feature of base.features ?? []) {
     const p = feature.properties ?? {};
+    if (p.id) ids.set(p.id, feature);
     const name = normalizeName(p.name);
     const domain = normalizeHost(p.website);
     if (name) names.set(name, feature);
@@ -396,12 +398,13 @@ export async function verifyOfficialRecords(records, base, { date = DEFAULT_DATE
       if (result.status !== "verified") continue;
       const feature = featureFromRecord(result.record, date, { trustedOfficial: true });
       if (!feature) continue;
-      const existing = findExistingMatch(feature, names, domains);
+      const existing = findExistingMatch(feature, names, domains, ids);
       if (existing) {
         promotions.push(result.record);
         continue;
       }
       verified.push(result.record);
+      ids.set(feature.properties.id, feature);
       names.set(normalizeName(feature.properties.name), feature);
       domains.set(normalizeHost(feature.properties.website), feature);
       if (verified.length >= limit) break;
@@ -503,8 +506,9 @@ export function featureFromRecord(record, date, { trustedOfficial = false } = {}
   };
 }
 
-function findExistingMatch(feature, names, domains) {
+function findExistingMatch(feature, names, domains, ids) {
   const properties = feature.properties ?? {};
+  if (properties.id && ids.has(properties.id)) return ids.get(properties.id);
   const name = normalizeName(properties.name);
   const domain = normalizeHost(properties.website);
   if (domain && domains.has(domain)) return domains.get(domain);
@@ -732,8 +736,10 @@ export function importDataset(base, records, { date = DEFAULT_DATE, limit = DEFA
   const features = Array.isArray(doc.features) ? doc.features : [];
   const names = new Map();
   const domains = new Map();
+  const ids = new Map();
   for (const feature of features) {
     const p = feature.properties ?? {};
+    if (p.id) ids.set(p.id, feature);
     const name = normalizeName(p.name);
     const domain = normalizeHost(p.website);
     if (name) names.set(name, feature);
@@ -749,12 +755,13 @@ export function importDataset(base, records, { date = DEFAULT_DATE, limit = DEFA
     considered += 1;
     const candidate = featureFromRecord(record, date, { trustedOfficial });
     if (!candidate) continue;
-    const existing = findExistingMatch(candidate, names, domains);
+    const existing = findExistingMatch(candidate, names, domains, ids);
     if (existing) {
       if (promotePresence(existing, candidate, date)) promoted += 1;
       continue;
     }
     added.push(candidate);
+    ids.set(candidate.properties.id, candidate);
     names.set(normalizeName(candidate.properties.name), candidate);
     domains.set(normalizeHost(candidate.properties.website), candidate);
   }
