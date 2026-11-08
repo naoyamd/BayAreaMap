@@ -1,6 +1,11 @@
 name: Data audit
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/audit.yml
+      - scripts/audit.mjs
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:
