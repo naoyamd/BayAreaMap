@@ -11,10 +11,10 @@
 
 ## データサマリ
 
-- データ更新日: 2026-11-02
-- 現所在確認日: 2026-11-02
-- 座標照合日: 2026-11-02
-- URL確認日: 2026-11-02
+- データ更新日: 2026-11-08
+- 現所在確認日: 2026-11-08
+- 座標照合日: 2026-11-08
+- URL確認日: 2026-11-08
 - 掲載件数: 1090件
 - 日本関連: 135件
 - 大規模（scale: large）: 263件
@@ -159,15 +159,15 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 | ○ | [Kawasaki Heavy Industries Silicon Valley](https://global.kawasaki.com/en/) | 企業 | 大規模 | San Jose／Santa Clara County | robotics, manufacturing, aerospace, defense | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 確認済み（2026-10-31） | 2026-10-31 |
 | ○ | [KDDI America Silicon Valley](https://us.kddi.com/) | 企業 | 大規模 | San Jose／Santa Clara County | telecommunications, cloud | 都市中心（概略） | 要確認（2026-10-31） | 未照合（—） | 確認済み（2026-10-31） | 2026-10-31 |
 | ○ | [KEYENCE America Bay Area](https://www.keyence.com/) | 企業 | 大規模 | San Jose／Santa Clara County | automation, manufacturing | 都市中心（概略） | 要確認（2026-10-31） | 未照合（—） | 確認済み（2026-10-31） | 2026-10-31 |
-| ○ | [Kikkoman San Francisco](https://www.kikkoman.com/en/) | 企業 | 大規模 | San Francisco／San Francisco County | food, manufacturing | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-| ○ | [Kintone Corporation (Cybozu Group)](https://www.kintone.com/) | 企業 | グロース | San Francisco／San Francisco County | software, collaboration | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-| ○ | [Kioxia America](https://americas.kioxia.com) | 企業 | 大規模 | San Jose／Santa Clara County | semiconductors, electronics | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-| ○ | [Komatsu Silicon Valley](https://www.komatsu.com/) | 企業 | 大規模 | San Francisco／San Francisco County | industrial, manufacturing | 都市中心（概略） | 要確認（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
-| ○ | [Konica Minolta Laboratory USA](https://research.konicaminolta.com) | 企業 | 大規模 | San Mateo／San Mateo County | imaging, research | 都市中心（概略） | 要確認（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
-| ○ | [Kurita Water Industries Silicon Valley](https://www.kurita-water.com/en/) | 企業 | 大規模 | San Mateo／San Mateo County | water, semiconductors, manufacturing | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 要確認（2026-09-29） | 2026-10-29 |
-| ○ | [Kyocera Document Solutions](https://www.kyoceradocumentsolutions.us/) | 企業 | 大規模 | Union City／Alameda County | imaging, electronics | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-| ○ | [LegalOn Technologies US](https://www.legalontech.com/) | 企業 | 大規模 | San Francisco／San Francisco County | legaltech, ai | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-| ○ | [Makita USA](https://www.makitatools.com/) | 企業 | 大規模 | Hayward／Alameda County | tools, manufacturing | 都市中心（概略） | 要確認（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
+| ○ | [Kikkoman San Francisco](https://www.kikkoman.com/en/) | 企業 | 大規模 | San Francisco／San Francisco County | food, manufacturing | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
+| ○ | [Kintone Corporation (Cybozu Group)](https://www.kintone.com/) | 企業 | グロース | San Francisco／San Francisco County | software, collaboration | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
+| ○ | [Kioxia America](https://americas.kioxia.com) | 企業 | 大規模 | San Jose／Santa Clara County | semiconductors, electronics | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
+| ○ | [Komatsu Silicon Valley](https://www.komatsu.com/) | 企業 | 大規模 | San Francisco／San Francisco County | industrial, manufacturing | 都市中心（概略） | 要確認（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+| ○ | [Konica Minolta Laboratory USA](https://research.konicaminolta.com) | 企業 | 大規模 | San Mateo／San Mateo County | imaging, research | 都市中心（概略） | 要確認（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+| ○ | [Kurita Water Industries Silicon Valley](https://www.kurita-water.com/en/) | 企業 | 大規模 | San Mateo／San Mateo County | water, semiconductors, manufacturing | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 要確認（2026-09-29） | 2026-11-08 |
+| ○ | [Kyocera Document Solutions](https://www.kyoceradocumentsolutions.us/) | 企業 | 大規模 | Union City／Alameda County | imaging, electronics | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
+| ○ | [LegalOn Technologies US](https://www.legalontech.com/) | 企業 | 大規模 | San Francisco／San Francisco County | legaltech, ai | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
+| ○ | [Makita USA](https://www.makitatools.com/) | 企業 | 大規模 | Hayward／Alameda County | tools, manufacturing | 都市中心（概略） | 要確認（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
 | ○ | [Marubeni America](https://www.marubeniamerica.com/) | 企業 | 大規模 | San Francisco／San Francisco County | trading, investment | 都市中心（概略） | 要確認（2026-10-31） | 未照合（—） | 確認済み（2026-10-31） | 2026-10-31 |
 | ○ | [Mercari US](https://www.mercari.com/) | 企業 | 大規模 | Palo Alto／Santa Clara County | ecommerce, software | 都市中心（概略） | 要確認（2026-11-01） | 未照合（—） | 要確認（2026-09-29） | 2026-11-01 |
 | ○ | [MinebeaMitsumi Technology Center](https://www.minebeamitsumi.com/) | 企業 | 大規模 | San Jose／Santa Clara County | electronics, manufacturing | 都市中心（概略） | 要確認（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
@@ -266,7 +266,7 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Affirm](https://www.affirm.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-02） | 住所・座標一致（2026-11-02） | 確認済み（2026-11-02） | 2026-11-02 |
 |  | [Affogato AI](https://affogato.ai) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, engineering-product-and-design, artificial-intelligence, generative-ai, ai, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Afriex](https://www.afriexapp.com) | 企業 | グロース | San Francisco／San Francisco County | fintech, payments, remittances | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [After College](https://www.aftercollege.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [After College](https://www.aftercollege.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [AfterQuery](https://afterquery.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, infrastructure, artificial-intelligence, data-labeling, big-data, ai, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Agave](https://www.useagave.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, saas, construction, proptech, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [AgentCollect](https://www.agentcollect.com) | 企業 | グロース | San Francisco／San Francisco County | fintech, artificial-intelligence, b2b, enterprise-software, software | 番地単位 | 確認済み（2026-11-01） | 住所・座標一致（2026-11-01） | 確認済み（2026-11-01） | 2026-11-01 |
@@ -274,30 +274,30 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [AgileMD](https://agilemd.com) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, healthcare-it, machine-learning | 番地単位 | 確認済み（2026-11-01） | 住所・座標一致（2026-11-01） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [AIOS](https://www.aiosmedical.com/) | 企業 | 大規模 | San Francisco／San Francisco County | healthcare, consumer-health-and-wellness, consumer-health-services, health-tech, telemedicine | 都市中心（概略） | 要確認（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [AiPrise](https://aiprise.com/) | 企業 | グロース | San Francisco／San Francisco County | fintech, b2b, identity, compliance, regtech, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [Airbnb](https://www.airbnb.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Airbnb](https://www.airbnb.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Airbyte](https://airbyte.com/) | 企業 | グロース | San Francisco／San Francisco County | b2b, artificial-intelligence, developer-tools, open-source, data-engineering, ai, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [AirMyne](http://www.airmyne.com) | 企業 | スタートアップ | San Francisco／San Francisco County | industrials, climate, carbon-capture-and-removal, hard-tech, hardware, industrial | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [Airware](https://www.airware.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 要確認（2026-09-30） | 2026-10-29 |
+|  | [Airware](https://www.airware.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 要確認（2026-09-30） | 2026-11-08 |
 |  | [AiSDR](https://aisdr.com/) | 企業 | グロース | San Francisco／San Francisco County | b2b, sales, artificial-intelligence, saas, ai, software | 番地単位 | 確認済み（2026-11-01） | 住所・座標一致（2026-11-01） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [AIVideo.com](https://aivideo.com) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [AKQA](http://www.akqa.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Aktana](https://www.aktana.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [AKQA](http://www.akqa.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Aktana](https://www.aktana.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Alex](https://alex.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, recruiting-and-talent, artificial-intelligence, saas, recruiting, hr-tech, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Algen Biotechnologies](https://www.algenbio.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, drug-discovery-and-delivery, crispr, biotech, therapeutics, drug-discovery, ai | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [Algolia](https://www.algolia.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Algolia](https://www.algolia.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Alpaca](https://alpaca.markets/) | 企業 | 大規模 | San Mateo／San Mateo County | fintech, banking-and-exchange, developer-tools, api, investing, infrastructure | 番地単位 | 確認済み（2026-11-01） | 住所・座標一致（2026-11-01） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [Alpha Sense](https://www.alpha-sense.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [AltSchool](https://www.altschool.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 要確認（2026-09-30） | 2026-10-29 |
-|  | [Always Hired](http://www.alwayshired.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Amazon Web Services](https://aws.amazon.com/) | 企業 | 大規模 | San Francisco／San Francisco County | cloud, enterprise-software | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Alpha Sense](https://www.alpha-sense.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [AltSchool](https://www.altschool.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 要確認（2026-09-30） | 2026-11-08 |
+|  | [Always Hired](http://www.alwayshired.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Amazon Web Services](https://aws.amazon.com/) | 企業 | 大規模 | San Francisco／San Francisco County | cloud, enterprise-software | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Ambient.ai](https://ambient.ai) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, security, artificial-intelligence, computer-vision, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [AMD](https://www.amd.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, computing | 番地単位 | 確認済み（2026-08-23） | 住所・座標一致（2026-10-30） | 要確認（2026-09-30） | 2026-08-27 |
-|  | [Amplitude Analytics](https://amplitude.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Amplitude Analytics](https://amplitude.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [AmpUp](https://ampup.io) | 企業 | グロース | Santa Clara／Santa Clara County | consumer, home-and-personal, climate, electric-vehicles, services | 番地単位 | 確認済み（2026-11-01） | 住所・座標一致（2026-11-01） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Andon Labs](https://andonlabs.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, engineering-product-and-design, machine-learning, ai, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Andreessen Horowitz](https://a16z.com/) | VC・CVC | 該当なし | Menlo Park／San Mateo County | venture-capital, technology | 番地単位 | 要確認（2026-10-30） | 住所・座標一致（2026-10-30） | 確認済み（2026-10-30） | 2026-10-30 |
 |  | [Andromeda Surgical](http://www.andromedasurgical.com) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, medical-devices, hard-tech, machine-learning, medical-robotics, ai | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [AngelList](https://angel.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [AngelList](https://angel.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Angle Health](https://www.anglehealth.com) | 企業 | 大規模 | San Francisco／San Francisco County | fintech, insurance, health-insurance | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Anjuna](https://www.anjuna.io) | 企業 | グロース | San Francisco／San Francisco County | b2b, security, cloud-workload-protection, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Ansa Biotechnologies](http://ansabio.com) | 企業 | グロース | Emeryville／Alameda County | healthcare, industrial-bio, synthetic-biology, biotech | 番地単位 | 要確認（2026-11-01） | 住所・座標一致（2026-11-01） | 確認済み（2026-11-01） | 2026-11-01 |
@@ -307,10 +307,10 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Apollo](http://apollographql.com/) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, infrastructure, developer-tools, open-source, graphql, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Apollo.io](https://www.apollo.io/) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, marketing, sales, software | 番地単位 | 確認済み（2026-11-01） | 住所・座標一致（2026-11-01） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Apozy](https://www.apozy.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, security, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [AppDirect](https://www.appdirect.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [AppDirect](https://www.appdirect.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Apple](https://www.apple.com/) | 企業 | 大規模 | Cupertino／Santa Clara County | electronics, software, services | 番地単位 | 要確認（2026-10-30） | 要確認（2026-10-30） | 確認済み（2026-10-30） | 2026-10-30 |
 |  | [Applied Materials](https://www.appliedmaterials.com/) | 企業 | 大規模 | Santa Clara／Santa Clara County | semiconductors, manufacturing, equipment | 番地単位 | 確認済み（2026-08-24） | 住所・座標一致（2026-10-30） | 要確認（2026-09-30） | 2026-08-24 |
-|  | [Apteligent](http://www.apteligent.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 要確認（2026-09-30） | 2026-10-29 |
+|  | [Apteligent](http://www.apteligent.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 要確認（2026-09-30） | 2026-11-08 |
 |  | [ArchForm](http://archform.com) | 企業 | グロース | San Francisco／San Francisco County | healthcare, medical-devices, robotics, health-tech, 3d-printing | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Archil](https://archil.com) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, infrastructure, developer-tools, machine-learning, big-data, ai, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Arini](https://www.arini.ai) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, healthcare-it, artificial-intelligence, health-tech, dental, call-center, ai | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
@@ -319,7 +319,7 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Array Labs](https://www.arraylabs.io/) | 企業 | グロース | San Francisco／San Francisco County | industrials, aviation-and-space, satellites, industrial | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Artie](https://www.artie.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, infrastructure, developer-tools, saas, data-engineering, enterprise-software, software | 番地単位 | 確認済み（2026-11-01） | 住所・座標一致（2026-11-01） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Artisan](https://artisan.co/?utm_source=ycombinator) | 企業 | グロース | San Francisco／San Francisco County | b2b, artificial-intelligence, sales, automation, ai-assistant, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [Asana](https://asana.com) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Asana](https://asana.com) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Ashby](https://www.ashbyhq.com) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, recruiting-and-talent, human-resources, recruiting, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Assembly HOA](https://assemblyhoa.com) | 企業 | スタートアップ | San Francisco／San Francisco County | real-estate-and-construction, housing-and-real-estate, artificial-intelligence, fintech, real-estate, housing, proptech, construction | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Astranis](http://www.astranis.com) | 企業 | 大規模 | San Francisco／San Francisco County | industrials, aviation-and-space, space-exploration, satellites, industrial | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
@@ -331,20 +331,20 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Atmo](http://atmo.ai) | 企業 | スタートアップ | San Francisco／San Francisco County | industrials, artificial-intelligence, machine-learning, weather, climate, ai, industrial | 番地単位 | 要確認（2026-11-01） | 住所・座標一致（2026-11-01） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [AtoB](https://atob.com/) | 企業 | グロース | San Francisco／San Francisco County | fintech, saas, payments, supply-chain, transportation | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Atomic](https://www.atomicvest.com/) | 企業 | グロース | San Francisco／San Francisco County | b2b, retail, artificial-intelligence, fintech, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [Automattic](https://automattic.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Automattic](https://automattic.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Awesomic](https://www.awesomic.com/?ref=yc) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, marketplace, recruiting, design, web-development, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [BackerKit](https://backerkit.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, sales, saas, crowdfunding, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 未確認（—） | 2026-11-01 |
 |  | [Balance](https://www.getbalance.com) | 企業 | グロース | San Francisco／San Francisco County | fintech, payments, b2b, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Basalt](https://basalt.space/) | 企業 | スタートアップ | San Francisco／San Francisco County | industrials, aviation-and-space, satellites, aerospace, automation, defense, ai, industrial | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Beacons](https://beacons.ai/) | 企業 | グロース | San Francisco／San Francisco County | consumer, social, saas, services | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 未確認（—） | 2026-11-01 |
-|  | [Bebo](https://bebo.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Bebo](https://bebo.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [BeGo](http://www.bego.ai) | 企業 | グロース | San Francisco／San Francisco County | b2b, supply-chain-and-logistics, artificial-intelligence, banking-as-a-service, digital-freight-brokerage, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Bellabeat](http://bellabeat.com) | 企業 | 大規模 | San Francisco／San Francisco County | consumer, consumer-electronics, fitness, health-and-wellness, femtech, services | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Benchling](http://benchling.com) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, saas, biotech, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [Berkeley SkyDeck](https://skydeck.berkeley.edu/) | 支援機関 | 該当なし | Berkeley／Alameda County | accelerator, startup-support | 都市中心（概略） | 要確認（2026-10-30） | 未照合（—） | 確認済み（2026-10-30） | 2026-10-30 |
 |  | [Besimple AI](https://besimple.ai) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, aiops, data-labeling, ai, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
-|  | [BetterUp](https://www.betterup.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Beyond Games](https://www.beyondgames.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [BetterUp](https://www.betterup.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Beyond Games](https://www.beyondgames.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [BigCommerce](https://www.bigcommerce.com) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [BiggerPicture](http://biggerpicture.co) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, scheduling, logistics, supply-chain, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
 |  | [BIK](https://bik.ai/) | 企業 | グロース | San Francisco／San Francisco County | b2b, retail, saas, e-commerce, ai, ai-assistant, software | 都市中心（概略） | 確認済み（2026-11-01） | 未照合（—） | 確認済み（2026-11-01） | 2026-11-01 |
@@ -521,64 +521,64 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Evolve (makers of Podcast App & Rest)](https://getrest.app) | 企業 | グロース | San Francisco／San Francisco County | consumer, content, sleep-tech, digital-health, podcasts, services | 都市中心（概略） | 確認済み（2026-11-02） | 未照合（—） | 確認済み（2026-11-02） | 2026-11-02 |
 |  | [Exa](https://exa.ai) | 企業 | グロース | San Francisco／San Francisco County | b2b, developer-tools, search, ai, apis, software | 番地単位 | 確認済み（2026-11-02） | 住所・座標一致（2026-11-02） | 確認済み（2026-11-02） | 2026-11-02 |
 |  | [Expensify](https://use.expensify.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Expent Inc](https://www.expent.ai/) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, operations, artificial-intelligence, machine-learning, saas, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Expo](https://expo.dev) | 企業 | グロース | San Francisco／San Francisco County | b2b, infrastructure, developer-tools, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Extern](http://www.extern.com) | 企業 | グロース | San Francisco／San Francisco County | consumer, job-and-career-services, education, marketplace, elearning, recruiting, remote-work, services | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [Expent Inc](https://www.expent.ai/) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, operations, artificial-intelligence, machine-learning, saas, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Expo](https://expo.dev) | 企業 | グロース | San Francisco／San Francisco County | b2b, infrastructure, developer-tools, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Extern](http://www.extern.com) | 企業 | グロース | San Francisco／San Francisco County | consumer, job-and-career-services, education, marketplace, elearning, recruiting, remote-work, services | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Extole](https://www.extole.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Eze](https://www.ezeit.ai/) | 企業 | グロース | San Francisco／San Francisco County | b2b, retail, marketplace, electronics, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Faire](https://www.faire.com/) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, retail, marketplace, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 未確認（—） | 2026-10-28 |
-|  | [Farcast](https://www.farcast.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | industrials, aviation-and-space, satellites, telecommunications, industrial | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Fathom](https://www.fathom.ai) | 企業 | グロース | San Francisco／San Francisco County | b2b, productivity, saas, ai, note-taking, software | 都市中心（概略） | 要確認（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Ferveret](http://www.ferveret.com) | 企業 | スタートアップ | San Francisco／San Francisco County | industrials, energy, hardware, climate, industrial | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [FidoCure®](https://www.fidocure.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, healthcare-services, oncology | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Fieldguide](http://fieldguide.com) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, productivity, artificial-intelligence, workflow-automation, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Finch](https://tryfinch.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, fintech, hr-tech, api, software | 番地単位 | 確認済み（2026-10-28） | 住所・座標一致（2026-10-28） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [Eze](https://www.ezeit.ai/) | 企業 | グロース | San Francisco／San Francisco County | b2b, retail, marketplace, electronics, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Faire](https://www.faire.com/) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, retail, marketplace, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 未確認（—） | 2026-11-08 |
+|  | [Farcast](https://www.farcast.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | industrials, aviation-and-space, satellites, telecommunications, industrial | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Fathom](https://www.fathom.ai) | 企業 | グロース | San Francisco／San Francisco County | b2b, productivity, saas, ai, note-taking, software | 都市中心（概略） | 要確認（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Ferveret](http://www.ferveret.com) | 企業 | スタートアップ | San Francisco／San Francisco County | industrials, energy, hardware, climate, industrial | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [FidoCure®](https://www.fidocure.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, healthcare-services, oncology | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Fieldguide](http://fieldguide.com) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, productivity, artificial-intelligence, workflow-automation, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Finch](https://tryfinch.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, fintech, hr-tech, api, software | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [FitBit](https://www.fitbit.com/home) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Fivetran](http://fivetran.com) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, infrastructure, saas, analytics, data-engineering, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Flagright](https://flagright.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, fintech, compliance, regtech, ai, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Flai](https://www.useflai.com/) | 企業 | グロース | San Francisco／San Francisco County | industrials, automotive, industrial | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [FleetWorks](https://fleetworks.ai) | 企業 | グロース | San Francisco／San Francisco County | b2b, supply-chain-and-logistics, logistics, ai, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [Fivetran](http://fivetran.com) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, infrastructure, saas, analytics, data-engineering, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Flagright](https://flagright.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, fintech, compliance, regtech, ai, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Flai](https://www.useflai.com/) | 企業 | グロース | San Francisco／San Francisco County | industrials, automotive, industrial | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [FleetWorks](https://fleetworks.ai) | 企業 | グロース | San Francisco／San Francisco County | b2b, supply-chain-and-logistics, logistics, ai, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Flexport](https://www.flexport.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Flockjay](https://flockjay.com) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, sales, artificial-intelligence, saas, elearning, productivity, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [FlutterFlow](https://flutterflow.io) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Focal Systems](http://www.focal.systems) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, retail, deep-learning, grocery, computer-vision, software | 番地単位 | 確認済み（2026-10-28） | 住所・座標一致（2026-10-28） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [Flockjay](https://flockjay.com) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, sales, artificial-intelligence, saas, elearning, productivity, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [FlutterFlow](https://flutterflow.io) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Focal Systems](http://www.focal.systems) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, retail, deep-learning, grocery, computer-vision, software | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Fond](https://fond.co/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Fondo](https://fondo.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, finance-and-accounting, fintech, saas, ai, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Forage](http://www.joinforage.com) | 企業 | グロース | San Francisco／San Francisco County | fintech, payments, govtech | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [Fondo](https://fondo.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, finance-and-accounting, fintech, saas, ai, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Forage](http://www.joinforage.com) | 企業 | グロース | San Francisco／San Francisco County | fintech, payments, govtech | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Forkable](https://forkable.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 都市中心（概略） | 要確認（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Formal](https://joinformal.com) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, cybersecurity, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [Formal](https://joinformal.com) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, cybersecurity, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Forward](https://goforward.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 要確認（2026-09-30） | 2026-10-29 |
 |  | [Fossa](https://www.fossa.io/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Fractional](https://fractional.app) | 企業 | スタートアップ | San Francisco／San Francisco County | fintech, real-estate, community | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Freshpaint](https://freshpaint.io) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, infrastructure, developer-tools, saas, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Front](https://front.com) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, productivity, saas, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [Fractional](https://fractional.app) | 企業 | スタートアップ | San Francisco／San Francisco County | fintech, real-estate, community | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Freshpaint](https://freshpaint.io) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, infrastructure, developer-tools, saas, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Front](https://front.com) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, productivity, saas, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Fundbox](https://fundbox.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [FundersClub](https://fundersclub.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [FurtherAI](https://www.furtherai.com/) | 企業 | グロース | San Francisco／San Francisco County | b2b, insurance, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Fuse AI](https://fuseai.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, sales, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [FurtherAI](https://www.furtherai.com/) | 企業 | グロース | San Francisco／San Francisco County | b2b, insurance, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Fuse AI](https://fuseai.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, sales, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Galvanize](https://www.galvanize.com/san-francisco) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 要確認（2026-09-30） | 2026-10-29 |
 |  | [Genentech](https://www.gene.com/) | 企業 | 大規模 | South San Francisco／San Mateo County | biotechnology, life-sciences | 番地単位 | 確認済み（2026-10-31） | 住所・座標一致（2026-10-31） | 確認済み（2026-10-31） | 2026-10-31 |
 |  | [General Assembly](https://generalassemb.ly/locations/san-francisco) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [General Proximity](https://www.generalproximity.bio/) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, drug-discovery-and-delivery, biotech, drug-discovery | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Genomelink](https://genomelink.io/) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, consumer-health-and-wellness, consumer-health-services, genomics | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [General Proximity](https://www.generalproximity.bio/) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, drug-discovery-and-delivery, biotech, drug-discovery | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Genomelink](https://genomelink.io/) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, consumer-health-and-wellness, consumer-health-services, genomics | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Getaround](https://www.getaround.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [GETASAP](https://www.getasap.us) | 企業 | グロース | San Francisco／San Francisco County | b2b, supply-chain-and-logistics, logistics, supply-chain, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Giga](https://giga.ai/) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, artificial-intelligence, ai, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Gigs](https://gigs.com) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, engineering-product-and-design, fintech, hr-tech, api, ai, software | 番地単位 | 確認済み（2026-10-28） | 住所・座標一致（2026-10-28） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [GETASAP](https://www.getasap.us) | 企業 | グロース | San Francisco／San Francisco County | b2b, supply-chain-and-logistics, logistics, supply-chain, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Giga](https://giga.ai/) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, artificial-intelligence, ai, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Gigs](https://gigs.com) | 企業 | 大規模 | San Francisco／San Francisco County | b2b, engineering-product-and-design, fintech, hr-tech, api, ai, software | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Gigster](https://gigster.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Gilead Sciences](https://www.gilead.com/) | 企業 | 大規模 | Foster City／San Mateo County | biotechnology, life-sciences | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 確認済み（2026-10-31） | 2026-10-31 |
-|  | [GitStart](https://www.gitstart.com) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, engineering-product-and-design, developer-tools, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [GitStart](https://www.gitstart.com) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, engineering-product-and-design, developer-tools, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Givecampus](https://www.givecampus.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 都市中心（概略） | 要確認（2026-10-29） | 未照合（—） | 要確認（2026-09-30） | 2026-10-29 |
-|  | [Glep](https://glep.com) | 企業 | グロース | San Francisco／San Francisco County | fintech, banking-and-exchange, enterprise-software, neobank | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Glide](https://www.glideapps.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, artificial-intelligence, developer-tools, no-code, enterprise-software, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Godela](http://godela.ai) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, engineering-product-and-design, artificial-intelligence, hard-tech, hardware, aerospace, ml, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [GoGoGrandparent](https://gogograndparent.com) | 企業 | グロース | San Francisco／San Francisco County | consumer, home-and-personal, assistive-tech, consumer-health-services, services | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [GoLinks](https://www.golinks.io) | 企業 | グロース | San Jose／Santa Clara County | b2b, productivity, saas, collaboration, software | 番地単位 | 確認済み（2026-10-28） | 住所・座標一致（2026-10-28） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [Glep](https://glep.com) | 企業 | グロース | San Francisco／San Francisco County | fintech, banking-and-exchange, enterprise-software, neobank | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Glide](https://www.glideapps.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, artificial-intelligence, developer-tools, no-code, enterprise-software, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Godela](http://godela.ai) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, engineering-product-and-design, artificial-intelligence, hard-tech, hardware, aerospace, ml, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [GoGoGrandparent](https://gogograndparent.com) | 企業 | グロース | San Francisco／San Francisco County | consumer, home-and-personal, assistive-tech, consumer-health-services, services | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [GoLinks](https://www.golinks.io) | 企業 | グロース | San Jose／Santa Clara County | b2b, productivity, saas, collaboration, software | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Goodby Silverstein & Partners](https://goodbysilverstein.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Google](https://www.google.com/) | 企業 | 大規模 | Mountain View／Santa Clara County | internet, cloud, ai | 番地単位 | 確認済み（2026-10-31） | 住所・座標一致（2026-10-31） | 確認済み（2026-10-31） | 2026-10-31 |
-|  | [Govly](https://www.govly.com/) | 企業 | グロース | San Francisco／San Francisco County | government, saas, govtech | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
-|  | [Grain](https://trygrain.com/) | 企業 | グロース | San Francisco／San Francisco County | fintech, credit-and-lending | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 未確認（—） | 2026-10-28 |
-|  | [Great Question](https://greatquestion.co) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, saas, design-tools, software | 都市中心（概略） | 確認済み（2026-10-28） | 未照合（—） | 確認済み（2026-10-28） | 2026-10-28 |
+|  | [Govly](https://www.govly.com/) | 企業 | グロース | San Francisco／San Francisco County | government, saas, govtech | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
+|  | [Grain](https://trygrain.com/) | 企業 | グロース | San Francisco／San Francisco County | fintech, credit-and-lending | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 未確認（—） | 2026-11-08 |
+|  | [Great Question](https://greatquestion.co) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, saas, design-tools, software | 都市中心（概略） | 確認済み（2026-11-08） | 未照合（—） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Greptile](https://www.greptile.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, engineering-product-and-design, artificial-intelligence, developer-tools, ai, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Grey](https://grey.co) | 企業 | スタートアップ | San Francisco／San Francisco County | fintech, consumer, b2b, neobank, services, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Gridware](https://www.gridware.io) | 企業 | 大規模 | San Francisco／San Francisco County | industrials, energy, hardware, climate, enterprise-software, industrial | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
@@ -671,17 +671,17 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Keeper](https://keepertax.com) | 企業 | スタートアップ | San Francisco／San Francisco County | fintech, consumer-finance, consumer, services | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Kentik](https://www.kentik.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 確認済み（2026-10-31） | 2026-10-31 |
 |  | [KERNEL](https://www.kernel.sh) | 企業 | グロース | San Francisco／San Francisco County | b2b, infrastructure, artificial-intelligence, developer-tools, cloud-computing, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Khosla Ventures](https://www.khoslaventures.com/) | VC・CVC | 該当なし | Menlo Park／San Mateo County | venture-capital, technology | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Khosla Ventures](https://www.khoslaventures.com/) | VC・CVC | 該当なし | Menlo Park／San Mateo County | venture-capital, technology | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Kinter](https://kinter.ai) | 企業 | グロース | San Francisco／San Francisco County | b2b, finance-and-accounting, saas, finance, ai, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Kissmetrics](https://www.kissmetrics.com/home/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 要確認（2026-10-02） | 2026-10-31 |
 |  | [KittyHawk](https://kittyhawk.io/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 都市中心（概略） | 要確認（2026-10-31） | 未照合（—） | 要確認（2026-10-01） | 2026-10-31 |
 |  | [Kivo Health](https://kivohealth.com) | 企業 | グロース | San Francisco／San Francisco County | healthcare, healthcare-services, consumer-health-services, telehealth, digital-health | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [KLA](https://www.kla.com/) | 企業 | 大規模 | Milpitas／Santa Clara County | semiconductors, manufacturing, equipment | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [KLA](https://www.kla.com/) | 企業 | 大規模 | Milpitas／Santa Clara County | semiconductors, manufacturing, equipment | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Koala](https://www.teachwithkoala.com) | 企業 | スタートアップ | San Francisco／San Francisco County | education, marketplace, gaming, metaverse | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Kontigo](https://kontigo.lat/) | 企業 | スタートアップ | San Francisco／San Francisco County | fintech, banking-and-exchange | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Labdoor](https://labdoor.com) | 企業 | スタートアップ | San Francisco／San Francisco County | consumer, food-and-beverage, marketplace, consumer-health-services, services | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Lago](https://www.getlago.com/) | 企業 | グロース | San Francisco／San Francisco County | b2b, finance-and-accounting, finops, fintech, saas, open-source, billing, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Lam Research](https://www.lamresearch.com/) | 企業 | 大規模 | Fremont／Alameda County | semiconductors, manufacturing, equipment | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Lam Research](https://www.lamresearch.com/) | 企業 | 大規模 | Fremont／Alameda County | semiconductors, manufacturing, equipment | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Lamar Health](http://www.lamarhealth.com) | 企業 | スタートアップ | San Francisco／San Francisco County | healthcare, healthcare-it, health-tech, ai | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Laminar](https://laminar.com) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, enterprise-software, ai, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Lance](https://www.lance.live) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, software | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
@@ -691,8 +691,8 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Lapel](https://lapel.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, artificial-intelligence, customer-success, sales, customer-support, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Latent](https://latenthealth.com) | 企業 | グロース | San Francisco／San Francisco County | healthcare, healthcare-it, artificial-intelligence, b2b, insurance, enterprise, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Lattice](https://lattice.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 確認済み（2026-10-31） | 住所・座標一致（2026-10-31） | 確認済み（2026-10-31） | 2026-10-31 |
-|  | [Lawrence Berkeley National Laboratory](https://www.lbl.gov/) | 大学・研究機関 | 該当なし | Berkeley／Alameda County | research, energy | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 要確認（2026-10-16） | 2026-10-29 |
-|  | [Lawrence Livermore National Laboratory](https://www.llnl.gov/) | 大学・研究機関 | 該当なし | Livermore／Alameda County | research, science, energy, defense | 番地単位 | 確認済み（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Lawrence Berkeley National Laboratory](https://www.lbl.gov/) | 大学・研究機関 | 該当なし | Berkeley／Alameda County | research, energy | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 要確認（2026-10-16） | 2026-11-08 |
+|  | [Lawrence Livermore National Laboratory](https://www.llnl.gov/) | 大学・研究機関 | 該当なし | Livermore／Alameda County | research, science, energy, defense | 番地単位 | 確認済み（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Layer](https://layer.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 確認済み（2026-10-31） | 2026-10-31 |
 |  | [Layerup](https://www.uselayerup.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, generative-ai, enterprise, ai, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [LeadGenius](http://leadgenius.com) | 企業 | グロース | San Francisco／San Francisco County | b2b, sales, marketing, ai, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
@@ -711,7 +711,7 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Lexi](https://getlexi.io/) | 企業 | スタートアップ | San Francisco／San Francisco County | b2b, legal, saas, legaltech, ai, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Liftopia](https://about.liftopia.com/index.html) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 要確認（2026-10-02） | 2026-10-31 |
 |  | [Lightbend](http://www.lightbend.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 要確認（2026-10-02） | 2026-10-31 |
-|  | [LinkedIn](https://www.linkedin.com/) | 企業 | 大規模 | Sunnyvale／Santa Clara County | social-media, enterprise-software, recruiting | 番地単位 | 要確認（2026-10-29） | 住所・座標一致（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [LinkedIn](https://www.linkedin.com/) | 企業 | 大規模 | Sunnyvale／Santa Clara County | social-media, enterprise-software, recruiting | 番地単位 | 要確認（2026-11-08） | 住所・座標一致（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Linqia](http://www.linqia.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 確認済み（2026-10-31） | 2026-10-31 |
 |  | [LiteLLM](https://www.litellm.ai/) | 企業 | グロース | San Francisco／San Francisco County | b2b, aiops, artificial-intelligence, developer-tools, generative-ai, open-source, software | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Literably](https://literably.com) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 要確認（2026-10-02） | 2026-10-31 |
@@ -720,7 +720,7 @@ npm run audit -- --all --city-only --city "San Francisco" # 都市を絞って�
 |  | [Living Carbon](https://www.livingcarbon.com) | 企業 | グロース | San Francisco／San Francisco County | industrials, climate, synthetic-biology, biotech, agriculture, industrial | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Lob](https://lob.com/) | 企業 | スタートアップ | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 確認済み（2026-10-31） | 2026-10-31 |
 |  | [Locale](https://www.shoplocale.com) | 企業 | スタートアップ | San Francisco／San Francisco County | consumer, food-and-beverage, grocery, marketplace, delivery, food, services | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
-|  | [Lockheed Martin Space](https://www.lockheedmartin.com/en-us/who-we-are/business-areas/space.html) | 企業 | 大規模 | Sunnyvale／Santa Clara County | aerospace, defense, space, manufacturing | 番地単位 | 要確認（2026-10-29） | 要確認（2026-10-29） | 確認済み（2026-10-29） | 2026-10-29 |
+|  | [Lockheed Martin Space](https://www.lockheedmartin.com/en-us/who-we-are/business-areas/space.html) | 企業 | 大規模 | Sunnyvale／Santa Clara County | aerospace, defense, space, manufacturing | 番地単位 | 要確認（2026-11-08） | 要確認（2026-11-08） | 確認済み（2026-11-08） | 2026-11-08 |
 |  | [Logikcull](http://logikcull.com/) | 企業 | グロース | San Francisco／San Francisco County | technology | 番地単位 | 要確認（2026-10-31） | 住所・座標一致（2026-10-31） | 確認済み（2026-10-31） | 2026-10-31 |
 |  | [Lollipuff](http://lollipuff.com) | 企業 | スタートアップ | San Francisco／San Francisco County | consumer, apparel-and-cosmetics, marketplace, e-commerce, fashion, services | 都市中心（概略） | 確認済み（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
 |  | [Long Term Stock Exchange](http://ltse.com) | 企業 | グロース | San Francisco／San Francisco County | fintech, banking-and-exchange, b2b, software | 都市中心（概略） | 要確認（2026-10-29） | 未照合（—） | 確認済み（2026-10-29） | 2026-10-29 |
