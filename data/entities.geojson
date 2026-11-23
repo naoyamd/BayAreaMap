@@ -23668,9 +23668,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -25093,9 +25093,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -26141,9 +26141,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -26510,9 +26510,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -28689,20 +28689,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.gridware.io/about-gridware",
           "sourceType": "official-directory",
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
           "checkedAt": "2026-11-23",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/gridware",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.gridware.io/about-gridware"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -31560,9 +31559,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -32832,17 +32831,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.golinks.io/sales.php",
           "sourceType": "official-directory",
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
-        "updatedAt": "2026-11-15",
+        "updatedAt": "2026-11-23",
         "presenceCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "verified",
           "sourceUrl": "https://www.golinks.io/sales.php"
         },
@@ -35895,9 +35894,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -35973,9 +35972,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -37385,7 +37384,7 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -37755,9 +37754,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -38057,9 +38056,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -38508,9 +38507,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -40311,9 +40310,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -41519,9 +41518,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -42643,9 +42642,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -42717,7 +42716,7 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -43709,7 +43708,7 @@
         "websiteCheck": {
           "checkedAt": "2026-11-08",
           "status": "review",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -45124,9 +45123,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -48286,9 +48285,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -52804,9 +52803,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -57437,20 +57436,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.hokali.com/about",
           "sourceType": "official-directory",
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
           "checkedAt": "2026-11-23",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/hokali",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.hokali.com/about"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -63237,9 +63235,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -63312,9 +63310,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -63389,13 +63387,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "ok",
-          "attemptedAt": "2026-11-15"
+          "attemptedAt": "2026-11-23"
         },
-        "updatedAt": "2026-11-15",
+        "updatedAt": "2026-11-23",
         "presenceCheck": {
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-23",
           "status": "review",
           "sourceUrl": "https://www.ycombinator.com/companies/hub",
           "sourceType": "official-directory"
@@ -75852,8 +75850,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -75925,8 +75924,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76000,8 +76000,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76075,8 +76076,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76147,8 +76149,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76224,8 +76227,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76296,8 +76300,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76334,8 +76339,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.118119622964,
+          37.445960433501
         ]
       },
       "properties": {
@@ -76354,29 +76359,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/apolink",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "2595 E Bayshore Rd, #150",
+          "city": "Palo Alto",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94303",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/apolink",
+          "county": "Santa Clara County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://apolink.space/contact",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
           "checkedAt": "2026-11-23",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/apolink",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://apolink.space/contact"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -76439,8 +76444,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76510,8 +76516,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76548,8 +76555,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.432212147414,
+          37.764728684114
         ]
       },
       "properties": {
@@ -76571,29 +76578,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/baymachines",
         "location": {
-          "address": null,
+          "address": "2261 Market Street, STE 68644",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94114",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/baymachines",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://baymachines.com/about/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
           "checkedAt": "2026-11-23",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/baymachines",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://baymachines.com/about/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -76660,8 +76667,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76734,8 +76742,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76810,8 +76819,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76882,8 +76892,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -76954,8 +76965,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77030,8 +77042,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77102,8 +77115,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77174,8 +77188,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77249,8 +77264,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77320,8 +77336,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77396,8 +77413,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77471,7 +77489,8 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77544,8 +77563,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77617,8 +77637,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77692,8 +77713,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77768,8 +77790,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77843,8 +77866,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77918,8 +77942,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -77990,8 +78015,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -78062,8 +78088,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -78133,8 +78160,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -78210,8 +78238,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -78286,8 +78315,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -78361,8 +78391,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -78437,8 +78468,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -78509,8 +78541,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -78547,8 +78580,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.434077215178,
+          37.789721356836
         ]
       },
       "properties": {
@@ -78568,29 +78601,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/mentalhappy",
         "location": {
-          "address": null,
+          "address": "2193 Fillmore St. #15",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94115",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/mentalhappy",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.mentalhappy.com/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
           "checkedAt": "2026-11-23",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/mentalhappy",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.mentalhappy.com/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -78620,8 +78653,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.400864486697,
+          37.656872339069
         ]
       },
       "properties": {
@@ -78643,29 +78676,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/mindstate-design-labs",
         "location": {
-          "address": null,
-          "city": "San Francisco",
+          "address": "611 Gateway Blvd Suite 120",
+          "city": "South San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94080",
           "countryCode": "US",
-          "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/mindstate-design-labs",
+          "county": "San Mateo County",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://mindstate.design/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
           "checkedAt": "2026-11-23",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/mindstate-design-labs",
-          "sourceType": "official-directory"
+          "status": "review",
+          "sourceUrl": "https://mindstate.design/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -78695,8 +78728,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.432212147414,
+          37.764728684114
         ]
       },
       "properties": {
@@ -78718,29 +78751,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/miracle",
         "location": {
-          "address": null,
+          "address": "2261 Market Street",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94114",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/miracle",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://miracleml.com/company?4bf108e0_page=1",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
           "checkedAt": "2026-11-23",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/miracle",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://miracleml.com/company?4bf108e0_page=1"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -78807,7 +78840,8 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -78844,8 +78878,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.397050528903,
+          37.777835047624
         ]
       },
       "properties": {
@@ -78864,29 +78898,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/nautilus",
         "location": {
-          "address": null,
+          "address": "525 Brannan St, STE 410",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94107",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/nautilus",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://www.nautilus.co/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
           "checkedAt": "2026-11-23",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/nautilus",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.nautilus.co/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -78953,8 +78987,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -79026,7 +79061,8 @@
         },
         "websiteCheck": {
           "checkedAt": null,
-          "status": "unchecked"
+          "status": "unchecked",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -79099,8 +79135,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -79171,8 +79208,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -79245,8 +79283,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -79319,8 +79358,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -79392,8 +79432,9 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
@@ -79430,8 +79471,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.403045790966,
+          37.793854237201
         ]
       },
       "properties": {
@@ -79452,29 +79493,29 @@
         ],
         "profileSourceUrl": "https://www.ycombinator.com/companies/ramain",
         "location": {
-          "address": null,
+          "address": "505 Montgomery Street",
           "city": "San Francisco",
           "region": "CA",
-          "postalCode": null,
+          "postalCode": "94111",
           "countryCode": "US",
           "county": "San Francisco County",
-          "precision": "city",
-          "coordinateSource": "city-centroid",
-          "sourceUrl": "https://www.ycombinator.com/companies/ramain",
+          "precision": "address",
+          "coordinateSource": "census-geocoder",
+          "sourceUrl": "https://ramain.ai/contact/",
           "sourceType": "official-directory",
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": null,
-          "status": "unchecked"
+          "checkedAt": "2026-11-23",
+          "status": "ok",
+          "attemptedAt": "2026-11-23"
         },
         "updatedAt": "2026-11-23",
         "presenceCheck": {
           "checkedAt": "2026-11-23",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/ramain",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://ramain.ai/contact/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
