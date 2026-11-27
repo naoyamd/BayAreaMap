@@ -9058,17 +9058,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-10-02",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9111,11 +9111,11 @@
         "websiteCheck": {
           "checkedAt": "2026-10-01",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9152,17 +9152,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-11-19",
-          "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "status": "review",
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9199,17 +9199,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": "https://www.mckesson.com/about-us/leadership/",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": "https://www.mckesson.com/about-us/leadership/"
         }
@@ -9246,17 +9246,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review"
         },
         "websiteCheck": {
           "checkedAt": "2026-10-02",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9293,17 +9293,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": "https://medrio.com/contact-us/",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://medrio.com/contact-us/"
         }
@@ -9340,17 +9340,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9387,17 +9387,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": "https://mendedesign.com/contact",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://mendedesign.com/contact"
         }
@@ -9434,17 +9434,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9481,17 +9481,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9528,17 +9528,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-10-02",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9577,17 +9577,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.microsoft.com/en-us/hub/locations",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": "https://www.microsoft.com/en-us/hub/locations"
         }
@@ -9624,17 +9624,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-10-02",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9671,17 +9671,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mixpanel",
           "sourceType": "official-directory"
@@ -9719,17 +9719,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9766,17 +9766,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9813,17 +9813,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.mux.com/sales-contact",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/mux",
           "sourceType": "official-directory"
@@ -9861,17 +9861,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9908,17 +9908,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -9955,17 +9955,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-10-31",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10002,17 +10002,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": "https://newrelic.com/about/contact-us",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://newrelic.com/about/contact-us"
         }
@@ -10049,17 +10049,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10096,17 +10096,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10143,17 +10143,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-10-02",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10190,17 +10190,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10237,17 +10237,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10284,17 +10284,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10331,17 +10331,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.okta.com/contact-sales/",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.okta.com/contact-sales/"
         }
@@ -10379,17 +10379,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://openai.com/policies/privacy-policy/",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-01",
-          "status": "review",
-          "attemptedAt": "2026-11-19"
+          "checkedAt": "2026-11-27",
+          "status": "ok",
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": "https://openai.com/policies/privacy-policy/"
         }
@@ -10426,17 +10426,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10473,17 +10473,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": "https://www.opendoor.com/contact-us",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": "https://www.opendoor.com/contact-us"
         }
@@ -10520,17 +10520,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-10-02",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10567,17 +10567,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10614,17 +10614,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10661,17 +10661,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10708,17 +10708,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10755,17 +10755,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10802,17 +10802,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10849,17 +10849,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -10896,17 +10896,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://plaid.com/",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://plaid.com/"
         }
@@ -10947,17 +10947,17 @@
           "precision": "address",
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.planet.com/locations/",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.planet.com/locations/"
         }
@@ -10994,17 +10994,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -11041,17 +11041,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -11092,13 +11092,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -11135,17 +11135,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -11182,17 +11182,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -11229,17 +11229,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-10-02",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -11276,17 +11276,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
           "checkedAt": "2026-10-02",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -11323,17 +11323,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": "https://www.quantcast.com/contact-us",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.quantcast.com/contact-us"
         }
@@ -11370,17 +11370,17 @@
           "precision": "address",
           "coordinateSource": "legacy",
           "sourceUrl": null,
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "review",
           "sourceUrl": null
         }
@@ -25393,16 +25393,15 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/sendbird",
-          "sourceType": "official-directory"
+          "checkedAt": "2026-11-27",
+          "status": "review",
+          "sourceUrl": "https://sendbird.com/about"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -25841,13 +25840,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/snappr",
           "sourceType": "official-directory"
@@ -27860,16 +27859,15 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
-          "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/singlestore",
-          "sourceType": "official-directory"
+          "checkedAt": "2026-11-27",
+          "status": "review",
+          "sourceUrl": "https://www.singlestore.com/company/jay-schaufeld/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -29065,13 +29063,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/short-story",
           "sourceType": "official-directory"
@@ -31174,13 +31172,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/shogun",
           "sourceType": "official-directory"
@@ -32977,11 +32975,11 @@
         "websiteCheck": {
           "checkedAt": "2026-10-26",
           "status": "review",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/shef",
           "sourceType": "official-directory"
@@ -33042,17 +33040,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.slash.com/products/corporate-cards",
           "sourceType": "official-directory",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.slash.com/products/corporate-cards"
         },
@@ -34393,13 +34391,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/shepherd",
           "sourceType": "official-directory"
@@ -36631,20 +36629,19 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://www.sinai.com/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
-          "sourceUrl": "https://www.ycombinator.com/companies/sinai",
-          "sourceType": "official-directory"
+          "sourceUrl": "https://www.sinai.com/"
         },
         "source": {
           "provider": "Y Combinator official company profile",
@@ -39479,13 +39476,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/speak",
           "sourceType": "official-directory"
@@ -39778,13 +39775,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/signoz",
           "sourceType": "official-directory"
@@ -39853,13 +39850,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/snackpass",
           "sourceType": "official-directory"
@@ -40524,13 +40521,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/simplyinsured",
           "sourceType": "official-directory"
@@ -40602,11 +40599,11 @@
         "websiteCheck": {
           "checkedAt": null,
           "status": "unchecked",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sourceress",
           "sourceType": "official-directory"
@@ -41131,13 +41128,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sieve",
           "sourceType": "official-directory"
@@ -41576,17 +41573,17 @@
           "coordinateSource": "census-geocoder",
           "sourceUrl": "https://segmed.ai/",
           "sourceType": "official-directory",
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "matched"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-19",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://segmed.ai/"
         },
@@ -43540,13 +43537,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/spellbrush",
           "sourceType": "official-directory"
@@ -45558,13 +45555,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/seam",
           "sourceType": "official-directory"
@@ -46694,13 +46691,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/snapmagic",
           "sourceType": "official-directory"
@@ -47220,13 +47217,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/socksoho",
           "sourceType": "official-directory"
@@ -51349,13 +51346,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/slope",
           "sourceType": "official-directory"
@@ -54060,13 +54057,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sirum",
           "sourceType": "official-directory"
@@ -55632,13 +55629,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/semble",
           "sourceType": "official-directory"
@@ -58177,13 +58174,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sigmamind-ai",
           "sourceType": "official-directory"
@@ -58252,13 +58249,13 @@
           "status": "unchecked"
         },
         "websiteCheck": {
-          "checkedAt": "2026-11-19",
+          "checkedAt": "2026-11-27",
           "status": "ok",
-          "attemptedAt": "2026-11-19"
+          "attemptedAt": "2026-11-27"
         },
-        "updatedAt": "2026-11-23",
+        "updatedAt": "2026-11-27",
         "presenceCheck": {
-          "checkedAt": "2026-11-23",
+          "checkedAt": "2026-11-27",
           "status": "verified",
           "sourceUrl": "https://www.ycombinator.com/companies/sixtyfour",
           "sourceType": "official-directory"
